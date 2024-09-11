@@ -6,6 +6,7 @@ class SMMFilledButton extends StatelessWidget {
   final Widget? child;
   final double? width;
   final double? height;
+  final Color? backgroundColor;
 
   factory SMMFilledButton({
     Key? key,
@@ -13,12 +14,14 @@ class SMMFilledButton extends StatelessWidget {
     VoidCallback? onPressed,
     double? width,
     double? height,
+    Color? backgroundColor,
   }) {
     return SMMFilledButton._(
       key: key,
       onPressed: onPressed,
       width: width,
       height: height,
+      backgroundColor: backgroundColor,
       child: child,
     );
   }
@@ -29,14 +32,17 @@ class SMMFilledButton extends StatelessWidget {
     VoidCallback? onPressed,
     double? width,
     double? height,
+    Color? backgroundColor,
   }) {
     return SMMFilledButton._(
       key: key,
       onPressed: onPressed,
       width: width,
       height: height,
+      backgroundColor: backgroundColor,
       child: Text(
         label,
+        overflow: TextOverflow.ellipsis,
         style: const TextStyle(color: Colors.white),
       ),
     );
@@ -48,6 +54,7 @@ class SMMFilledButton extends StatelessWidget {
     this.child,
     this.width,
     this.height,
+    this.backgroundColor,
   });
 
   @override
@@ -62,7 +69,7 @@ class SMMFilledButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6.0),
           ),
-          backgroundColor: AppColors.primaryBrandMain,
+          backgroundColor: backgroundColor ?? AppColors.primaryBrandMain,
         ),
         child: child,
       ),

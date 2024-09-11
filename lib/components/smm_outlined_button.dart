@@ -6,6 +6,7 @@ class SMMOutlinedButton extends StatelessWidget {
   final Widget? child;
   final double? width;
   final double? height;
+  final Color? outlineColor;
 
   factory SMMOutlinedButton({
     Key? key,
@@ -13,12 +14,14 @@ class SMMOutlinedButton extends StatelessWidget {
     VoidCallback? onPressed,
     double? width,
     double? height,
+    Color? outlineColor,
   }) {
     return SMMOutlinedButton._(
       key: key,
       onPressed: onPressed,
       width: width,
       height: height,
+      outlineColor: outlineColor,
       child: child,
     );
   }
@@ -29,16 +32,20 @@ class SMMOutlinedButton extends StatelessWidget {
     VoidCallback? onPressed,
     double? width,
     double? height,
+    Color? outlineColor,
+    Color? textColor,
   }) {
     return SMMOutlinedButton._(
       key: key,
       onPressed: onPressed,
       width: width,
       height: height,
+      outlineColor: outlineColor,
       child: Text(
         label,
-        style: const TextStyle(
-          color: AppColors.primaryBrandMain,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+          color: textColor ?? AppColors.primaryBrandMain,
         ),
       ),
     );
@@ -50,6 +57,7 @@ class SMMOutlinedButton extends StatelessWidget {
     this.child,
     this.width,
     this.height,
+    this.outlineColor,
   });
 
   @override
@@ -60,9 +68,9 @@ class SMMOutlinedButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(
+          side: BorderSide(
             width: 1.0,
-            color: AppColors.primaryDefaultLight,
+            color: outlineColor ?? AppColors.primaryDefaultLight,
           ),
           padding: const EdgeInsets.symmetric(horizontal: 16),
           shape: RoundedRectangleBorder(
