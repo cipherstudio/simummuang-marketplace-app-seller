@@ -22,6 +22,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "hello_world": MessageLookupByLibrary.simpleMessage("Hello World")
+        "hello_world": MessageLookupByLibrary.simpleMessage("Hello World"),
+        "login_external_detail":
+            MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี"),
+        "login_external_text_button":
+            MessageLookupByLibrary.simpleMessage("สร้างบัญชีใหม่"),
+        "login_external_title": MessageLookupByLibrary.simpleMessage(
+            "เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย"),
+        "register_external_detail":
+            MessageLookupByLibrary.simpleMessage("หากท่านมีบัญชีอยู่แล้ว?"),
+        "register_external_text_button":
+            MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
+        "register_external_title": MessageLookupByLibrary.simpleMessage(
+            "ลงทะเบียนด้วยบัญชีโซเชียลมีเดีย")
       };
 }

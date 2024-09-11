@@ -1,3 +1,9 @@
 {
-  "hello_world": "สวัสดี ชาวโลก"
+  "hello_world": "สวัสดี ชาวโลก",
+  "register_external_title":"ลงทะเบียนด้วยบัญชีโซเชียลมีเดีย",
+  "register_external_detail":"หากท่านมีบัญชีอยู่แล้ว?",
+  "register_external_text_button":"เข้าสู่ระบบ",
+  "login_external_title":"เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย",
+  "login_external_detail":"ยังไม่มีบัญชี",
+  "login_external_text_button":"สร้างบัญชีใหม่"
 }

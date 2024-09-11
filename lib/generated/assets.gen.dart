@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/icon_check.svg
+  SvgGenImage get iconCheck => const SvgGenImage('assets/icons/icon_check.svg');
+
   /// File path: assets/icons/icon_signin_facebook.svg
   SvgGenImage get iconSigninFacebook =>
       const SvgGenImage('assets/icons/icon_signin_facebook.svg');
@@ -28,7 +31,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values =>
-      [iconSigninFacebook, iconSigninGoogle, iconSigninLine];
+      [iconCheck, iconSigninFacebook, iconSigninGoogle, iconSigninLine];
 }
 
 class Assets {
