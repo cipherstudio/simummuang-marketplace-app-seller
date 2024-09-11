@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:smm_application/generated/assets.gen.dart';
 
 class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
@@ -14,10 +15,10 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   // final List<Widget> actions = List.empty(growable: true);
 
   factory SMMAppBar.loginAndRegister() {
-    return const SMMAppBar._(
+    return SMMAppBar._(
       showBack: false,
       automaticallyImplyLeading: false,
-      // title: ,
+      title: const $AssetsIconsGen().iconSigninGoogle.svg(),
     );
   }
 
