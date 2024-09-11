@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/themes/app_theme.dart';
+import 'package:smm_application/translation/generated/l10n.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [Locale('th'), Locale('en')],
       locale: const Locale('th'),
       localizationsDelegates: const [
+        Trans.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
