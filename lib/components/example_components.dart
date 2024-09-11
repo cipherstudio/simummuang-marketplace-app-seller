@@ -21,7 +21,7 @@ class _ExampleConponentsState extends State<ExampleConponents> {
       ),
       body: Column(
         children: [
-          SmmFilledButton.normal(
+          SMMFilledButton.normal(
             label: 'SMM text form field',
             onPressed: () {
               Navigator.push(
@@ -32,7 +32,7 @@ class _ExampleConponentsState extends State<ExampleConponents> {
               );
             },
           ),
-          SmmFilledButton.normal(
+          SMMFilledButton.normal(
             label: 'SMM buttons',
             onPressed: () {
               Navigator.push(
@@ -43,7 +43,7 @@ class _ExampleConponentsState extends State<ExampleConponents> {
               );
             },
           ),
-          SmmFilledButton.normal(
+          SMMFilledButton.normal(
             label: 'SMM app bar',
             onPressed: () {
               Navigator.push(

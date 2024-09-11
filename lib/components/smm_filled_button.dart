@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class SmmFilledButton extends StatelessWidget {
+class SMMFilledButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Widget? child;
   final double? width;
   final double? height;
 
-  factory SmmFilledButton({
+  factory SMMFilledButton({
     Key? key,
     Widget? child,
     VoidCallback? onPressed,
     double? width,
     double? height,
   }) {
-    return SmmFilledButton._(
+    return SMMFilledButton._(
       key: key,
       onPressed: onPressed,
       width: width,
@@ -22,14 +22,14 @@ class SmmFilledButton extends StatelessWidget {
     );
   }
 
-  factory SmmFilledButton.normal({
+  factory SMMFilledButton.normal({
     Key? key,
     required String label,
     VoidCallback? onPressed,
     double? width,
     double? height,
   }) {
-    return SmmFilledButton._(
+    return SMMFilledButton._(
       key: key,
       onPressed: onPressed,
       width: width,
@@ -41,7 +41,7 @@ class SmmFilledButton extends StatelessWidget {
     );
   }
 
-  const SmmFilledButton._({
+  const SMMFilledButton._({
     super.key,
     this.onPressed,
     this.child,

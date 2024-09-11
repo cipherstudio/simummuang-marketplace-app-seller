@@ -39,7 +39,7 @@ class _ExamplePageState extends State<ExamplePage> {
               detail: Trans.current.register_external_detail,
               textButton: Trans.current.register_external_text_button,
             ),
-            SmmFilledButton.normal(
+            SMMFilledButton.normal(
               label: 'go to example components',
               onPressed: () {
                 Navigator.push(

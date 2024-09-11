@@ -19,7 +19,7 @@ class _SMMButtonsExampleState extends State<SMMButtonsExample> {
       ),
       body: Column(
         children: [
-          SmmFilledButton.normal(
+          SMMFilledButton.normal(
             width: double.infinity,
             label: 'เข้าสู่ระบบ',
             onPressed: () {},
