@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:smm_application/generated/assets.gen.dart';
 
 class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
+  static double defaultSize = 100;
+
   final Widget? leading;
   final bool showBack;
   final bool automaticallyImplyLeading;
@@ -15,10 +17,12 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   // final List<Widget> actions = List.empty(growable: true);
 
   factory SMMAppBar.loginAndRegister() {
+    defaultSize = 92;
     return SMMAppBar._(
       showBack: false,
-      automaticallyImplyLeading: false,
-      title: const $AssetsIconsGen().iconSigninGoogle.svg(),
+      automaticallyImplyLeading: true,
+      title: const $AssetsIconsGen().iconSimummuengOnline.svg(),
+      centerTitle: true,
     );
   }
 
@@ -38,16 +42,12 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor:
           backgroundColor ?? const Color.fromRGBO(237, 26, 37, 1.0),
-      // title: title,
-      title: Text(
-        'Hello',
-        style: TextStyle(color: Colors.white),
-      ),
+      title: title,
       centerTitle: centerTitle,
       leading: _buildLeading(context),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(16),
+          bottom: Radius.circular(32),
         ),
       ),
       // actions: const [
@@ -80,7 +80,7 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(56.0);
+  Size get preferredSize => Size.fromHeight(defaultSize);
 
   Widget? _buildLeading(BuildContext context) {
     if (leading != null) {
