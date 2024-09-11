@@ -218,6 +218,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_svg",
+      "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/flutter_svg-2.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/nanthasak/Development/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -270,6 +276,12 @@
       "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/graphs-2.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/http-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "http_multi_server",
@@ -396,6 +408,12 @@
       "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/path_parsing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "petitparser",
@@ -560,6 +578,24 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "vector_graphics",
+      "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/vector_graphics-1.1.11+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_codec",
+      "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.11+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_compiler",
+      "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.11+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/nanthasak/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -608,7 +644,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-09-09T17:36:24.980228Z",
+  "generated": "2024-09-11T03:16:09.725439Z",
   "generator": "pub",
   "generatorVersion": "3.3.2"
 }
