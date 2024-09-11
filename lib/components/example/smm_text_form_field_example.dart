@@ -22,7 +22,7 @@ class _SmmTextFormFieldExampleState extends State<SmmTextFormFieldExample> {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            child: SMMTextFormField.general(
+            child: SMMTextFormField.normal(
               isEnable: true,
               hintText: 'กรุณาระบุชื่อ',
               validator: (v) {

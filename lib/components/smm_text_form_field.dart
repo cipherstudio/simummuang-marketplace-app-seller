@@ -28,7 +28,7 @@ class SMMTextFormField extends StatefulWidget {
   final int? maxLength;
 
   /// factory general input
-  factory SMMTextFormField.general({
+  factory SMMTextFormField.normal({
     Key? key,
     TextEditingController? controller,
     InputDecoration? decoration,
