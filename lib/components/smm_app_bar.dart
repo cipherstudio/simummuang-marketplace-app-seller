@@ -1,5 +1,3 @@
-//  class SMMAppBar extends StatelessWidget implements PreferredSizeWidget
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smm_application/generated/assets.gen.dart';
@@ -16,9 +14,10 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? centerTitle;
   // final List<Widget> actions = List.empty(growable: true);
 
-  factory SMMAppBar.loginAndRegister() {
+  factory SMMAppBar.loginAndRegister({Key? key}) {
     defaultSize = 92;
     return SMMAppBar._(
+      key: key,
       showBack: false,
       automaticallyImplyLeading: true,
       title: const $AssetsIconsGen().iconSimummuengOnline.svg(),
@@ -28,13 +27,13 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const SMMAppBar._({
     super.key,
-    this.leading,
     this.showBack = false,
     this.automaticallyImplyLeading = true,
-    this.onBackPressed,
     this.title,
-    this.backgroundColor,
     this.centerTitle,
+    this.leading,
+    this.onBackPressed,
+    this.backgroundColor,
   });
 
   @override
@@ -50,32 +49,6 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
           bottom: Radius.circular(32),
         ),
       ),
-      // actions: const [
-      //   Padding(
-      //     padding: EdgeInsets.all(8.0),
-      //     child: Text('action 1'),
-      //   ),
-      //   Padding(
-      //     padding: EdgeInsets.all(8.0),
-      //     child: Text('action 2'),
-      //   ),
-      //   Padding(
-      //     padding: const EdgeInsets.all(8.0),
-      //     child: Text('action 3'),
-      //   )
-      // ],
-      // leading: _buildLeading(context),
-      // leadingWidth: 48,
-      // backgroundColor: backgroundColor,
-      // elevation: elevation ?? 0,
-      // scrolledUnderElevation: scrolledUnderElevation ?? 0,
-      // title: title,
-      // titleSpacing: 8,
-      // centerTitle: centerTitle,
-      // automaticallyImplyLeading: false,
-      // actions: actions,
-      // actionsIconTheme: IconTheme.of(context).copyWith(size: 24),
-      // forceMaterialTransparency: forceMaterialTransparency,
     );
   }
 

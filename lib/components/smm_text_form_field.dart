@@ -42,7 +42,7 @@ class SMMTextFormField extends StatefulWidget {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
     // }
 
-    return SMMTextFormField._internal(
+    return SMMTextFormField._(
       controller: controller,
       decoration: decoration,
       keyboardType: keyboardType,
@@ -68,7 +68,7 @@ class SMMTextFormField extends StatefulWidget {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
     // }
 
-    return SMMTextFormField._internal(
+    return SMMTextFormField._(
       controller: controller,
       decoration: decoration,
       keyboardType: keyboardType,
@@ -94,7 +94,8 @@ class SMMTextFormField extends StatefulWidget {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
     // }
 
-    return SMMTextFormField._internal(
+    return SMMTextFormField._(
+      key: key,
       controller: controller,
       decoration: decoration,
       keyboardType: keyboardType,
@@ -108,19 +109,20 @@ class SMMTextFormField extends StatefulWidget {
   }
 
   /// _internal default constructor
-  const SMMTextFormField._internal({
+  const SMMTextFormField._({
+    super.key,
     this.controller,
     this.decoration,
     this.keyboardType,
     this.hintText,
-    this.suffixText,
     required this.isObscure,
-    this.textInputAction,
     this.validator,
+    required this.isEnable,
+    this.suffixText,
+    this.textInputAction,
     this.onChanged,
     this.validatorText,
     this.initialValue,
-    required this.isEnable,
     this.tailWidget,
     this.autovalidateMode,
     this.prefixIcon,

@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:smm_application/components/smm_app_bar.dart';
 import 'package:smm_application/components/smm_filled_button.dart';
 import 'package:smm_application/components/smm_outlined_button.dart';
 
-class SMMFilledButtonExample extends StatefulWidget {
-  const SMMFilledButtonExample({super.key});
+class SMMButtonsExample extends StatefulWidget {
+  const SMMButtonsExample({super.key});
 
   @override
-  State<SMMFilledButtonExample> createState() => _SMMFilledButtonExampleState();
+  State<SMMButtonsExample> createState() => _SMMButtonsExampleState();
 }
 
-class _SMMFilledButtonExampleState extends State<SMMFilledButtonExample> {
+class _SMMButtonsExampleState extends State<SMMButtonsExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SMMAppBar.loginAndRegister(),
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: const Text('smm buttons'),
+      ),
       body: Column(
         children: [
           SmmFilledButton.normal(
