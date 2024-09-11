@@ -59,6 +59,66 @@ class Trans {
       args: [],
     );
   }
+
+  /// `ลงทะเบียนด้วยบัญชีโซเชียลมีเดีย`
+  String get register_external_title {
+    return Intl.message(
+      'ลงทะเบียนด้วยบัญชีโซเชียลมีเดีย',
+      name: 'register_external_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `หากท่านมีบัญชีอยู่แล้ว?`
+  String get register_external_detail {
+    return Intl.message(
+      'หากท่านมีบัญชีอยู่แล้ว?',
+      name: 'register_external_detail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เข้าสู่ระบบ`
+  String get register_external_text_button {
+    return Intl.message(
+      'เข้าสู่ระบบ',
+      name: 'register_external_text_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย`
+  String get login_external_title {
+    return Intl.message(
+      'เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย',
+      name: 'login_external_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยังไม่มีบัญชี`
+  String get login_external_detail {
+    return Intl.message(
+      'ยังไม่มีบัญชี',
+      name: 'login_external_detail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างบัญชีใหม่`
+  String get login_external_text_button {
+    return Intl.message(
+      'สร้างบัญชีใหม่',
+      name: 'login_external_text_button',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {
