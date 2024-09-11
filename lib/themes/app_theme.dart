@@ -4,7 +4,7 @@ import 'app_colors.dart';
 
 class AppTheme {
   static final mainTheme = ThemeData(
-      primaryColor: AppColors.primaryColor,
+      primaryColor: AppColors.primaryBrandMain,
       fontFamily: AppKeys.fontFamily,
       appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
@@ -16,12 +16,12 @@ class AppTheme {
             fontFamily: AppKeys.fontFamily,
           )),
       textSelectionTheme:
-          const TextSelectionThemeData(cursorColor: AppColors.primaryColor),
+          const TextSelectionThemeData(cursorColor: AppColors.primaryBrandMain),
       inputDecorationTheme: const InputDecorationTheme(
-          focusColor: AppColors.primaryColor,
+          focusColor: AppColors.primaryBrandMain,
           focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: AppColors.primaryColor))),
+              borderSide: BorderSide(color: AppColors.primaryBrandMain))),
       colorScheme: ColorScheme.fromSwatch().copyWith(
-          secondary: AppColors.primaryColor,
-          background: AppColors.backgroundColor));
+          secondary: AppColors.primaryBrandMain,
+          background: AppColors.primaryDefaultInverseMain));
 }
