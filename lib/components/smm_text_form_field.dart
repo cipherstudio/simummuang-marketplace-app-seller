@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:smm_application/themes/app_colors.dart';
 
 /// 1. text field แบบธรรมดา
 /// 2. text field E-mail
@@ -156,7 +157,7 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       enabled: widget.isEnable,
-      style: const TextStyle(color: Color.fromRGBO(28, 28, 28, 1.0)),
+      style: const TextStyle(color: AppColors.primaryDefaultMain),
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       textInputAction: widget.textInputAction,
@@ -182,7 +183,7 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
         // prefixText: widget.prefixText,
         // hintStyle:
         //     CustomTextStyles.body3.copyWith(color: CustomColors.text4Color),
-        hintStyle: const TextStyle(color: Color.fromRGBO(194, 194, 194, 1.0)),
+        hintStyle: const TextStyle(color: AppColors.primaryDefaultWeak),
         hintText: widget.decoration?.hintText ?? widget.hintText,
         // fillColor: widget.isEnable
         //     ? CustomColors.onBackground3Color
@@ -193,7 +194,7 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
         // alignLabelWithHint: true,
 
         /// สำหรับปรับแต่ง style เมื่อ validator เข้าเงื่อนไข
-        errorStyle: const TextStyle(color: Color.fromRGBO(229, 1, 1, 1.0)),
+        errorStyle: const TextStyle(color: AppColors.primarySemanticErrorMain),
         // label: Text(
         //   '${widget.hintText}',
         //   style: CustomTextStyles.hint,
@@ -209,20 +210,22 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
         // suffixStyle: CustomTextStyles.body3,
         suffixIcon: widget.isObscure
             ? IconButton(
-                color: const Color.fromRGBO(153, 153, 153, 1.0),
+                color: AppColors.primaryDefaultMedium,
                 icon: Icon(
-                  _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                  _passwordVisible
+                      ? Icons.visibility_outlined
+                      : Icons.visibility_off_outlined,
                 ),
                 onPressed: () => onHidePasswordTap(),
               )
             : const SizedBox.shrink(),
         errorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(color: Color.fromRGBO(244, 118, 124, 1.0)),
+          borderSide: BorderSide(color: AppColors.primaryBrandWeak),
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(color: Color.fromRGBO(244, 118, 124, 1.0)),
+          borderSide: BorderSide(color: AppColors.primaryBrandWeak),
         ),
         disabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(
@@ -231,14 +234,14 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
           // borderSide: BorderSide(color: CustomColors.onBackground2Color),
         ),
         enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color.fromRGBO(194, 194, 194, 1.0)),
+          borderSide: BorderSide(color: AppColors.primaryDefaultWeak),
           borderRadius: BorderRadius.all(
             Radius.circular(4),
           ),
         ),
         contentPadding: EdgeInsets.zero,
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color.fromRGBO(194, 194, 194, 1.0)),
+          borderSide: BorderSide(color: AppColors.primaryDefaultWeak),
           borderRadius: BorderRadius.all(
             Radius.circular(4),
           ),

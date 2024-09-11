@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smm_application/generated/assets.gen.dart';
+import 'package:smm_application/themes/app_colors.dart';
 
 class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   static double defaultSize = 100;
@@ -39,8 +40,7 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor:
-          backgroundColor ?? const Color.fromRGBO(237, 26, 37, 1.0),
+      backgroundColor: AppColors.primaryBrandMain,
       title: title,
       centerTitle: centerTitle,
       leading: _buildLeading(context),

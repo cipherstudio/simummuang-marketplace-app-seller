@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smm_application/themes/app_colors.dart';
 
 class SMMFilledButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -61,7 +62,7 @@ class SMMFilledButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6.0),
           ),
-          backgroundColor: const Color.fromRGBO(237, 27, 36, 1.0),
+          backgroundColor: AppColors.primaryBrandMain,
         ),
         child: child,
       ),

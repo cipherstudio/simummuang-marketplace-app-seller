@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smm_application/themes/app_colors.dart';
 
 class SMMOutlinedButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -36,7 +37,9 @@ class SMMOutlinedButton extends StatelessWidget {
       height: height,
       child: Text(
         label,
-        style: const TextStyle(color: Color.fromRGBO(237, 27, 36, 1.0)),
+        style: const TextStyle(
+          color: AppColors.primaryBrandMain,
+        ),
       ),
     );
   }
@@ -59,12 +62,7 @@ class SMMOutlinedButton extends StatelessWidget {
         style: OutlinedButton.styleFrom(
           side: const BorderSide(
             width: 1.0,
-            color: Color.fromRGBO(
-              235,
-              235,
-              235,
-              1.0,
-            ),
+            color: AppColors.primaryDefaultLight,
           ),
           padding: const EdgeInsets.symmetric(horizontal: 16),
           shape: RoundedRectangleBorder(
