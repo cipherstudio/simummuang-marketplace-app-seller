@@ -33,13 +33,18 @@ class $AssetsIconsGen {
   SvgGenImage get iconSimummuengOnline =>
       const SvgGenImage('assets/icons/icon_simummueng_online.svg');
 
+  /// File path: assets/icons/icons_arrow_right.svg
+  SvgGenImage get iconsArrowRight =>
+      const SvgGenImage('assets/icons/icons_arrow_right.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         iconCheck,
         iconSigninFacebook,
         iconSigninGoogle,
         iconSigninLine,
-        iconSimummuengOnline
+        iconSimummuengOnline,
+        iconsArrowRight
       ];
 }
 

@@ -119,6 +119,106 @@ class Trans {
       args: [],
     );
   }
+
+  /// `ระบุ`
+  String get hint_text {
+    return Intl.message(
+      'ระบุ',
+      name: 'hint_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `กรุณาระบุ`
+  String get validate_text {
+    return Intl.message(
+      'กรุณาระบุ',
+      name: 'validate_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สมัครสมาชิกใหม่`
+  String get register_title {
+    return Intl.message(
+      'สมัครสมาชิกใหม่',
+      name: 'register_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ชื่อ`
+  String get register_name {
+    return Intl.message(
+      'ชื่อ',
+      name: 'register_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `นามสกุล`
+  String get register_surname {
+    return Intl.message(
+      'นามสกุล',
+      name: 'register_surname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `อีเมล`
+  String get register_email {
+    return Intl.message(
+      'อีเมล',
+      name: 'register_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างรหัสผ่าน`
+  String get register_password {
+    return Intl.message(
+      'สร้างรหัสผ่าน',
+      name: 'register_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยืนยันรหัสผ่าน`
+  String get register_password_confirm {
+    return Intl.message(
+      'ยืนยันรหัสผ่าน',
+      name: 'register_password_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รหัสผ่านอีกครั้ง`
+  String get register_password_hint {
+    return Intl.message(
+      'รหัสผ่านอีกครั้ง',
+      name: 'register_password_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ถัดไป`
+  String get register_next_button {
+    return Intl.message(
+      'ถัดไป',
+      name: 'register_next_button',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {
