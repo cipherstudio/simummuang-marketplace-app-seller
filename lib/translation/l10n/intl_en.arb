@@ -5,5 +5,15 @@
   "register_external_text_button":"เข้าสู่ระบบ",
   "login_external_title":"เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย",
   "login_external_detail":"ยังไม่มีบัญชี",
-  "login_external_text_button":"สร้างบัญชีใหม่"
+  "login_external_text_button":"สร้างบัญชีใหม่",
+  "hint_text" : "ระบุ",
+  "validate_text" : "กรุณาระบุ",
+  "register_title" : "สมัครสมาชิกใหม่",
+  "register_name" : "ชื่อ",
+  "register_surname" : "นามสกุล", 
+  "register_email" : "อีเมล", 
+  "register_password" : "สร้างรหัสผ่าน",
+  "register_password_confirm" : "ยืนยันรหัสผ่าน",
+  "register_password_hint" : "รหัสผ่านอีกครั้ง",
+  "register_next_button" : "ถัดไป"
 }

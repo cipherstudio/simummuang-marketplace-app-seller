@@ -23,17 +23,31 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "hello_world": MessageLookupByLibrary.simpleMessage("สวัสดี ชาวโลก"),
+        "hint_text": MessageLookupByLibrary.simpleMessage("ระบุ"),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี"),
         "login_external_text_button":
             MessageLookupByLibrary.simpleMessage("สร้างบัญชีใหม่"),
         "login_external_title": MessageLookupByLibrary.simpleMessage(
             "เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย"),
+        "register_email": MessageLookupByLibrary.simpleMessage("อีเมล"),
         "register_external_detail":
             MessageLookupByLibrary.simpleMessage("หากท่านมีบัญชีอยู่แล้ว?"),
         "register_external_text_button":
             MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
         "register_external_title": MessageLookupByLibrary.simpleMessage(
-            "ลงทะเบียนด้วยบัญชีโซเชียลมีเดีย")
+            "ลงทะเบียนด้วยบัญชีโซเชียลมีเดีย"),
+        "register_name": MessageLookupByLibrary.simpleMessage("ชื่อ"),
+        "register_next_button": MessageLookupByLibrary.simpleMessage("ถัดไป"),
+        "register_password":
+            MessageLookupByLibrary.simpleMessage("สร้างรหัสผ่าน"),
+        "register_password_confirm":
+            MessageLookupByLibrary.simpleMessage("ยืนยันรหัสผ่าน"),
+        "register_password_hint":
+            MessageLookupByLibrary.simpleMessage("รหัสผ่านอีกครั้ง"),
+        "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
+        "register_title":
+            MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),
+        "validate_text": MessageLookupByLibrary.simpleMessage("กรุณาระบุ")
       };
 }

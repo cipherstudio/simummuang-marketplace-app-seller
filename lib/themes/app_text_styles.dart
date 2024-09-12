@@ -14,4 +14,10 @@ class AppTextStyles {
 
   static const TextStyle textSMSemiBold = TextStyle(
       color: AppColors.black, fontSize: 14, fontWeight: FontWeight.w600);
+
+  static const TextStyle textBTNNormal = TextStyle(
+      color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400);
+
+  static const TextStyle displaySMSemibold = TextStyle(
+      color: AppColors.black, fontSize: 30, fontWeight: FontWeight.w600);
 }
