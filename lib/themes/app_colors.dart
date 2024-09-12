@@ -7,6 +7,12 @@ class AppColors {
   static const Color primaryDefaultInverseWeak = Color(0xffC2C2C2);
   static const Color primaryBrandVeryLight2 = Color(0xfffde8e9);
   static const Color primaryDefaultInverseMain = Color(0xffffffff);
+  static const Color primaryDefaultLight = Color(0xffEBEBEB);
+  static const Color primaryDefaultMain = Color(0xff333333);
+  static const Color primaryDefaultWeak = Color(0xffC2C2C2);
+  static const Color primarySemanticErrorMain = Color(0xffE50000);
+  static const Color primaryDefaultMedium = Color(0xff999999);
+  static const Color primaryBrandWeak = Color(0xffF4767C);
 
   static const Color black = Color(0xff000000);
 }
