@@ -30,6 +30,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("สร้างบัญชีใหม่"),
         "login_external_title": MessageLookupByLibrary.simpleMessage(
             "เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย"),
+        "register_back_button": MessageLookupByLibrary.simpleMessage("กลับ"),
+        "register_confirm_button":
+            MessageLookupByLibrary.simpleMessage("ยืนยัน"),
+        "register_consent1": MessageLookupByLibrary.simpleMessage(
+            "ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก"),
+        "register_consent2": MessageLookupByLibrary.simpleMessage(
+            "รับข่าวสารจากสี่มุมเมืองออนไลน์"),
         "register_email": MessageLookupByLibrary.simpleMessage("อีเมล"),
         "register_external_detail":
             MessageLookupByLibrary.simpleMessage("หากท่านมีบัญชีอยู่แล้ว?"),
@@ -39,12 +46,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "ลงทะเบียนด้วยบัญชีโซเชียลมีเดีย"),
         "register_name": MessageLookupByLibrary.simpleMessage("ชื่อ"),
         "register_next_button": MessageLookupByLibrary.simpleMessage("ถัดไป"),
+        "register_otp": MessageLookupByLibrary.simpleMessage("OTP"),
         "register_password":
             MessageLookupByLibrary.simpleMessage("สร้างรหัสผ่าน"),
         "register_password_confirm":
             MessageLookupByLibrary.simpleMessage("ยืนยันรหัสผ่าน"),
         "register_password_hint":
             MessageLookupByLibrary.simpleMessage("รหัสผ่านอีกครั้ง"),
+        "register_phone": MessageLookupByLibrary.simpleMessage("เบอร์โทรศัพท์"),
+        "register_ref_code":
+            MessageLookupByLibrary.simpleMessage("รหัสอ้างอิง:"),
+        "register_request_otp":
+            MessageLookupByLibrary.simpleMessage("กดรับ OTP"),
         "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
         "register_title":
             MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),

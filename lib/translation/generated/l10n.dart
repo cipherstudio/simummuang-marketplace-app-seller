@@ -219,6 +219,86 @@ class Trans {
       args: [],
     );
   }
+
+  /// `เบอร์โทรศัพท์`
+  String get register_phone {
+    return Intl.message(
+      'เบอร์โทรศัพท์',
+      name: 'register_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `กดรับ OTP`
+  String get register_request_otp {
+    return Intl.message(
+      'กดรับ OTP',
+      name: 'register_request_otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP`
+  String get register_otp {
+    return Intl.message(
+      'OTP',
+      name: 'register_otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รหัสอ้างอิง:`
+  String get register_ref_code {
+    return Intl.message(
+      'รหัสอ้างอิง:',
+      name: 'register_ref_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก`
+  String get register_consent1 {
+    return Intl.message(
+      'ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก',
+      name: 'register_consent1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รับข่าวสารจากสี่มุมเมืองออนไลน์`
+  String get register_consent2 {
+    return Intl.message(
+      'รับข่าวสารจากสี่มุมเมืองออนไลน์',
+      name: 'register_consent2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยืนยัน`
+  String get register_confirm_button {
+    return Intl.message(
+      'ยืนยัน',
+      name: 'register_confirm_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `กลับ`
+  String get register_back_button {
+    return Intl.message(
+      'กลับ',
+      name: 'register_back_button',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {

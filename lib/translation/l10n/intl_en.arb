@@ -15,5 +15,13 @@
   "register_password" : "สร้างรหัสผ่าน",
   "register_password_confirm" : "ยืนยันรหัสผ่าน",
   "register_password_hint" : "รหัสผ่านอีกครั้ง",
-  "register_next_button" : "ถัดไป"
+  "register_next_button" : "ถัดไป",
+  "register_phone" : "เบอร์โทรศัพท์",
+  "register_request_otp" : "กดรับ OTP",
+  "register_otp" : "OTP",
+  "register_ref_code" : "รหัสอ้างอิง:",
+  "register_consent1" : "ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก",
+  "register_consent2" : "รับข่าวสารจากสี่มุมเมืองออนไลน์",
+  "register_confirm_button" : "ยืนยัน",
+  "register_back_button" : "กลับ"
 }
