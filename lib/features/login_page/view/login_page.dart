@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 16,
                 ),
-                _buildRememberAndForgotPassword(context, null),
+                _buildRememberAndForgotPassword(context, () {}),
                 const SizedBox(
                   height: 24,
                 ),
@@ -97,6 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                   title: Trans.current.login_external_title,
                   detail: Trans.current.login_external_detail,
                   textButton: Trans.current.login_external_text_button,
+                  onSocialMediaTap: (socialMediaKindEnum) {
+                    print(socialMediaKindEnum);
+                  },
                 ),
                 const SizedBox(
                   height: 24,

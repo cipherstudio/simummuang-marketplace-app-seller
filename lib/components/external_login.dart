@@ -39,13 +39,19 @@ class ExternalLogin extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             SMMIconButton.facebook(
-              onTap: onSocialMediaTap?.call(SocialMediaKindEnum.facebook),
+              onTap: () {
+                onSocialMediaTap?.call(SocialMediaKindEnum.facebook);
+              },
             ),
             SMMIconButton.google(
-              onTap: onSocialMediaTap?.call(SocialMediaKindEnum.google),
+              onTap: () {
+                onSocialMediaTap?.call(SocialMediaKindEnum.google);
+              },
             ),
             SMMIconButton.line(
-              onTap: onSocialMediaTap?.call(SocialMediaKindEnum.line),
+              onTap: () {
+                onSocialMediaTap?.call(SocialMediaKindEnum.line);
+              },
             )
           ],
         ),
