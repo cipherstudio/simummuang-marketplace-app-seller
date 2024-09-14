@@ -24,12 +24,26 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "hello_world": MessageLookupByLibrary.simpleMessage("สวัสดี ชาวโลก"),
         "hint_text": MessageLookupByLibrary.simpleMessage("ระบุ"),
+        "login_button_label":
+            MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
+        "login_email_hint_label":
+            MessageLookupByLibrary.simpleMessage("ระบุอีเมล์"),
+        "login_email_label": MessageLookupByLibrary.simpleMessage("อีเมล์"),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี"),
         "login_external_text_button":
             MessageLookupByLibrary.simpleMessage("สร้างบัญชีใหม่"),
         "login_external_title": MessageLookupByLibrary.simpleMessage(
             "เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย"),
+        "login_forgot_password_label":
+            MessageLookupByLibrary.simpleMessage("ลืมรหัสผ่าน?"),
+        "login_password_hint_label":
+            MessageLookupByLibrary.simpleMessage("ระบุรหัสผ่าน"),
+        "login_password_label":
+            MessageLookupByLibrary.simpleMessage("รหัสผ่าน"),
+        "login_remember_me_label":
+            MessageLookupByLibrary.simpleMessage("จดจำรหัสผ่านของฉัน"),
+        "login_title": MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
         "register_email": MessageLookupByLibrary.simpleMessage("อีเมล"),
         "register_external_detail":
             MessageLookupByLibrary.simpleMessage("หากท่านมีบัญชีอยู่แล้ว?"),

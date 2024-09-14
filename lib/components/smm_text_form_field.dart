@@ -37,6 +37,8 @@ class SMMTextFormField extends StatefulWidget {
     required bool isEnable,
     String? hintText,
     FormFieldValidator<String>? validator,
+    ValueChanged<String?>? onChanged,
+    AutovalidateMode? autovalidateMode,
   }) {
     decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
@@ -51,6 +53,8 @@ class SMMTextFormField extends StatefulWidget {
       isEnable: isEnable,
       hintText: hintText,
       validator: validator,
+      onChanged: onChanged,
+      autovalidateMode: autovalidateMode,
     );
   }
 
@@ -63,6 +67,8 @@ class SMMTextFormField extends StatefulWidget {
     required bool isEnable,
     String? hintText,
     FormFieldValidator<String>? validator,
+    ValueChanged<String?>? onChanged,
+    AutovalidateMode? autovalidateMode,
   }) {
     decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
@@ -77,6 +83,8 @@ class SMMTextFormField extends StatefulWidget {
       isEnable: isEnable,
       hintText: hintText,
       validator: validator,
+      onChanged: onChanged,
+      autovalidateMode: autovalidateMode,
     );
   }
 
@@ -88,7 +96,9 @@ class SMMTextFormField extends StatefulWidget {
     TextInputType? keyboardType,
     required bool isEnable,
     String? hintText,
-    // FormFieldValidator<String>? validator,
+    FormFieldValidator<String>? validator,
+    ValueChanged<String?>? onChanged,
+    AutovalidateMode? autovalidateMode,
   }) {
     decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
@@ -103,9 +113,13 @@ class SMMTextFormField extends StatefulWidget {
       isObscure: false,
       isEnable: isEnable,
       hintText: hintText,
-      validator: (value) => EmailValidator.validate(value ?? '')
-          ? null
-          : "Please enter a valid email",
+      validator: (validator == null)
+          ? (value) => EmailValidator.validate(value ?? '')
+              ? null
+              : "Please enter a valid email"
+          : validator,
+      onChanged: onChanged,
+      autovalidateMode: autovalidateMode,
     );
   }
 

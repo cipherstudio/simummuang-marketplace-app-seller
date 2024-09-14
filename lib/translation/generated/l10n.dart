@@ -219,6 +219,86 @@ class Trans {
       args: [],
     );
   }
+
+  /// `เข้าสู่ระบบ`
+  String get login_title {
+    return Intl.message(
+      'เข้าสู่ระบบ',
+      name: 'login_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `อีเมล์`
+  String get login_email_label {
+    return Intl.message(
+      'อีเมล์',
+      name: 'login_email_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุอีเมล์`
+  String get login_email_hint_label {
+    return Intl.message(
+      'ระบุอีเมล์',
+      name: 'login_email_hint_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รหัสผ่าน`
+  String get login_password_label {
+    return Intl.message(
+      'รหัสผ่าน',
+      name: 'login_password_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุรหัสผ่าน`
+  String get login_password_hint_label {
+    return Intl.message(
+      'ระบุรหัสผ่าน',
+      name: 'login_password_hint_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `จดจำรหัสผ่านของฉัน`
+  String get login_remember_me_label {
+    return Intl.message(
+      'จดจำรหัสผ่านของฉัน',
+      name: 'login_remember_me_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ลืมรหัสผ่าน?`
+  String get login_forgot_password_label {
+    return Intl.message(
+      'ลืมรหัสผ่าน?',
+      name: 'login_forgot_password_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เข้าสู่ระบบ`
+  String get login_button_label {
+    return Intl.message(
+      'เข้าสู่ระบบ',
+      name: 'login_button_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {
