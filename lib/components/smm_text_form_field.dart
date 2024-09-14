@@ -29,15 +29,15 @@ class SMMTextFormField extends StatefulWidget {
   final int? maxLength;
 
   /// factory general input
-  factory SMMTextFormField.normal({
-    Key? key,
-    TextEditingController? controller,
-    InputDecoration? decoration,
-    TextInputType? keyboardType,
-    required bool isEnable,
-    String? hintText,
-    FormFieldValidator<String>? validator,
-  }) {
+  factory SMMTextFormField.normal(
+      {Key? key,
+      TextEditingController? controller,
+      InputDecoration? decoration,
+      TextInputType? keyboardType,
+      required bool isEnable,
+      String? hintText,
+      FormFieldValidator<String>? validator,
+      ValueChanged<String?>? onChanged}) {
     decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
@@ -51,6 +51,7 @@ class SMMTextFormField extends StatefulWidget {
       isEnable: isEnable,
       hintText: hintText,
       validator: validator,
+      onChanged: onChanged,
     );
   }
 

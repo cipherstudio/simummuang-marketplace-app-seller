@@ -22,6 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "forgetpassword_confirm":
+            MessageLookupByLibrary.simpleMessage("ยืนยัน"),
+        "forgetpassword_create_account":
+            MessageLookupByLibrary.simpleMessage("สร้างบัญชีใหม่"),
+        "forgetpassword_does_not_account":
+            MessageLookupByLibrary.simpleMessage("หากท่านยังไม่มีบัญชี"),
+        "forgetpassword_fill_otp":
+            MessageLookupByLibrary.simpleMessage("ระบุ OTP ของคุณ"),
+        "forgetpassword_mail_or_phone":
+            MessageLookupByLibrary.simpleMessage("อีเมลหรือเบอร์โทรศัพท์"),
+        "forgetpassword_otp_title": MessageLookupByLibrary.simpleMessage(
+            "ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์"),
+        "forgetpassword_ref_code":
+            MessageLookupByLibrary.simpleMessage("รหัสอ้างอิง:"),
+        "forgetpassword_request_otp_title":
+            MessageLookupByLibrary.simpleMessage(
+                "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"),
+        "forgetpassword_subtitle": MessageLookupByLibrary.simpleMessage(
+            "โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน"),
+        "forgetpassword_title":
+            MessageLookupByLibrary.simpleMessage("ลืมรหัสผ่าน?"),
         "hello_world": MessageLookupByLibrary.simpleMessage("Hello World"),
         "hint_text": MessageLookupByLibrary.simpleMessage("ระบุ"),
         "login_external_detail":

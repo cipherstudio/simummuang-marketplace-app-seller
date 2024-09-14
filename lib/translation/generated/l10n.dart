@@ -299,6 +299,106 @@ class Trans {
       args: [],
     );
   }
+
+  /// `ลืมรหัสผ่าน?`
+  String get forgetpassword_title {
+    return Intl.message(
+      'ลืมรหัสผ่าน?',
+      name: 'forgetpassword_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน`
+  String get forgetpassword_subtitle {
+    return Intl.message(
+      'โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน',
+      name: 'forgetpassword_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `อีเมลหรือเบอร์โทรศัพท์`
+  String get forgetpassword_mail_or_phone {
+    return Intl.message(
+      'อีเมลหรือเบอร์โทรศัพท์',
+      name: 'forgetpassword_mail_or_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยืนยัน`
+  String get forgetpassword_confirm {
+    return Intl.message(
+      'ยืนยัน',
+      name: 'forgetpassword_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `หากท่านยังไม่มีบัญชี`
+  String get forgetpassword_does_not_account {
+    return Intl.message(
+      'หากท่านยังไม่มีบัญชี',
+      name: 'forgetpassword_does_not_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างบัญชีใหม่`
+  String get forgetpassword_create_account {
+    return Intl.message(
+      'สร้างบัญชีใหม่',
+      name: 'forgetpassword_create_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์`
+  String get forgetpassword_otp_title {
+    return Intl.message(
+      'ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์',
+      name: 'forgetpassword_otp_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุ OTP ของคุณ`
+  String get forgetpassword_fill_otp {
+    return Intl.message(
+      'ระบุ OTP ของคุณ',
+      name: 'forgetpassword_fill_otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รหัสอ้างอิง:`
+  String get forgetpassword_ref_code {
+    return Intl.message(
+      'รหัสอ้างอิง:',
+      name: 'forgetpassword_ref_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง`
+  String get forgetpassword_request_otp_title {
+    return Intl.message(
+      'หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง',
+      name: 'forgetpassword_request_otp_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {

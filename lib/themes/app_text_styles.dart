@@ -20,4 +20,10 @@ class AppTextStyles {
 
   static const TextStyle displaySMSemibold = TextStyle(
       color: AppColors.black, fontSize: 30, fontWeight: FontWeight.w600);
+
+  static const TextStyle displayXSbold = TextStyle(
+      color: AppColors.black, fontSize: 24, fontWeight: FontWeight.w700);
+
+  static const TextStyle textXSRegular = TextStyle(
+      color: AppColors.black, fontSize: 12, fontWeight: FontWeight.w400);
 }
