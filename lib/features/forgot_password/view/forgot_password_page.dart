@@ -5,7 +5,6 @@ import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:smm_application/features/forgot_password/view/component/request_otp.dart';
 import 'package:smm_application/features/forgot_password/view/component/verify_otp.dart';
-import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
 import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
