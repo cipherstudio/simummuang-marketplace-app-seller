@@ -31,7 +31,7 @@
   "set_new_password_second_text_form_field_hint" : "please fill your new password again",
   "set_new_password_button_label" : "confirm your new password",
   "set_new_password_not_have_account_label" : "not have account?",
-  "set_new_password_create_new_account_label" : "create new account"
+  "set_new_password_create_new_account_label" : "create new account",
   "register_phone" : "เบอร์โทรศัพท์",
   "register_request_otp" : "กดรับ OTP",
   "register_otp" : "OTP",
@@ -50,5 +50,4 @@
   "forgetpassword_fill_otp" : "ระบุ OTP ของคุณ",
   "forgetpassword_ref_code" : "รหัสอ้างอิง:",
   "forgetpassword_request_otp_title" : "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"
-
 }

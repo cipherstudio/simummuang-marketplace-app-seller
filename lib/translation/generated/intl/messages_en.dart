@@ -64,8 +64,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_remember_me_label":
             MessageLookupByLibrary.simpleMessage("Remember me."),
         "login_title": MessageLookupByLibrary.simpleMessage("Login"),
-        "login_external_title": MessageLookupByLibrary.simpleMessage(
-            "เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย"),
         "register_back_button": MessageLookupByLibrary.simpleMessage("กลับ"),
         "register_confirm_button":
             MessageLookupByLibrary.simpleMessage("ยืนยัน"),

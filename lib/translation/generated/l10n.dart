@@ -225,11 +225,6 @@ class Trans {
     return Intl.message(
       'เข้าสู่ระบบ',
       name: 'login_title',
-  /// `เบอร์โทรศัพท์`
-  String get register_phone {
-    return Intl.message(
-      'เบอร์โทรศัพท์',
-      name: 'register_phone',
       desc: '',
       args: [],
     );
@@ -240,11 +235,6 @@ class Trans {
     return Intl.message(
       'อีเมล์',
       name: 'login_email_label',
-  /// `กดรับ OTP`
-  String get register_request_otp {
-    return Intl.message(
-      'กดรับ OTP',
-      name: 'register_request_otp',
       desc: '',
       args: [],
     );
@@ -255,11 +245,6 @@ class Trans {
     return Intl.message(
       'ระบุอีเมล์',
       name: 'login_email_hint_label',
-  /// `OTP`
-  String get register_otp {
-    return Intl.message(
-      'OTP',
-      name: 'register_otp',
       desc: '',
       args: [],
     );
@@ -270,11 +255,6 @@ class Trans {
     return Intl.message(
       'รหัสผ่าน',
       name: 'login_password_label',
-  /// `รหัสอ้างอิง:`
-  String get register_ref_code {
-    return Intl.message(
-      'รหัสอ้างอิง:',
-      name: 'register_ref_code',
       desc: '',
       args: [],
     );
@@ -285,11 +265,6 @@ class Trans {
     return Intl.message(
       'ระบุรหัสผ่าน',
       name: 'login_password_hint_label',
-  /// `ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก`
-  String get register_consent1 {
-    return Intl.message(
-      'ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก',
-      name: 'register_consent1',
       desc: '',
       args: [],
     );
@@ -300,31 +275,6 @@ class Trans {
     return Intl.message(
       'จดจำรหัสผ่านของฉัน',
       name: 'login_remember_me_label',
-  /// `รับข่าวสารจากสี่มุมเมืองออนไลน์`
-  String get register_consent2 {
-    return Intl.message(
-      'รับข่าวสารจากสี่มุมเมืองออนไลน์',
-      name: 'register_consent2',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `ยืนยัน`
-  String get register_confirm_button {
-    return Intl.message(
-      'ยืนยัน',
-      name: 'register_confirm_button',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `กลับ`
-  String get register_back_button {
-    return Intl.message(
-      'กลับ',
-      name: 'register_back_button',
       desc: '',
       args: [],
     );
@@ -335,10 +285,6 @@ class Trans {
     return Intl.message(
       'ลืมรหัสผ่าน?',
       name: 'login_forgot_password_label',
-  String get forgetpassword_title {
-    return Intl.message(
-      'ลืมรหัสผ่าน?',
-      name: 'forgetpassword_title',
       desc: '',
       args: [],
     );
@@ -349,11 +295,6 @@ class Trans {
     return Intl.message(
       'เข้าสู่ระบบ',
       name: 'login_button_label',
-  /// `โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน`
-  String get forgetpassword_subtitle {
-    return Intl.message(
-      'โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน',
-      name: 'forgetpassword_subtitle',
       desc: '',
       args: [],
     );
@@ -364,11 +305,6 @@ class Trans {
     return Intl.message(
       'สร้างรหัสผ่านใหม่',
       name: 'set_new_password_main_title',
-  /// `อีเมลหรือเบอร์โทรศัพท์`
-  String get forgetpassword_mail_or_phone {
-    return Intl.message(
-      'อีเมลหรือเบอร์โทรศัพท์',
-      name: 'forgetpassword_mail_or_phone',
       desc: '',
       args: [],
     );
@@ -379,11 +315,6 @@ class Trans {
     return Intl.message(
       'สร้างรหัสผ่านใหม่',
       name: 'set_new_password_first_text_label',
-  /// `ยืนยัน`
-  String get forgetpassword_confirm {
-    return Intl.message(
-      'ยืนยัน',
-      name: 'forgetpassword_confirm',
       desc: '',
       args: [],
     );
@@ -434,6 +365,141 @@ class Trans {
     return Intl.message(
       'ยังไม่มีบัญชี?',
       name: 'set_new_password_not_have_account_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างบัญชีใหม่`
+  String get set_new_password_create_new_account_label {
+    return Intl.message(
+      'สร้างบัญชีใหม่',
+      name: 'set_new_password_create_new_account_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เบอร์โทรศัพท์`
+  String get register_phone {
+    return Intl.message(
+      'เบอร์โทรศัพท์',
+      name: 'register_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `กดรับ OTP`
+  String get register_request_otp {
+    return Intl.message(
+      'กดรับ OTP',
+      name: 'register_request_otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP`
+  String get register_otp {
+    return Intl.message(
+      'OTP',
+      name: 'register_otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รหัสอ้างอิง:`
+  String get register_ref_code {
+    return Intl.message(
+      'รหัสอ้างอิง:',
+      name: 'register_ref_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก`
+  String get register_consent1 {
+    return Intl.message(
+      'ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก',
+      name: 'register_consent1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รับข่าวสารจากสี่มุมเมืองออนไลน์`
+  String get register_consent2 {
+    return Intl.message(
+      'รับข่าวสารจากสี่มุมเมืองออนไลน์',
+      name: 'register_consent2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยืนยัน`
+  String get register_confirm_button {
+    return Intl.message(
+      'ยืนยัน',
+      name: 'register_confirm_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `กลับ`
+  String get register_back_button {
+    return Intl.message(
+      'กลับ',
+      name: 'register_back_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ลืมรหัสผ่าน?`
+  String get forgetpassword_title {
+    return Intl.message(
+      'ลืมรหัสผ่าน?',
+      name: 'forgetpassword_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน`
+  String get forgetpassword_subtitle {
+    return Intl.message(
+      'โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน',
+      name: 'forgetpassword_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `อีเมลหรือเบอร์โทรศัพท์`
+  String get forgetpassword_mail_or_phone {
+    return Intl.message(
+      'อีเมลหรือเบอร์โทรศัพท์',
+      name: 'forgetpassword_mail_or_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยืนยัน`
+  String get forgetpassword_confirm {
+    return Intl.message(
+      'ยืนยัน',
+      name: 'forgetpassword_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `หากท่านยังไม่มีบัญชี`
   String get forgetpassword_does_not_account {
     return Intl.message(
@@ -445,10 +511,6 @@ class Trans {
   }
 
   /// `สร้างบัญชีใหม่`
-  String get set_new_password_create_new_account_label {
-    return Intl.message(
-      'สร้างบัญชีใหม่',
-      name: 'set_new_password_create_new_account_label',
   String get forgetpassword_create_account {
     return Intl.message(
       'สร้างบัญชีใหม่',
