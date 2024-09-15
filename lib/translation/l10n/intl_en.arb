@@ -49,5 +49,6 @@
   "forgetpassword_otp_title" : "ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์",
   "forgetpassword_fill_otp" : "ระบุ OTP ของคุณ",
   "forgetpassword_ref_code" : "รหัสอ้างอิง:",
-  "forgetpassword_request_otp_title" : "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"
+  "forgetpassword_request_otp_title" : "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง",
+  "component_button_label_edit" : "Edit"
 }

@@ -26,4 +26,7 @@ class AppTextStyles {
 
   static const TextStyle textXSRegular = TextStyle(
       color: AppColors.black, fontSize: 12, fontWeight: FontWeight.w400);
+
+  static const TextStyle textBTNSmall = TextStyle(
+      color: AppColors.black, fontSize: 13, fontWeight: FontWeight.w400);
 }
