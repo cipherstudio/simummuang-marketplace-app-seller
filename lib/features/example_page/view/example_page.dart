@@ -51,40 +51,30 @@ class _ExamplePageState extends State<ExamplePage> {
             SMMFilledButton.normal(
               label: 'go to example components',
               onPressed: () {
-                context.pushNamed(AppRouter.forgotPasswordPageNamed);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ExampleConponents(),
+                  ),
+                );
               },
             ),
             SMMFilledButton.normal(
               label: 'go to login page',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
-                );
+                context.pushNamed(AppRouter.loginPageNamed);
               },
             ),
             SMMFilledButton.normal(
               label: 'go to set new password page.',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SetNewPasswordPage(),
-                  ),
-                );
+                context.pushNamed(AppRouter.setNewPasswordNamed);
               },
             ),
             SMMFilledButton.normal(
               label: 'go to ForgotPasswordPage',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ForgotPasswordPage(),
-                  ),
-                );
+                context.pushNamed(AppRouter.forgotPasswordPageNamed);
               },
             ),
           ],
