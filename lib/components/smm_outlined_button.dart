@@ -7,6 +7,7 @@ class SMMOutlinedButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? outlineColor;
+  final OutlinedBorder? shape;
 
   factory SMMOutlinedButton({
     Key? key,
@@ -15,6 +16,7 @@ class SMMOutlinedButton extends StatelessWidget {
     double? width,
     double? height,
     Color? outlineColor,
+    OutlinedBorder? shape,
   }) {
     return SMMOutlinedButton._(
       key: key,
@@ -22,6 +24,7 @@ class SMMOutlinedButton extends StatelessWidget {
       width: width,
       height: height,
       outlineColor: outlineColor,
+      shape: shape,
       child: child,
     );
   }
@@ -34,6 +37,7 @@ class SMMOutlinedButton extends StatelessWidget {
     double? height,
     Color? outlineColor,
     Color? textColor,
+    OutlinedBorder? shape,
   }) {
     return SMMOutlinedButton._(
       key: key,
@@ -41,6 +45,7 @@ class SMMOutlinedButton extends StatelessWidget {
       width: width,
       height: height,
       outlineColor: outlineColor,
+      shape: shape,
       child: Text(
         label,
         overflow: TextOverflow.ellipsis,
@@ -58,6 +63,7 @@ class SMMOutlinedButton extends StatelessWidget {
     this.width,
     this.height,
     this.outlineColor,
+    this.shape,
   });
 
   @override
@@ -73,9 +79,11 @@ class SMMOutlinedButton extends StatelessWidget {
             color: outlineColor ?? AppColors.primaryDefaultLight,
           ),
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(6.0),
-          ),
+          shape: (shape != null)
+              ? shape
+              : RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6.0),
+                ),
         ),
         child: child,
       ),

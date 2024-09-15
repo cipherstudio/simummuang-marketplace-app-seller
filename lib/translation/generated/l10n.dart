@@ -559,6 +559,16 @@ class Trans {
       args: [],
     );
   }
+
+  /// `แก้ไข`
+  String get component_button_label_edit {
+    return Intl.message(
+      'แก้ไข',
+      name: 'component_button_label_edit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {

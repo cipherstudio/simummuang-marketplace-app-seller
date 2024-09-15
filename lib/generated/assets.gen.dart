@@ -53,10 +53,22 @@ class $AssetsIconsGen {
       ];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/image_picker_placeholder.png
+  AssetGenImage get imagePickerPlaceholder =>
+      const AssetGenImage('assets/images/image_picker_placeholder.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [imagePickerPlaceholder];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {

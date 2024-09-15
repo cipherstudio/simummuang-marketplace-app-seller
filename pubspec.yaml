@@ -87,6 +87,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -117,6 +118,9 @@ flutter_gen:
   output: lib/generated/
   integrations:
     flutter_svg: true
+    flare_flutter: true
+    rive: true
+    lottie: true
 
 flutter_intl:
     enabled: true
