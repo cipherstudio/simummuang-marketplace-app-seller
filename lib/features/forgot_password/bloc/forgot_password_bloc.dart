@@ -15,6 +15,7 @@ class ForgotPasswordBloc
     on<_RequestOTP>(_onRequestOTP);
     on<_EmailOrPhoneChange>(_onEmailOrPhoneChange);
     on<_Back>(_onBack);
+    on<_VerifySendedOTP>(_onVerifySendedOTP);
   }
   ScrollController scrollController = ScrollController();
 
@@ -55,5 +56,21 @@ class ForgotPasswordBloc
     emit(
       state.copyWith(emailOrPhoneInput: event.value),
     );
+  }
+
+  FutureOr<void> _onVerifySendedOTP(
+    _VerifySendedOTP event,
+    Emitter<ForgotPasswordBlocState> emit,
+  ) async {
+    try {
+      // do something.
+      emit(
+        state.copyWith(
+          verifySendedOTPSuccess: true,
+        ),
+      );
+    } catch (e) {
+      // do nothing.
+    }
   }
 }

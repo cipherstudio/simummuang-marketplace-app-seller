@@ -7,4 +7,5 @@ class ForgotPasswordBlocEvent with _$ForgotPasswordBlocEvent {
   const factory ForgotPasswordBlocEvent.emailOrPhoneChange(String value) =
       _EmailOrPhoneChange;
   const factory ForgotPasswordBlocEvent.back() = _Back;
+  const factory ForgotPasswordBlocEvent.verifySendedOTP() = _VerifySendedOTP;
 }

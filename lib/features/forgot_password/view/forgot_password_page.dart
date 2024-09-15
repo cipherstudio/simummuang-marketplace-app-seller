@@ -4,6 +4,7 @@ import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:smm_application/features/forgot_password/view/component/request_otp.dart';
 import 'package:smm_application/features/forgot_password/view/component/verify_otp.dart';
+import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
@@ -15,7 +16,35 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ForgotPasswordBloc(),
-      child: BlocBuilder<ForgotPasswordBloc, ForgotPasswordBlocState>(
+      child: BlocConsumer<ForgotPasswordBloc, ForgotPasswordBlocState>(
+          listener: (context, state) {
+            if (state.verifySendedOTPSuccess == true) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SetNewPasswordPage(),
+                ),
+              );
+            } else if (state.verifySendedOTPSuccess == false) {
+              showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: const Text('Warning.'),
+                  content: const Text('Verify OTP not success.'),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'Cancel'),
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'OK'),
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
+              );
+            }
+          },
           builder: (context, state) => _body(context, state)),
     );
   }
