@@ -32,4 +32,23 @@
   "set_new_password_button_label" : "confirm your new password",
   "set_new_password_not_have_account_label" : "not have account?",
   "set_new_password_create_new_account_label" : "create new account"
+  "register_phone" : "เบอร์โทรศัพท์",
+  "register_request_otp" : "กดรับ OTP",
+  "register_otp" : "OTP",
+  "register_ref_code" : "รหัสอ้างอิง:",
+  "register_consent1" : "ยอมรับข้อตกลงและเงื่อนไขการสมัครสมาชิก",
+  "register_consent2" : "รับข่าวสารจากสี่มุมเมืองออนไลน์",
+  "register_confirm_button" : "ยืนยัน",
+  "register_back_button" : "กลับ",
+  "forgetpassword_title" : "ลืมรหัสผ่าน?",
+  "forgetpassword_subtitle" : "โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน",
+  "forgetpassword_mail_or_phone" : "อีเมลหรือเบอร์โทรศัพท์",
+  "forgetpassword_confirm" : "ยืนยัน",
+  "forgetpassword_does_not_account" : "หากท่านยังไม่มีบัญชี",
+  "forgetpassword_create_account" : "สร้างบัญชีใหม่",
+  "forgetpassword_otp_title" : "ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์",
+  "forgetpassword_fill_otp" : "ระบุ OTP ของคุณ",
+  "forgetpassword_ref_code" : "รหัสอ้างอิง:",
+  "forgetpassword_request_otp_title" : "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smm_application/core/keys/app_keys.dart';
 import 'package:smm_application/generated/assets.gen.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
@@ -16,12 +17,16 @@ abstract class SMMCheckbox extends Widget {
           bool isCheck = false,
           Function(bool?)? onChanged,
           required String text,
-          Color? textColor}) =>
+          Color? textColor,
+          TextDecoration? textDecoration,
+          bool isStar = false}) =>
       _CheckboxWithText(
         isChecked: isCheck,
         onChanged: onChanged,
         text: text,
         textColor: textColor,
+        textDecoration: textDecoration,
+        isStar: isStar,
       );
 }
 
@@ -78,30 +83,45 @@ class _CheckboxWithText extends StatelessWidget implements SMMCheckbox {
       {this.onChanged,
       this.isChecked = false,
       required this.text,
-      this.textColor});
+      this.textColor,
+      this.textDecoration,
+      this.isStar = false});
   final bool isChecked;
+  final bool isStar;
   final Function(bool?)? onChanged;
   final String text;
   final Color? textColor;
+  final TextDecoration? textDecoration;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _Checkbox(
-            isChecked: isChecked,
-            onChanged: onChanged,
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Text(
-            text,
-            style: AppTextStyles.textMDRegular.copyWith(color: textColor),
-          )
-        ],
-      ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _Checkbox(
+          isChecked: isChecked,
+          onChanged: onChanged,
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        RichText(
+            text: TextSpan(children: [
+          TextSpan(
+              text: text,
+              style: AppTextStyles.textMDRegular.copyWith(
+                  fontFamily: AppKeys.fontFamily,
+                  decoration: textDecoration,
+                  color: AppColors.primaryDefaultMain)),
+          if (isStar)
+            TextSpan(
+                text: '*',
+                style: AppTextStyles.textMDRegular.copyWith(
+                    fontFamily: AppKeys.fontFamily,
+                    color: AppColors.primaryDefaultMain)),
+        ])),
+      ],
     );
   }
 }

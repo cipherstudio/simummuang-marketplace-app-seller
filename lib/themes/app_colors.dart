@@ -14,5 +14,7 @@ class AppColors {
   static const Color primaryDefaultMedium = Color(0xff999999);
   static const Color primaryBrandWeak = Color(0xffF4767C);
 
+  static const Color orange = Color(0xffFF5C00);
+
   static const Color black = Color(0xff000000);
 }
