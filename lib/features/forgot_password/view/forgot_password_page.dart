@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:smm_application/features/forgot_password/view/component/request_otp.dart';
 import 'package:smm_application/features/forgot_password/view/component/verify_otp.dart';
 import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
+import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
@@ -19,12 +21,7 @@ class ForgotPasswordPage extends StatelessWidget {
       child: BlocConsumer<ForgotPasswordBloc, ForgotPasswordBlocState>(
           listener: (context, state) {
             if (state.verifySendedOTPSuccess == true) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SetNewPasswordPage(),
-                ),
-              );
+              context.pushNamed(AppRouter.setNewPasswordNamed);
             } else if (state.verifySendedOTPSuccess == false) {
               showDialog<String>(
                 context: context,
