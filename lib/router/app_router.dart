@@ -34,7 +34,7 @@ class AppRouter {
           path: appDirectorPath,
           pageBuilder: (context, state) {
             return MaterialPage<void>(
-                key: state.pageKey, child: const ExamplePage());
+                key: state.pageKey, child: const LoginPage());
           },
           routes: [
             GoRoute(

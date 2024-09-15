@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/core/enums/app_enums.dart';
 import 'package:smm_application/features/login_page/bloc/login_bloc.dart';
+import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
@@ -71,7 +73,9 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 16,
                 ),
-                _buildRememberAndForgotPassword(context, () {}),
+                _buildRememberAndForgotPassword(context, () {
+                  context.goNamed(AppRouter.forgotPasswordPageNamed);
+                }),
                 const SizedBox(
                   height: 24,
                 ),
@@ -90,6 +94,9 @@ class _LoginPageState extends State<LoginPage> {
                   title: Trans.current.login_external_title,
                   detail: Trans.current.login_external_detail,
                   textButton: Trans.current.login_external_text_button,
+                  onTextButtonTap: () {
+                    context.goNamed(AppRouter.registerPageNamed);
+                  },
                   onSocialMediaTap: (socialMediaKindEnum) {
                     print(socialMediaKindEnum);
                   },

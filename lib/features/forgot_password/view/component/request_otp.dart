@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
+import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
@@ -66,7 +68,9 @@ class RequestOTP extends StatelessWidget {
               width: 4,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                context.pushNamed(AppRouter.registerPageNamed);
+              },
               child: Text(
                 Trans.current.forgetpassword_create_account,
                 style: AppTextStyles.textSMSemiBold
