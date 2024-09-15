@@ -9,7 +9,7 @@ class LoginBlocState with _$LoginBlocState {
     @Default(UIInitial()) UIStatus passwordOptionStatus,
     @Default(PasswordOptionEnum.rememberAndForgot)
     PasswordOptionEnum passwordOptionEnum,
-    String? emailValidatorMessage,
-    @Default(false) bool validateForm,
+    @Default(AutovalidateMode.disabled) AutovalidateMode autovalidateMode,
+    FormFieldValidator<String>? validator,
   }) = _LoginBlocState;
 }

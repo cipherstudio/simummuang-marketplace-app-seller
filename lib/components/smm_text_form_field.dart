@@ -114,9 +114,14 @@ class SMMTextFormField extends StatefulWidget {
       isEnable: isEnable,
       hintText: hintText,
       validator: (validator == null)
-          ? (value) => EmailValidator.validate(value ?? '')
-              ? null
-              : "Please enter a valid email"
+          ? (value) {
+              if (value!.isEmpty) {
+                return null;
+              }
+              return EmailValidator.validate(value)
+                  ? null
+                  : "Please enter a valid email";
+            }
           : validator,
       onChanged: onChanged,
       autovalidateMode: autovalidateMode,

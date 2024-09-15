@@ -21,8 +21,8 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
       transformer: droppable(),
     );
 
-    on<_ValidateForm>(
-      _onValidateForm,
+    on<_InitialPasswordTextFormField>(
+      _onInitialPasswordTextFormField,
       transformer: droppable(),
     );
   }
@@ -35,12 +35,30 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
       emit(
         state.copyWith(
           status: const UILoadSuccess(),
-          checkEmailStatus: const UILoadSuccess(),
+          autovalidateMode: AutovalidateMode.disabled,
+          validator: null,
+
+          // checkEmailStatus: const UIInitial(),
+          // autovalidateMode: AutovalidateMode.onUserInteraction,
         ),
       );
+      // add(const _InitialPasswordTextFormField());
     } catch (e) {
       // do nothing.
     }
+  }
+
+  Future<void> _onInitialPasswordTextFormField(
+    _InitialPasswordTextFormField event,
+    Emitter<LoginBlocState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        // checkEmailStatus: const UIInitial(),
+        autovalidateMode: AutovalidateMode.always,
+        validator: null,
+      ),
+    );
   }
 
   Future<void> _onLogin(
@@ -50,26 +68,19 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
     try {
       emit(
         state.copyWith(
-          checkEmailStatus: const UIInitial(),
-        ),
-      );
-      emit(
-        state.copyWith(
           passwordOptionEnum: PasswordOptionEnum.forgotOnly,
-          emailValidatorMessage: 'ไม่พบอีเมล์นี้ในระบบ',
-          validateForm: true,
-          checkEmailStatus: const UILoadSuccess(),
+          // checkEmailStatus: const UILoadSuccess(),
+          autovalidateMode: AutovalidateMode.always,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return null;
+            }
+            return 'ไม่พบอีเมล์นี้ในระบบ';
+          },
         ),
       );
     } catch (e) {
       // do nothing.
     }
-  }
-
-  Future<void> _onValidateForm(
-    _ValidateForm event,
-    Emitter<LoginBlocState> emit,
-  ) async {
-    // event.formKey.currentState!.validate();
   }
 }

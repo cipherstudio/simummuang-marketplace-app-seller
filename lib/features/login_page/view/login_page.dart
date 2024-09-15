@@ -21,14 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => LoginBloc()..add(const LoginBlocEvent.initialize()),
-      child: BlocConsumer<LoginBloc, LoginBlocState>(
-        listener: (context, state) {
-          state.checkEmailStatus.whenOrNull(
-            loadSuccess: (message) {
-              _formKey.currentState?.validate();
-            },
-          );
-        },
+      child: BlocBuilder<LoginBloc, LoginBlocState>(
         builder: (context, state) {
           return _body(context, state);
         },
@@ -118,19 +111,42 @@ class _LoginPageState extends State<LoginPage> {
       isStar: true,
       child: BlocBuilder<LoginBloc, LoginBlocState>(
         builder: (context, state) {
-          return state.checkEmailStatus.whenOrNull(
-                loadSuccess: (message) {
-                  return SMMTextFormField.email(
-                    autovalidateMode: AutovalidateMode.disabled,
-                    isEnable: true,
-                    hintText: Trans.current.login_email_hint_label,
-                    validator: (state.emailValidatorMessage != null)
-                        ? (value) => state.emailValidatorMessage
-                        : null,
-                  );
-                },
-              ) ??
-              const SizedBox.shrink();
+          // return state.checkEmailStatus.whenOrNull(
+          //       initial: () => SMMTextFormField.email(
+          //         isEnable: true,
+          //         autovalidateMode: AutovalidateMode.disabled,
+          //       ),
+          //       loadSuccess: (message) {
+          //         return SMMTextFormField.email(
+          //           onChanged: (value) {
+          //             print(value);
+          //             if (value!.isEmpty) {
+          //               BlocProvider.of<LoginBloc>(context).add(
+          //                   const LoginBlocEvent
+          //                       .initialPasswordTextFormField());
+          //             }
+          //           },
+          //           autovalidateMode: state.autovalidateMode,
+          //           isEnable: true,
+          //           hintText: Trans.current.login_email_hint_label,
+          //           validator: state.validator,
+          //         );
+          //       },
+          //     ) ??
+          //     const SizedBox.shrink();
+          return SMMTextFormField.email(
+            onChanged: (value) {
+              print(value);
+              if (value!.isEmpty) {
+                BlocProvider.of<LoginBloc>(context)
+                    .add(const LoginBlocEvent.initialPasswordTextFormField());
+              }
+            },
+            autovalidateMode: state.autovalidateMode,
+            isEnable: true,
+            hintText: Trans.current.login_email_hint_label,
+            validator: state.validator,
+          );
         },
       ),
     );

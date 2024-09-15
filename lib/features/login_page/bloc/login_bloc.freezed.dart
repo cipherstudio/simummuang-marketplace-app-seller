@@ -19,44 +19,47 @@ mixin _$LoginBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() initialPasswordTextFormField,
     required TResult Function() login,
-    required TResult Function(GlobalKey<FormState> formKey) validateForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? initialPasswordTextFormField,
     TResult? Function()? login,
-    TResult? Function(GlobalKey<FormState> formKey)? validateForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? initialPasswordTextFormField,
     TResult Function()? login,
-    TResult Function(GlobalKey<FormState> formKey)? validateForm,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialPasswordTextFormField value)
+        initialPasswordTextFormField,
     required TResult Function(_Login value) login,
-    required TResult Function(_ValidateForm value) validateForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
     TResult? Function(_Login value)? login,
-    TResult? Function(_ValidateForm value)? validateForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
     TResult Function(_Login value)? login,
-    TResult Function(_ValidateForm value)? validateForm,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,8 +122,8 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() initialPasswordTextFormField,
     required TResult Function() login,
-    required TResult Function(GlobalKey<FormState> formKey) validateForm,
   }) {
     return initialize();
   }
@@ -129,8 +132,8 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? initialPasswordTextFormField,
     TResult? Function()? login,
-    TResult? Function(GlobalKey<FormState> formKey)? validateForm,
   }) {
     return initialize?.call();
   }
@@ -139,8 +142,8 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? initialPasswordTextFormField,
     TResult Function()? login,
-    TResult Function(GlobalKey<FormState> formKey)? validateForm,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -153,8 +156,9 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialPasswordTextFormField value)
+        initialPasswordTextFormField,
     required TResult Function(_Login value) login,
-    required TResult Function(_ValidateForm value) validateForm,
   }) {
     return initialize(this);
   }
@@ -163,8 +167,9 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
     TResult? Function(_Login value)? login,
-    TResult? Function(_ValidateForm value)? validateForm,
   }) {
     return initialize?.call(this);
   }
@@ -173,8 +178,9 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
     TResult Function(_Login value)? login,
-    TResult Function(_ValidateForm value)? validateForm,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -186,6 +192,123 @@ class _$InitializeImpl implements _Initialize {
 
 abstract class _Initialize implements LoginBlocEvent {
   const factory _Initialize() = _$InitializeImpl;
+}
+
+/// @nodoc
+abstract class _$$InitialPasswordTextFormFieldImplCopyWith<$Res> {
+  factory _$$InitialPasswordTextFormFieldImplCopyWith(
+          _$InitialPasswordTextFormFieldImpl value,
+          $Res Function(_$InitialPasswordTextFormFieldImpl) then) =
+      __$$InitialPasswordTextFormFieldImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialPasswordTextFormFieldImplCopyWithImpl<$Res>
+    extends _$LoginBlocEventCopyWithImpl<$Res,
+        _$InitialPasswordTextFormFieldImpl>
+    implements _$$InitialPasswordTextFormFieldImplCopyWith<$Res> {
+  __$$InitialPasswordTextFormFieldImplCopyWithImpl(
+      _$InitialPasswordTextFormFieldImpl _value,
+      $Res Function(_$InitialPasswordTextFormFieldImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InitialPasswordTextFormFieldImpl
+    implements _InitialPasswordTextFormField {
+  const _$InitialPasswordTextFormFieldImpl();
+
+  @override
+  String toString() {
+    return 'LoginBlocEvent.initialPasswordTextFormField()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitialPasswordTextFormFieldImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function() initialPasswordTextFormField,
+    required TResult Function() login,
+  }) {
+    return initialPasswordTextFormField();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialize,
+    TResult? Function()? initialPasswordTextFormField,
+    TResult? Function()? login,
+  }) {
+    return initialPasswordTextFormField?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function()? initialPasswordTextFormField,
+    TResult Function()? login,
+    required TResult orElse(),
+  }) {
+    if (initialPasswordTextFormField != null) {
+      return initialPasswordTextFormField();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialPasswordTextFormField value)
+        initialPasswordTextFormField,
+    required TResult Function(_Login value) login,
+  }) {
+    return initialPasswordTextFormField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
+    TResult? Function(_Login value)? login,
+  }) {
+    return initialPasswordTextFormField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
+    TResult Function(_Login value)? login,
+    required TResult orElse(),
+  }) {
+    if (initialPasswordTextFormField != null) {
+      return initialPasswordTextFormField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialPasswordTextFormField implements LoginBlocEvent {
+  const factory _InitialPasswordTextFormField() =
+      _$InitialPasswordTextFormFieldImpl;
 }
 
 /// @nodoc
@@ -227,8 +350,8 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() initialPasswordTextFormField,
     required TResult Function() login,
-    required TResult Function(GlobalKey<FormState> formKey) validateForm,
   }) {
     return login();
   }
@@ -237,8 +360,8 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? initialPasswordTextFormField,
     TResult? Function()? login,
-    TResult? Function(GlobalKey<FormState> formKey)? validateForm,
   }) {
     return login?.call();
   }
@@ -247,8 +370,8 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? initialPasswordTextFormField,
     TResult Function()? login,
-    TResult Function(GlobalKey<FormState> formKey)? validateForm,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -261,8 +384,9 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialPasswordTextFormField value)
+        initialPasswordTextFormField,
     required TResult Function(_Login value) login,
-    required TResult Function(_ValidateForm value) validateForm,
   }) {
     return login(this);
   }
@@ -271,8 +395,9 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
     TResult? Function(_Login value)? login,
-    TResult? Function(_ValidateForm value)? validateForm,
   }) {
     return login?.call(this);
   }
@@ -281,8 +406,9 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
     TResult Function(_Login value)? login,
-    TResult Function(_ValidateForm value)? validateForm,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -297,146 +423,6 @@ abstract class _Login implements LoginBlocEvent {
 }
 
 /// @nodoc
-abstract class _$$ValidateFormImplCopyWith<$Res> {
-  factory _$$ValidateFormImplCopyWith(
-          _$ValidateFormImpl value, $Res Function(_$ValidateFormImpl) then) =
-      __$$ValidateFormImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({GlobalKey<FormState> formKey});
-}
-
-/// @nodoc
-class __$$ValidateFormImplCopyWithImpl<$Res>
-    extends _$LoginBlocEventCopyWithImpl<$Res, _$ValidateFormImpl>
-    implements _$$ValidateFormImplCopyWith<$Res> {
-  __$$ValidateFormImplCopyWithImpl(
-      _$ValidateFormImpl _value, $Res Function(_$ValidateFormImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? formKey = null,
-  }) {
-    return _then(_$ValidateFormImpl(
-      formKey: null == formKey
-          ? _value.formKey
-          : formKey // ignore: cast_nullable_to_non_nullable
-              as GlobalKey<FormState>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ValidateFormImpl implements _ValidateForm {
-  const _$ValidateFormImpl({required this.formKey});
-
-  @override
-  final GlobalKey<FormState> formKey;
-
-  @override
-  String toString() {
-    return 'LoginBlocEvent.validateForm(formKey: $formKey)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ValidateFormImpl &&
-            (identical(other.formKey, formKey) || other.formKey == formKey));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, formKey);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ValidateFormImplCopyWith<_$ValidateFormImpl> get copyWith =>
-      __$$ValidateFormImplCopyWithImpl<_$ValidateFormImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initialize,
-    required TResult Function() login,
-    required TResult Function(GlobalKey<FormState> formKey) validateForm,
-  }) {
-    return validateForm(formKey);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initialize,
-    TResult? Function()? login,
-    TResult? Function(GlobalKey<FormState> formKey)? validateForm,
-  }) {
-    return validateForm?.call(formKey);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialize,
-    TResult Function()? login,
-    TResult Function(GlobalKey<FormState> formKey)? validateForm,
-    required TResult orElse(),
-  }) {
-    if (validateForm != null) {
-      return validateForm(formKey);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialize value) initialize,
-    required TResult Function(_Login value) login,
-    required TResult Function(_ValidateForm value) validateForm,
-  }) {
-    return validateForm(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialize value)? initialize,
-    TResult? Function(_Login value)? login,
-    TResult? Function(_ValidateForm value)? validateForm,
-  }) {
-    return validateForm?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialize value)? initialize,
-    TResult Function(_Login value)? login,
-    TResult Function(_ValidateForm value)? validateForm,
-    required TResult orElse(),
-  }) {
-    if (validateForm != null) {
-      return validateForm(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ValidateForm implements LoginBlocEvent {
-  const factory _ValidateForm({required final GlobalKey<FormState> formKey}) =
-      _$ValidateFormImpl;
-
-  GlobalKey<FormState> get formKey;
-  @JsonKey(ignore: true)
-  _$$ValidateFormImplCopyWith<_$ValidateFormImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$LoginBlocState {
   UIStatus get status => throw _privateConstructorUsedError;
   UIStatus get checkEmailStatus => throw _privateConstructorUsedError;
@@ -444,8 +430,9 @@ mixin _$LoginBlocState {
   UIStatus get passwordOptionStatus => throw _privateConstructorUsedError;
   PasswordOptionEnum get passwordOptionEnum =>
       throw _privateConstructorUsedError;
-  String? get emailValidatorMessage => throw _privateConstructorUsedError;
-  bool get validateForm => throw _privateConstructorUsedError;
+  AutovalidateMode get autovalidateMode => throw _privateConstructorUsedError;
+  FormFieldValidator<String>? get validator =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LoginBlocStateCopyWith<LoginBlocState> get copyWith =>
@@ -464,8 +451,8 @@ abstract class $LoginBlocStateCopyWith<$Res> {
       UIStatus checkPasswordStatus,
       UIStatus passwordOptionStatus,
       PasswordOptionEnum passwordOptionEnum,
-      String? emailValidatorMessage,
-      bool validateForm});
+      AutovalidateMode autovalidateMode,
+      FormFieldValidator<String>? validator});
 
   $UIStatusCopyWith<$Res> get status;
   $UIStatusCopyWith<$Res> get checkEmailStatus;
@@ -491,8 +478,8 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
     Object? checkPasswordStatus = null,
     Object? passwordOptionStatus = null,
     Object? passwordOptionEnum = null,
-    Object? emailValidatorMessage = freezed,
-    Object? validateForm = null,
+    Object? autovalidateMode = null,
+    Object? validator = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -515,14 +502,14 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
               as PasswordOptionEnum,
-      emailValidatorMessage: freezed == emailValidatorMessage
-          ? _value.emailValidatorMessage
-          : emailValidatorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validateForm: null == validateForm
-          ? _value.validateForm
-          : validateForm // ignore: cast_nullable_to_non_nullable
-              as bool,
+      autovalidateMode: null == autovalidateMode
+          ? _value.autovalidateMode
+          : autovalidateMode // ignore: cast_nullable_to_non_nullable
+              as AutovalidateMode,
+      validator: freezed == validator
+          ? _value.validator
+          : validator // ignore: cast_nullable_to_non_nullable
+              as FormFieldValidator<String>?,
     ) as $Val);
   }
 
@@ -573,8 +560,8 @@ abstract class _$$LoginBlocStateImplCopyWith<$Res>
       UIStatus checkPasswordStatus,
       UIStatus passwordOptionStatus,
       PasswordOptionEnum passwordOptionEnum,
-      String? emailValidatorMessage,
-      bool validateForm});
+      AutovalidateMode autovalidateMode,
+      FormFieldValidator<String>? validator});
 
   @override
   $UIStatusCopyWith<$Res> get status;
@@ -602,8 +589,8 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
     Object? checkPasswordStatus = null,
     Object? passwordOptionStatus = null,
     Object? passwordOptionEnum = null,
-    Object? emailValidatorMessage = freezed,
-    Object? validateForm = null,
+    Object? autovalidateMode = null,
+    Object? validator = freezed,
   }) {
     return _then(_$LoginBlocStateImpl(
       status: null == status
@@ -626,14 +613,14 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
               as PasswordOptionEnum,
-      emailValidatorMessage: freezed == emailValidatorMessage
-          ? _value.emailValidatorMessage
-          : emailValidatorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validateForm: null == validateForm
-          ? _value.validateForm
-          : validateForm // ignore: cast_nullable_to_non_nullable
-              as bool,
+      autovalidateMode: null == autovalidateMode
+          ? _value.autovalidateMode
+          : autovalidateMode // ignore: cast_nullable_to_non_nullable
+              as AutovalidateMode,
+      validator: freezed == validator
+          ? _value.validator
+          : validator // ignore: cast_nullable_to_non_nullable
+              as FormFieldValidator<String>?,
     ));
   }
 }
@@ -647,8 +634,8 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
       this.checkPasswordStatus = const UIInitial(),
       this.passwordOptionStatus = const UIInitial(),
       this.passwordOptionEnum = PasswordOptionEnum.rememberAndForgot,
-      this.emailValidatorMessage,
-      this.validateForm = false});
+      this.autovalidateMode = AutovalidateMode.disabled,
+      this.validator});
 
   @override
   @JsonKey()
@@ -666,14 +653,14 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
   @JsonKey()
   final PasswordOptionEnum passwordOptionEnum;
   @override
-  final String? emailValidatorMessage;
-  @override
   @JsonKey()
-  final bool validateForm;
+  final AutovalidateMode autovalidateMode;
+  @override
+  final FormFieldValidator<String>? validator;
 
   @override
   String toString() {
-    return 'LoginBlocState(status: $status, checkEmailStatus: $checkEmailStatus, checkPasswordStatus: $checkPasswordStatus, passwordOptionStatus: $passwordOptionStatus, passwordOptionEnum: $passwordOptionEnum, emailValidatorMessage: $emailValidatorMessage, validateForm: $validateForm)';
+    return 'LoginBlocState(status: $status, checkEmailStatus: $checkEmailStatus, checkPasswordStatus: $checkPasswordStatus, passwordOptionStatus: $passwordOptionStatus, passwordOptionEnum: $passwordOptionEnum, autovalidateMode: $autovalidateMode, validator: $validator)';
   }
 
   @override
@@ -690,10 +677,10 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
                 other.passwordOptionStatus == passwordOptionStatus) &&
             (identical(other.passwordOptionEnum, passwordOptionEnum) ||
                 other.passwordOptionEnum == passwordOptionEnum) &&
-            (identical(other.emailValidatorMessage, emailValidatorMessage) ||
-                other.emailValidatorMessage == emailValidatorMessage) &&
-            (identical(other.validateForm, validateForm) ||
-                other.validateForm == validateForm));
+            (identical(other.autovalidateMode, autovalidateMode) ||
+                other.autovalidateMode == autovalidateMode) &&
+            (identical(other.validator, validator) ||
+                other.validator == validator));
   }
 
   @override
@@ -704,8 +691,8 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
       checkPasswordStatus,
       passwordOptionStatus,
       passwordOptionEnum,
-      emailValidatorMessage,
-      validateForm);
+      autovalidateMode,
+      validator);
 
   @JsonKey(ignore: true)
   @override
@@ -722,8 +709,8 @@ abstract class _LoginBlocState implements LoginBlocState {
       final UIStatus checkPasswordStatus,
       final UIStatus passwordOptionStatus,
       final PasswordOptionEnum passwordOptionEnum,
-      final String? emailValidatorMessage,
-      final bool validateForm}) = _$LoginBlocStateImpl;
+      final AutovalidateMode autovalidateMode,
+      final FormFieldValidator<String>? validator}) = _$LoginBlocStateImpl;
 
   @override
   UIStatus get status;
@@ -736,9 +723,9 @@ abstract class _LoginBlocState implements LoginBlocState {
   @override
   PasswordOptionEnum get passwordOptionEnum;
   @override
-  String? get emailValidatorMessage;
+  AutovalidateMode get autovalidateMode;
   @override
-  bool get validateForm;
+  FormFieldValidator<String>? get validator;
   @override
   @JsonKey(ignore: true)
   _$$LoginBlocStateImplCopyWith<_$LoginBlocStateImpl> get copyWith =>
