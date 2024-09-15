@@ -62,6 +62,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
         "register_title":
             MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),
+        "set_new_password_button_label":
+            MessageLookupByLibrary.simpleMessage("ตั้งรหัสผ่านใหม่"),
+        "set_new_password_create_new_account_label":
+            MessageLookupByLibrary.simpleMessage("สร้างบัญชีใหม่"),
+        "set_new_password_first_text_form_field_hint":
+            MessageLookupByLibrary.simpleMessage("ระบุรหัสผ่านใหม่"),
+        "set_new_password_first_text_label":
+            MessageLookupByLibrary.simpleMessage("สร้างรหัสผ่านใหม่"),
+        "set_new_password_main_title":
+            MessageLookupByLibrary.simpleMessage("สร้างรหัสผ่านใหม่"),
+        "set_new_password_not_have_account_label":
+            MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี?"),
+        "set_new_password_second_text_form_field_hint":
+            MessageLookupByLibrary.simpleMessage("ระบุรหัสผ่านใหม่อีกครั้ง"),
+        "set_new_password_second_text_label":
+            MessageLookupByLibrary.simpleMessage("ยืนยันรหัสผ่านใหม่"),
         "validate_text": MessageLookupByLibrary.simpleMessage("กรุณาระบุ")
       };
 }

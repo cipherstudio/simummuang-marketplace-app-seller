@@ -23,5 +23,13 @@
   "login_password_hint_label" : "please fill Password.",
   "login_remember_me_label" : "Remember me.",
   "login_forgot_password_label" : "forgot password.",
-  "login_button_label" : "Login"
+  "login_button_label" : "Login",
+  "set_new_password_main_title" : "create new password.",
+  "set_new_password_first_text_label" : "create new password",
+  "set_new_password_first_text_form_field_hint" : "please fill your new password",
+  "set_new_password_second_text_label" : "confirm your password",
+  "set_new_password_second_text_form_field_hint" : "please fill your new password again",
+  "set_new_password_button_label" : "confirm your new password",
+  "set_new_password_not_have_account_label" : "not have account?",
+  "set_new_password_create_new_account_label" : "create new account"
 }

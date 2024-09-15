@@ -299,6 +299,86 @@ class Trans {
       args: [],
     );
   }
+
+  /// `สร้างรหัสผ่านใหม่`
+  String get set_new_password_main_title {
+    return Intl.message(
+      'สร้างรหัสผ่านใหม่',
+      name: 'set_new_password_main_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างรหัสผ่านใหม่`
+  String get set_new_password_first_text_label {
+    return Intl.message(
+      'สร้างรหัสผ่านใหม่',
+      name: 'set_new_password_first_text_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุรหัสผ่านใหม่`
+  String get set_new_password_first_text_form_field_hint {
+    return Intl.message(
+      'ระบุรหัสผ่านใหม่',
+      name: 'set_new_password_first_text_form_field_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยืนยันรหัสผ่านใหม่`
+  String get set_new_password_second_text_label {
+    return Intl.message(
+      'ยืนยันรหัสผ่านใหม่',
+      name: 'set_new_password_second_text_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุรหัสผ่านใหม่อีกครั้ง`
+  String get set_new_password_second_text_form_field_hint {
+    return Intl.message(
+      'ระบุรหัสผ่านใหม่อีกครั้ง',
+      name: 'set_new_password_second_text_form_field_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ตั้งรหัสผ่านใหม่`
+  String get set_new_password_button_label {
+    return Intl.message(
+      'ตั้งรหัสผ่านใหม่',
+      name: 'set_new_password_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยังไม่มีบัญชี?`
+  String get set_new_password_not_have_account_label {
+    return Intl.message(
+      'ยังไม่มีบัญชี?',
+      name: 'set_new_password_not_have_account_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างบัญชีใหม่`
+  String get set_new_password_create_new_account_label {
+    return Intl.message(
+      'สร้างบัญชีใหม่',
+      name: 'set_new_password_create_new_account_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {

@@ -166,13 +166,23 @@ abstract class _Initialize implements SetNewPasswordBlocEvent {
 }
 
 /// @nodoc
-mixin _$SetNewPasswordBlocState {}
+mixin _$SetNewPasswordBlocState {
+  UIStatus get status => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetNewPasswordBlocStateCopyWith<SetNewPasswordBlocState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $SetNewPasswordBlocStateCopyWith<$Res> {
   factory $SetNewPasswordBlocStateCopyWith(SetNewPasswordBlocState value,
           $Res Function(SetNewPasswordBlocState) then) =
       _$SetNewPasswordBlocStateCopyWithImpl<$Res, SetNewPasswordBlocState>;
+  @useResult
+  $Res call({UIStatus status});
+
+  $UIStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -185,14 +195,42 @@ class _$SetNewPasswordBlocStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_value.copyWith(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as UIStatus,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UIStatusCopyWith<$Res> get status {
+    return $UIStatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$SetNewPasswordBlocStateImplCopyWith<$Res> {
+abstract class _$$SetNewPasswordBlocStateImplCopyWith<$Res>
+    implements $SetNewPasswordBlocStateCopyWith<$Res> {
   factory _$$SetNewPasswordBlocStateImplCopyWith(
           _$SetNewPasswordBlocStateImpl value,
           $Res Function(_$SetNewPasswordBlocStateImpl) then) =
       __$$SetNewPasswordBlocStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UIStatus status});
+
+  @override
+  $UIStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -204,29 +242,62 @@ class __$$SetNewPasswordBlocStateImplCopyWithImpl<$Res>
       _$SetNewPasswordBlocStateImpl _value,
       $Res Function(_$SetNewPasswordBlocStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_$SetNewPasswordBlocStateImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as UIStatus,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SetNewPasswordBlocStateImpl implements _SetNewPasswordBlocState {
-  const _$SetNewPasswordBlocStateImpl();
+  const _$SetNewPasswordBlocStateImpl({this.status = const UIInitial()});
+
+  @override
+  @JsonKey()
+  final UIStatus status;
 
   @override
   String toString() {
-    return 'SetNewPasswordBlocState()';
+    return 'SetNewPasswordBlocState(status: $status)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetNewPasswordBlocStateImpl);
+            other is _$SetNewPasswordBlocStateImpl &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetNewPasswordBlocStateImplCopyWith<_$SetNewPasswordBlocStateImpl>
+      get copyWith => __$$SetNewPasswordBlocStateImplCopyWithImpl<
+          _$SetNewPasswordBlocStateImpl>(this, _$identity);
 }
 
 abstract class _SetNewPasswordBlocState implements SetNewPasswordBlocState {
-  const factory _SetNewPasswordBlocState() = _$SetNewPasswordBlocStateImpl;
+  const factory _SetNewPasswordBlocState({final UIStatus status}) =
+      _$SetNewPasswordBlocStateImpl;
+
+  @override
+  UIStatus get status;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetNewPasswordBlocStateImplCopyWith<_$SetNewPasswordBlocStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
