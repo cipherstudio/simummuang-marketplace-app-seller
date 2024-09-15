@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/example_components.dart';
 import 'package:smm_application/components/smm_filled_button.dart';
+import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
-import 'package:smm_application/widgets/custom_checkbox.dart';
-import 'package:smm_application/widgets/external_login.dart';
+import 'package:smm_application/components/smm_checkbox.dart';
+import 'package:smm_application/components/external_login.dart';
 
 class ExamplePage extends StatefulWidget {
   const ExamplePage({
@@ -42,12 +44,7 @@ class _ExamplePageState extends State<ExamplePage> {
             SMMFilledButton.normal(
               label: 'go to example components',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ExampleConponents(),
-                  ),
-                );
+                context.pushNamed(AppRouter.forgotPasswordPageNamed);
               },
             ),
           ],
