@@ -45,12 +45,25 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ลืมรหัสผ่าน?"),
         "hello_world": MessageLookupByLibrary.simpleMessage("Hello World"),
         "hint_text": MessageLookupByLibrary.simpleMessage("ระบุ"),
+        "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_email_hint_label":
+            MessageLookupByLibrary.simpleMessage("please fill E-mail."),
+        "login_email_label": MessageLookupByLibrary.simpleMessage("E-mail"),
         "login_external_detail":
-            MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี"),
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account yet?"),
         "login_external_text_button":
             MessageLookupByLibrary.simpleMessage("สร้างบัญชีใหม่"),
-        "login_external_title": MessageLookupByLibrary.simpleMessage(
-            "เข้าสู่ระบบด้วยบัญชีโซเชียลมีเดีย"),
+        "login_external_title":
+            MessageLookupByLibrary.simpleMessage("Login with social media."),
+        "login_forgot_password_label":
+            MessageLookupByLibrary.simpleMessage("forgot password."),
+        "login_password_hint_label":
+            MessageLookupByLibrary.simpleMessage("please fill Password."),
+        "login_password_label":
+            MessageLookupByLibrary.simpleMessage("Password"),
+        "login_remember_me_label":
+            MessageLookupByLibrary.simpleMessage("Remember me."),
+        "login_title": MessageLookupByLibrary.simpleMessage("Login"),
         "register_back_button": MessageLookupByLibrary.simpleMessage("กลับ"),
         "register_confirm_button":
             MessageLookupByLibrary.simpleMessage("ยืนยัน"),
@@ -82,6 +95,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
         "register_title":
             MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),
+        "set_new_password_button_label":
+            MessageLookupByLibrary.simpleMessage("confirm your new password"),
+        "set_new_password_create_new_account_label":
+            MessageLookupByLibrary.simpleMessage("create new account"),
+        "set_new_password_first_text_form_field_hint":
+            MessageLookupByLibrary.simpleMessage(
+                "please fill your new password"),
+        "set_new_password_first_text_label":
+            MessageLookupByLibrary.simpleMessage("create new password"),
+        "set_new_password_main_title":
+            MessageLookupByLibrary.simpleMessage("create new password."),
+        "set_new_password_not_have_account_label":
+            MessageLookupByLibrary.simpleMessage("not have account?"),
+        "set_new_password_second_text_form_field_hint":
+            MessageLookupByLibrary.simpleMessage(
+                "please fill your new password again"),
+        "set_new_password_second_text_label":
+            MessageLookupByLibrary.simpleMessage("confirm your password"),
         "validate_text": MessageLookupByLibrary.simpleMessage("กรุณาระบุ")
       };
 }

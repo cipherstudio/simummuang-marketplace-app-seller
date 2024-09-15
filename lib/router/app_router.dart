@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_application/features/example_page/view/example_page.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
+import 'package:smm_application/features/login_page/view/login_page.dart';
 import 'package:smm_application/features/register/view/register_page.dart';
+import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
 
 class AppRouter {
   AppRouter({this.rootKey});
@@ -18,6 +20,12 @@ class AppRouter {
 
   static const String forgotPasswordPageNamed = 'forgot-password';
   static const String forgotPasswordPagePath = 'forgot-password';
+
+  static const String loginPageNamed = 'login';
+  static const String loginPagePath = 'login';
+
+  static const String setNewPasswordNamed = 'setNewPassword';
+  static const String setNewPasswordPath = 'setNewPassword';
 
   static GoRouter router() {
     return GoRouter(
@@ -38,6 +46,16 @@ class AppRouter {
               path: forgotPasswordPagePath,
               name: forgotPasswordPageNamed,
               builder: (context, state) => const ForgotPasswordPage(),
+            ),
+            GoRoute(
+              path: loginPagePath,
+              name: loginPageNamed,
+              builder: (context, state) => const LoginPage(),
+            ),
+            GoRoute(
+              path: setNewPasswordPath,
+              name: setNewPasswordNamed,
+              builder: (context, state) => const SetNewPasswordPage(),
             )
           ],
         ),

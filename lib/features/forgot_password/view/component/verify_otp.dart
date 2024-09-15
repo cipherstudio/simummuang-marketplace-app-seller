@@ -77,7 +77,11 @@ class VerifyOTP extends StatelessWidget {
           SMMFilledButton.normal(
             label: Trans.current.forgetpassword_confirm,
             width: double.infinity,
-            onPressed: () {},
+            onPressed: () {
+              BlocProvider.of<ForgotPasswordBloc>(context).add(
+                const ForgotPasswordBlocEvent.verifySendedOTP(),
+              );
+            },
           ),
         ],
       ),

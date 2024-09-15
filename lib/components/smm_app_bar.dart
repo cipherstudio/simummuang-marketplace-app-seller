@@ -40,6 +40,7 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      surfaceTintColor: Colors.transparent,
       backgroundColor: AppColors.primaryBrandMain,
       title: title,
       centerTitle: centerTitle,

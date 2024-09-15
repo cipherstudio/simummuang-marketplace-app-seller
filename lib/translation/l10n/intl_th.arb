@@ -16,6 +16,22 @@
   "register_password_confirm" : "ยืนยันรหัสผ่าน",
   "register_password_hint" : "รหัสผ่านอีกครั้ง",
   "register_next_button" : "ถัดไป",
+  "login_title" : "เข้าสู่ระบบ",
+  "login_email_label" : "อีเมล์",
+  "login_email_hint_label" : "ระบุอีเมล์",
+  "login_password_label" : "รหัสผ่าน",
+  "login_password_hint_label" : "ระบุรหัสผ่าน",
+  "login_remember_me_label" : "จดจำรหัสผ่านของฉัน",
+  "login_forgot_password_label" : "ลืมรหัสผ่าน?",
+  "login_button_label" : "เข้าสู่ระบบ",
+  "set_new_password_main_title" : "สร้างรหัสผ่านใหม่",
+  "set_new_password_first_text_label" : "สร้างรหัสผ่านใหม่",
+  "set_new_password_first_text_form_field_hint" : "ระบุรหัสผ่านใหม่",
+  "set_new_password_second_text_label" : "ยืนยันรหัสผ่านใหม่",
+  "set_new_password_second_text_form_field_hint" : "ระบุรหัสผ่านใหม่อีกครั้ง",
+  "set_new_password_button_label" : "ตั้งรหัสผ่านใหม่",
+  "set_new_password_not_have_account_label" : "ยังไม่มีบัญชี?",
+  "set_new_password_create_new_account_label" : "สร้างบัญชีใหม่",
   "register_phone" : "เบอร์โทรศัพท์",
   "register_request_otp" : "กดรับ OTP",
   "register_otp" : "OTP",
@@ -34,5 +50,4 @@
   "forgetpassword_fill_otp" : "ระบุ OTP ของคุณ",
   "forgetpassword_ref_code" : "รหัสอ้างอิง:",
   "forgetpassword_request_otp_title" : "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"
-
 }

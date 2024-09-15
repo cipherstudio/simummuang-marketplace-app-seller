@@ -220,6 +220,166 @@ class Trans {
     );
   }
 
+  /// `เข้าสู่ระบบ`
+  String get login_title {
+    return Intl.message(
+      'เข้าสู่ระบบ',
+      name: 'login_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `อีเมล์`
+  String get login_email_label {
+    return Intl.message(
+      'อีเมล์',
+      name: 'login_email_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุอีเมล์`
+  String get login_email_hint_label {
+    return Intl.message(
+      'ระบุอีเมล์',
+      name: 'login_email_hint_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รหัสผ่าน`
+  String get login_password_label {
+    return Intl.message(
+      'รหัสผ่าน',
+      name: 'login_password_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุรหัสผ่าน`
+  String get login_password_hint_label {
+    return Intl.message(
+      'ระบุรหัสผ่าน',
+      name: 'login_password_hint_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `จดจำรหัสผ่านของฉัน`
+  String get login_remember_me_label {
+    return Intl.message(
+      'จดจำรหัสผ่านของฉัน',
+      name: 'login_remember_me_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ลืมรหัสผ่าน?`
+  String get login_forgot_password_label {
+    return Intl.message(
+      'ลืมรหัสผ่าน?',
+      name: 'login_forgot_password_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เข้าสู่ระบบ`
+  String get login_button_label {
+    return Intl.message(
+      'เข้าสู่ระบบ',
+      name: 'login_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างรหัสผ่านใหม่`
+  String get set_new_password_main_title {
+    return Intl.message(
+      'สร้างรหัสผ่านใหม่',
+      name: 'set_new_password_main_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างรหัสผ่านใหม่`
+  String get set_new_password_first_text_label {
+    return Intl.message(
+      'สร้างรหัสผ่านใหม่',
+      name: 'set_new_password_first_text_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุรหัสผ่านใหม่`
+  String get set_new_password_first_text_form_field_hint {
+    return Intl.message(
+      'ระบุรหัสผ่านใหม่',
+      name: 'set_new_password_first_text_form_field_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยืนยันรหัสผ่านใหม่`
+  String get set_new_password_second_text_label {
+    return Intl.message(
+      'ยืนยันรหัสผ่านใหม่',
+      name: 'set_new_password_second_text_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ระบุรหัสผ่านใหม่อีกครั้ง`
+  String get set_new_password_second_text_form_field_hint {
+    return Intl.message(
+      'ระบุรหัสผ่านใหม่อีกครั้ง',
+      name: 'set_new_password_second_text_form_field_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ตั้งรหัสผ่านใหม่`
+  String get set_new_password_button_label {
+    return Intl.message(
+      'ตั้งรหัสผ่านใหม่',
+      name: 'set_new_password_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยังไม่มีบัญชี?`
+  String get set_new_password_not_have_account_label {
+    return Intl.message(
+      'ยังไม่มีบัญชี?',
+      name: 'set_new_password_not_have_account_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สร้างบัญชีใหม่`
+  String get set_new_password_create_new_account_label {
+    return Intl.message(
+      'สร้างบัญชีใหม่',
+      name: 'set_new_password_create_new_account_label',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `เบอร์โทรศัพท์`
   String get register_phone {
     return Intl.message(
