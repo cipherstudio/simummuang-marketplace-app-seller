@@ -1,7 +1,9 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:smm_application/themes/app_colors.dart';
+import 'package:smm_application/themes/app_text_styles.dart';
 
 /// 1. text field แบบธรรมดา
 /// 2. text field E-mail
@@ -27,6 +29,9 @@ class SMMTextFormField extends StatefulWidget {
   final String? prefixText;
   final List<TextInputFormatter>? inputFormatters;
   final int? maxLength;
+  final TextStyle? errorStyle;
+  final int? maxLines;
+  final TextStyle? style;
 
   /// factory general input
   factory SMMTextFormField.normal({
@@ -40,7 +45,7 @@ class SMMTextFormField extends StatefulWidget {
     ValueChanged<String?>? onChanged,
     AutovalidateMode? autovalidateMode,
   }) {
-    decoration ??= const InputDecoration();
+    // decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
     // }
@@ -62,7 +67,6 @@ class SMMTextFormField extends StatefulWidget {
   factory SMMTextFormField.obscure({
     Key? key,
     TextEditingController? controller,
-    InputDecoration? decoration,
     TextInputType? keyboardType,
     required bool isEnable,
     String? hintText,
@@ -70,14 +74,13 @@ class SMMTextFormField extends StatefulWidget {
     ValueChanged<String?>? onChanged,
     AutovalidateMode? autovalidateMode,
   }) {
-    decoration ??= const InputDecoration();
+    // decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
     // }
 
     return SMMTextFormField._(
       controller: controller,
-      decoration: decoration,
       keyboardType: keyboardType,
       isObscure: true,
       isEnable: isEnable,
@@ -100,7 +103,7 @@ class SMMTextFormField extends StatefulWidget {
     ValueChanged<String?>? onChanged,
     AutovalidateMode? autovalidateMode,
   }) {
-    decoration ??= const InputDecoration();
+    // decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
     // }
@@ -128,6 +131,125 @@ class SMMTextFormField extends StatefulWidget {
     );
   }
 
+  factory SMMTextFormField.settingNormal({
+    Key? key,
+    TextEditingController? controller,
+    // InputDecoration? decoration,
+    TextInputType? keyboardType,
+    required bool isEnable,
+    String? hintText,
+    FormFieldValidator<String>? validator,
+    ValueChanged<String?>? onChanged,
+    AutovalidateMode? autovalidateMode,
+    String? suffixText,
+  }) {
+    return SMMTextFormField._(
+      controller: controller,
+      decoration: InputDecoration(
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.zero,
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        disabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        errorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        focusedErrorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        suffixIcon: (suffixText != null)
+            ? Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                ),
+                child: Text(
+                  suffixText,
+                  style: AppTextStyles.textSMRegular,
+                ),
+              )
+            : const SizedBox.shrink(),
+        prefixIconConstraints: const BoxConstraints.tightFor(width: 16),
+      ),
+      isObscure: false,
+      isEnable: isEnable,
+      hintText: hintText,
+      validator: validator,
+      onChanged: onChanged,
+      autovalidateMode: autovalidateMode,
+      maxLines: 1,
+      style: AppTextStyles.textMDSemiBold,
+    );
+  }
+
+  factory SMMTextFormField.settingMultipleLines({
+    Key? key,
+    TextEditingController? controller,
+    // InputDecoration? decoration,
+    TextInputType? keyboardType,
+    required bool isEnable,
+    String? hintText,
+    FormFieldValidator<String>? validator,
+    ValueChanged<String?>? onChanged,
+    AutovalidateMode? autovalidateMode,
+    String? suffixText,
+  }) {
+    return SMMTextFormField._(
+      controller: controller,
+      decoration: InputDecoration(
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.zero,
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        disabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        errorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        focusedErrorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.zero,
+          borderSide: BorderSide.none,
+        ),
+        suffixIcon: (suffixText != null)
+            ? Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                ),
+                child: Text(
+                  suffixText,
+                  style: AppTextStyles.textSMRegular,
+                ),
+              )
+            : const SizedBox.shrink(),
+        prefixIconConstraints: const BoxConstraints.tightFor(width: 16),
+      ),
+      keyboardType: TextInputType.multiline,
+      isObscure: false,
+      isEnable: isEnable,
+      hintText: hintText,
+      validator: validator,
+      onChanged: onChanged,
+      autovalidateMode: autovalidateMode,
+      maxLines: null,
+      style: AppTextStyles.textMDSemiBold,
+    );
+  }
+
   /// _internal default constructor
   const SMMTextFormField._({
     super.key,
@@ -149,6 +271,9 @@ class SMMTextFormField extends StatefulWidget {
     this.prefixText,
     this.inputFormatters,
     this.maxLength,
+    this.errorStyle,
+    this.maxLines,
+    this.style,
   });
 
   @override
@@ -175,8 +300,10 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: widget.maxLines,
       enabled: widget.isEnable,
-      style: const TextStyle(color: AppColors.primaryDefaultMain),
+      style:
+          widget.style ?? const TextStyle(color: AppColors.primaryDefaultMain),
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       textInputAction: widget.textInputAction,
@@ -202,6 +329,7 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
         // prefixText: widget.prefixText,
         // hintStyle:
         //     CustomTextStyles.body3.copyWith(color: CustomColors.text4Color),
+
         hintStyle: const TextStyle(color: AppColors.primaryDefaultWeak),
         hintText: widget.decoration?.hintText ?? widget.hintText,
         // fillColor: widget.isEnable
@@ -213,7 +341,8 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
         // alignLabelWithHint: true,
 
         /// สำหรับปรับแต่ง style เมื่อ validator เข้าเงื่อนไข
-        errorStyle: const TextStyle(color: AppColors.primarySemanticErrorMain),
+        errorStyle: widget.errorStyle ??
+            const TextStyle(color: AppColors.primarySemanticErrorMain),
         // label: Text(
         //   '${widget.hintText}',
         //   style: CustomTextStyles.hint,
@@ -224,47 +353,43 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
         prefixIcon: Container(
           width: 0,
         ),
-        prefixIconConstraints: const BoxConstraints.tightFor(width: 10),
-
-        // suffixStyle: CustomTextStyles.body3,
-        suffixIcon: widget.isObscure
-            ? IconButton(
-                color: AppColors.primaryDefaultMedium,
-                icon: Icon(
-                  _passwordVisible
-                      ? Icons.visibility_outlined
-                      : Icons.visibility_off_outlined,
-                ),
-                onPressed: () => onHidePasswordTap(),
-              )
-            : const SizedBox.shrink(),
-        errorBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(color: AppColors.primaryBrandWeak),
-        ),
-        focusedErrorBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(color: AppColors.primaryBrandWeak),
-        ),
-        disabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(12),
-          ),
-          // borderSide: BorderSide(color: CustomColors.onBackground2Color),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.primaryDefaultWeak),
-          borderRadius: BorderRadius.all(
-            Radius.circular(4),
-          ),
-        ),
-        contentPadding: EdgeInsets.zero,
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.primaryDefaultWeak),
-          borderRadius: BorderRadius.all(
-            Radius.circular(4),
-          ),
-        ),
+        prefixIconConstraints: widget.decoration?.prefixIconConstraints ??
+            const BoxConstraints.tightFor(width: 10),
+        suffixIcon: widget.decoration?.suffixIcon ?? (_buildObscureIcon()),
+        suffixIconConstraints: widget.decoration?.suffixIconConstraints ??
+            const BoxConstraints(minWidth: 0),
+        errorBorder: widget.decoration?.errorBorder ??
+            const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+              borderSide: BorderSide(color: AppColors.primaryBrandWeak),
+            ),
+        focusedErrorBorder: widget.decoration?.focusedErrorBorder ??
+            const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+              borderSide: BorderSide(color: AppColors.primaryBrandWeak),
+            ),
+        disabledBorder: widget.decoration?.disabledBorder ??
+            const OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(12),
+              ),
+              // borderSide: BorderSide(color: CustomColors.onBackground2Color),
+            ),
+        enabledBorder: widget.decoration?.enabledBorder ??
+            const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.primaryDefaultWeak),
+              borderRadius: BorderRadius.all(
+                Radius.circular(4),
+              ),
+            ),
+        contentPadding: widget.decoration?.contentPadding ?? EdgeInsets.zero,
+        focusedBorder: widget.decoration?.focusedBorder ??
+            const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.primaryDefaultWeak),
+              borderRadius: BorderRadius.all(
+                Radius.circular(4),
+              ),
+            ),
         // border: const OutlineInputBorder(
         //   borderRadius: BorderRadius.all(Radius.circular(4)),
         //   borderSide: BorderSide(color: Colors.blue),
@@ -275,5 +400,19 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
       autovalidateMode:
           widget.autovalidateMode ?? AutovalidateMode.onUserInteraction,
     );
+  }
+
+  Widget _buildObscureIcon() {
+    return widget.isObscure
+        ? IconButton(
+            color: AppColors.primaryDefaultMedium,
+            icon: Icon(
+              _passwordVisible
+                  ? Icons.visibility_outlined
+                  : Icons.visibility_off_outlined,
+            ),
+            onPressed: () => onHidePasswordTap(),
+          )
+        : const SizedBox.shrink();
   }
 }
