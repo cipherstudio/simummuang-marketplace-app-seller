@@ -77,6 +77,12 @@ class _ExamplePageState extends State<ExamplePage> {
                 context.pushNamed(AppRouter.forgotPasswordPageNamed);
               },
             ),
+            SMMFilledButton.normal(
+              label: 'go to seller setting',
+              onPressed: () {
+                context.pushNamed(AppRouter.sellerSettingPageNamed);
+              },
+            ),
           ],
         ),
       ),

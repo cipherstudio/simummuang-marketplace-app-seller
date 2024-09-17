@@ -9,6 +9,9 @@ class AppTextStyles {
   static const TextStyle textMDRegular = TextStyle(
       color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400);
 
+  static const TextStyle textMDSemibold = TextStyle(
+      color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w600);
+
   static const TextStyle textSMRegular = TextStyle(
       color: AppColors.black, fontSize: 14, fontWeight: FontWeight.w400);
 
@@ -29,4 +32,10 @@ class AppTextStyles {
 
   static const TextStyle textBTNSmall = TextStyle(
       color: AppColors.black, fontSize: 13, fontWeight: FontWeight.w400);
+
+  static const TextStyle textLGSemibold = TextStyle(
+      color: AppColors.black, fontSize: 18, fontWeight: FontWeight.w600);
+
+  static const TextStyle textBase = TextStyle(
+      color: AppColors.black, fontSize: 14, fontWeight: FontWeight.w400);
 }

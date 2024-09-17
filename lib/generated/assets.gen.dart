@@ -21,6 +21,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon_check.svg
   SvgGenImage get iconCheck => const SvgGenImage('assets/icons/icon_check.svg');
 
+  /// File path: assets/icons/icon_preview.svg
+  SvgGenImage get iconPreview =>
+      const SvgGenImage('assets/icons/icon_preview.svg');
+
+  /// File path: assets/icons/icon_save.svg
+  SvgGenImage get iconSave => const SvgGenImage('assets/icons/icon_save.svg');
+
   /// File path: assets/icons/icon_signin_facebook.svg
   SvgGenImage get iconSigninFacebook =>
       const SvgGenImage('assets/icons/icon_signin_facebook.svg');
@@ -45,6 +52,8 @@ class $AssetsIconsGen {
   List<SvgGenImage> get values => [
         iconArrowLeft,
         iconCheck,
+        iconPreview,
+        iconSave,
         iconSigninFacebook,
         iconSigninGoogle,
         iconSigninLine,
@@ -60,8 +69,12 @@ class $AssetsImagesGen {
   AssetGenImage get imagePickerPlaceholder =>
       const AssetGenImage('assets/images/image_picker_placeholder.png');
 
+  /// File path: assets/images/map_image.png
+  AssetGenImage get mapImage =>
+      const AssetGenImage('assets/images/map_image.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [imagePickerPlaceholder];
+  List<AssetGenImage> get values => [imagePickerPlaceholder, mapImage];
 }
 
 class Assets {
