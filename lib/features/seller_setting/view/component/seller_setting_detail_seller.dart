@@ -4,8 +4,8 @@ import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
 
-class DetailSeller extends StatelessWidget {
-  const DetailSeller({super.key});
+class SellerSettingDetailSeller extends StatelessWidget {
+  const SellerSettingDetailSeller({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,6 @@ class DetailSeller extends StatelessWidget {
 
   Widget _body(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
       color: AppColors.background,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,10 +21,13 @@ class DetailSeller extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          Text('รายละเอียด',
-              style: AppTextStyles.textLGSemibold.copyWith(
-                color: AppColors.primaryDefaultMain,
-              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(Trans.current.seller_setting_detail_title,
+                style: AppTextStyles.textLGSemibold.copyWith(
+                  color: AppColors.primaryDefaultMain,
+                )),
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -42,10 +44,13 @@ tempor dictum. Mauris interdum, ante eu tristique feugiat, tellus tortor consequ
           const SizedBox(
             height: 32,
           ),
-          Text('แผนที่',
-              style: AppTextStyles.textLGSemibold.copyWith(
-                color: AppColors.primaryDefaultMain,
-              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(Trans.current.seller_setting_map,
+                style: AppTextStyles.textLGSemibold.copyWith(
+                  color: AppColors.primaryDefaultMain,
+                )),
+          ),
           const SizedBox(
             height: 16,
           ),

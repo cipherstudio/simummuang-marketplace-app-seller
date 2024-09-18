@@ -97,6 +97,43 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
         "register_title":
             MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),
+        "seller_setting_cancle": MessageLookupByLibrary.simpleMessage("ยกเลิก"),
+        "seller_setting_detail_title":
+            MessageLookupByLibrary.simpleMessage("รายละเอียด"),
+        "seller_setting_map": MessageLookupByLibrary.simpleMessage("แผนที่"),
+        "seller_setting_save":
+            MessageLookupByLibrary.simpleMessage("บันทึกข้อมูล"),
+        "seller_setting_seller_email_suffix_text":
+            MessageLookupByLibrary.simpleMessage("E-mail"),
+        "seller_setting_seller_information_label":
+            MessageLookupByLibrary.simpleMessage("Seller Information"),
+        "seller_setting_seller_name_suffix_text":
+            MessageLookupByLibrary.simpleMessage("First Name - Last Name"),
+        "seller_setting_seller_suffix_text":
+            MessageLookupByLibrary.simpleMessage("Address"),
+        "seller_setting_seller_tel_num_suffix_text":
+            MessageLookupByLibrary.simpleMessage("Telephone Number"),
+        "seller_setting_store_image_label":
+            MessageLookupByLibrary.simpleMessage("Store Profile"),
+        "seller_setting_store_label_suffix_text":
+            MessageLookupByLibrary.simpleMessage("Market"),
+        "seller_setting_store_name_label":
+            MessageLookupByLibrary.simpleMessage("Store Name"),
+        "seller_setting_store_opening_hours_suffix_text":
+            MessageLookupByLibrary.simpleMessage("Open - Close"),
+        "seller_setting_store_tel_num_suffix_text":
+            MessageLookupByLibrary.simpleMessage("Telephone Number"),
+        "seller_setting_store_type_label":
+            MessageLookupByLibrary.simpleMessage("Market Type"),
+        "seller_setting_store_zone_suffix_text":
+            MessageLookupByLibrary.simpleMessage("Market Zone"),
+        "seller_setting_tab_1":
+            MessageLookupByLibrary.simpleMessage("ข้อมูลร้านค้า"),
+        "seller_setting_tab_2":
+            MessageLookupByLibrary.simpleMessage("รายละเอียดร้านค้า"),
+        "seller_setting_title": MessageLookupByLibrary.simpleMessage("ตั้งค่า"),
+        "seller_setting_view":
+            MessageLookupByLibrary.simpleMessage("ดูตัวอย่าง"),
         "set_new_password_button_label":
             MessageLookupByLibrary.simpleMessage("confirm your new password"),
         "set_new_password_create_new_account_label":

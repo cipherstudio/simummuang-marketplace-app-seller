@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/components/smm_tabbar.dart';
 import 'package:smm_application/features/seller_setting/bloc/seller_setting_bloc.dart';
-import 'package:smm_application/features/seller_setting/view/component/detail_seller.dart';
+import 'package:smm_application/features/seller_setting/view/component/seller_setting_detail_seller.dart';
+import 'package:smm_application/features/seller_setting/view/component/seller_setting_store_info.dart';
 import 'package:smm_application/generated/assets.gen.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
@@ -25,17 +26,17 @@ class SellerSettingPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: SMMAppBar.text(
-        text: 'ตั้งค่า',
+        text: Trans.current.seller_setting_title,
         bottom: SMMTabbar(
             isScrollable: false,
             tabs: [
               SMMTab(
                 isSelected: state.currentTabbarIndex == 0,
-                text: 'ข้อมูลร้านค้า',
+                text: Trans.current.seller_setting_tab_1,
               ),
               SMMTab(
                 isSelected: state.currentTabbarIndex == 1,
-                text: 'รายละเอียดร้านค้า',
+                text: Trans.current.seller_setting_tab_2,
               )
             ],
             currentIndex: state.currentTabbarIndex,
@@ -52,7 +53,10 @@ class SellerSettingPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               if (state.sellerSettingPageState == SellerSettingPageState.detail)
-                const DetailSeller(),
+                const SellerSettingDetailSeller(),
+              if (state.sellerSettingPageState ==
+                  SellerSettingPageState.profile)
+                const SellerSettingStoreInfo(),
               _footer()
             ],
           ),
@@ -78,7 +82,7 @@ class SellerSettingPage extends StatelessWidget {
                   width: 4,
                 ),
                 Text(
-                  'บันทึกข้อมูล',
+                  Trans.current.seller_setting_save,
                   style: AppTextStyles.textMDSemibold
                       .copyWith(color: AppColors.primaryDefaultInverseMain),
                 )
@@ -95,7 +99,7 @@ class SellerSettingPage extends StatelessWidget {
                   width: 4,
                 ),
                 Text(
-                  'ดูตัวอย่าง',
+                  Trans.current.seller_setting_view,
                   style: AppTextStyles.textMDSemibold
                       .copyWith(color: AppColors.primaryBrandMain),
                 )
@@ -105,7 +109,7 @@ class SellerSettingPage extends StatelessWidget {
           SMMOutlinedButton(
             width: double.infinity,
             child: Text(
-              'ยกเลิก',
+              Trans.current.seller_setting_cancle,
               style: AppTextStyles.textMDSemibold
                   .copyWith(color: AppColors.primaryBrandMain),
             ),

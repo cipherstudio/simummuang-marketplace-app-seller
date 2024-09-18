@@ -569,6 +569,206 @@ class Trans {
       args: [],
     );
   }
+
+  /// `ตั้งค่า`
+  String get seller_setting_title {
+    return Intl.message(
+      'ตั้งค่า',
+      name: 'seller_setting_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ข้อมูลร้านค้า`
+  String get seller_setting_tab_1 {
+    return Intl.message(
+      'ข้อมูลร้านค้า',
+      name: 'seller_setting_tab_1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รายละเอียดร้านค้า`
+  String get seller_setting_tab_2 {
+    return Intl.message(
+      'รายละเอียดร้านค้า',
+      name: 'seller_setting_tab_2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `บันทึกข้อมูล`
+  String get seller_setting_save {
+    return Intl.message(
+      'บันทึกข้อมูล',
+      name: 'seller_setting_save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ดูตัวอย่าง`
+  String get seller_setting_view {
+    return Intl.message(
+      'ดูตัวอย่าง',
+      name: 'seller_setting_view',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยกเลิก`
+  String get seller_setting_cancle {
+    return Intl.message(
+      'ยกเลิก',
+      name: 'seller_setting_cancle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รายละเอียด`
+  String get seller_setting_detail_title {
+    return Intl.message(
+      'รายละเอียด',
+      name: 'seller_setting_detail_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `แผนที่`
+  String get seller_setting_map {
+    return Intl.message(
+      'แผนที่',
+      name: 'seller_setting_map',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รูปโปรไฟล์ร้าน`
+  String get seller_setting_store_image_label {
+    return Intl.message(
+      'รูปโปรไฟล์ร้าน',
+      name: 'seller_setting_store_image_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ชื่อร้านค้า`
+  String get seller_setting_store_name_label {
+    return Intl.message(
+      'ชื่อร้านค้า',
+      name: 'seller_setting_store_name_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ประเภทคลาด`
+  String get seller_setting_store_type_label {
+    return Intl.message(
+      'ประเภทคลาด',
+      name: 'seller_setting_store_type_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ข้อมูลผู้ขาย`
+  String get seller_setting_seller_information_label {
+    return Intl.message(
+      'ข้อมูลผู้ขาย',
+      name: 'seller_setting_seller_information_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ตลาด`
+  String get seller_setting_store_label_suffix_text {
+    return Intl.message(
+      'ตลาด',
+      name: 'seller_setting_store_label_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `แผงค้า`
+  String get seller_setting_store_zone_suffix_text {
+    return Intl.message(
+      'แผงค้า',
+      name: 'seller_setting_store_zone_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เวลาเปิด - ปิดร้าน`
+  String get seller_setting_store_opening_hours_suffix_text {
+    return Intl.message(
+      'เวลาเปิด - ปิดร้าน',
+      name: 'seller_setting_store_opening_hours_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เบอร์โทร`
+  String get seller_setting_store_tel_num_suffix_text {
+    return Intl.message(
+      'เบอร์โทร',
+      name: 'seller_setting_store_tel_num_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ชื่อ-นามสกุล`
+  String get seller_setting_seller_name_suffix_text {
+    return Intl.message(
+      'ชื่อ-นามสกุล',
+      name: 'seller_setting_seller_name_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `เบอร์ติดต่อ`
+  String get seller_setting_seller_tel_num_suffix_text {
+    return Intl.message(
+      'เบอร์ติดต่อ',
+      name: 'seller_setting_seller_tel_num_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `อีเมล`
+  String get seller_setting_seller_email_suffix_text {
+    return Intl.message(
+      'อีเมล',
+      name: 'seller_setting_seller_email_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ที่อยู่`
+  String get seller_setting_seller_suffix_text {
+    return Intl.message(
+      'ที่อยู่',
+      name: 'seller_setting_seller_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {

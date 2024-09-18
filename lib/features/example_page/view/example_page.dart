@@ -4,6 +4,7 @@ import 'package:smm_application/components/example_components.dart';
 import 'package:smm_application/components/smm_filled_button.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
 import 'package:smm_application/features/login_page/view/login_page.dart';
+import 'package:smm_application/features/seller_setting/view/component/seller_setting_store_info.dart';
 import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
@@ -78,9 +79,20 @@ class _ExamplePageState extends State<ExamplePage> {
               },
             ),
             SMMFilledButton.normal(
-              label: 'go to seller setting',
+                label: 'go to seller setting',
+                onPressed: () {
+                  context.pushNamed(AppRouter.sellerSettingPageNamed);
+                }),
+
+            SMMFilledButton.normal(
+              label: 'go to seller store setting page',
               onPressed: () {
-                context.pushNamed(AppRouter.sellerSettingPageNamed);
+                // StoreInfoSetting
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const SellerSettingStoreInfo(),
+                  ),
+                );
               },
             ),
           ],
