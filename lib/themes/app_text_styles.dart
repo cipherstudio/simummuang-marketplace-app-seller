@@ -29,4 +29,10 @@ class AppTextStyles {
 
   static const TextStyle textBTNSmall = TextStyle(
       color: AppColors.black, fontSize: 13, fontWeight: FontWeight.w400);
+
+  static const TextStyle textLGSemiBold = TextStyle(
+      color: AppColors.black, fontSize: 18, fontWeight: FontWeight.w600);
+
+  static const TextStyle textMDSemiBold = TextStyle(
+      color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w600);
 }
