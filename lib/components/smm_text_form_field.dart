@@ -88,6 +88,7 @@ class SMMTextFormField extends StatefulWidget {
       validator: validator,
       onChanged: onChanged,
       autovalidateMode: autovalidateMode,
+      maxLines: 1,
     );
   }
 

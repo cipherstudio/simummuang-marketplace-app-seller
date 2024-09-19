@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         return ResponsiveBreakpoints.builder(
           child: GestureDetector(
             onTap: () {
-              // AppUtils.hideKeyboard();
+              FocusManager.instance.primaryFocus?.unfocus();
             },
             child: Builder(
               builder: (context) => MaxWidthBox(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/example_components.dart';
 import 'package:smm_application/components/smm_filled_button.dart';
+import 'package:smm_application/core/keys/app_keys.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
 import 'package:smm_application/features/login_page/view/login_page.dart';
 import 'package:smm_application/features/seller_setting/view/component/seller_setting_store_info.dart';
@@ -40,7 +41,7 @@ class _ExamplePageState extends State<ExamplePage> {
           children: <Widget>[
             Text(
               Trans.current.hello_world,
-              style: AppTextStyles.textMDRegular,
+              style: TextStyle(fontFamily: AppKeys.fontFamily),
             ),
             // SMMCheckbox(),
             // SMMCheckbox.withText(text: 'ttttttttt'),
@@ -49,21 +50,34 @@ class _ExamplePageState extends State<ExamplePage> {
             //   detail: Trans.current.register_external_detail,
             //   textButton: Trans.current.register_external_text_button,
             // ),
-            SMMFilledButton.normal(
-              label: 'go to example components',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ExampleConponents(),
-                  ),
-                );
-              },
-            ),
+            // SMMFilledButton.normal(
+            //   label: 'go to example components',
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => const ExampleConponents(),
+            //       ),
+            //     );
+            //   },
+            // ),
             SMMFilledButton.normal(
               label: 'go to login page',
               onPressed: () {
                 context.pushNamed(AppRouter.loginPageNamed);
+              },
+            ),
+            SMMFilledButton.normal(
+              label: 'go to register page',
+              onPressed: () {
+                context.pushNamed(AppRouter.registerPageNamed);
+              },
+            ),
+
+            SMMFilledButton.normal(
+              label: 'go to forgot password page',
+              onPressed: () {
+                context.pushNamed(AppRouter.forgotPasswordPageNamed);
               },
             ),
             SMMFilledButton.normal(
@@ -73,28 +87,10 @@ class _ExamplePageState extends State<ExamplePage> {
               },
             ),
             SMMFilledButton.normal(
-              label: 'go to ForgotPasswordPage',
-              onPressed: () {
-                context.pushNamed(AppRouter.forgotPasswordPageNamed);
-              },
-            ),
-            SMMFilledButton.normal(
                 label: 'go to seller setting',
                 onPressed: () {
                   context.pushNamed(AppRouter.sellerSettingPageNamed);
                 }),
-
-            SMMFilledButton.normal(
-              label: 'go to seller store setting page',
-              onPressed: () {
-                // StoreInfoSetting
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const SellerSettingStoreInfo(),
-                  ),
-                );
-              },
-            ),
           ],
         ),
       ),
