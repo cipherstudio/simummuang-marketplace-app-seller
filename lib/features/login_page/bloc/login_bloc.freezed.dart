@@ -19,28 +19,39 @@ mixin _$LoginBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function() login,
+    required TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)
+        login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function()? login,
+    TResult? Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function()? login,
+    TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialEmailTextFormField value)
+        initialEmailTextFormField,
     required TResult Function(_InitialPasswordTextFormField value)
         initialPasswordTextFormField,
     required TResult Function(_Login value) login,
@@ -49,6 +60,8 @@ mixin _$LoginBlocEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult? Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult? Function(_Login value)? login,
@@ -57,6 +70,8 @@ mixin _$LoginBlocEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult Function(_Login value)? login,
@@ -122,8 +137,11 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function() login,
+    required TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)
+        login,
   }) {
     return initialize();
   }
@@ -132,8 +150,11 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function()? login,
+    TResult? Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
   }) {
     return initialize?.call();
   }
@@ -142,8 +163,11 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function()? login,
+    TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -156,6 +180,8 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialEmailTextFormField value)
+        initialEmailTextFormField,
     required TResult Function(_InitialPasswordTextFormField value)
         initialPasswordTextFormField,
     required TResult Function(_Login value) login,
@@ -167,6 +193,8 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult? Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult? Function(_Login value)? login,
@@ -178,6 +206,8 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult Function(_Login value)? login,
@@ -192,6 +222,135 @@ class _$InitializeImpl implements _Initialize {
 
 abstract class _Initialize implements LoginBlocEvent {
   const factory _Initialize() = _$InitializeImpl;
+}
+
+/// @nodoc
+abstract class _$$InitialEmailTextFormFieldImplCopyWith<$Res> {
+  factory _$$InitialEmailTextFormFieldImplCopyWith(
+          _$InitialEmailTextFormFieldImpl value,
+          $Res Function(_$InitialEmailTextFormFieldImpl) then) =
+      __$$InitialEmailTextFormFieldImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialEmailTextFormFieldImplCopyWithImpl<$Res>
+    extends _$LoginBlocEventCopyWithImpl<$Res, _$InitialEmailTextFormFieldImpl>
+    implements _$$InitialEmailTextFormFieldImplCopyWith<$Res> {
+  __$$InitialEmailTextFormFieldImplCopyWithImpl(
+      _$InitialEmailTextFormFieldImpl _value,
+      $Res Function(_$InitialEmailTextFormFieldImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InitialEmailTextFormFieldImpl implements _InitialEmailTextFormField {
+  const _$InitialEmailTextFormFieldImpl();
+
+  @override
+  String toString() {
+    return 'LoginBlocEvent.initialEmailTextFormField()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitialEmailTextFormFieldImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function() initialEmailTextFormField,
+    required TResult Function() initialPasswordTextFormField,
+    required TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)
+        login,
+  }) {
+    return initialEmailTextFormField();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialize,
+    TResult? Function()? initialEmailTextFormField,
+    TResult? Function()? initialPasswordTextFormField,
+    TResult? Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
+  }) {
+    return initialEmailTextFormField?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function()? initialEmailTextFormField,
+    TResult Function()? initialPasswordTextFormField,
+    TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
+    required TResult orElse(),
+  }) {
+    if (initialEmailTextFormField != null) {
+      return initialEmailTextFormField();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialEmailTextFormField value)
+        initialEmailTextFormField,
+    required TResult Function(_InitialPasswordTextFormField value)
+        initialPasswordTextFormField,
+    required TResult Function(_Login value) login,
+  }) {
+    return initialEmailTextFormField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
+    TResult? Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
+    TResult? Function(_Login value)? login,
+  }) {
+    return initialEmailTextFormField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
+    TResult Function(_InitialPasswordTextFormField value)?
+        initialPasswordTextFormField,
+    TResult Function(_Login value)? login,
+    required TResult orElse(),
+  }) {
+    if (initialEmailTextFormField != null) {
+      return initialEmailTextFormField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialEmailTextFormField implements LoginBlocEvent {
+  const factory _InitialEmailTextFormField() = _$InitialEmailTextFormFieldImpl;
 }
 
 /// @nodoc
@@ -238,8 +397,11 @@ class _$InitialPasswordTextFormFieldImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function() login,
+    required TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)
+        login,
   }) {
     return initialPasswordTextFormField();
   }
@@ -248,8 +410,11 @@ class _$InitialPasswordTextFormFieldImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function()? login,
+    TResult? Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
   }) {
     return initialPasswordTextFormField?.call();
   }
@@ -258,8 +423,11 @@ class _$InitialPasswordTextFormFieldImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function()? login,
+    TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
     required TResult orElse(),
   }) {
     if (initialPasswordTextFormField != null) {
@@ -272,6 +440,8 @@ class _$InitialPasswordTextFormFieldImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialEmailTextFormField value)
+        initialEmailTextFormField,
     required TResult Function(_InitialPasswordTextFormField value)
         initialPasswordTextFormField,
     required TResult Function(_Login value) login,
@@ -283,6 +453,8 @@ class _$InitialPasswordTextFormFieldImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult? Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult? Function(_Login value)? login,
@@ -294,6 +466,8 @@ class _$InitialPasswordTextFormFieldImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult Function(_Login value)? login,
@@ -316,6 +490,10 @@ abstract class _$$LoginImplCopyWith<$Res> {
   factory _$$LoginImplCopyWith(
           _$LoginImpl value, $Res Function(_$LoginImpl) then) =
       __$$LoginImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {TextEditingController? emailTextFieldController,
+      TextEditingController? passwordTextFieldController});
 }
 
 /// @nodoc
@@ -325,57 +503,105 @@ class __$$LoginImplCopyWithImpl<$Res>
   __$$LoginImplCopyWithImpl(
       _$LoginImpl _value, $Res Function(_$LoginImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? emailTextFieldController = freezed,
+    Object? passwordTextFieldController = freezed,
+  }) {
+    return _then(_$LoginImpl(
+      emailTextFieldController: freezed == emailTextFieldController
+          ? _value.emailTextFieldController
+          : emailTextFieldController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+      passwordTextFieldController: freezed == passwordTextFieldController
+          ? _value.passwordTextFieldController
+          : passwordTextFieldController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LoginImpl implements _Login {
-  const _$LoginImpl();
+  const _$LoginImpl(
+      {this.emailTextFieldController, this.passwordTextFieldController});
+
+  @override
+  final TextEditingController? emailTextFieldController;
+  @override
+  final TextEditingController? passwordTextFieldController;
 
   @override
   String toString() {
-    return 'LoginBlocEvent.login()';
+    return 'LoginBlocEvent.login(emailTextFieldController: $emailTextFieldController, passwordTextFieldController: $passwordTextFieldController)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginImpl &&
+            (identical(
+                    other.emailTextFieldController, emailTextFieldController) ||
+                other.emailTextFieldController == emailTextFieldController) &&
+            (identical(other.passwordTextFieldController,
+                    passwordTextFieldController) ||
+                other.passwordTextFieldController ==
+                    passwordTextFieldController));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, emailTextFieldController, passwordTextFieldController);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginImplCopyWith<_$LoginImpl> get copyWith =>
+      __$$LoginImplCopyWithImpl<_$LoginImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function() login,
+    required TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)
+        login,
   }) {
-    return login();
+    return login(emailTextFieldController, passwordTextFieldController);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function()? login,
+    TResult? Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
   }) {
-    return login?.call();
+    return login?.call(emailTextFieldController, passwordTextFieldController);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function()? login,
+    TResult Function(TextEditingController? emailTextFieldController,
+            TextEditingController? passwordTextFieldController)?
+        login,
     required TResult orElse(),
   }) {
     if (login != null) {
-      return login();
+      return login(emailTextFieldController, passwordTextFieldController);
     }
     return orElse();
   }
@@ -384,6 +610,8 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
+    required TResult Function(_InitialEmailTextFormField value)
+        initialEmailTextFormField,
     required TResult Function(_InitialPasswordTextFormField value)
         initialPasswordTextFormField,
     required TResult Function(_Login value) login,
@@ -395,6 +623,8 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
+    TResult? Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult? Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult? Function(_Login value)? login,
@@ -406,6 +636,8 @@ class _$LoginImpl implements _Login {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
+    TResult Function(_InitialEmailTextFormField value)?
+        initialEmailTextFormField,
     TResult Function(_InitialPasswordTextFormField value)?
         initialPasswordTextFormField,
     TResult Function(_Login value)? login,
@@ -419,19 +651,25 @@ class _$LoginImpl implements _Login {
 }
 
 abstract class _Login implements LoginBlocEvent {
-  const factory _Login() = _$LoginImpl;
+  const factory _Login(
+      {final TextEditingController? emailTextFieldController,
+      final TextEditingController? passwordTextFieldController}) = _$LoginImpl;
+
+  TextEditingController? get emailTextFieldController;
+  TextEditingController? get passwordTextFieldController;
+  @JsonKey(ignore: true)
+  _$$LoginImplCopyWith<_$LoginImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$LoginBlocState {
   UIStatus get status => throw _privateConstructorUsedError;
-  UIStatus get checkEmailStatus => throw _privateConstructorUsedError;
-  UIStatus get checkPasswordStatus => throw _privateConstructorUsedError;
-  UIStatus get passwordOptionStatus => throw _privateConstructorUsedError;
   PasswordOptionEnum get passwordOptionEnum =>
       throw _privateConstructorUsedError;
-  AutovalidateMode get autovalidateMode => throw _privateConstructorUsedError;
-  FormFieldValidator<String>? get validator =>
+  EmailFieldProperties get emailFieldProperties =>
+      throw _privateConstructorUsedError;
+  PasswordFieldProperties get passwordFieldProperties =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -447,17 +685,11 @@ abstract class $LoginBlocStateCopyWith<$Res> {
   @useResult
   $Res call(
       {UIStatus status,
-      UIStatus checkEmailStatus,
-      UIStatus checkPasswordStatus,
-      UIStatus passwordOptionStatus,
       PasswordOptionEnum passwordOptionEnum,
-      AutovalidateMode autovalidateMode,
-      FormFieldValidator<String>? validator});
+      EmailFieldProperties emailFieldProperties,
+      PasswordFieldProperties passwordFieldProperties});
 
   $UIStatusCopyWith<$Res> get status;
-  $UIStatusCopyWith<$Res> get checkEmailStatus;
-  $UIStatusCopyWith<$Res> get checkPasswordStatus;
-  $UIStatusCopyWith<$Res> get passwordOptionStatus;
 }
 
 /// @nodoc
@@ -474,42 +706,27 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
   @override
   $Res call({
     Object? status = null,
-    Object? checkEmailStatus = null,
-    Object? checkPasswordStatus = null,
-    Object? passwordOptionStatus = null,
     Object? passwordOptionEnum = null,
-    Object? autovalidateMode = null,
-    Object? validator = freezed,
+    Object? emailFieldProperties = null,
+    Object? passwordFieldProperties = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UIStatus,
-      checkEmailStatus: null == checkEmailStatus
-          ? _value.checkEmailStatus
-          : checkEmailStatus // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
-      checkPasswordStatus: null == checkPasswordStatus
-          ? _value.checkPasswordStatus
-          : checkPasswordStatus // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
-      passwordOptionStatus: null == passwordOptionStatus
-          ? _value.passwordOptionStatus
-          : passwordOptionStatus // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
       passwordOptionEnum: null == passwordOptionEnum
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
               as PasswordOptionEnum,
-      autovalidateMode: null == autovalidateMode
-          ? _value.autovalidateMode
-          : autovalidateMode // ignore: cast_nullable_to_non_nullable
-              as AutovalidateMode,
-      validator: freezed == validator
-          ? _value.validator
-          : validator // ignore: cast_nullable_to_non_nullable
-              as FormFieldValidator<String>?,
+      emailFieldProperties: null == emailFieldProperties
+          ? _value.emailFieldProperties
+          : emailFieldProperties // ignore: cast_nullable_to_non_nullable
+              as EmailFieldProperties,
+      passwordFieldProperties: null == passwordFieldProperties
+          ? _value.passwordFieldProperties
+          : passwordFieldProperties // ignore: cast_nullable_to_non_nullable
+              as PasswordFieldProperties,
     ) as $Val);
   }
 
@@ -518,30 +735,6 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
   $UIStatusCopyWith<$Res> get status {
     return $UIStatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UIStatusCopyWith<$Res> get checkEmailStatus {
-    return $UIStatusCopyWith<$Res>(_value.checkEmailStatus, (value) {
-      return _then(_value.copyWith(checkEmailStatus: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UIStatusCopyWith<$Res> get checkPasswordStatus {
-    return $UIStatusCopyWith<$Res>(_value.checkPasswordStatus, (value) {
-      return _then(_value.copyWith(checkPasswordStatus: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UIStatusCopyWith<$Res> get passwordOptionStatus {
-    return $UIStatusCopyWith<$Res>(_value.passwordOptionStatus, (value) {
-      return _then(_value.copyWith(passwordOptionStatus: value) as $Val);
     });
   }
 }
@@ -556,21 +749,12 @@ abstract class _$$LoginBlocStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {UIStatus status,
-      UIStatus checkEmailStatus,
-      UIStatus checkPasswordStatus,
-      UIStatus passwordOptionStatus,
       PasswordOptionEnum passwordOptionEnum,
-      AutovalidateMode autovalidateMode,
-      FormFieldValidator<String>? validator});
+      EmailFieldProperties emailFieldProperties,
+      PasswordFieldProperties passwordFieldProperties});
 
   @override
   $UIStatusCopyWith<$Res> get status;
-  @override
-  $UIStatusCopyWith<$Res> get checkEmailStatus;
-  @override
-  $UIStatusCopyWith<$Res> get checkPasswordStatus;
-  @override
-  $UIStatusCopyWith<$Res> get passwordOptionStatus;
 }
 
 /// @nodoc
@@ -585,42 +769,27 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? checkEmailStatus = null,
-    Object? checkPasswordStatus = null,
-    Object? passwordOptionStatus = null,
     Object? passwordOptionEnum = null,
-    Object? autovalidateMode = null,
-    Object? validator = freezed,
+    Object? emailFieldProperties = null,
+    Object? passwordFieldProperties = null,
   }) {
     return _then(_$LoginBlocStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UIStatus,
-      checkEmailStatus: null == checkEmailStatus
-          ? _value.checkEmailStatus
-          : checkEmailStatus // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
-      checkPasswordStatus: null == checkPasswordStatus
-          ? _value.checkPasswordStatus
-          : checkPasswordStatus // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
-      passwordOptionStatus: null == passwordOptionStatus
-          ? _value.passwordOptionStatus
-          : passwordOptionStatus // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
       passwordOptionEnum: null == passwordOptionEnum
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
               as PasswordOptionEnum,
-      autovalidateMode: null == autovalidateMode
-          ? _value.autovalidateMode
-          : autovalidateMode // ignore: cast_nullable_to_non_nullable
-              as AutovalidateMode,
-      validator: freezed == validator
-          ? _value.validator
-          : validator // ignore: cast_nullable_to_non_nullable
-              as FormFieldValidator<String>?,
+      emailFieldProperties: null == emailFieldProperties
+          ? _value.emailFieldProperties
+          : emailFieldProperties // ignore: cast_nullable_to_non_nullable
+              as EmailFieldProperties,
+      passwordFieldProperties: null == passwordFieldProperties
+          ? _value.passwordFieldProperties
+          : passwordFieldProperties // ignore: cast_nullable_to_non_nullable
+              as PasswordFieldProperties,
     ));
   }
 }
@@ -628,39 +797,30 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoginBlocStateImpl implements _LoginBlocState {
-  const _$LoginBlocStateImpl(
+  _$LoginBlocStateImpl(
       {this.status = const UIInitial(),
-      this.checkEmailStatus = const UIInitial(),
-      this.checkPasswordStatus = const UIInitial(),
-      this.passwordOptionStatus = const UIInitial(),
       this.passwordOptionEnum = PasswordOptionEnum.rememberAndForgot,
-      this.autovalidateMode = AutovalidateMode.disabled,
-      this.validator});
+      this.emailFieldProperties = const EmailFieldProperties(
+          autovalidateMode: AutovalidateMode.disabled),
+      this.passwordFieldProperties = const PasswordFieldProperties(
+          autovalidateMode: AutovalidateMode.disabled)});
 
   @override
   @JsonKey()
   final UIStatus status;
   @override
   @JsonKey()
-  final UIStatus checkEmailStatus;
-  @override
-  @JsonKey()
-  final UIStatus checkPasswordStatus;
-  @override
-  @JsonKey()
-  final UIStatus passwordOptionStatus;
-  @override
-  @JsonKey()
   final PasswordOptionEnum passwordOptionEnum;
   @override
   @JsonKey()
-  final AutovalidateMode autovalidateMode;
+  final EmailFieldProperties emailFieldProperties;
   @override
-  final FormFieldValidator<String>? validator;
+  @JsonKey()
+  final PasswordFieldProperties passwordFieldProperties;
 
   @override
   String toString() {
-    return 'LoginBlocState(status: $status, checkEmailStatus: $checkEmailStatus, checkPasswordStatus: $checkPasswordStatus, passwordOptionStatus: $passwordOptionStatus, passwordOptionEnum: $passwordOptionEnum, autovalidateMode: $autovalidateMode, validator: $validator)';
+    return 'LoginBlocState(status: $status, passwordOptionEnum: $passwordOptionEnum, emailFieldProperties: $emailFieldProperties, passwordFieldProperties: $passwordFieldProperties)';
   }
 
   @override
@@ -669,30 +829,18 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
         (other.runtimeType == runtimeType &&
             other is _$LoginBlocStateImpl &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.checkEmailStatus, checkEmailStatus) ||
-                other.checkEmailStatus == checkEmailStatus) &&
-            (identical(other.checkPasswordStatus, checkPasswordStatus) ||
-                other.checkPasswordStatus == checkPasswordStatus) &&
-            (identical(other.passwordOptionStatus, passwordOptionStatus) ||
-                other.passwordOptionStatus == passwordOptionStatus) &&
             (identical(other.passwordOptionEnum, passwordOptionEnum) ||
                 other.passwordOptionEnum == passwordOptionEnum) &&
-            (identical(other.autovalidateMode, autovalidateMode) ||
-                other.autovalidateMode == autovalidateMode) &&
-            (identical(other.validator, validator) ||
-                other.validator == validator));
+            (identical(other.emailFieldProperties, emailFieldProperties) ||
+                other.emailFieldProperties == emailFieldProperties) &&
+            (identical(
+                    other.passwordFieldProperties, passwordFieldProperties) ||
+                other.passwordFieldProperties == passwordFieldProperties));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      status,
-      checkEmailStatus,
-      checkPasswordStatus,
-      passwordOptionStatus,
-      passwordOptionEnum,
-      autovalidateMode,
-      validator);
+  int get hashCode => Object.hash(runtimeType, status, passwordOptionEnum,
+      emailFieldProperties, passwordFieldProperties);
 
   @JsonKey(ignore: true)
   @override
@@ -703,29 +851,21 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
 }
 
 abstract class _LoginBlocState implements LoginBlocState {
-  const factory _LoginBlocState(
-      {final UIStatus status,
-      final UIStatus checkEmailStatus,
-      final UIStatus checkPasswordStatus,
-      final UIStatus passwordOptionStatus,
-      final PasswordOptionEnum passwordOptionEnum,
-      final AutovalidateMode autovalidateMode,
-      final FormFieldValidator<String>? validator}) = _$LoginBlocStateImpl;
+  factory _LoginBlocState(
+          {final UIStatus status,
+          final PasswordOptionEnum passwordOptionEnum,
+          final EmailFieldProperties emailFieldProperties,
+          final PasswordFieldProperties passwordFieldProperties}) =
+      _$LoginBlocStateImpl;
 
   @override
   UIStatus get status;
   @override
-  UIStatus get checkEmailStatus;
-  @override
-  UIStatus get checkPasswordStatus;
-  @override
-  UIStatus get passwordOptionStatus;
-  @override
   PasswordOptionEnum get passwordOptionEnum;
   @override
-  AutovalidateMode get autovalidateMode;
+  EmailFieldProperties get emailFieldProperties;
   @override
-  FormFieldValidator<String>? get validator;
+  PasswordFieldProperties get passwordFieldProperties;
   @override
   @JsonKey(ignore: true)
   _$$LoginBlocStateImplCopyWith<_$LoginBlocStateImpl> get copyWith =>

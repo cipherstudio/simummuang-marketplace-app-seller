@@ -670,10 +670,10 @@ class Trans {
     );
   }
 
-  /// `ประเภทคลาด`
+  /// `ประเภทตลาด`
   String get seller_setting_store_type_label {
     return Intl.message(
-      'ประเภทคลาด',
+      'ประเภทตลาด',
       name: 'seller_setting_store_type_label',
       desc: '',
       args: [],
