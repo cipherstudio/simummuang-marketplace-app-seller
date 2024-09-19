@@ -92,7 +92,7 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
         emailValidationMessage = 'โปรดระบุอีเมล์';
       } else {
         if (!EmailValidator.validate(emailInput ?? '')) {
-          emailValidationMessage = 'อีเมล์์ไม่ถูกต้อง';
+          emailValidationMessage = 'อีเมล์ไม่ถูกต้อง';
         }
 
         if (emailInput == 'notexists@gmail.com') {
