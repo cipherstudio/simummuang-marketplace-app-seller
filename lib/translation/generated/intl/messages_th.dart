@@ -98,6 +98,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
         "register_title":
             MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),
+        "seller_setting_cancle": MessageLookupByLibrary.simpleMessage("ยกเลิก"),
+        "seller_setting_detail_title":
+            MessageLookupByLibrary.simpleMessage("รายละเอียด"),
+        "seller_setting_map": MessageLookupByLibrary.simpleMessage("แผนที่"),
+        "seller_setting_save":
+            MessageLookupByLibrary.simpleMessage("บันทึกข้อมูล"),
         "seller_setting_seller_email_suffix_text":
             MessageLookupByLibrary.simpleMessage("อีเมล"),
         "seller_setting_seller_information_label":
@@ -122,6 +128,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ประเภทคลาด"),
         "seller_setting_store_zone_suffix_text":
             MessageLookupByLibrary.simpleMessage("แผงค้า"),
+        "seller_setting_tab_1":
+            MessageLookupByLibrary.simpleMessage("ข้อมูลร้านค้า"),
+        "seller_setting_tab_2":
+            MessageLookupByLibrary.simpleMessage("รายละเอียดร้านค้า"),
+        "seller_setting_title": MessageLookupByLibrary.simpleMessage("ตั้งค่า"),
+        "seller_setting_view":
+            MessageLookupByLibrary.simpleMessage("ดูตัวอย่าง"),
         "set_new_password_button_label":
             MessageLookupByLibrary.simpleMessage("ตั้งรหัสผ่านใหม่"),
         "set_new_password_create_new_account_label":

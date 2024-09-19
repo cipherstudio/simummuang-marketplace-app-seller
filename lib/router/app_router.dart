@@ -4,6 +4,7 @@ import 'package:smm_application/features/example_page/view/example_page.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
 import 'package:smm_application/features/login_page/view/login_page.dart';
 import 'package:smm_application/features/register/view/register_page.dart';
+import 'package:smm_application/features/seller_setting/view/seller_setting_page.dart';
 import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
 
 class AppRouter {
@@ -26,6 +27,9 @@ class AppRouter {
 
   static const String setNewPasswordNamed = 'setNewPassword';
   static const String setNewPasswordPath = 'setNewPassword';
+
+  static const String sellerSettingPageNamed = 'seller-setting';
+  static const String sellerSettingPagePath = 'seller-setting';
 
   static GoRouter router() {
     return GoRouter(
@@ -56,6 +60,11 @@ class AppRouter {
               path: setNewPasswordPath,
               name: setNewPasswordNamed,
               builder: (context, state) => const SetNewPasswordPage(),
+            ),
+            GoRoute(
+              path: sellerSettingPagePath,
+              name: sellerSettingPageNamed,
+              builder: (context, state) => const SellerSettingPage(),
             )
           ],
         ),

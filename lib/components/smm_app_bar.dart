@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smm_application/generated/assets.gen.dart';
 import 'package:smm_application/themes/app_colors.dart';
+import 'package:smm_application/themes/app_text_styles.dart';
 
 class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   static double defaultSize = 100;
@@ -13,6 +14,8 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
   final Color? backgroundColor;
   final bool? centerTitle;
+  final bool shapeCurve;
+  final PreferredSizeWidget? bottom;
   // final List<Widget> actions = List.empty(growable: true);
 
   factory SMMAppBar.loginAndRegister({Key? key}) {
@@ -23,19 +26,35 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: true,
       title: const $AssetsIconsGen().iconSimummuengOnline.svg(),
       centerTitle: true,
+      shapeCurve: true,
     );
   }
-
-  const SMMAppBar._({
-    super.key,
-    this.showBack = false,
-    this.automaticallyImplyLeading = true,
-    this.title,
-    this.centerTitle,
-    this.leading,
-    this.onBackPressed,
-    this.backgroundColor,
-  });
+  factory SMMAppBar.text(
+      {Key? key, String text = '', PreferredSizeWidget? bottom}) {
+    defaultSize = bottom != null ? 95 : 45;
+    return SMMAppBar._(
+      key: key,
+      showBack: true,
+      automaticallyImplyLeading: true,
+      title: Text(text,
+          style: AppTextStyles.textMDSemibold
+              .copyWith(color: AppColors.primaryDefaultInverseMain)),
+      centerTitle: true,
+      shapeCurve: false,
+      bottom: bottom,
+    );
+  }
+  const SMMAppBar._(
+      {super.key,
+      this.showBack = false,
+      this.automaticallyImplyLeading = true,
+      this.title,
+      this.centerTitle,
+      this.leading,
+      this.onBackPressed,
+      this.backgroundColor,
+      this.shapeCurve = false,
+      this.bottom});
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +64,14 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title,
       centerTitle: centerTitle,
       leading: _buildLeading(context),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(32),
-        ),
-      ),
+      bottom: bottom,
+      shape: shapeCurve
+          ? const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(32),
+              ),
+            )
+          : null,
     );
   }
 

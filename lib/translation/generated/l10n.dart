@@ -570,6 +570,86 @@ class Trans {
     );
   }
 
+  /// `ตั้งค่า`
+  String get seller_setting_title {
+    return Intl.message(
+      'ตั้งค่า',
+      name: 'seller_setting_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ข้อมูลร้านค้า`
+  String get seller_setting_tab_1 {
+    return Intl.message(
+      'ข้อมูลร้านค้า',
+      name: 'seller_setting_tab_1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รายละเอียดร้านค้า`
+  String get seller_setting_tab_2 {
+    return Intl.message(
+      'รายละเอียดร้านค้า',
+      name: 'seller_setting_tab_2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `บันทึกข้อมูล`
+  String get seller_setting_save {
+    return Intl.message(
+      'บันทึกข้อมูล',
+      name: 'seller_setting_save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ดูตัวอย่าง`
+  String get seller_setting_view {
+    return Intl.message(
+      'ดูตัวอย่าง',
+      name: 'seller_setting_view',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยกเลิก`
+  String get seller_setting_cancle {
+    return Intl.message(
+      'ยกเลิก',
+      name: 'seller_setting_cancle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รายละเอียด`
+  String get seller_setting_detail_title {
+    return Intl.message(
+      'รายละเอียด',
+      name: 'seller_setting_detail_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `แผนที่`
+  String get seller_setting_map {
+    return Intl.message(
+      'แผนที่',
+      name: 'seller_setting_map',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `รูปโปรไฟล์ร้าน`
   String get seller_setting_store_image_label {
     return Intl.message(
