@@ -125,7 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "seller_setting_store_tel_num_suffix_text":
             MessageLookupByLibrary.simpleMessage("เบอร์โทร"),
         "seller_setting_store_type_label":
-            MessageLookupByLibrary.simpleMessage("ประเภทคลาด"),
+            MessageLookupByLibrary.simpleMessage("ประเภทตลาด"),
         "seller_setting_store_zone_suffix_text":
             MessageLookupByLibrary.simpleMessage("แผงค้า"),
         "seller_setting_tab_1":

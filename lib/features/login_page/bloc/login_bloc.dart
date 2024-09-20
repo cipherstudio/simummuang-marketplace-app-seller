@@ -1,16 +1,18 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:smm_application/core/bloc_core/ui_status.dart';
 import 'package:smm_application/core/enums/app_enums.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
+import 'package:smm_application/extensions/string_extension.dart';
 
 part './login_bloc_event.dart';
 part './login_bloc_state.dart';
 part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
-  LoginBloc() : super(const LoginBlocState()) {
+  LoginBloc() : super(LoginBlocState()) {
     on<_Initialize>(
       _onInitialize,
       transformer: droppable(),
@@ -18,6 +20,11 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
 
     on<_Login>(
       _onLogin,
+      transformer: droppable(),
+    );
+
+    on<_InitialEmailTextFormField>(
+      _onInitialEmailTextFormField,
       transformer: droppable(),
     );
 
@@ -35,17 +42,25 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
       emit(
         state.copyWith(
           status: const UILoadSuccess(),
-          autovalidateMode: AutovalidateMode.disabled,
-          validator: null,
-
-          // checkEmailStatus: const UIInitial(),
-          // autovalidateMode: AutovalidateMode.onUserInteraction,
         ),
       );
-      // add(const _InitialPasswordTextFormField());
     } catch (e) {
       // do nothing.
     }
+  }
+
+  Future<void> _onInitialEmailTextFormField(
+    _InitialEmailTextFormField event,
+    Emitter<LoginBlocState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        emailFieldProperties: EmailFieldProperties(
+          autovalidateMode: AutovalidateMode.always,
+          validator: (value) => null,
+        ),
+      ),
+    );
   }
 
   Future<void> _onInitialPasswordTextFormField(
@@ -54,9 +69,10 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
   ) async {
     emit(
       state.copyWith(
-        // checkEmailStatus: const UIInitial(),
-        autovalidateMode: AutovalidateMode.always,
-        validator: null,
+        passwordFieldProperties: PasswordFieldProperties(
+          autovalidateMode: AutovalidateMode.always,
+          validator: (value) => null,
+        ),
       ),
     );
   }
@@ -66,17 +82,39 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
     Emitter<LoginBlocState> emit,
   ) async {
     try {
+      String? emailValidationMessage;
+      String? passwordValidationMessage;
+
+      String? emailInput = event.emailTextFieldController?.text;
+      String? passwordInput = event.passwordTextFieldController?.text;
+
+      if (emailInput.stringNullOrEmpty) {
+        emailValidationMessage = 'โปรดระบุอีเมล์';
+      } else {
+        if (!EmailValidator.validate(emailInput ?? '')) {
+          emailValidationMessage = 'อีเมล์ไม่ถูกต้อง';
+        }
+
+        if (emailInput == 'notexists@gmail.com') {
+          emailValidationMessage = 'ไม่พบอีเมล์นี้ในระบบ';
+        }
+      }
+
+      if (passwordInput == '123456') {
+        passwordValidationMessage = 'รหัสผ่านไม่ถูกต้อง';
+      }
+
       emit(
         state.copyWith(
           passwordOptionEnum: PasswordOptionEnum.forgotOnly,
-          // checkEmailStatus: const UILoadSuccess(),
-          autovalidateMode: AutovalidateMode.always,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return null;
-            }
-            return 'ไม่พบอีเมล์นี้ในระบบ';
-          },
+          emailFieldProperties: EmailFieldProperties(
+            autovalidateMode: AutovalidateMode.always,
+            validator: (value) => emailValidationMessage,
+          ),
+          passwordFieldProperties: PasswordFieldProperties(
+            autovalidateMode: AutovalidateMode.always,
+            validator: (value) => passwordValidationMessage,
+          ),
         ),
       );
     } catch (e) {
