@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smm_application/core/keys/app_keys.dart';
 
 import 'app_colors.dart';
 
@@ -7,7 +8,10 @@ class AppTextStyles {
   const AppTextStyles();
 
   static const TextStyle textMDRegular = TextStyle(
-      color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w400);
+      color: AppColors.black,
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      fontFamily: AppKeys.fontFamily);
 
   static const TextStyle textMDSemibold = TextStyle(
       color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w600);

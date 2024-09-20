@@ -87,6 +87,8 @@ class _SMMTabbar extends State<SMMTabbar> with TickerProviderStateMixin {
           isScrollable: widget.isScrollable,
           labelPadding:
               widget.labelPadding ?? const EdgeInsets.symmetric(horizontal: 16),
+          labelStyle: AppTextStyles.textMDRegular,
+          labelColor: AppColors.primaryDefaultMain,
           tabs: widget.tabs
               .map((tab) => Tab(
                     height: 48,
