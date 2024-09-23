@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smm_application/components/smm_app_bar.dart';
 
 class MyAccountPage extends StatefulWidget {
   const MyAccountPage({super.key});
@@ -10,6 +11,9 @@ class MyAccountPage extends StatefulWidget {
 class _MyAccountPageState extends State<MyAccountPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: SMMAppBar.myAccount(),
+      body: const Placeholder(),
+    );
   }
 }

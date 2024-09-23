@@ -5,6 +5,7 @@ import 'package:smm_application/core/route/shell_route_nav_bar.dart';
 import 'package:smm_application/features/example_page/view/example_page.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
 import 'package:smm_application/features/login_page/view/login_page.dart';
+import 'package:smm_application/features/my_account/view/my_account_page.dart';
 import 'package:smm_application/features/register/view/register_page.dart';
 import 'package:smm_application/features/seller_setting/view/seller_setting_page.dart';
 import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
@@ -54,7 +55,7 @@ class AppRouter {
             GoRoute(
               path: myAccountPagePath,
               name: myAccountPageNamed,
-              builder: (context, state) => MyAccountPage(),
+              builder: (context, state) => const MyAccountPage(),
             ),
           ],
         ),

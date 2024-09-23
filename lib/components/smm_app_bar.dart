@@ -19,6 +19,7 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
   final double? curveRadius;
   final bool showLeading;
+  final List<Widget>? actions;
   // final List<Widget> actions = List.empty(growable: true);
 
   factory SMMAppBar.loginAndRegister({Key? key}) {
@@ -79,6 +80,20 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
       shapeCurve: true,
       curveRadius: 20,
       showLeading: false,
+      actions: [
+        SMMNotificationIconButton.notification(
+          notificationCounts: '99+',
+        ),
+        SMMNotificationIconButton.message(
+          notificationCounts: '20',
+        ),
+        SMMNotificationIconButton.shoppingCart(
+          notificationCounts: '20',
+        ),
+        const SizedBox(
+          width: 16,
+        )
+      ],
     );
   }
 
@@ -95,6 +110,7 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.bottom,
     this.curveRadius,
     required this.showLeading,
+    this.actions,
   });
 
   @override
@@ -115,20 +131,21 @@ class SMMAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             )
           : null,
-      actions: <Widget>[
-        SMMNotificationIconButton.notification(
-          notificationCounts: '99+',
-        ),
-        SMMNotificationIconButton.message(
-          notificationCounts: '20',
-        ),
-        SMMNotificationIconButton.shoppingCart(
-          notificationCounts: '20',
-        ),
-        const SizedBox(
-          width: 16,
-        )
-      ],
+      // actions: <Widget>[
+      //   SMMNotificationIconButton.notification(
+      //     notificationCounts: '99+',
+      //   ),
+      //   SMMNotificationIconButton.message(
+      //     notificationCounts: '20',
+      //   ),
+      //   SMMNotificationIconButton.shoppingCart(
+      //     notificationCounts: '20',
+      //   ),
+      //   const SizedBox(
+      //     width: 16,
+      //   )
+      // ],
+      actions: actions,
     );
   }
 
