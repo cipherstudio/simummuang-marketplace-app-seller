@@ -50,17 +50,17 @@ class _ExamplePageState extends State<ExamplePage> {
             //   detail: Trans.current.register_external_detail,
             //   textButton: Trans.current.register_external_text_button,
             // ),
-            // SMMFilledButton.normal(
-            //   label: 'go to example components',
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) => const ExampleConponents(),
-            //       ),
-            //     );
-            //   },
-            // ),
+            SMMFilledButton.normal(
+              label: 'go to example components',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ExampleConponents(),
+                  ),
+                );
+              },
+            ),
             SMMFilledButton.normal(
               label: 'go to login page',
               onPressed: () {
@@ -87,10 +87,11 @@ class _ExamplePageState extends State<ExamplePage> {
               },
             ),
             SMMFilledButton.normal(
-                label: 'go to seller setting',
-                onPressed: () {
-                  context.pushNamed(AppRouter.sellerSettingPageNamed);
-                }),
+              label: 'go to seller setting',
+              onPressed: () {
+                context.pushNamed(AppRouter.sellerSettingPageNamed);
+              },
+            ),
           ],
         ),
       ),

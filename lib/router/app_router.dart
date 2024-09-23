@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smm_application/components/example/smm_app_bar_main_app_bar_example.dart';
+import 'package:smm_application/core/route/shell_route_nav_bar.dart';
 import 'package:smm_application/features/example_page/view/example_page.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
 import 'package:smm_application/features/login_page/view/login_page.dart';
@@ -31,9 +33,31 @@ class AppRouter {
   static const String sellerSettingPageNamed = 'seller-setting';
   static const String sellerSettingPagePath = 'seller-setting';
 
+  static const String myAccountPageNamed = 'my-account';
+  static const String myAccountPagePath = '/my-account';
+
   static GoRouter router() {
     return GoRouter(
       routes: [
+        ShellRoute(
+          pageBuilder:
+              (BuildContext context, GoRouterState state, Widget child) {
+            return NoTransitionPage(
+              child: ShellRouteNavBar(
+                currentRouteUri:
+                    GoRouter.of(context).routeInformationProvider.value.uri,
+                child: child,
+              ),
+            );
+          },
+          routes: <RouteBase>[
+            GoRoute(
+              path: myAccountPagePath,
+              name: myAccountPageNamed,
+              builder: (context, state) => MyAccountPage(),
+            ),
+          ],
+        ),
         GoRoute(
           path: appDirectorPath,
           pageBuilder: (context, state) {

@@ -42,7 +42,4 @@ class AppTextStyles {
 
   static const TextStyle textBase = TextStyle(
       color: AppColors.black, fontSize: 14, fontWeight: FontWeight.w400);
-
-  static const TextStyle textMDSemiBold = TextStyle(
-      color: AppColors.black, fontSize: 16, fontWeight: FontWeight.w600);
 }
