@@ -80,18 +80,6 @@ class _ExampleConponentsState extends State<ExampleConponents> {
               );
             },
           ),
-          SMMFilledButton.normal(
-            label: 'bottom navigation example',
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => const BottomNavExample(c,),
-              //   ),
-              // );
-              context.goNamed(AppRouter.myAccountPageNamed);
-            },
-          ),
         ],
       ),
     );

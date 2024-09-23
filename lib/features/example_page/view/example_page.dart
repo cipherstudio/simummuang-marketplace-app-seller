@@ -92,6 +92,18 @@ class _ExamplePageState extends State<ExamplePage> {
                 context.pushNamed(AppRouter.sellerSettingPageNamed);
               },
             ),
+            SMMFilledButton.normal(
+              label: 'My Account.',
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const BottomNavExample(c,),
+                //   ),
+                // );
+                context.goNamed(AppRouter.myAccountPageNamed);
+              },
+            ),
           ],
         ),
       ),
