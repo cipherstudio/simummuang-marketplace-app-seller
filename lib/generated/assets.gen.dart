@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/icon_account_bottom_nav.svg
+  SvgGenImage get iconAccountBottomNav =>
+      const SvgGenImage('assets/icons/icon_account_bottom_nav.svg');
+
   /// File path: assets/icons/icon_arrow_left.svg
   SvgGenImage get iconArrowLeft =>
       const SvgGenImage('assets/icons/icon_arrow_left.svg');
@@ -21,9 +25,25 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon_check.svg
   SvgGenImage get iconCheck => const SvgGenImage('assets/icons/icon_check.svg');
 
+  /// File path: assets/icons/icon_first_page_bottom_nav.svg
+  SvgGenImage get iconFirstPageBottomNav =>
+      const SvgGenImage('assets/icons/icon_first_page_bottom_nav.svg');
+
+  /// File path: assets/icons/icon_for_you_bottom_nav.svg
+  SvgGenImage get iconForYouBottomNav =>
+      const SvgGenImage('assets/icons/icon_for_you_bottom_nav.svg');
+
+  /// File path: assets/icons/icon_orders_bottom_nav.svg
+  SvgGenImage get iconOrdersBottomNav =>
+      const SvgGenImage('assets/icons/icon_orders_bottom_nav.svg');
+
   /// File path: assets/icons/icon_preview.svg
   SvgGenImage get iconPreview =>
       const SvgGenImage('assets/icons/icon_preview.svg');
+
+  /// File path: assets/icons/icon_products_bottom_nav.svg
+  SvgGenImage get iconProductsBottomNav =>
+      const SvgGenImage('assets/icons/icon_products_bottom_nav.svg');
 
   /// File path: assets/icons/icon_save.svg
   SvgGenImage get iconSave => const SvgGenImage('assets/icons/icon_save.svg');
@@ -50,9 +70,14 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+        iconAccountBottomNav,
         iconArrowLeft,
         iconCheck,
+        iconFirstPageBottomNav,
+        iconForYouBottomNav,
+        iconOrdersBottomNav,
         iconPreview,
+        iconProductsBottomNav,
         iconSave,
         iconSigninFacebook,
         iconSigninGoogle,

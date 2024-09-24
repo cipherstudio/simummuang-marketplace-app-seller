@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:smm_application/components/smm_icon_button.dart';
+import 'package:smm_application/components/smm_social_media_icon_button.dart';
 import 'package:smm_application/core/enums/app_enums.dart';
 
 import 'package:smm_application/themes/app_colors.dart';
@@ -38,17 +38,17 @@ class ExternalLogin extends StatelessWidget {
           spacing: 40,
           alignment: WrapAlignment.center,
           children: [
-            SMMIconButton.facebook(
+            SMMSocialMediaIconButton.facebook(
               onTap: () {
                 onSocialMediaTap?.call(SocialMediaKindEnum.facebook);
               },
             ),
-            SMMIconButton.google(
+            SMMSocialMediaIconButton.google(
               onTap: () {
                 onSocialMediaTap?.call(SocialMediaKindEnum.google);
               },
             ),
-            SMMIconButton.line(
+            SMMSocialMediaIconButton.line(
               onTap: () {
                 onSocialMediaTap?.call(SocialMediaKindEnum.line);
               },

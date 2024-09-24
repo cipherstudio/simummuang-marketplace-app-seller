@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/example/smm_app_bar_example.dart';
+import 'package:smm_application/components/example/smm_app_bar_main_app_bar_example.dart';
 import 'package:smm_application/components/example/smm_button_example.dart';
 import 'package:smm_application/components/example/smm_image_picker_example.dart';
 import 'package:smm_application/components/example/smm_text_form_field_example.dart';
 import 'package:smm_application/components/smm_filled_button.dart';
+import 'package:smm_application/router/app_router.dart';
 
 class ExampleConponents extends StatefulWidget {
   const ExampleConponents({super.key});
@@ -62,6 +65,17 @@ class _ExampleConponentsState extends State<ExampleConponents> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const SMMImagePickerExample(),
+                ),
+              );
+            },
+          ),
+          SMMFilledButton.normal(
+            label: 'SMM app bar (main app bar)',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SMMAppBarMainAppBarExample(),
                 ),
               );
             },

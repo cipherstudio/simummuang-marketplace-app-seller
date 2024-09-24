@@ -70,5 +70,10 @@
   "seller_setting_seller_name_suffix_text":"First Name - Last Name",
   "seller_setting_seller_tel_num_suffix_text":"Telephone Number",
   "seller_setting_seller_email_suffix_text":"E-mail",
-  "seller_setting_seller_suffix_text":"Address"
+  "seller_setting_seller_suffix_text":"Address",
+  "bottom_nav_first_page_label" : "home page",
+  "bottom_nav_for_you_page_label" : "for you",
+  "bottom_nav_products_page_label" : "products",
+  "bottom_nav_orders_page_label" : "orders",
+  "bottom_nav_account_page_label" : "account"
 }
