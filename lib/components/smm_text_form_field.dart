@@ -187,7 +187,7 @@ class SMMTextFormField extends StatefulWidget {
       onChanged: onChanged,
       autovalidateMode: autovalidateMode,
       maxLines: 1,
-      style: AppTextStyles.textMDSemiBold,
+      style: AppTextStyles.textMDSemibold,
     );
   }
 
@@ -247,7 +247,7 @@ class SMMTextFormField extends StatefulWidget {
       onChanged: onChanged,
       autovalidateMode: autovalidateMode,
       maxLines: null,
-      style: AppTextStyles.textMDSemiBold,
+      style: AppTextStyles.textMDSemibold,
     );
   }
 

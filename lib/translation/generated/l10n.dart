@@ -769,6 +769,56 @@ class Trans {
       args: [],
     );
   }
+
+  /// `หน้าแรก`
+  String get bottom_nav_first_page_label {
+    return Intl.message(
+      'หน้าแรก',
+      name: 'bottom_nav_first_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สินค้าเพื่อคุณ`
+  String get bottom_nav_for_you_page_label {
+    return Intl.message(
+      'สินค้าเพื่อคุณ',
+      name: 'bottom_nav_for_you_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สินค้า`
+  String get bottom_nav_products_page_label {
+    return Intl.message(
+      'สินค้า',
+      name: 'bottom_nav_products_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `คำสั่งซื้อ`
+  String get bottom_nav_orders_page_label {
+    return Intl.message(
+      'คำสั่งซื้อ',
+      name: 'bottom_nav_orders_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `บัญชี`
+  String get bottom_nav_account_page_label {
+    return Intl.message(
+      'บัญชี',
+      name: 'bottom_nav_account_page_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Trans> {

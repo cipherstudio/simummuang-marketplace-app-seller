@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smm_application/generated/assets.gen.dart';
 
-class SMMIconButton extends StatelessWidget {
+class SMMSocialMediaIconButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Widget? icon;
@@ -9,11 +9,11 @@ class SMMIconButton extends StatelessWidget {
   final BorderRadius? borderRadius;
   final VoidCallback? onTap;
 
-  factory SMMIconButton.facebook({
+  factory SMMSocialMediaIconButton.facebook({
     Key? key,
     VoidCallback? onTap,
   }) {
-    return SMMIconButton._(
+    return SMMSocialMediaIconButton._(
       key: key,
       width: 48,
       height: 48,
@@ -26,11 +26,11 @@ class SMMIconButton extends StatelessWidget {
     );
   }
 
-  factory SMMIconButton.google({
+  factory SMMSocialMediaIconButton.google({
     Key? key,
     VoidCallback? onTap,
   }) {
-    return SMMIconButton._(
+    return SMMSocialMediaIconButton._(
       key: key,
       width: 48,
       height: 48,
@@ -43,11 +43,11 @@ class SMMIconButton extends StatelessWidget {
     );
   }
 
-  factory SMMIconButton.line({
+  factory SMMSocialMediaIconButton.line({
     Key? key,
     VoidCallback? onTap,
   }) {
-    return SMMIconButton._(
+    return SMMSocialMediaIconButton._(
       key: key,
       width: 48,
       height: 48,
@@ -60,7 +60,7 @@ class SMMIconButton extends StatelessWidget {
     );
   }
 
-  const SMMIconButton._({
+  const SMMSocialMediaIconButton._({
     super.key,
     this.width,
     this.height,

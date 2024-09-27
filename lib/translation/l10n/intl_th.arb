@@ -70,5 +70,10 @@
   "seller_setting_seller_name_suffix_text":"ชื่อ-นามสกุล",
   "seller_setting_seller_tel_num_suffix_text":"เบอร์ติดต่อ",
   "seller_setting_seller_email_suffix_text":"อีเมล",
-  "seller_setting_seller_suffix_text":"ที่อยู่"
+  "seller_setting_seller_suffix_text":"ที่อยู่",
+  "bottom_nav_first_page_label" : "หน้าแรก",
+  "bottom_nav_for_you_page_label" : "สินค้าเพื่อคุณ",
+  "bottom_nav_products_page_label" : "สินค้า",
+  "bottom_nav_orders_page_label" : "คำสั่งซื้อ",
+  "bottom_nav_account_page_label" : "บัญชี"
 }

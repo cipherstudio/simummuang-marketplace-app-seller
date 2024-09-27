@@ -22,6 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "bottom_nav_account_page_label":
+            MessageLookupByLibrary.simpleMessage("บัญชี"),
+        "bottom_nav_first_page_label":
+            MessageLookupByLibrary.simpleMessage("หน้าแรก"),
+        "bottom_nav_for_you_page_label":
+            MessageLookupByLibrary.simpleMessage("สินค้าเพื่อคุณ"),
+        "bottom_nav_orders_page_label":
+            MessageLookupByLibrary.simpleMessage("คำสั่งซื้อ"),
+        "bottom_nav_products_page_label":
+            MessageLookupByLibrary.simpleMessage("สินค้า"),
         "component_button_label_edit":
             MessageLookupByLibrary.simpleMessage("แก้ไข"),
         "forgetpassword_confirm":

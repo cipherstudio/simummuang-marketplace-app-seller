@@ -51,17 +51,17 @@ class _ExamplePageState extends State<ExamplePage> {
             //   detail: Trans.current.register_external_detail,
             //   textButton: Trans.current.register_external_text_button,
             // ),
-            // SMMFilledButton.normal(
-            //   label: 'go to example components',
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) => const ExampleConponents(),
-            //       ),
-            //     );
-            //   },
-            // ),
+            SMMFilledButton.normal(
+              label: 'go to example components',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ExampleConponents(),
+                  ),
+                );
+              },
+            ),
             SMMFilledButton.normal(
               label: 'go to login page',
               onPressed: () {
@@ -88,13 +88,23 @@ class _ExamplePageState extends State<ExamplePage> {
               },
             ),
             SMMFilledButton.normal(
-                label: 'go to seller setting',
-                onPressed: () {
-                  context.pushNamed(AppRouter.sellerSettingPageNamed);
-                }),
-            SMMDropdown(
-                items: ['1', '2', '3'],
-                widgetBuilder: ((context, item) => Text(item)))
+              label: 'go to seller setting',
+              onPressed: () {
+                context.pushNamed(AppRouter.sellerSettingPageNamed);
+              },
+            ),
+            SMMFilledButton.normal(
+              label: 'My Account.',
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const BottomNavExample(c,),
+                //   ),
+                // );
+                context.goNamed(AppRouter.myAccountPageNamed);
+              },
+            ),
           ],
         ),
       ),
