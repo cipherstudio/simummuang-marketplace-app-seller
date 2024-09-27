@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/example_components.dart';
+import 'package:smm_application/components/smm_dropdown.dart';
 import 'package:smm_application/components/smm_filled_button.dart';
 import 'package:smm_application/core/keys/app_keys.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
@@ -91,6 +92,9 @@ class _ExamplePageState extends State<ExamplePage> {
                 onPressed: () {
                   context.pushNamed(AppRouter.sellerSettingPageNamed);
                 }),
+            SMMDropdown(
+                items: ['1', '2', '3'],
+                widgetBuilder: ((context, item) => Text(item)))
           ],
         ),
       ),

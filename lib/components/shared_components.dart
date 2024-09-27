@@ -5,3 +5,7 @@ export 'smm_filled_button.dart';
 export 'smm_outlined_button.dart';
 export 'smm_text_form_field.dart';
 export 'smm_text_label.dart';
+export 'smm_dropdown.dart';
+export 'smm_icon_button.dart';
+export 'smm_image_picker.dart';
+export 'smm_tabbar.dart';
