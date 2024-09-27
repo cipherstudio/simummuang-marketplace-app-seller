@@ -5,6 +5,7 @@ import 'package:smm_application/components/example/smm_app_bar_main_app_bar_exam
 import 'package:smm_application/components/example/smm_button_example.dart';
 import 'package:smm_application/components/example/smm_image_picker_example.dart';
 import 'package:smm_application/components/example/smm_text_form_field_example.dart';
+import 'package:smm_application/components/smm_dropdown.dart';
 import 'package:smm_application/components/smm_filled_button.dart';
 import 'package:smm_application/router/app_router.dart';
 
@@ -80,6 +81,9 @@ class _ExampleConponentsState extends State<ExampleConponents> {
               );
             },
           ),
+          SMMDropdown(
+              items: ['1', '2', '3'],
+              widgetBuilder: ((context, item) => Text(item)))
         ],
       ),
     );
