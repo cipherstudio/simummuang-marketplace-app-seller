@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/shared_components.dart';
+import 'package:smm_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_application/core/authenticator/credential.dart';
 import 'package:smm_application/core/enums/app_enums.dart';
 import 'package:smm_application/features/login_page/bloc/login_bloc.dart';
+import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
+import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
+import 'package:smm_application/utils/dialog_utils.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -23,12 +28,45 @@ class _LoginPageState extends State<LoginPage> {
 
   final TextEditingController passwordTextFieldController =
       TextEditingController();
+  late final LoginBloc _loginBloc;
+  SMMDialogManager dialogManager = SMMDialogManager();
+
+  void _onLoginSuccess(BuildContext context, String token) {
+    AuthenticatorService authService = AuthenticatorService.of(context);
+    authService.setCredential(
+      Credential.authorized(
+        accessToken: token,
+        refreshToken: token,
+        expireAt: 0,
+        // expireAt:
+        //     DateTime.now().millisecondsSinceEpoch + (token.expireIn * 1000),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginBloc()..add(const LoginBlocEvent.initialize()),
-      child: BlocBuilder<LoginBloc, LoginBlocState>(
+    _loginBloc = Injector.instance<LoginBloc>();
+    return BlocProvider.value(
+      value: _loginBloc..add(const LoginBlocEvent.initialize()),
+      child: BlocConsumer<LoginBloc, LoginBlocState>(
+        listenWhen: (previous, current) => previous.status != current.status,
+        listener: (context, state) {
+          state.status.whenOrNull(
+            initial: () {},
+            loading: () {
+              dialogManager.showLoading(context);
+            },
+            loadFailed: (message, error) {
+              dialogManager.dismissLoadingDialog();
+              DialogUtils.openErrorDialog(context, message);
+            },
+            loadSuccess: (message) {
+              dialogManager.dismissLoadingDialog();
+              _onLoginSuccess(context, state.token);
+            },
+          );
+        },
         builder: (context, state) {
           return _body(context, state);
         },
