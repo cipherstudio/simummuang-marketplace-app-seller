@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/shared_components.dart';
+import 'package:smm_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_application/core/authenticator/credential.dart';
 import 'package:smm_application/core/enums/app_enums.dart';
 import 'package:smm_application/features/login_page/bloc/login_bloc.dart';
 import 'package:smm_application/injector/app_injector.dart';
@@ -28,6 +30,20 @@ class _LoginPageState extends State<LoginPage> {
       TextEditingController(text: '213213');
   late final LoginBloc _loginBloc;
   SMMDialogManager dialogManager = SMMDialogManager();
+
+  void _onLoginSuccess(BuildContext context, dynamic token) {
+    // AuthenticatorService authService = AuthenticatorService.of(context);
+    // authService.setCredential(
+    //   Credential.authorized(
+    //     accessToken: token.accessToken,
+    //     refreshToken: token.refreshToken,
+    //     expireAt: 0,
+    //     // expireAt:
+    //     //     DateTime.now().millisecondsSinceEpoch + (token.expireIn * 1000),
+    //   ),
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     _loginBloc = Injector.instance<LoginBloc>();
@@ -44,7 +60,10 @@ class _LoginPageState extends State<LoginPage> {
               dialogManager.dismissLoadingDialog();
               DialogUtils.openErrorDialog(context, message);
             },
-            loadSuccess: (message) => dialogManager.dismissLoadingDialog(),
+            loadSuccess: (data) {
+              dialogManager.dismissLoadingDialog();
+              _onLoginSuccess(context, data);
+            },
           );
         },
         builder: (context, state) {

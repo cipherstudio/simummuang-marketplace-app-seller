@@ -54,6 +54,11 @@ dependencies:
   visibility_detector: ^0.4.0+2
   flutter_widget_from_html: 0.15.2
   flutter_otp_text_field: 1.2.0
+  jwt_decoder: 2.0.1
+  #storage
+  shared_preferences: 2.2.1
+  flutter_secure_storage: 9.0.0
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:

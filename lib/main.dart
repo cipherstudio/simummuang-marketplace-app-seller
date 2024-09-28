@@ -3,14 +3,19 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:smm_application/injector/app_injector.config.dart';
+import 'package:smm_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_application/core/interceptor/app_default_interceptor.dart';
 import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/themes/app_theme.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
 
 void main() {
-  Injector.instance.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies(
+      authenticatorService: AuthenticatorService(),
+      appDefaultHeaderInterceptor: AppDefaultHeaderInterceptor());
+
   runApp(const MyApp());
 }
 
