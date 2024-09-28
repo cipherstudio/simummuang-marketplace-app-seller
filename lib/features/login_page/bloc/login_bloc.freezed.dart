@@ -665,6 +665,7 @@ abstract class _Login implements LoginBlocEvent {
 /// @nodoc
 mixin _$LoginBlocState {
   UIStatus get status => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
   PasswordOptionEnum get passwordOptionEnum =>
       throw _privateConstructorUsedError;
   EmailFieldProperties get emailFieldProperties =>
@@ -685,6 +686,7 @@ abstract class $LoginBlocStateCopyWith<$Res> {
   @useResult
   $Res call(
       {UIStatus status,
+      String token,
       PasswordOptionEnum passwordOptionEnum,
       EmailFieldProperties emailFieldProperties,
       PasswordFieldProperties passwordFieldProperties});
@@ -706,6 +708,7 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
   @override
   $Res call({
     Object? status = null,
+    Object? token = null,
     Object? passwordOptionEnum = null,
     Object? emailFieldProperties = null,
     Object? passwordFieldProperties = null,
@@ -715,6 +718,10 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UIStatus,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
       passwordOptionEnum: null == passwordOptionEnum
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
@@ -749,6 +756,7 @@ abstract class _$$LoginBlocStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {UIStatus status,
+      String token,
       PasswordOptionEnum passwordOptionEnum,
       EmailFieldProperties emailFieldProperties,
       PasswordFieldProperties passwordFieldProperties});
@@ -769,6 +777,7 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? token = null,
     Object? passwordOptionEnum = null,
     Object? emailFieldProperties = null,
     Object? passwordFieldProperties = null,
@@ -778,6 +787,10 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UIStatus,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
       passwordOptionEnum: null == passwordOptionEnum
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
@@ -799,6 +812,7 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
 class _$LoginBlocStateImpl implements _LoginBlocState {
   _$LoginBlocStateImpl(
       {this.status = const UIInitial(),
+      this.token = '',
       this.passwordOptionEnum = PasswordOptionEnum.rememberAndForgot,
       this.emailFieldProperties = const EmailFieldProperties(
           autovalidateMode: AutovalidateMode.disabled),
@@ -808,6 +822,9 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
   @override
   @JsonKey()
   final UIStatus status;
+  @override
+  @JsonKey()
+  final String token;
   @override
   @JsonKey()
   final PasswordOptionEnum passwordOptionEnum;
@@ -820,7 +837,7 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
 
   @override
   String toString() {
-    return 'LoginBlocState(status: $status, passwordOptionEnum: $passwordOptionEnum, emailFieldProperties: $emailFieldProperties, passwordFieldProperties: $passwordFieldProperties)';
+    return 'LoginBlocState(status: $status, token: $token, passwordOptionEnum: $passwordOptionEnum, emailFieldProperties: $emailFieldProperties, passwordFieldProperties: $passwordFieldProperties)';
   }
 
   @override
@@ -829,6 +846,7 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
         (other.runtimeType == runtimeType &&
             other is _$LoginBlocStateImpl &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.token, token) || other.token == token) &&
             (identical(other.passwordOptionEnum, passwordOptionEnum) ||
                 other.passwordOptionEnum == passwordOptionEnum) &&
             (identical(other.emailFieldProperties, emailFieldProperties) ||
@@ -839,8 +857,8 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, passwordOptionEnum,
-      emailFieldProperties, passwordFieldProperties);
+  int get hashCode => Object.hash(runtimeType, status, token,
+      passwordOptionEnum, emailFieldProperties, passwordFieldProperties);
 
   @JsonKey(ignore: true)
   @override
@@ -853,6 +871,7 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
 abstract class _LoginBlocState implements LoginBlocState {
   factory _LoginBlocState(
           {final UIStatus status,
+          final String token,
           final PasswordOptionEnum passwordOptionEnum,
           final EmailFieldProperties emailFieldProperties,
           final PasswordFieldProperties passwordFieldProperties}) =
@@ -860,6 +879,8 @@ abstract class _LoginBlocState implements LoginBlocState {
 
   @override
   UIStatus get status;
+  @override
+  String get token;
   @override
   PasswordOptionEnum get passwordOptionEnum;
   @override

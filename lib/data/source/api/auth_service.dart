@@ -11,8 +11,8 @@ abstract class AuthService {
   // Constructor
   factory AuthService(Dio dio, {String baseUrl}) = _AuthService;
 
-  @POST('/rest/default/V1/integration/customer/token')
-  Future<dynamic> login({
+  @POST('/rest/all/V1/integration/customer/token')
+  Future<String> login({
     @Body() required LoginRequestModel body,
   });
 }

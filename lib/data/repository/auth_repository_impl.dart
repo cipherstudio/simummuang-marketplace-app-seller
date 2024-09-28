@@ -10,7 +10,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }) : _authService = authService;
 
   @override
-  Future<dynamic> login({required LoginRequestModel body}) async {
+  Future<String> login({required LoginRequestModel body}) async {
     try {
       return await _authService
           .login(
