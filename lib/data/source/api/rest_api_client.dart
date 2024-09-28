@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:smm_application/core/keys/app_keys.dart';
 
 class RestAPIClient {
   static Dio? _dioInstance;
@@ -11,7 +12,7 @@ class RestAPIClient {
   static Dio _createPrivate() {
     final Dio dio = Dio(
       BaseOptions(
-        baseUrl: 'todo',
+        baseUrl: AppKeys.baseUrl,
       ),
     );
 
@@ -37,7 +38,9 @@ class ApiInterceptor extends Interceptor {
 
   @override
   Future<void> onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {}
+      RequestOptions options, RequestInterceptorHandler handler) async {
+    handler.next(options);
+  }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
@@ -45,5 +48,7 @@ class ApiInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioException err, ErrorInterceptorHandler handler) {}
+  void onError(DioException err, ErrorInterceptorHandler handler) {
+    handler.next(err);
+  }
 }

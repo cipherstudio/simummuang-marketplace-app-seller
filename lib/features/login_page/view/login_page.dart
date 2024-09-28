@@ -4,10 +4,13 @@ import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/core/enums/app_enums.dart';
 import 'package:smm_application/features/login_page/bloc/login_bloc.dart';
+import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
+import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
+import 'package:smm_application/utils/dialog_utils.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -19,16 +22,31 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController emailTextFieldController =
-      TextEditingController();
+      TextEditingController(text: 'asdas@gasd.com');
 
   final TextEditingController passwordTextFieldController =
-      TextEditingController();
-
+      TextEditingController(text: '213213');
+  late final LoginBloc _loginBloc;
+  SMMDialogManager dialogManager = SMMDialogManager();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginBloc()..add(const LoginBlocEvent.initialize()),
-      child: BlocBuilder<LoginBloc, LoginBlocState>(
+    _loginBloc = Injector.instance<LoginBloc>();
+    return BlocProvider.value(
+      value: _loginBloc..add(const LoginBlocEvent.initialize()),
+      child: BlocConsumer<LoginBloc, LoginBlocState>(
+        listener: (context, state) {
+          state.status.whenOrNull(
+            initial: () {},
+            loading: () {
+              dialogManager.showLoading(context);
+            },
+            loadFailed: (message, error) {
+              dialogManager.dismissLoadingDialog();
+              DialogUtils.openErrorDialog(context, message);
+            },
+            loadSuccess: (message) => dialogManager.dismissLoadingDialog(),
+          );
+        },
         builder: (context, state) {
           return _body(context, state);
         },
