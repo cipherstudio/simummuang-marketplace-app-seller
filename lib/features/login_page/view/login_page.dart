@@ -24,24 +24,24 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController emailTextFieldController =
-      TextEditingController(text: 'asdas@gasd.com');
+      TextEditingController(text: "finch255@gmail.com");
 
   final TextEditingController passwordTextFieldController =
-      TextEditingController(text: '213213');
+      TextEditingController(text: "smm#1234");
   late final LoginBloc _loginBloc;
   SMMDialogManager dialogManager = SMMDialogManager();
 
-  void _onLoginSuccess(BuildContext context, dynamic token) {
-    // AuthenticatorService authService = AuthenticatorService.of(context);
-    // authService.setCredential(
-    //   Credential.authorized(
-    //     accessToken: token.accessToken,
-    //     refreshToken: token.refreshToken,
-    //     expireAt: 0,
-    //     // expireAt:
-    //     //     DateTime.now().millisecondsSinceEpoch + (token.expireIn * 1000),
-    //   ),
-    // );
+  void _onLoginSuccess(BuildContext context, String token) {
+    AuthenticatorService authService = AuthenticatorService.of(context);
+    authService.setCredential(
+      Credential.authorized(
+        accessToken: token,
+        refreshToken: token,
+        expireAt: 0,
+        // expireAt:
+        //     DateTime.now().millisecondsSinceEpoch + (token.expireIn * 1000),
+      ),
+    );
   }
 
   @override
@@ -50,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocProvider.value(
       value: _loginBloc..add(const LoginBlocEvent.initialize()),
       child: BlocConsumer<LoginBloc, LoginBlocState>(
+        listenWhen: (previous, current) => previous.status != current.status,
         listener: (context, state) {
           state.status.whenOrNull(
             initial: () {},
@@ -60,9 +61,9 @@ class _LoginPageState extends State<LoginPage> {
               dialogManager.dismissLoadingDialog();
               DialogUtils.openErrorDialog(context, message);
             },
-            loadSuccess: (data) {
+            loadSuccess: (message) {
               dialogManager.dismissLoadingDialog();
-              _onLoginSuccess(context, data);
+              _onLoginSuccess(context, state.token);
             },
           );
         },

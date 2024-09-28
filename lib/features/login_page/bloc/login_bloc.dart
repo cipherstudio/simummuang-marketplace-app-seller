@@ -48,7 +48,7 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
     try {
       emit(
         state.copyWith(
-          status: const UILoadSuccess(),
+          status: const UIInitial(),
         ),
       );
     } catch (e) {
@@ -95,11 +95,11 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
       String? emailInput = event.emailTextFieldController?.text;
       String? passwordInput = event.passwordTextFieldController?.text;
 
-      // emailValidationMessage = emailInput.stringNullOrEmpty
-      //     ? 'โปรดระบุอีเมล์'
-      //     : !EmailValidator.validate(emailInput ?? '')
-      //         ? 'อีเมล์ไม่ถูกต้อง'
-      //         : null;
+      emailValidationMessage = emailInput.stringNullOrEmpty
+          ? 'โปรดระบุอีเมล์'
+          : !EmailValidator.validate(emailInput ?? '')
+              ? 'อีเมล์ไม่ถูกต้อง'
+              : null;
 
       if (emailValidationMessage != null) {
         emit(
@@ -119,12 +119,11 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
         emit(
           state.copyWith(status: const UIStatus.loading()),
         );
-        final response = await _authRepository.login(
+        final String token = await _authRepository.login(
             body: LoginRequestModel(
                 username: emailInput ?? '', password: passwordInput ?? ''));
-
         emit(
-          state.copyWith(status: const UILoadSuccess()),
+          state.copyWith(status: const UILoadSuccess(), token: token),
         );
       }
     } catch (e) {

@@ -4,6 +4,7 @@ part of 'login_bloc.dart';
 class LoginBlocState with _$LoginBlocState {
   factory LoginBlocState({
     @Default(UIInitial()) UIStatus status,
+    @Default('') String token,
     @Default(PasswordOptionEnum.rememberAndForgot)
     PasswordOptionEnum passwordOptionEnum,
     @Default(

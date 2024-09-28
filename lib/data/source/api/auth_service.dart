@@ -6,14 +6,13 @@ import 'package:smm_application/domain/data/models/login/login_request_model.dar
 
 part 'auth_service.g.dart';
 
-//
 @RestApi()
 abstract class AuthService {
   // Constructor
   factory AuthService(Dio dio, {String baseUrl}) = _AuthService;
 
-  @POST('/lofmarketplace/seller/login')
-  Future<dynamic> login({
+  @POST('/rest/all/V1/integration/customer/token')
+  Future<String> login({
     @Body() required LoginRequestModel body,
   });
 }
