@@ -95,11 +95,11 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
       String? emailInput = event.emailTextFieldController?.text;
       String? passwordInput = event.passwordTextFieldController?.text;
 
-      // emailValidationMessage = emailInput.stringNullOrEmpty
-      //     ? 'โปรดระบุอีเมล์'
-      //     : !EmailValidator.validate(emailInput ?? '')
-      //         ? 'อีเมล์ไม่ถูกต้อง'
-      //         : null;
+      emailValidationMessage = emailInput.stringNullOrEmpty
+          ? 'โปรดระบุอีเมล์'
+          : !EmailValidator.validate(emailInput ?? '')
+              ? 'อีเมล์ไม่ถูกต้อง'
+              : null;
 
       if (emailValidationMessage != null) {
         emit(

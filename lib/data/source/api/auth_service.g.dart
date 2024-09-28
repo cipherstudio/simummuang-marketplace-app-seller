@@ -35,7 +35,7 @@ class _AuthService implements AuthService {
     )
         .compose(
           _dio.options,
-          '/lofmarketplace/seller/login',
+          '/rest/default/V1/integration/customer/token',
           queryParameters: queryParameters,
           data: _data,
         )

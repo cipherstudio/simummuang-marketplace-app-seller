@@ -22,10 +22,10 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController emailTextFieldController =
-      TextEditingController(text: 'asdas@gasd.com');
+      TextEditingController();
 
   final TextEditingController passwordTextFieldController =
-      TextEditingController(text: '213213');
+      TextEditingController();
   late final LoginBloc _loginBloc;
   SMMDialogManager dialogManager = SMMDialogManager();
   @override
