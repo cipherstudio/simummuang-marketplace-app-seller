@@ -12,7 +12,7 @@ import 'package:smm_application/translation/generated/l10n.dart';
 import 'package:smm_application/utils/dialog_utils.dart';
 
 class SetNewPasswordPage extends StatefulWidget {
-  const SetNewPasswordPage({super.key, this.email = 'finch255@gmail.com'});
+  const SetNewPasswordPage({super.key, this.email = ''});
   final String email;
   @override
   State<SetNewPasswordPage> createState() => _SetNewPasswordPageState();
