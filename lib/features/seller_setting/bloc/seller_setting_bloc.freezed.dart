@@ -19,18 +19,21 @@ mixin _$SellerSettingBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
+    required TResult Function() loadData,
     required TResult Function(int index) tabbar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
+    TResult? Function()? loadData,
     TResult? Function(int index)? tabbar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function()? loadData,
     TResult Function(int index)? tabbar,
     required TResult orElse(),
   }) =>
@@ -38,18 +41,21 @@ mixin _$SellerSettingBlocEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) init,
+    required TResult Function(_LoadData value) loadData,
     required TResult Function(_TabbarTap value) tabbar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? init,
+    TResult? Function(_LoadData value)? loadData,
     TResult? Function(_TabbarTap value)? tabbar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? init,
+    TResult Function(_LoadData value)? loadData,
     TResult Function(_TabbarTap value)? tabbar,
     required TResult orElse(),
   }) =>
@@ -114,6 +120,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
+    required TResult Function() loadData,
     required TResult Function(int index) tabbar,
   }) {
     return init();
@@ -123,6 +130,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
+    TResult? Function()? loadData,
     TResult? Function(int index)? tabbar,
   }) {
     return init?.call();
@@ -132,6 +140,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function()? loadData,
     TResult Function(int index)? tabbar,
     required TResult orElse(),
   }) {
@@ -145,6 +154,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) init,
+    required TResult Function(_LoadData value) loadData,
     required TResult Function(_TabbarTap value) tabbar,
   }) {
     return init(this);
@@ -154,6 +164,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? init,
+    TResult? Function(_LoadData value)? loadData,
     TResult? Function(_TabbarTap value)? tabbar,
   }) {
     return init?.call(this);
@@ -163,6 +174,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? init,
+    TResult Function(_LoadData value)? loadData,
     TResult Function(_TabbarTap value)? tabbar,
     required TResult orElse(),
   }) {
@@ -175,6 +187,114 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements SellerSettingBlocEvent {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadDataImplCopyWith<$Res> {
+  factory _$$LoadDataImplCopyWith(
+          _$LoadDataImpl value, $Res Function(_$LoadDataImpl) then) =
+      __$$LoadDataImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadDataImplCopyWithImpl<$Res>
+    extends _$SellerSettingBlocEventCopyWithImpl<$Res, _$LoadDataImpl>
+    implements _$$LoadDataImplCopyWith<$Res> {
+  __$$LoadDataImplCopyWithImpl(
+      _$LoadDataImpl _value, $Res Function(_$LoadDataImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadDataImpl implements _LoadData {
+  const _$LoadDataImpl();
+
+  @override
+  String toString() {
+    return 'SellerSettingBlocEvent.loadData()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadDataImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loadData,
+    required TResult Function(int index) tabbar,
+  }) {
+    return loadData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? loadData,
+    TResult? Function(int index)? tabbar,
+  }) {
+    return loadData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loadData,
+    TResult Function(int index)? tabbar,
+    required TResult orElse(),
+  }) {
+    if (loadData != null) {
+      return loadData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) init,
+    required TResult Function(_LoadData value) loadData,
+    required TResult Function(_TabbarTap value) tabbar,
+  }) {
+    return loadData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? init,
+    TResult? Function(_LoadData value)? loadData,
+    TResult? Function(_TabbarTap value)? tabbar,
+  }) {
+    return loadData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? init,
+    TResult Function(_LoadData value)? loadData,
+    TResult Function(_TabbarTap value)? tabbar,
+    required TResult orElse(),
+  }) {
+    if (loadData != null) {
+      return loadData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadData implements SellerSettingBlocEvent {
+  const factory _LoadData() = _$LoadDataImpl;
 }
 
 /// @nodoc
@@ -242,6 +362,7 @@ class _$TabbarTapImpl implements _TabbarTap {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
+    required TResult Function() loadData,
     required TResult Function(int index) tabbar,
   }) {
     return tabbar(index);
@@ -251,6 +372,7 @@ class _$TabbarTapImpl implements _TabbarTap {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
+    TResult? Function()? loadData,
     TResult? Function(int index)? tabbar,
   }) {
     return tabbar?.call(index);
@@ -260,6 +382,7 @@ class _$TabbarTapImpl implements _TabbarTap {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
+    TResult Function()? loadData,
     TResult Function(int index)? tabbar,
     required TResult orElse(),
   }) {
@@ -273,6 +396,7 @@ class _$TabbarTapImpl implements _TabbarTap {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) init,
+    required TResult Function(_LoadData value) loadData,
     required TResult Function(_TabbarTap value) tabbar,
   }) {
     return tabbar(this);
@@ -282,6 +406,7 @@ class _$TabbarTapImpl implements _TabbarTap {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? init,
+    TResult? Function(_LoadData value)? loadData,
     TResult? Function(_TabbarTap value)? tabbar,
   }) {
     return tabbar?.call(this);
@@ -291,6 +416,7 @@ class _$TabbarTapImpl implements _TabbarTap {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? init,
+    TResult Function(_LoadData value)? loadData,
     TResult Function(_TabbarTap value)? tabbar,
     required TResult orElse(),
   }) {
@@ -312,8 +438,10 @@ abstract class _TabbarTap implements SellerSettingBlocEvent {
 
 /// @nodoc
 mixin _$SellerSettingBlocState {
+  UIStatus get status => throw _privateConstructorUsedError;
   SellerSettingPageState get sellerSettingPageState =>
       throw _privateConstructorUsedError;
+  SellerInfoModel? get sellerInfoData => throw _privateConstructorUsedError;
   int get currentTabbarIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -328,7 +456,12 @@ abstract class $SellerSettingBlocStateCopyWith<$Res> {
       _$SellerSettingBlocStateCopyWithImpl<$Res, SellerSettingBlocState>;
   @useResult
   $Res call(
-      {SellerSettingPageState sellerSettingPageState, int currentTabbarIndex});
+      {UIStatus status,
+      SellerSettingPageState sellerSettingPageState,
+      SellerInfoModel? sellerInfoData,
+      int currentTabbarIndex});
+
+  $UIStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -345,19 +478,37 @@ class _$SellerSettingBlocStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? status = null,
     Object? sellerSettingPageState = null,
+    Object? sellerInfoData = freezed,
     Object? currentTabbarIndex = null,
   }) {
     return _then(_value.copyWith(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as UIStatus,
       sellerSettingPageState: null == sellerSettingPageState
           ? _value.sellerSettingPageState
           : sellerSettingPageState // ignore: cast_nullable_to_non_nullable
               as SellerSettingPageState,
+      sellerInfoData: freezed == sellerInfoData
+          ? _value.sellerInfoData
+          : sellerInfoData // ignore: cast_nullable_to_non_nullable
+              as SellerInfoModel?,
       currentTabbarIndex: null == currentTabbarIndex
           ? _value.currentTabbarIndex
           : currentTabbarIndex // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UIStatusCopyWith<$Res> get status {
+    return $UIStatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
+    });
   }
 }
 
@@ -371,7 +522,13 @@ abstract class _$$SellerSettingBlocStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {SellerSettingPageState sellerSettingPageState, int currentTabbarIndex});
+      {UIStatus status,
+      SellerSettingPageState sellerSettingPageState,
+      SellerInfoModel? sellerInfoData,
+      int currentTabbarIndex});
+
+  @override
+  $UIStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -387,14 +544,24 @@ class __$$SellerSettingBlocStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? status = null,
     Object? sellerSettingPageState = null,
+    Object? sellerInfoData = freezed,
     Object? currentTabbarIndex = null,
   }) {
     return _then(_$SellerSettingBlocStateImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as UIStatus,
       sellerSettingPageState: null == sellerSettingPageState
           ? _value.sellerSettingPageState
           : sellerSettingPageState // ignore: cast_nullable_to_non_nullable
               as SellerSettingPageState,
+      sellerInfoData: freezed == sellerInfoData
+          ? _value.sellerInfoData
+          : sellerInfoData // ignore: cast_nullable_to_non_nullable
+              as SellerInfoModel?,
       currentTabbarIndex: null == currentTabbarIndex
           ? _value.currentTabbarIndex
           : currentTabbarIndex // ignore: cast_nullable_to_non_nullable
@@ -407,19 +574,26 @@ class __$$SellerSettingBlocStateImplCopyWithImpl<$Res>
 
 class _$SellerSettingBlocStateImpl implements _SellerSettingBlocState {
   const _$SellerSettingBlocStateImpl(
-      {this.sellerSettingPageState = SellerSettingPageState.profile,
+      {this.status = const UIInitial(),
+      this.sellerSettingPageState = SellerSettingPageState.profile,
+      this.sellerInfoData,
       this.currentTabbarIndex = 0});
 
   @override
   @JsonKey()
+  final UIStatus status;
+  @override
+  @JsonKey()
   final SellerSettingPageState sellerSettingPageState;
+  @override
+  final SellerInfoModel? sellerInfoData;
   @override
   @JsonKey()
   final int currentTabbarIndex;
 
   @override
   String toString() {
-    return 'SellerSettingBlocState(sellerSettingPageState: $sellerSettingPageState, currentTabbarIndex: $currentTabbarIndex)';
+    return 'SellerSettingBlocState(status: $status, sellerSettingPageState: $sellerSettingPageState, sellerInfoData: $sellerInfoData, currentTabbarIndex: $currentTabbarIndex)';
   }
 
   @override
@@ -427,15 +601,18 @@ class _$SellerSettingBlocStateImpl implements _SellerSettingBlocState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SellerSettingBlocStateImpl &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.sellerSettingPageState, sellerSettingPageState) ||
                 other.sellerSettingPageState == sellerSettingPageState) &&
+            const DeepCollectionEquality()
+                .equals(other.sellerInfoData, sellerInfoData) &&
             (identical(other.currentTabbarIndex, currentTabbarIndex) ||
                 other.currentTabbarIndex == currentTabbarIndex));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, sellerSettingPageState, currentTabbarIndex);
+  int get hashCode => Object.hash(runtimeType, status, sellerSettingPageState,
+      const DeepCollectionEquality().hash(sellerInfoData), currentTabbarIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -447,11 +624,17 @@ class _$SellerSettingBlocStateImpl implements _SellerSettingBlocState {
 
 abstract class _SellerSettingBlocState implements SellerSettingBlocState {
   const factory _SellerSettingBlocState(
-      {final SellerSettingPageState sellerSettingPageState,
+      {final UIStatus status,
+      final SellerSettingPageState sellerSettingPageState,
+      final SellerInfoModel? sellerInfoData,
       final int currentTabbarIndex}) = _$SellerSettingBlocStateImpl;
 
   @override
+  UIStatus get status;
+  @override
   SellerSettingPageState get sellerSettingPageState;
+  @override
+  SellerInfoModel? get sellerInfoData;
   @override
   int get currentTabbarIndex;
   @override

@@ -40,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
         expireAt: DateTime.now().millisecondsSinceEpoch + (600000 * 1000),
       ),
     );
+    context.pushNamed(AppRouter.sellerSettingPageNamed);
   }
 
   @override

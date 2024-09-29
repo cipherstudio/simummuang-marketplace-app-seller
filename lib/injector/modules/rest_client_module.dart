@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:smm_application/data/source/api/api_client.dart';
 import 'package:smm_application/data/source/api/auth_service.dart';
+import 'package:smm_application/data/source/api/seller_info_service.dart';
 import 'package:smm_application/injector/modules/dio_module.dart';
 
 @module
@@ -10,4 +11,7 @@ abstract class RestClientModule {
       ApiClient(dio);
   AuthService getAuthService(@Named(dioPublicInstanceName) Dio dio) =>
       AuthService(dio);
+  SellerInfoService getSellerInfoService(
+          @Named(dioPrivateInstanceName) Dio dio) =>
+      SellerInfoService(dio);
 }

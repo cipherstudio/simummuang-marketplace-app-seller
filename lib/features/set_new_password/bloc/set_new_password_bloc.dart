@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:smm_application/core/bloc_core/ui_status.dart';
-import 'package:smm_application/domain/data/models/resetPassword/reset_password_request_model.dart';
+import 'package:smm_application/domain/data/models/reset_password/reset_password_request_model.dart';
 import 'package:smm_application/domain/repository/auth_repository.dart';
 
 part './set_new_password_bloc_event.dart';
