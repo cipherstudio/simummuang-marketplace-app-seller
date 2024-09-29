@@ -35,7 +35,7 @@ class _AuthService implements AuthService {
     )
         .compose(
           _dio.options,
-          '/rest/all/V1/integration/customer/token',
+          '/V1/integration/customer/token',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -46,6 +46,40 @@ class _AuthService implements AuthService {
         )));
     final _result = await _dio.fetch<String>(_options);
     late String _value;
+    try {
+      _value = _result.data!;
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<bool> resetPassword({required ResetPasswordRequestModel body}) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<bool>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/V1/customers/resetPassword',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<bool>(_options);
+    late bool _value;
     try {
       _value = _result.data!;
     } on Object catch (e, s) {
