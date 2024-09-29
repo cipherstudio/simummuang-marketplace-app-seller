@@ -35,11 +35,9 @@ class _LoginPageState extends State<LoginPage> {
     AuthenticatorService authService = AuthenticatorService.of(context);
     authService.setCredential(
       Credential.authorized(
-        accessToken: token,
-        refreshToken: token,
-        expireAt: 0,
-        // expireAt:
-        //     DateTime.now().millisecondsSinceEpoch + (token.expireIn * 1000),
+        accessToken: token.replaceAll('"', ''),
+        refreshToken: token.replaceAll('"', ''),
+        expireAt: DateTime.now().millisecondsSinceEpoch + (600000 * 1000),
       ),
     );
   }
