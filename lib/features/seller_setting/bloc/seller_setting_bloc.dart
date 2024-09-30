@@ -37,7 +37,9 @@ class SellerSettingBloc
       emit(
         state.copyWith(status: const UIStatus.loading()),
       );
-      final response = await _sellerInfoRepository.getSellerInfo(id: '4');
+      final getCustomer = await _sellerInfoRepository.getCustomer();
+      final response = await _sellerInfoRepository.getSellerInfo(
+          id: getCustomer.id.toString());
       emit(
         state.copyWith(
             status: const UIStatus.loadSuccess(), sellerInfoData: response),

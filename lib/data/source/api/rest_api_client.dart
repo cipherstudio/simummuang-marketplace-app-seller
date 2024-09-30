@@ -8,13 +8,14 @@ import 'package:smm_application/core/keys/app_keys.dart';
 import 'package:smm_application/injector/app_injector.dart';
 
 class RestAPIClient {
-  static Dio? _dioInstance;
+  static Dio? _dioPublicInstance;
+  static Dio? _dioPrivateInstance;
 
-  static Dio get dioPrivateInstance =>
-      _dioInstance ??= _createPrivate(Injector.instance(), Injector.instance());
+  static Dio get dioPrivateInstance => _dioPrivateInstance ??=
+      _createPrivate(Injector.instance(), Injector.instance());
 
   static Dio get dioPublicInstance =>
-      _dioInstance ??= _createPublic(Injector.instance());
+      _dioPublicInstance ??= _createPublic(Injector.instance());
 
   static Dio _createPrivate(
     AuthenticatorService authenticatorService,
@@ -27,9 +28,9 @@ class RestAPIClient {
     );
 
     dio.interceptors.addAll([
-      ApiInterceptor(),
-      authenticatorService.newAuthenticatorApiInterceptor(),
       appDefaultHeaderInterceptor,
+      authenticatorService.newAuthenticatorApiInterceptor(),
+      ApiInterceptor(),
     ]);
     if (!kReleaseMode) {
       dio.interceptors.add(
@@ -77,6 +78,9 @@ class ApiInterceptor extends Interceptor {
   @override
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
+    if (options.path.contains('V1/customers/me')) {
+      options.baseUrl = "https://srv566686.hstgr.cloud/rest/default";
+    }
     handler.next(options);
   }
 

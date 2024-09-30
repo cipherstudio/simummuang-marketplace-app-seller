@@ -7,7 +7,7 @@ abstract final class DialogUtils {
       {Function? positiveTap}) async {
     final SMMDialogResult? result = await SMMDialogManager().show(
       context,
-      title: 'Fail',
+      title: 'พบข้อผิดพลาด',
       message: message,
       positiveButton: 'Confirm',
       useRootNavigator: true,
@@ -21,7 +21,7 @@ abstract final class DialogUtils {
       {Function? positiveTap}) async {
     final SMMDialogResult? result = await SMMDialogManager().show(
       context,
-      title: 'Success',
+      title: 'สำเร็จ',
       message: message,
       positiveButton: 'Confirm',
       useRootNavigator: true,
