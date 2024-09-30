@@ -16,4 +16,18 @@ abstract final class DialogUtils {
       positiveTap();
     }
   }
+
+  static void openSuccessDialog(BuildContext context, String message,
+      {Function? positiveTap}) async {
+    final SMMDialogResult? result = await SMMDialogManager().show(
+      context,
+      title: 'Success',
+      message: message,
+      positiveButton: 'Confirm',
+      useRootNavigator: true,
+    );
+    if (result == SMMDialogResult.positive && positiveTap != null) {
+      positiveTap();
+    }
+  }
 }
