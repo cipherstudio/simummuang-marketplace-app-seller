@@ -62,29 +62,29 @@ class RequestOTP extends StatelessWidget {
         const SizedBox(
           height: 24,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              Trans.current.forgetpassword_does_not_account,
-              style: AppTextStyles.textSMRegular
-                  .copyWith(color: AppColors.primaryDefaultStrong),
-            ),
-            const SizedBox(
-              width: 4,
-            ),
-            GestureDetector(
-              onTap: () {
-                context.pushNamed(AppRouter.registerPageNamed);
-              },
-              child: Text(
-                Trans.current.forgetpassword_create_account,
-                style: AppTextStyles.textSMSemiBold
-                    .copyWith(color: AppColors.primaryBrandMain),
-              ),
-            ),
-          ],
-        ),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     Text(
+        //       Trans.current.forgetpassword_does_not_account,
+        //       style: AppTextStyles.textSMRegular
+        //           .copyWith(color: AppColors.primaryDefaultStrong),
+        //     ),
+        //     const SizedBox(
+        //       width: 4,
+        //     ),
+        //     GestureDetector(
+        //       onTap: () {
+        //         context.pushNamed(AppRouter.registerPageNamed);
+        //       },
+        //       child: Text(
+        //         Trans.current.forgetpassword_create_account,
+        //         style: AppTextStyles.textSMSemiBold
+        //             .copyWith(color: AppColors.primaryBrandMain),
+        //       ),
+        //     ),
+        //   ],
+        // ),
       ],
     );
   }

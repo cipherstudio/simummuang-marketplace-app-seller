@@ -129,17 +129,17 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 24,
                 ),
-                ExternalLogin(
-                  title: Trans.current.login_external_title,
-                  detail: Trans.current.login_external_detail,
-                  textButton: Trans.current.login_external_text_button,
-                  onTextButtonTap: () {
-                    context.goNamed(AppRouter.registerPageNamed);
-                  },
-                  onSocialMediaTap: (socialMediaKindEnum) {
-                    print(socialMediaKindEnum);
-                  },
-                ),
+                // ExternalLogin(
+                //   title: Trans.current.login_external_title,
+                //   detail: Trans.current.login_external_detail,
+                //   textButton: Trans.current.login_external_text_button,
+                //   onTextButtonTap: () {
+                //     context.goNamed(AppRouter.registerPageNamed);
+                //   },
+                //   onSocialMediaTap: (socialMediaKindEnum) {
+                //     print(socialMediaKindEnum);
+                //   },
+                // ),
                 const SizedBox(
                   height: 24,
                 ),

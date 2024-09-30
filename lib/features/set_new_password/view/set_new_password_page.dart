@@ -130,30 +130,30 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                       },
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        Trans.current.set_new_password_not_have_account_label,
-                        style: AppTextStyles.textSMRegular,
-                      ),
-                      const SizedBox(
-                        width: 4,
-                      ),
-                      InkWell(
-                        child: Text(
-                          Trans.current
-                              .set_new_password_create_new_account_label,
-                          style: AppTextStyles.textSMSemiBold.copyWith(
-                            color: AppColors.primaryBrandMain,
-                          ),
-                        ),
-                        onTap: () {
-                          context.pushNamed(AppRouter.registerPageNamed);
-                        },
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     Text(
+                  //       Trans.current.set_new_password_not_have_account_label,
+                  //       style: AppTextStyles.textSMRegular,
+                  //     ),
+                  //     const SizedBox(
+                  //       width: 4,
+                  //     ),
+                  //     InkWell(
+                  //       child: Text(
+                  //         Trans.current
+                  //             .set_new_password_create_new_account_label,
+                  //         style: AppTextStyles.textSMSemiBold.copyWith(
+                  //           color: AppColors.primaryBrandMain,
+                  //         ),
+                  //       ),
+                  //       onTap: () {
+                  //         context.pushNamed(AppRouter.registerPageNamed);
+                  //       },
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
