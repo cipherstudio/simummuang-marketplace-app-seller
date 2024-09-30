@@ -16,14 +16,16 @@ import '../data/source/api/api_client.dart' as _i5;
 import '../data/source/api/auth_service.dart' as _i4;
 import '../data/source/api/seller_info_service.dart' as _i6;
 import '../domain/repository/auth_repository.dart' as _i7;
-import '../domain/repository/seller_info_repository.dart' as _i8;
-import '../features/login_page/bloc/login_bloc.dart' as _i9;
-import '../features/seller_setting/bloc/seller_setting_bloc.dart' as _i11;
-import '../features/set_new_password/bloc/set_new_password_bloc.dart' as _i10;
-import 'modules/bloc_module.dart' as _i15;
-import 'modules/dio_module.dart' as _i12;
-import 'modules/repository_module.dart' as _i14;
-import 'modules/rest_client_module.dart' as _i13;
+import '../domain/repository/otp_repository.dart' as _i8;
+import '../domain/repository/seller_info_repository.dart' as _i9;
+import '../features/forgot_password/bloc/forgot_password_bloc.dart' as _i12;
+import '../features/login_page/bloc/login_bloc.dart' as _i10;
+import '../features/seller_setting/bloc/seller_setting_bloc.dart' as _i13;
+import '../features/set_new_password/bloc/set_new_password_bloc.dart' as _i11;
+import 'modules/bloc_module.dart' as _i17;
+import 'modules/dio_module.dart' as _i14;
+import 'modules/repository_module.dart' as _i16;
+import 'modules/rest_client_module.dart' as _i15;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -56,22 +58,26 @@ extension GetItInjectableX on _i1.GetIt {
         .getSellerInfoService(gh<_i3.Dio>(instanceName: 'dioPrivateInstance')));
     gh.factory<_i7.AuthRepository>(
         () => repositoryModule.provideAuthRepository(gh<_i4.AuthService>()));
-    gh.factory<_i8.SellerInfoRepository>(() => repositoryModule
+    gh.factory<_i8.OtpRepository>(
+        () => repositoryModule.provideOtpRepository(gh<_i5.ApiClient>()));
+    gh.factory<_i9.SellerInfoRepository>(() => repositoryModule
         .provideSellerInfoRepository(gh<_i6.SellerInfoService>()));
-    gh.factory<_i9.LoginBloc>(
+    gh.factory<_i10.LoginBloc>(
         () => blocPrivilegeModule.getLoginBloc(gh<_i7.AuthRepository>()));
-    gh.factory<_i10.SetNewPasswordBloc>(() =>
+    gh.factory<_i11.SetNewPasswordBloc>(() =>
         blocPrivilegeModule.getSetNewPasswordBloc(gh<_i7.AuthRepository>()));
-    gh.factory<_i11.SellerSettingBloc>(() => blocPrivilegeModule
-        .getSellerSettingBloc(gh<_i8.SellerInfoRepository>()));
+    gh.factory<_i12.ForgotPasswordBloc>(() =>
+        blocPrivilegeModule.getForgotPasswordBloc(gh<_i8.OtpRepository>()));
+    gh.factory<_i13.SellerSettingBloc>(() => blocPrivilegeModule
+        .getSellerSettingBloc(gh<_i9.SellerInfoRepository>()));
     return this;
   }
 }
 
-class _$DioModule extends _i12.DioModule {}
+class _$DioModule extends _i14.DioModule {}
 
-class _$RestClientModule extends _i13.RestClientModule {}
+class _$RestClientModule extends _i15.RestClientModule {}
 
-class _$RepositoryModule extends _i14.RepositoryModule {}
+class _$RepositoryModule extends _i16.RepositoryModule {}
 
-class _$BlocPrivilegeModule extends _i15.BlocPrivilegeModule {}
+class _$BlocPrivilegeModule extends _i17.BlocPrivilegeModule {}
