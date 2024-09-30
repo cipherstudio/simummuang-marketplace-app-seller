@@ -10,8 +10,11 @@ import 'package:smm_application/injector/app_injector.dart';
 class RestAPIClient {
   static Dio? _dioInstance;
 
-  static Dio get dioInstance =>
+  static Dio get dioPrivateInstance =>
       _dioInstance ??= _createPrivate(Injector.instance(), Injector.instance());
+
+  static Dio get dioPublicInstance =>
+      _dioInstance ??= _createPublic(Injector.instance());
 
   static Dio _createPrivate(
     AuthenticatorService authenticatorService,
@@ -26,6 +29,32 @@ class RestAPIClient {
     dio.interceptors.addAll([
       ApiInterceptor(),
       authenticatorService.newAuthenticatorApiInterceptor(),
+      appDefaultHeaderInterceptor,
+    ]);
+    if (!kReleaseMode) {
+      dio.interceptors.add(
+        PrettyDioLogger(
+          requestHeader: true,
+          requestBody: true,
+          responseHeader: true,
+          request: true,
+        ),
+      );
+    }
+    return dio;
+  }
+
+  static Dio _createPublic(
+    AppDefaultHeaderInterceptor appDefaultHeaderInterceptor,
+  ) {
+    final Dio dio = Dio(
+      BaseOptions(
+        baseUrl: AppKeys.baseUrl,
+      ),
+    );
+
+    dio.interceptors.addAll([
+      ApiInterceptor(),
       appDefaultHeaderInterceptor,
     ]);
     if (!kReleaseMode) {

@@ -1,24 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smm_application/components/shared_components.dart';
-import 'package:smm_application/components/smm_tabbar.dart';
+import 'package:smm_application/domain/data/models/seller_info/seller_info_model.dart';
 import 'package:smm_application/features/seller_setting/bloc/seller_setting_bloc.dart';
 import 'package:smm_application/features/seller_setting/view/component/seller_setting_detail_seller.dart';
 import 'package:smm_application/features/seller_setting/view/component/seller_setting_store_info.dart';
 import 'package:smm_application/generated/assets.gen.dart';
+import 'package:smm_application/injector/app_injector.dart';
+import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
+import 'package:smm_application/utils/dialog_utils.dart';
 
 class SellerSettingPage extends StatelessWidget {
   const SellerSettingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SellerSettingBloc(),
-      child: BlocBuilder<SellerSettingBloc, SellerSettingBlocState>(
-          builder: (context, state) => _body(context, state)),
+    final SMMDialogManager dialogManager = SMMDialogManager();
+    final SellerSettingBloc sellerSettingBloc =
+        Injector.instance<SellerSettingBloc>();
+    return BlocProvider.value(
+      value: sellerSettingBloc..add(const SellerSettingBlocEvent.init()),
+      child: BlocConsumer<SellerSettingBloc, SellerSettingBlocState>(
+          listener: (context, state) {
+        state.status.whenOrNull(
+          initial: () {},
+          loading: () {
+            dialogManager.showLoading(context);
+          },
+          loadFailed: (message, error) {
+            dialogManager.dismissLoadingDialog();
+            DialogUtils.openErrorDialog(context, message);
+          },
+          loadSuccess: (message) {
+            dialogManager.dismissLoadingDialog();
+          },
+        );
+      }, builder: (context, state) {
+        return _body(context, state);
+      }),
     );
   }
 
@@ -48,19 +70,35 @@ class SellerSettingPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          controller: context.read<SellerSettingBloc>().scrollController,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              if (state.sellerSettingPageState == SellerSettingPageState.detail)
-                const SellerSettingDetailSeller(),
-              if (state.sellerSettingPageState ==
-                  SellerSettingPageState.profile)
-                const SellerSettingStoreInfo(),
-              _footer()
-            ],
-          ),
-        ),
+            controller: context.read<SellerSettingBloc>().scrollController,
+            child: state.status.whenOrNull(
+              initial: () {
+                return const SizedBox.shrink();
+              },
+              loading: () {
+                return const SizedBox.shrink();
+              },
+              loadFailed: (message, error) {
+                return const SizedBox.shrink();
+              },
+              loadSuccess: (message) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    if (state.sellerSettingPageState ==
+                        SellerSettingPageState.detail)
+                      const SellerSettingDetailSeller(),
+                    if (state.sellerSettingPageState ==
+                        SellerSettingPageState.profile)
+                      SellerSettingStoreInfo(
+                        sellerInfoModel: state.sellerInfoData ??
+                            SellerInfoModel.fromJson({}),
+                      ),
+                    _footer()
+                  ],
+                );
+              },
+            )),
       ),
     );
   }
