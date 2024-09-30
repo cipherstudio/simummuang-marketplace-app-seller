@@ -604,15 +604,15 @@ class _$SellerSettingBlocStateImpl implements _SellerSettingBlocState {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.sellerSettingPageState, sellerSettingPageState) ||
                 other.sellerSettingPageState == sellerSettingPageState) &&
-            const DeepCollectionEquality()
-                .equals(other.sellerInfoData, sellerInfoData) &&
+            (identical(other.sellerInfoData, sellerInfoData) ||
+                other.sellerInfoData == sellerInfoData) &&
             (identical(other.currentTabbarIndex, currentTabbarIndex) ||
                 other.currentTabbarIndex == currentTabbarIndex));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, status, sellerSettingPageState,
-      const DeepCollectionEquality().hash(sellerInfoData), currentTabbarIndex);
+      sellerInfoData, currentTabbarIndex);
 
   @JsonKey(ignore: true)
   @override

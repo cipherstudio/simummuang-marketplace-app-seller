@@ -56,20 +56,21 @@ class _AuthService implements AuthService {
   }
 
   @override
-  Future<bool> resetPassword({required ResetPasswordRequestModel body}) async {
+  Future<ResetPasswordResponseModel> resetPassword(
+      {required ResetPasswordRequestModel body}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<bool>(Options(
+    final _options = _setStreamType<ResetPasswordResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/V1/customers/resetPassword',
+          '/V1/smm/password/reset',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -78,10 +79,10 @@ class _AuthService implements AuthService {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<bool>(_options);
-    late bool _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResetPasswordResponseModel _value;
     try {
-      _value = _result.data!;
+      _value = ResetPasswordResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

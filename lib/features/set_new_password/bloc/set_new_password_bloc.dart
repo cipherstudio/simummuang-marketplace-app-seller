@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:smm_application/core/bloc_core/ui_status.dart';
 import 'package:smm_application/domain/data/models/reset_password/reset_password_request_model.dart';
+import 'package:smm_application/domain/data/models/reset_password/reset_password_response_model.dart';
 import 'package:smm_application/domain/repository/auth_repository.dart';
 
 part './set_new_password_bloc_event.dart';
@@ -52,12 +53,13 @@ class SetNewPasswordBloc
           status: const UIStatus.loading(),
         ),
       );
-      final bool result = await _authRepository.resetPassword(
-          body: ResetPasswordRequestModel(
-              email: event.email,
-              resetToken: 'resetToken',
-              newPassword: event.newPassword));
-      if (result) {
+      final ResetPasswordResponseModel result =
+          await _authRepository.resetPassword(
+              body: ResetPasswordRequestModel(
+                  mobile: event.mobile,
+                  type: 'seller',
+                  password: event.newPassword));
+      if (result.succes) {
         emit(
           state.copyWith(
             status: const UIStatus.loadSuccess(),

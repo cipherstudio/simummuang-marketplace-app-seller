@@ -12,8 +12,8 @@ import 'package:smm_application/translation/generated/l10n.dart';
 import 'package:smm_application/utils/dialog_utils.dart';
 
 class SetNewPasswordPage extends StatefulWidget {
-  const SetNewPasswordPage({super.key, this.email = ''});
-  final String email;
+  const SetNewPasswordPage({super.key, this.mobile = ''});
+  final String mobile;
   @override
   State<SetNewPasswordPage> createState() => _SetNewPasswordPageState();
 }
@@ -44,6 +44,7 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
             },
             loadSuccess: (message) {
               dialogManager.dismissLoadingDialog();
+              DialogUtils.openSuccessDialog(context, 'ตั้งรหัสสำเร็จ');
             },
           );
         },
@@ -122,7 +123,7 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                         if (_formKey.currentState!.validate()) {
                           context.read<SetNewPasswordBloc>().add(
                               SetNewPasswordBlocEvent.resetPassword(
-                                  email: widget.email,
+                                  mobile: widget.mobile,
                                   newPassword: _setNewPasswordBloc
                                       .newPasswordController.text));
                         }

@@ -19,19 +19,19 @@ mixin _$SetNewPasswordBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
-    required TResult Function(String email, String newPassword) resetPassword,
+    required TResult Function(String mobile, String newPassword) resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
-    TResult? Function(String email, String newPassword)? resetPassword,
+    TResult? Function(String mobile, String newPassword)? resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
-    TResult Function(String email, String newPassword)? resetPassword,
+    TResult Function(String mobile, String newPassword)? resetPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,7 +114,7 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
-    required TResult Function(String email, String newPassword) resetPassword,
+    required TResult Function(String mobile, String newPassword) resetPassword,
   }) {
     return initialize();
   }
@@ -123,7 +123,7 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
-    TResult? Function(String email, String newPassword)? resetPassword,
+    TResult? Function(String mobile, String newPassword)? resetPassword,
   }) {
     return initialize?.call();
   }
@@ -132,7 +132,7 @@ class _$InitializeImpl implements _Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
-    TResult Function(String email, String newPassword)? resetPassword,
+    TResult Function(String mobile, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -183,7 +183,7 @@ abstract class _$$ResetPasswordImplCopyWith<$Res> {
           _$ResetPasswordImpl value, $Res Function(_$ResetPasswordImpl) then) =
       __$$ResetPasswordImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String email, String newPassword});
+  $Res call({String mobile, String newPassword});
 }
 
 /// @nodoc
@@ -197,13 +197,13 @@ class __$$ResetPasswordImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = null,
+    Object? mobile = null,
     Object? newPassword = null,
   }) {
     return _then(_$ResetPasswordImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      mobile: null == mobile
+          ? _value.mobile
+          : mobile // ignore: cast_nullable_to_non_nullable
               as String,
       newPassword: null == newPassword
           ? _value.newPassword
@@ -216,16 +216,16 @@ class __$$ResetPasswordImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ResetPasswordImpl implements _ResetPassword {
-  const _$ResetPasswordImpl({required this.email, required this.newPassword});
+  const _$ResetPasswordImpl({required this.mobile, required this.newPassword});
 
   @override
-  final String email;
+  final String mobile;
   @override
   final String newPassword;
 
   @override
   String toString() {
-    return 'SetNewPasswordBlocEvent.resetPassword(email: $email, newPassword: $newPassword)';
+    return 'SetNewPasswordBlocEvent.resetPassword(mobile: $mobile, newPassword: $newPassword)';
   }
 
   @override
@@ -233,13 +233,13 @@ class _$ResetPasswordImpl implements _ResetPassword {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ResetPasswordImpl &&
-            (identical(other.email, email) || other.email == email) &&
+            (identical(other.mobile, mobile) || other.mobile == mobile) &&
             (identical(other.newPassword, newPassword) ||
                 other.newPassword == newPassword));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, newPassword);
+  int get hashCode => Object.hash(runtimeType, mobile, newPassword);
 
   @JsonKey(ignore: true)
   @override
@@ -251,29 +251,29 @@ class _$ResetPasswordImpl implements _ResetPassword {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
-    required TResult Function(String email, String newPassword) resetPassword,
+    required TResult Function(String mobile, String newPassword) resetPassword,
   }) {
-    return resetPassword(email, newPassword);
+    return resetPassword(mobile, newPassword);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
-    TResult? Function(String email, String newPassword)? resetPassword,
+    TResult? Function(String mobile, String newPassword)? resetPassword,
   }) {
-    return resetPassword?.call(email, newPassword);
+    return resetPassword?.call(mobile, newPassword);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
-    TResult Function(String email, String newPassword)? resetPassword,
+    TResult Function(String mobile, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
-      return resetPassword(email, newPassword);
+      return resetPassword(mobile, newPassword);
     }
     return orElse();
   }
@@ -312,10 +312,10 @@ class _$ResetPasswordImpl implements _ResetPassword {
 
 abstract class _ResetPassword implements SetNewPasswordBlocEvent {
   const factory _ResetPassword(
-      {required final String email,
+      {required final String mobile,
       required final String newPassword}) = _$ResetPasswordImpl;
 
-  String get email;
+  String get mobile;
   String get newPassword;
   @JsonKey(ignore: true)
   _$$ResetPasswordImplCopyWith<_$ResetPasswordImpl> get copyWith =>
