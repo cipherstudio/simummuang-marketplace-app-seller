@@ -7,13 +7,23 @@ import 'package:smm_application/domain/data/models/otp/request_otp_response_mode
 import 'package:smm_application/domain/data/models/otp/verify_otp_request_body_model.dart';
 import 'package:smm_application/domain/data/models/otp/verify_otp_response_model.dart';
 
-part 'api_client.g.dart';
+part 'otp_service.g.dart';
 
 //
 @RestApi()
 
 ///to mock data add field key isMock boolean type and add field key file to open json file mock data response in Extra option to toggle use mock data
-abstract class ApiClient {
+abstract class OtpService {
   // Constructor
-  factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
+  factory OtpService(Dio dio, {String baseUrl}) = _OtpService;
+
+  @POST('/V1/smm/otp/request')
+  Future<RequestOtpResponseModel> requestOTP({
+    @Body() required RequestOtpRequestBody body,
+  });
+
+  @POST('/V1/smm/otp/verify')
+  Future<VerifyOtpResponseModel> verifyOTP({
+    @Body() required VerifyOtpRequestBodyModel body,
+  });
 }

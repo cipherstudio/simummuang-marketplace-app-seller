@@ -1,4 +1,5 @@
 import 'package:smm_application/data/source/api/api_client.dart';
+import 'package:smm_application/data/source/api/otp_service.dart';
 import 'package:smm_application/domain/data/models/otp/request_otp_request_body_model.dart';
 import 'package:smm_application/domain/data/models/otp/request_otp_response_model.dart';
 import 'package:smm_application/domain/data/models/otp/verify_otp_request_body_model.dart';
@@ -6,10 +7,10 @@ import 'package:smm_application/domain/data/models/otp/verify_otp_response_model
 import 'package:smm_application/domain/repository/otp_repository.dart';
 
 class OtpRepositoryImpl implements OtpRepository {
-  late final ApiClient _apiClient;
+  late final OtpService _apiClient;
 
   OtpRepositoryImpl({
-    required ApiClient apiClient,
+    required OtpService apiClient,
   }) : _apiClient = apiClient;
 
   @override

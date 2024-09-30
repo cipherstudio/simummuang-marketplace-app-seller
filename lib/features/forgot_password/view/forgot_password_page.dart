@@ -8,15 +8,19 @@ import 'package:smm_application/features/forgot_password/view/component/request_
 import 'package:smm_application/features/forgot_password/view/component/verify_otp.dart';
 import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
+import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
+import 'package:smm_application/utils/dialog_utils.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SMMDialogManager dialogManager = SMMDialogManager();
+
     return BlocProvider(
       create: (context) => Injector.instance<ForgotPasswordBloc>()
         ..add(const ForgotPasswordBlocEvent.init()),
@@ -28,23 +32,14 @@ class ForgotPasswordPage extends StatelessWidget {
             listener: (context, state) {
               state.requestOtpUiStatus.whenOrNull(
                 loading: () {
-                  CoolAlert.show(
-                    context: context,
-                    type: CoolAlertType.loading,
-                  );
+                  dialogManager.showLoading(context);
                 },
                 loadFailed: (message, error) {
-                  Navigator.pop(context, 1);
-                  CoolAlert.show(
-                    context: context,
-                    type: CoolAlertType.error,
-                    title: 'Oops...',
-                    text: 'Sorry, something went wrong',
-                    loopAnimation: false,
-                  );
+                  dialogManager.dismissLoadingDialog();
+                  DialogUtils.openErrorDialog(context, 'Something went wrong.');
                 },
                 loadSuccess: (message) {
-                  Navigator.pop(context, 1);
+                  dialogManager.dismissLoadingDialog();
                 },
               );
             },
@@ -55,24 +50,18 @@ class ForgotPasswordPage extends StatelessWidget {
             listener: (BuildContext context, ForgotPasswordBlocState state) {
               state.verifySendedOTPStatus.whenOrNull(
                 loading: () {
-                  CoolAlert.show(
-                    context: context,
-                    type: CoolAlertType.loading,
-                  );
+                  dialogManager.showLoading(context);
                 },
                 loadFailed: (message, error) {
-                  Navigator.pop(context, 1);
-                  CoolAlert.show(
-                    context: context,
-                    type: CoolAlertType.error,
-                    title: 'Oops...',
-                    text: 'Sorry, something went wrong',
-                    loopAnimation: false,
-                  );
+                  dialogManager.dismissLoadingDialog();
+                  DialogUtils.openErrorDialog(context, 'Something went wrong.');
                 },
                 loadSuccess: (message) {
-                  Navigator.pop(context, 1);
-                  context.pushNamed(AppRouter.setNewPasswordNamed);
+                  dialogManager.dismissLoadingDialog();
+                  context.pushNamed(
+                    AppRouter.setNewPasswordNamed,
+                    extra: state.emailOrPhoneInput,
+                  );
                 },
               );
             },
