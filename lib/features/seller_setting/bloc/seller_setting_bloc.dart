@@ -39,8 +39,7 @@ class SellerSettingBloc
       );
       final getCustomer = await _sellerInfoRepository.getCustomer();
       final response = await _sellerInfoRepository.getSellerInfo(
-        // id: getCustomer.id.toString(),
-        id: '9',
+        id: getCustomer.id.toString(),
       );
       emit(
         state.copyWith(
