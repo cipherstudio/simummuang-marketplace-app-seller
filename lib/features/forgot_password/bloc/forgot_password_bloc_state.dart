@@ -8,6 +8,8 @@ class ForgotPasswordBlocState with _$ForgotPasswordBlocState {
     @Default(ForgotPasswordPageState.reqOTP)
     ForgotPasswordPageState forgotPasswordPageState,
     @Default('') String emailOrPhoneInput,
-    bool? verifySendedOTPSuccess,
+    @Default(UIInitial()) UIStatus verifySendedOTPStatus,
+    @Default(UIInitial()) UIStatus requestOtpUiStatus,
+    @Default(UIInitial()) UIStatus status,
   }) = _ForgotPasswordBlocState;
 }

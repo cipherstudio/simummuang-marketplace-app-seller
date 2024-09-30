@@ -63,7 +63,9 @@ class AppRouter {
           path: appDirectorPath,
           pageBuilder: (context, state) {
             return MaterialPage<void>(
-                key: state.pageKey, child: const ExamplePage());
+              key: state.pageKey,
+              child: const LoginPage(),
+            );
           },
           routes: [
             GoRoute(
@@ -76,15 +78,20 @@ class AppRouter {
               name: forgotPasswordPageNamed,
               builder: (context, state) => const ForgotPasswordPage(),
             ),
-            GoRoute(
-              path: loginPagePath,
-              name: loginPageNamed,
-              builder: (context, state) => const LoginPage(),
-            ),
+            // GoRoute(
+            //   path: loginPagePath,
+            //   name: loginPageNamed,
+            //   builder: (context, state) => const LoginPage(),
+            // ),
             GoRoute(
               path: setNewPasswordPath,
               name: setNewPasswordNamed,
-              builder: (context, state) => const SetNewPasswordPage(),
+              builder: (context, state) {
+                String? mobileNoOrEmail = state.extra as String?;
+                return SetNewPasswordPage(
+                  mobile: mobileNoOrEmail ?? '',
+                );
+              },
             ),
             GoRoute(
               path: sellerSettingPagePath,

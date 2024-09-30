@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
 
   final TextEditingController passwordTextFieldController =
       TextEditingController();
-  late final LoginBloc _loginBloc;
+  // late final LoginBloc _loginBloc;
   SMMDialogManager dialogManager = SMMDialogManager();
 
   void _onLoginSuccess(BuildContext context, String token) {
@@ -45,9 +45,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    _loginBloc = Injector.instance<LoginBloc>();
-    return BlocProvider.value(
-      value: _loginBloc..add(const LoginBlocEvent.initialize()),
+    // _loginBloc = Injector.instance<LoginBloc>();
+    return BlocProvider(
+      create: (context) => Injector.instance<LoginBloc>()
+        ..add(const LoginBlocEvent.initialize()),
       child: BlocConsumer<LoginBloc, LoginBlocState>(
         listenWhen: (previous, current) => previous.status != current.status,
         listener: (context, state) {

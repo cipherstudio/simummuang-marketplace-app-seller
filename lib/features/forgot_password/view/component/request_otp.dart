@@ -18,6 +18,9 @@ class RequestOTP extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
+    TextEditingController emailOrPhoneNumberInputController =
+        TextEditingController();
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -25,6 +28,7 @@ class RequestOTP extends StatelessWidget {
           text: Trans.current.forgetpassword_mail_or_phone,
           isStar: true,
           child: SMMTextFormField.normal(
+            controller: emailOrPhoneNumberInputController,
             isEnable: true,
             onChanged: (value) => context
                 .read<ForgotPasswordBloc>()
@@ -48,9 +52,11 @@ class RequestOTP extends StatelessWidget {
           label: Trans.current.forgetpassword_confirm,
           width: double.infinity,
           onPressed: () {
-            context
-                .read<ForgotPasswordBloc>()
-                .add(const ForgotPasswordBlocEvent.requestOTP());
+            context.read<ForgotPasswordBloc>().add(
+                  ForgotPasswordBlocEvent.requestOTP(
+                    emailOrPhoneNumber: emailOrPhoneNumberInputController.text,
+                  ),
+                );
           },
         ),
         const SizedBox(
