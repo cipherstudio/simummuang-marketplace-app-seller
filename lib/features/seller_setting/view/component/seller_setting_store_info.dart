@@ -20,6 +20,9 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
      * to-do
      * remove Scaffold when merged to seller setting feature.
      */
+
+    String defaultTextWhenNull = 'กรุณาใส่ข้อมูลเพิ่มเติม';
+
     return Container(
       color: AppColors.background,
       child: Column(
@@ -53,8 +56,8 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
             height: 16,
           ),
           SMMTextFormField.settingNormal(
-            controller:
-                TextEditingController(text: widget.sellerInfoModel.shopTitle),
+            controller: TextEditingController(
+                text: widget.sellerInfoModel.shopTitle ?? defaultTextWhenNull),
             isEnable: true,
           ),
           const SizedBox(
@@ -71,25 +74,32 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
             height: 16,
           ),
           SMMTextFormField.settingNormal(
-            controller: TextEditingController(text: 'รอข้อมูลจาก API'),
+            controller: TextEditingController(
+                text:
+                    widget.sellerInfoModel.responseTime ?? defaultTextWhenNull),
             isEnable: true,
             suffixText: Trans.current.seller_setting_store_label_suffix_text,
           ),
           SMMTextFormField.settingNormal(
-            controller:
-                TextEditingController(text: widget.sellerInfoModel.pageLayout),
+            controller: TextEditingController(
+                text: widget.sellerInfoModel.responseRatio ??
+                    defaultTextWhenNull),
             isEnable: true,
             suffixText: Trans.current.seller_setting_store_zone_suffix_text,
           ),
           SMMTextFormField.settingNormal(
-            controller: TextEditingController(text: 'รอข้อมูลจาก API'),
+            controller: TextEditingController(
+                text: widget.sellerInfoModel.operatingTime ??
+                    defaultTextWhenNull),
             isEnable: true,
             suffixText:
                 Trans.current.seller_setting_store_opening_hours_suffix_text,
           ),
           SMMTextFormField.settingNormal(
             controller: TextEditingController(
-                text: widget.sellerInfoModel.contactNumber),
+                text: (widget.sellerInfoModel.contactNumber ??
+                        widget.sellerInfoModel.telephone) ??
+                    '08xxxxxxxx'),
             isEnable: true,
             suffixText: Trans.current.seller_setting_store_tel_num_suffix_text,
           ),
@@ -107,25 +117,29 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
             height: 16,
           ),
           SMMTextFormField.settingNormal(
-            controller:
-                TextEditingController(text: widget.sellerInfoModel.name),
+            controller: TextEditingController(
+                text: widget.sellerInfoModel.name ?? defaultTextWhenNull),
             isEnable: true,
             suffixText: Trans.current.seller_setting_seller_name_suffix_text,
           ),
           SMMTextFormField.settingNormal(
-            controller:
-                TextEditingController(text: widget.sellerInfoModel.telephone),
+            controller: TextEditingController(
+                text: (widget.sellerInfoModel.telephone ??
+                        widget.sellerInfoModel.contactNumber) ??
+                    '08xxxxxxxx'),
             isEnable: true,
             suffixText: Trans.current.seller_setting_seller_tel_num_suffix_text,
           ),
           SMMTextFormField.settingNormal(
-            controller:
-                TextEditingController(text: widget.sellerInfoModel.email),
+            controller: TextEditingController(
+                text: widget.sellerInfoModel.email ?? defaultTextWhenNull),
             isEnable: true,
             suffixText: Trans.current.seller_setting_seller_email_suffix_text,
           ),
           SMMTextFormField.settingMultipleLines(
-            controller: TextEditingController(text: 'รอข้อมูลจาก API'),
+            controller: TextEditingController(
+                text:
+                    '${widget.sellerInfoModel.address} ${widget.sellerInfoModel.city} ${widget.sellerInfoModel.country} ${widget.sellerInfoModel.postcode}'),
             isEnable: true,
             suffixText: Trans.current.seller_setting_seller_suffix_text,
           ),
