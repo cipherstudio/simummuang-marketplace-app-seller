@@ -6,7 +6,6 @@ import 'package:smm_application/features/set_new_password/bloc/set_new_password_
 import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
-import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
 import 'package:smm_application/utils/dialog_utils.dart';
@@ -44,7 +43,10 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
             },
             loadSuccess: (message) {
               dialogManager.dismissLoadingDialog();
-              DialogUtils.openSuccessDialog(context, 'ตั้งรหัสสำเร็จ');
+              DialogUtils.openSuccessDialog(context, 'ตั้งรหัสสำเร็จ',
+                  positiveTap: () {
+                context.go(AppRouter.appDirectorPath);
+              });
             },
           );
         },
