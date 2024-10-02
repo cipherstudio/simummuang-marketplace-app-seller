@@ -85,7 +85,9 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                     child: SMMTextFormField.obscure(
                       controller: _setNewPasswordBloc.newPasswordController,
                       validator: (value) {
-                        if ((value ?? '').length < 6) {
+                        if (value == null || value.isEmpty) {
+                          return 'โปรดระบุรหัสผ่านใหม่';
+                        } else if (value.length < 6) {
                           return 'อย่างน้อย 6 ตัวอักษร';
                         }
                         return null;
@@ -105,8 +107,13 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                       controller:
                           _setNewPasswordBloc.confirmNewPasswordController,
                       validator: (value) {
-                        if (value !=
-                            _setNewPasswordBloc.newPasswordController.text) {
+                        if (value == null || value.isEmpty) {
+                          return 'โปรดระบุยืนยันรหัสผ่านใหม่';
+                        } else if (value !=
+                                _setNewPasswordBloc
+                                    .newPasswordController.text &&
+                            _setNewPasswordBloc
+                                .newPasswordController.text.isNotEmpty) {
                           return 'ยืนยันรหัสผ่านต้องตรงกับรหัสผ่าน';
                         }
                         return null;
