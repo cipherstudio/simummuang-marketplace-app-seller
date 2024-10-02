@@ -24,27 +24,7 @@ class RequestOTP extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        SMMTextLabel.textField(
-          text: Trans.current.forgetpassword_mail_or_phone,
-          isStar: true,
-          child: SMMTextFormField.normal(
-            controller: emailOrPhoneNumberInputController,
-            isEnable: true,
-            onChanged: (value) => context
-                .read<ForgotPasswordBloc>()
-                .add(ForgotPasswordBlocEvent.emailOrPhoneChange(value ?? '')),
-            hintText: Trans.current.hint_text +
-                Trans.current.forgetpassword_mail_or_phone,
-            validator: (v) {
-              if (v!.isEmpty == true) {
-                return Trans.current.validate_text +
-                    Trans.current.forgetpassword_mail_or_phone;
-              } else {
-                return null;
-              }
-            },
-          ),
-        ),
+        _buildEmailOrPhoneNumber(context, emailOrPhoneNumberInputController),
         const SizedBox(
           height: 24,
         ),
@@ -86,6 +66,37 @@ class RequestOTP extends StatelessWidget {
         //   ],
         // ),
       ],
+    );
+  }
+
+  Widget _buildEmailOrPhoneNumber(
+    BuildContext context,
+    TextEditingController emailOrPhoneNumberInputController,
+  ) {
+    return SMMTextLabel.textField(
+      text: Trans.current.forgetpassword_mail_or_phone,
+      isStar: true,
+      child: BlocBuilder<ForgotPasswordBloc, ForgotPasswordBlocState>(
+        buildWhen: (previous, current) => true,
+        builder: (BuildContext context, ForgotPasswordBlocState state) {
+          return SMMTextFormField.normal(
+            controller: emailOrPhoneNumberInputController,
+            onChanged: (value) {
+              if (value!.isEmpty) {
+                BlocProvider.of<ForgotPasswordBloc>(context).add(
+                  const ForgotPasswordBlocEvent
+                      .initialEmailOrPhoneNumberFormField(),
+                );
+              }
+            },
+            autovalidateMode:
+                state.emailOrPhoneNumberFieldProperties.autovalidateMode,
+            validator: state.emailOrPhoneNumberFieldProperties.validator,
+            isEnable: true,
+            hintText: Trans.current.login_email_hint_label,
+          );
+        },
+      ),
     );
   }
 }
