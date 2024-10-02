@@ -104,7 +104,14 @@ class AuthenticatorService {
   }
 
   bool isLogin() =>
-      _credential != null && (_credential!.authenType == AuthenType.authorized);
+      _credential !=
+      null; //&& (_credential!.authenType == AuthenType.authorized);
+
+  bool? getRememberPassword() => _storage.getRememberPassword();
+
+  void setRememberPassword(bool isCheck) {
+    _storage.setRememberPassword(isCheck);
+  }
 
   void setCredential(Credential credential) {
     _setCredential(credential: credential);
@@ -112,6 +119,7 @@ class AuthenticatorService {
 
   void logout() {
     _setCredential(credential: null);
+    _storage.setRememberPassword(false);
   }
 
   void _setCredential({

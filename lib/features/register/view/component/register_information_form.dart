@@ -136,7 +136,7 @@ class RegisterInformationForm extends StatelessWidget {
           detail: Trans.current.register_external_detail,
           textButton: Trans.current.register_external_text_button,
           onTextButtonTap: () {
-            context.goNamed(AppRouter.loginPageNamed);
+            context.pushNamed(AppRouter.loginPageNamed);
           },
         ),
       ],

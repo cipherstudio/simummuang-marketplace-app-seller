@@ -89,43 +89,18 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
     Emitter<LoginBlocState> emit,
   ) async {
     try {
-      String? emailValidationMessage;
-      String? passwordValidationMessage;
-
       String? emailInput = event.emailTextFieldController?.text;
       String? passwordInput = event.passwordTextFieldController?.text;
 
-      emailValidationMessage = emailInput.stringNullOrEmpty
-          ? 'โปรดระบุอีเมล์'
-          : !EmailValidator.validate(emailInput ?? '')
-              ? 'อีเมล์ไม่ถูกต้อง'
-              : null;
-
-      if (emailValidationMessage != null) {
-        emit(
-          state.copyWith(
-            passwordOptionEnum: PasswordOptionEnum.forgotOnly,
-            emailFieldProperties: EmailFieldProperties(
-              autovalidateMode: AutovalidateMode.always,
-              validator: (value) => emailValidationMessage,
-            ),
-            passwordFieldProperties: PasswordFieldProperties(
-              autovalidateMode: AutovalidateMode.always,
-              validator: (value) => passwordValidationMessage,
-            ),
-          ),
-        );
-      } else {
-        emit(
-          state.copyWith(status: const UIStatus.loading()),
-        );
-        final String token = await _authRepository.login(
-            body: LoginRequestModel(
-                username: emailInput ?? '', password: passwordInput ?? ''));
-        emit(
-          state.copyWith(status: const UILoadSuccess(), token: token),
-        );
-      }
+      emit(
+        state.copyWith(status: const UIStatus.loading()),
+      );
+      final String token = await _authRepository.login(
+          body: LoginRequestModel(
+              username: emailInput ?? '', password: passwordInput ?? ''));
+      emit(
+        state.copyWith(status: const UILoadSuccess(), token: token),
+      );
     } catch (e) {
       emit(
         state.copyWith(status: UIStatus.loadFailed(message: e.toString())),

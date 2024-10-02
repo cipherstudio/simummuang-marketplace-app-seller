@@ -27,9 +27,21 @@ class AuthenticatorStorage extends CoreStorage {
       await secureStorage!.delete(key: Keys.credentialKey);
     }
   }
+
+  bool? getRememberPassword() {
+    checkSharePref();
+    return sharedPreferences!.getBool(Keys.rememberPasswordFlag);
+  }
+
+  Future<void> setRememberPassword(bool isRememberPassword) async {
+    checkSharePref();
+    await sharedPreferences!
+        .setBool(Keys.rememberPasswordFlag, isRememberPassword);
+  }
 }
 
 @protected
 abstract class Keys {
   static const String credentialKey = 'credentialKey';
+  static const String rememberPasswordFlag = 'rememberPasswordFlag';
 }

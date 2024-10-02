@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -5,6 +6,7 @@ import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/core/authenticator/authenticator_service.dart';
 import 'package:smm_application/core/authenticator/credential.dart';
 import 'package:smm_application/core/enums/app_enums.dart';
+import 'package:smm_application/extensions/extension.dart';
 import 'package:smm_application/features/login_page/bloc/login_bloc.dart';
 import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
@@ -59,7 +61,8 @@ class _LoginPageState extends State<LoginPage> {
             },
             loadFailed: (message, error) {
               dialogManager.dismissLoadingDialog();
-              DialogUtils.openErrorDialog(context, message);
+              DialogUtils.openErrorDialog(
+                  context, 'อีเมลหรือรหัสผ่านไม่ถูกต้อง');
             },
             loadSuccess: (message) {
               dialogManager.dismissLoadingDialog();
@@ -110,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 16,
                 ),
                 _buildRememberAndForgotPassword(context, () {
-                  context.goNamed(AppRouter.forgotPasswordPageNamed);
+                  context.pushNamed(AppRouter.forgotPasswordPageNamed);
                 }),
                 const SizedBox(
                   height: 24,
@@ -119,11 +122,14 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   label: Trans.current.login_button_label,
                   onPressed: () {
-                    BlocProvider.of<LoginBloc>(context)
-                        .add(LoginBlocEvent.login(
-                      emailTextFieldController: emailTextFieldController,
-                      passwordTextFieldController: passwordTextFieldController,
-                    ));
+                    if (_formKey.currentState!.validate()) {
+                      BlocProvider.of<LoginBloc>(context)
+                          .add(LoginBlocEvent.login(
+                        emailTextFieldController: emailTextFieldController,
+                        passwordTextFieldController:
+                            passwordTextFieldController,
+                      ));
+                    }
                   },
                 ),
                 const SizedBox(
@@ -166,8 +172,15 @@ class _LoginPageState extends State<LoginPage> {
                     .add(const LoginBlocEvent.initialEmailTextFormField());
               }
             },
-            autovalidateMode: state.emailFieldProperties.autovalidateMode,
-            validator: state.emailFieldProperties.validator,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'โปรดระบุอีเมล์';
+              } else if (!EmailValidator.validate(value)) {
+                return 'รูปแบบอีเมลไม่ถูกต้อง';
+              }
+              return null;
+            },
             isEnable: true,
             hintText: Trans.current.login_email_hint_label,
           );
@@ -184,14 +197,24 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context, state) {
           return SMMTextFormField.obscure(
             controller: passwordTextFieldController,
+            onSubmit: (value) {
+              if (_formKey.currentState!.validate()) {
+                BlocProvider.of<LoginBloc>(context).add(LoginBlocEvent.login(
+                  emailTextFieldController: emailTextFieldController,
+                  passwordTextFieldController: passwordTextFieldController,
+                ));
+              }
+            },
             onChanged: (value) {
               if (value!.isEmpty) {
                 BlocProvider.of<LoginBloc>(context)
                     .add(const LoginBlocEvent.initialPasswordTextFormField());
               }
             },
-            autovalidateMode: state.passwordFieldProperties.autovalidateMode,
-            validator: state.passwordFieldProperties.validator,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: (value) {
+              return value.stringNullOrEmpty ? 'โปรดระบุรหัสผ่าน' : null;
+            },
             isEnable: true,
             hintText: Trans.current.login_password_hint_label,
           );
@@ -210,6 +233,11 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               SMMCheckbox.withText(
                 text: Trans.current.login_remember_me_label,
+                onChanged: (value) {
+                  AuthenticatorService authService =
+                      AuthenticatorService.of(context);
+                  authService.setRememberPassword(value ?? false);
+                },
               ),
               InkWell(
                 onTap: onForgotPasswordTap,

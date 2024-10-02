@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/components/example/smm_app_bar_main_app_bar_example.dart';
+import 'package:smm_application/core/authenticator/authenticator_service.dart';
 import 'package:smm_application/core/route/shell_route_nav_bar.dart';
-import 'package:smm_application/features/example_page/view/example_page.dart';
 import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
+import 'package:smm_application/features/landing_page/landing_page.dart';
 import 'package:smm_application/features/login_page/view/login_page.dart';
 import 'package:smm_application/features/my_account/view/my_account_page.dart';
 import 'package:smm_application/features/register/view/register_page.dart';
@@ -64,7 +64,7 @@ class AppRouter {
           pageBuilder: (context, state) {
             return MaterialPage<void>(
               key: state.pageKey,
-              child: const LoginPage(),
+              child: const LandingPage(),
             );
           },
           routes: [
@@ -78,11 +78,11 @@ class AppRouter {
               name: forgotPasswordPageNamed,
               builder: (context, state) => const ForgotPasswordPage(),
             ),
-            // GoRoute(
-            //   path: loginPagePath,
-            //   name: loginPageNamed,
-            //   builder: (context, state) => const LoginPage(),
-            // ),
+            GoRoute(
+              path: loginPagePath,
+              name: loginPageNamed,
+              builder: (context, state) => const LoginPage(),
+            ),
             GoRoute(
               path: setNewPasswordPath,
               name: setNewPasswordNamed,

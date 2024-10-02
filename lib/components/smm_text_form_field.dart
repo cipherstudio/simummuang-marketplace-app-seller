@@ -32,6 +32,7 @@ class SMMTextFormField extends StatefulWidget {
   final TextStyle? errorStyle;
   final int? maxLines;
   final TextStyle? style;
+  final ValueChanged<String>? onSubmit;
 
   /// factory general input
   factory SMMTextFormField.normal({
@@ -64,16 +65,16 @@ class SMMTextFormField extends StatefulWidget {
   }
 
   /// factory obscure input
-  factory SMMTextFormField.obscure({
-    Key? key,
-    TextEditingController? controller,
-    TextInputType? keyboardType,
-    required bool isEnable,
-    String? hintText,
-    FormFieldValidator<String>? validator,
-    ValueChanged<String?>? onChanged,
-    AutovalidateMode? autovalidateMode,
-  }) {
+  factory SMMTextFormField.obscure(
+      {Key? key,
+      TextEditingController? controller,
+      TextInputType? keyboardType,
+      required bool isEnable,
+      String? hintText,
+      FormFieldValidator<String>? validator,
+      ValueChanged<String?>? onChanged,
+      AutovalidateMode? autovalidateMode,
+      ValueChanged<String>? onSubmit}) {
     // decoration ??= const InputDecoration();
     // if (decoration.hintText?.isEmpty ?? true) {
     //   decoration = decoration.copyWith(hintText: 'please provide some hint.');
@@ -88,6 +89,7 @@ class SMMTextFormField extends StatefulWidget {
       validator: validator,
       onChanged: onChanged,
       autovalidateMode: autovalidateMode,
+      onSubmit: onSubmit,
       maxLines: 1,
     );
   }
@@ -252,30 +254,30 @@ class SMMTextFormField extends StatefulWidget {
   }
 
   /// _internal default constructor
-  const SMMTextFormField._({
-    super.key,
-    this.controller,
-    this.decoration,
-    this.keyboardType,
-    this.hintText,
-    required this.isObscure,
-    this.validator,
-    required this.isEnable,
-    this.suffixText,
-    this.textInputAction,
-    this.onChanged,
-    this.validatorText,
-    this.initialValue,
-    this.tailWidget,
-    this.autovalidateMode,
-    this.prefixIcon,
-    this.prefixText,
-    this.inputFormatters,
-    this.maxLength,
-    this.errorStyle,
-    this.maxLines,
-    this.style,
-  });
+  const SMMTextFormField._(
+      {super.key,
+      this.controller,
+      this.decoration,
+      this.keyboardType,
+      this.hintText,
+      required this.isObscure,
+      this.validator,
+      required this.isEnable,
+      this.suffixText,
+      this.textInputAction,
+      this.onChanged,
+      this.validatorText,
+      this.initialValue,
+      this.tailWidget,
+      this.autovalidateMode,
+      this.prefixIcon,
+      this.prefixText,
+      this.inputFormatters,
+      this.maxLength,
+      this.errorStyle,
+      this.maxLines,
+      this.style,
+      this.onSubmit});
 
   @override
   State<SMMTextFormField> createState() => _SMMTextFormFieldState();
@@ -301,6 +303,7 @@ class _SMMTextFormFieldState extends State<SMMTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onFieldSubmitted: widget.onSubmit,
       maxLines: widget.maxLines,
       enabled: widget.isEnable,
       style:
