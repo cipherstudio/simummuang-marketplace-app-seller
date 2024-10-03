@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/domain/data/models/otp/request_otp_response_model.dart';
+import 'package:smm_application/extensions/extension.dart';
 import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';
@@ -17,6 +18,9 @@ class VerifyOTP extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
+    List<String> otpCodeList = [];
+    List<String> otpCodeList2 = [];
+
     return BlocBuilder<ForgotPasswordBloc, ForgotPasswordBlocState>(
       builder: (context, state) {
         RequestOtpResponseModel? requestOtpResponseModel =
@@ -61,8 +65,12 @@ class VerifyOTP extends StatelessWidget {
                 focusedBorderColor: AppColors.primaryBrandMain,
                 borderColor: AppColors.primaryDefaultWeak,
                 showFieldAsBox: true,
-                onCodeChanged: (String code) {},
+                onCodeChanged: (String code) {
+                  print(code);
+                  otpCodeList.add(code);
+                },
                 onSubmit: (String verificationCode) {
+                  print(verificationCode);
                   _verificationCode = verificationCode;
                 },
               ),
@@ -88,9 +96,28 @@ class VerifyOTP extends StatelessWidget {
               label: Trans.current.forgetpassword_confirm,
               width: double.infinity,
               onPressed: () {
-                BlocProvider.of<ForgotPasswordBloc>(context).add(
-                  ForgotPasswordBlocEvent.verifySendedOTP(_verificationCode),
-                );
+                List<int> indicesToSelect = [0, 2, 4, 6, 8, 10, 12];
+
+                for (int index in indicesToSelect) {
+                  if (index < otpCodeList.length) {
+                    otpCodeList2.add(otpCodeList[index]);
+                  } else {
+                    break;
+                  }
+                }
+                String otpCodeFromList = otpCodeList2.join('');
+
+                if (!otpCodeFromList.stringNullOrEmpty &&
+                    _verificationCode == null) {
+                  BlocProvider.of<ForgotPasswordBloc>(context).add(
+                    ForgotPasswordBlocEvent.verifySendedOTP(otpCodeFromList),
+                  );
+                  otpCodeList2 = [];
+                } else {
+                  BlocProvider.of<ForgotPasswordBloc>(context).add(
+                    ForgotPasswordBlocEvent.verifySendedOTP(_verificationCode),
+                  );
+                }
               },
             ),
           ],

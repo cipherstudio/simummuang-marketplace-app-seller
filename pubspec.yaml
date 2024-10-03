@@ -63,6 +63,7 @@ dependencies:
   loading_indicator: ^3.1.1
   cool_alert: ^2.0.1
   phone_numbers_parser: ^9.0.1
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:

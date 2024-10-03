@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_application/components/shared_components.dart';
 import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
+import 'package:smm_application/features/forgot_password/exceptions/forgot_password_exception.dart';
 import 'package:smm_application/features/forgot_password/view/component/request_otp.dart';
 import 'package:smm_application/features/forgot_password/view/component/verify_otp.dart';
 import 'package:smm_application/injector/app_injector.dart';
@@ -27,8 +28,9 @@ class ForgotPasswordPage extends StatelessWidget {
       child: MultiBlocListener(
         listeners: [
           BlocListener<ForgotPasswordBloc, ForgotPasswordBlocState>(
-            listenWhen: (previous, current) =>
-                current.requestOtpUiStatus != previous.requestOtpUiStatus,
+            // listenWhen: (previous, current) =>
+            //     current.requestOtpUiStatus != previous.requestOtpUiStatus,
+            listenWhen: (previous, current) => true,
             listener: (context, state) {
               state.requestOtpUiStatus.whenOrNull(
                 loading: () {
@@ -53,8 +55,19 @@ class ForgotPasswordPage extends StatelessWidget {
                   dialogManager.showLoading(context);
                 },
                 loadFailed: (message, error) {
-                  dialogManager.dismissLoadingDialog();
-                  DialogUtils.openErrorDialog(context, 'Something went wrong.');
+                  if (error is ForgotPasswordException) {
+                    dialogManager.dismissLoadingDialog();
+                    DialogUtils.openErrorDialog(
+                      context,
+                      error.message,
+                    );
+                  } else {
+                    dialogManager.dismissLoadingDialog();
+                    DialogUtils.openErrorDialog(
+                        context, 'Something went wrong.');
+                  }
+                  // dialogManager.dismissLoadingDialog();
+                  // DialogUtils.openErrorDialog(context, 'Something went wrong.');
                 },
                 loadSuccess: (message) {
                   dialogManager.dismissLoadingDialog();

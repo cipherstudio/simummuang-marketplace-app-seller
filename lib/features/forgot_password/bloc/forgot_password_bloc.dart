@@ -12,6 +12,7 @@ import 'package:smm_application/domain/data/models/otp/verify_otp_request_body_m
 import 'package:smm_application/domain/data/models/otp/verify_otp_response_model.dart';
 import 'package:smm_application/domain/repository/otp_repository.dart';
 import 'package:smm_application/extensions/extension.dart';
+import 'package:smm_application/features/forgot_password/exceptions/forgot_password_exception.dart';
 
 part 'forgot_password_bloc_event.dart';
 part 'forgot_password_bloc_state.dart';
@@ -177,6 +178,37 @@ class ForgotPasswordBloc
     try {
       emit(
         state.copyWith(
+          verifySendedOTPStatus: const UIInitial(),
+        ),
+      );
+      String? verificationCode = event.verificationCode;
+
+      String? validateMessage;
+
+      bool isValid = false;
+
+      if (verificationCode.stringNullOrEmpty) {
+        validateMessage = 'กรุณาป้อน OTP';
+      } else {
+        RegExp regExp = RegExp(r'^\d+$');
+        if (!regExp.hasMatch(verificationCode!)) {
+          // ถ้าไม่ใช้ nummeric ก็ให้ error
+          validateMessage = 'OTP ต้องเป็นตัวเลขเท่านั้น';
+        } else {
+          if (verificationCode.length < 6) {
+            validateMessage = 'กรุณาป้อน OTP ให้ครบ 6 หลัก';
+          } else {
+            isValid = true;
+          }
+        }
+      }
+
+      if (!isValid) {
+        throw ForgotPasswordException(message: validateMessage ?? '');
+      }
+
+      emit(
+        state.copyWith(
           verifySendedOTPStatus: const UILoading(),
         ),
       );
@@ -188,11 +220,18 @@ class ForgotPasswordBloc
         ),
       );
 
-      print(verifyOtpResponse);
-
       emit(
         state.copyWith(
           verifySendedOTPStatus: const UILoadSuccess(),
+        ),
+      );
+    } on ForgotPasswordException catch (e) {
+      emit(
+        state.copyWith(
+          verifySendedOTPStatus: UILoadFailed(
+            message: '',
+            error: e,
+          ),
         ),
       );
     } catch (e) {
