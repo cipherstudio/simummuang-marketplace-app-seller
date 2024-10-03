@@ -33,7 +33,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-
+  smm_components:
+    git:
+      url: https://github.com/hopeza081081081/SMMComponents.git
+      ref: 0.1.5
+  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6

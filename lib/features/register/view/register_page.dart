@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smm_application/components/shared_components.dart';
+import 'package:smm_components/components/shared_components.dart';
 import 'package:smm_application/features/register/bloc/register_bloc.dart';
 import 'package:smm_application/features/register/view/component/register_confirm_consent.dart';
 import 'package:smm_application/features/register/view/component/register_information_form.dart';

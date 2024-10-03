@@ -1098,6 +1098,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smm_components:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "0.1.5"
+      resolved-ref: "0d90d55a0bc028f32b9db635a10a0540c3a2c298"
+      url: "https://github.com/hopeza081081081/SMMComponents.git"
+    source: git
+    version: "0.1.5"
   source_gen:
     dependency: transitive
     description:

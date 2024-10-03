@@ -1,8 +1,8 @@
-import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/components/shared_components.dart';
+import 'package:smm_components/components/shared_components.dart';
+
 import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:smm_application/features/forgot_password/exceptions/forgot_password_exception.dart';
 import 'package:smm_application/features/forgot_password/view/component/request_otp.dart';

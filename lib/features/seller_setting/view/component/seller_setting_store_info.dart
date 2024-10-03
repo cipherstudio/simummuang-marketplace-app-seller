@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smm_application/components/shared_components.dart';
-import 'package:smm_application/components/smm_image_picker.dart';
+import 'package:smm_components/components/shared_components.dart';
+
 import 'package:smm_application/domain/data/models/seller_info/seller_info_model.dart';
 import 'package:smm_application/themes/app_colors.dart';
 import 'package:smm_application/themes/app_text_styles.dart';

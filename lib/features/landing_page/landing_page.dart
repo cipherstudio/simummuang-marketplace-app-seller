@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/components/shared_components.dart';
+import 'package:smm_components/components/shared_components.dart';
 import 'package:smm_application/core/authenticator/authenticator_service.dart';
-import 'package:smm_application/core/core_storage.dart';
+
 import 'package:smm_application/router/app_router.dart';
 
 class LandingPage extends StatefulWidget {

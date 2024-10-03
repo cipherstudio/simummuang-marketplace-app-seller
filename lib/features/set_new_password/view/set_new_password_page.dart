@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/components/shared_components.dart';
+import 'package:smm_components/components/shared_components.dart';
 import 'package:smm_application/features/set_new_password/bloc/set_new_password_bloc.dart';
 import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
