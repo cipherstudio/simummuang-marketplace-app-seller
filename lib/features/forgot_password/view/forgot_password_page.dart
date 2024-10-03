@@ -10,10 +10,11 @@ import 'package:smm_application/features/forgot_password/view/component/verify_o
 import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
 import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
-import 'package:smm_application/themes/app_colors.dart';
-import 'package:smm_application/themes/app_text_styles.dart';
+
 import 'package:smm_application/translation/generated/l10n.dart';
 import 'package:smm_application/utils/dialog_utils.dart';
+import 'package:smm_components/themes/app_colors.dart';
+import 'package:smm_components/themes/app_text_styles.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});
