@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smm_application/components/smm_app_bar.dart';
+import 'package:smm_components/components/shared_components.dart';
 
 class MyAccountPage extends StatefulWidget {
   const MyAccountPage({super.key});

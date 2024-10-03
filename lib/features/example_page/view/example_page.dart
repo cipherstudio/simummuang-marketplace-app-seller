@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/components/example_components.dart';
-import 'package:smm_application/components/smm_dropdown.dart';
-import 'package:smm_application/components/smm_filled_button.dart';
+
 import 'package:smm_application/core/keys/app_keys.dart';
-import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
-import 'package:smm_application/features/login_page/view/login_page.dart';
-import 'package:smm_application/features/seller_setting/view/component/seller_setting_store_info.dart';
-import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
-import 'package:smm_application/themes/app_text_styles.dart';
+
 import 'package:smm_application/translation/generated/l10n.dart';
 // import 'package:smm_application/widgets/custom_checkbox.dart';
 // import 'package:smm_application/widgets/external_login.dart';
 import 'package:smm_application/router/app_router.dart';
-import 'package:smm_application/themes/app_text_styles.dart';
-import 'package:smm_application/translation/generated/l10n.dart';
-import 'package:smm_application/components/smm_checkbox.dart';
-import 'package:smm_application/components/external_login.dart';
+import 'package:smm_components/components/example_components.dart';
+import 'package:smm_components/components/shared_components.dart';
 
 class ExamplePage extends StatefulWidget {
   const ExamplePage({
@@ -42,7 +34,7 @@ class _ExamplePageState extends State<ExamplePage> {
           children: <Widget>[
             Text(
               Trans.current.hello_world,
-              style: TextStyle(fontFamily: AppKeys.fontFamily),
+              style: const TextStyle(fontFamily: AppKeys.fontFamily),
             ),
             // SMMCheckbox(),
             // SMMCheckbox.withText(text: 'ttttttttt'),

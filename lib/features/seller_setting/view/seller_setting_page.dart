@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smm_application/components/shared_components.dart';
+import 'package:smm_components/components/shared_components.dart';
 import 'package:smm_application/domain/data/models/seller_info/seller_info_model.dart';
 import 'package:smm_application/features/seller_setting/bloc/seller_setting_bloc.dart';
 import 'package:smm_application/features/seller_setting/view/component/seller_setting_detail_seller.dart';
