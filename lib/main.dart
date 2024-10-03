@@ -7,9 +7,9 @@ import 'package:smm_application/core/authenticator/authenticator_service.dart';
 import 'package:smm_application/core/interceptor/app_default_interceptor.dart';
 import 'package:smm_application/injector/app_injector.dart';
 import 'package:smm_application/router/app_router.dart';
-import 'package:smm_application/themes/app_theme.dart';
 import 'package:smm_application/translation/generated/l10n.dart';
 import 'package:provider/provider.dart';
+import 'package:smm_components/themes/app_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
