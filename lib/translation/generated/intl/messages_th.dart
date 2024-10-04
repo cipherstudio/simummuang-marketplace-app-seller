@@ -43,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetpassword_fill_otp":
             MessageLookupByLibrary.simpleMessage("ระบุ OTP ของคุณ"),
         "forgetpassword_mail_or_phone":
-            MessageLookupByLibrary.simpleMessage("อีเมลหรือเบอร์โทรศัพท์"),
+            MessageLookupByLibrary.simpleMessage("เบอร์โทรศัพท์"),
         "forgetpassword_otp_title": MessageLookupByLibrary.simpleMessage(
             "ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์"),
         "forgetpassword_ref_code":

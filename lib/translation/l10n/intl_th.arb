@@ -42,7 +42,7 @@
   "register_back_button" : "กลับ",
   "forgetpassword_title" : "ลืมรหัสผ่าน?",
   "forgetpassword_subtitle" : "โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน",
-  "forgetpassword_mail_or_phone" : "อีเมลหรือเบอร์โทรศัพท์",
+  "forgetpassword_mail_or_phone" : "เบอร์โทรศัพท์",
   "forgetpassword_confirm" : "ยืนยัน",
   "forgetpassword_does_not_account" : "หากท่านยังไม่มีบัญชี",
   "forgetpassword_create_account" : "สร้างบัญชีใหม่",

@@ -480,10 +480,10 @@ class Trans {
     );
   }
 
-  /// `อีเมลหรือเบอร์โทรศัพท์`
+  /// `เบอร์โทรศัพท์`
   String get forgetpassword_mail_or_phone {
     return Intl.message(
-      'อีเมลหรือเบอร์โทรศัพท์',
+      'เบอร์โทรศัพท์',
       name: 'forgetpassword_mail_or_phone',
       desc: '',
       args: [],

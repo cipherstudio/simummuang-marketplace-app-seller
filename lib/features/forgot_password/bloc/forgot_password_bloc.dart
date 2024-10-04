@@ -58,7 +58,7 @@ class ForgotPasswordBloc
     emit(
       state.copyWith(
         emailOrPhoneNumberFieldProperties: EmailOrPhoneNumberProperties(
-          autovalidateMode: AutovalidateMode.always,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: (value) => null,
         ),
       ),
@@ -94,13 +94,13 @@ class ForgotPasswordBloc
             isValid = true;
           }
         } else {
+          validationMessage = 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
           // เข้าไปเช็ค email ต่อ
-
-          if (!EmailValidator.validate(emailOrPhoneNumber)) {
-            validationMessage = 'รูปแบบอีเมล์ไม่ถูกต้อง';
-          } else {
-            isValid = true;
-          }
+          // if (!EmailValidator.validate(emailOrPhoneNumber)) {
+          //   validationMessage = 'รูปแบบอีเมล์ไม่ถูกต้อง';
+          // } else {
+          //   isValid = true;
+          // }
         }
       }
 
