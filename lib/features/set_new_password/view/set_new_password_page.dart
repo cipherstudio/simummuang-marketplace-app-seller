@@ -86,18 +86,12 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                     child: SMMTextFormField.obscure(
                       controller: _setNewPasswordBloc.newPasswordController,
                       validator: (value) {
-                        // if (value == null || value.isEmpty) {
-                        //   return 'โปรดระบุรหัสผ่านใหม่';
-                        // } else if (value.length < 6) {
-                        //   return 'อย่างน้อย 6 ตัวอักษร';
-                        // }
-
                         const String pattern =
                             r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,15}$';
                         final RegExp regExp = RegExp(pattern);
 
                         if (!regExp.hasMatch(value ?? '')) {
-                          return 'รหัสผ่านไม่แข็งแรง';
+                          return 'รหัสผ่านไม่แข็งแรงและแนะนำให้ใช้รหัสผ่านที่มีความซับซ้อนมากขึ้น';
                         }
 
                         return null;
@@ -117,12 +111,23 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                       controller:
                           _setNewPasswordBloc.confirmNewPasswordController,
                       validator: (value) {
+                        // if (value == null || value.isEmpty) {
+                        //   return 'โปรดระบุยืนยันรหัสผ่านใหม่';
+                        // } else if (value !=
+                        //         _setNewPasswordBloc
+                        //             .newPasswordController.text &&
+                        //     _setNewPasswordBloc
+                        //         .newPasswordController.text.isNotEmpty) {
+                        //   return 'ยืนยันรหัสผ่านต้องตรงกับรหัสผ่าน';
+                        // }
+                        // return null;
+
                         const String pattern =
                             r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,15}$';
                         final RegExp regExp = RegExp(pattern);
 
                         if (!regExp.hasMatch(value ?? '')) {
-                          return 'รหัสผ่านไม่แข็งแรง';
+                          return 'รหัสผ่านไม่แข็งแรงและแนะนำให้ใช้รหัสผ่านที่มีความซับซ้อนมากขึ้น';
                         } else {
                           if (value == null || value.isEmpty) {
                             return 'โปรดระบุยืนยันรหัสผ่านใหม่';

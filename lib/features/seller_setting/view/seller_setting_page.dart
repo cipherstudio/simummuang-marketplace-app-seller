@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smm_components/components/shared_components.dart';
 import 'package:smm_seller_application/domain/data/models/seller_info/seller_info_model.dart';
 import 'package:smm_seller_application/features/seller_setting/bloc/seller_setting_bloc.dart';
@@ -7,6 +8,7 @@ import 'package:smm_seller_application/features/seller_setting/view/component/se
 import 'package:smm_seller_application/features/seller_setting/view/component/seller_setting_store_info.dart';
 import 'package:smm_seller_application/generated/assets.gen.dart';
 import 'package:smm_seller_application/injector/app_injector.dart';
+import 'package:smm_seller_application/router/app_router.dart';
 import 'package:smm_seller_application/src/dialogs/smm_dialog_manager.dart';
 import 'package:smm_seller_application/translation/generated/l10n.dart';
 import 'package:smm_seller_application/utils/dialog_utils.dart';
@@ -94,7 +96,7 @@ class SellerSettingPage extends StatelessWidget {
                         sellerInfoModel: state.sellerInfoData ??
                             SellerInfoModel.fromJson({}),
                       ),
-                    _footer()
+                    _footer(context)
                   ],
                 );
               },
@@ -103,7 +105,7 @@ class SellerSettingPage extends StatelessWidget {
     );
   }
 
-  Widget _footer() {
+  Widget _footer(BuildContext context) {
     return Container(
       color: AppColors.primaryDefaultInverseMain,
       padding: const EdgeInsets.all(16),
@@ -146,6 +148,10 @@ class SellerSettingPage extends StatelessWidget {
           ),
           SMMOutlinedButton(
             width: double.infinity,
+            onPressed: () {
+              // AuthenticatorService.of(context).logout();
+              context.goNamed(AppRouter.loginPageNamed);
+            },
             child: Text(
               Trans.current.seller_setting_cancle,
               style: AppTextStyles.textMDSemibold

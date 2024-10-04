@@ -18,7 +18,7 @@
   "register_next_button" : "ถัดไป",
   "login_title" : "Login",
   "login_email_label" : "E-mail",
-  "login_email_hint_label" : "please fill E-mail.",
+  "login_email_hint_label" : "please fill phone number.",
   "login_password_label" : "Password",
   "login_password_hint_label" : "please fill Password.",
   "login_remember_me_label" : "Remember me.",

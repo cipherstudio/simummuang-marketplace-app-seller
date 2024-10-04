@@ -59,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "hint_text": MessageLookupByLibrary.simpleMessage("ระบุ"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_hint_label":
-            MessageLookupByLibrary.simpleMessage("please fill E-mail."),
+            MessageLookupByLibrary.simpleMessage("please fill phone number."),
         "login_email_label": MessageLookupByLibrary.simpleMessage("E-mail"),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account yet?"),

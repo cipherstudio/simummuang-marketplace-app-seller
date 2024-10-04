@@ -52,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"),
         "forgetpassword_subtitle": MessageLookupByLibrary.simpleMessage(
-            "โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน"),
+            "โปรดระบุเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน"),
         "forgetpassword_title":
             MessageLookupByLibrary.simpleMessage("ลืมรหัสผ่าน?"),
         "hello_world": MessageLookupByLibrary.simpleMessage("สวัสดี ชาวโลก"),
@@ -60,7 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_button_label":
             MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
         "login_email_hint_label":
-            MessageLookupByLibrary.simpleMessage("ระบุอีเมล์"),
+            MessageLookupByLibrary.simpleMessage("ระบุเบอร์มือถือ"),
         "login_email_label": MessageLookupByLibrary.simpleMessage("อีเมล์"),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี"),
