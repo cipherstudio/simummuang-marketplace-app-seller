@@ -5,10 +5,10 @@ part 'request_otp_request_body_model.g.dart';
 class RequestOtpRequestBody {
   @JsonKey(name: "number")
   final String number;
+  @JsonKey(name: "mode")
+  final String mode;
 
-  RequestOtpRequestBody({
-    required this.number,
-  });
+  RequestOtpRequestBody({required this.number, this.mode = ''});
 
   RequestOtpRequestBody copyWith({
     String? number,

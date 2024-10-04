@@ -7,7 +7,7 @@ class VerifyOtpResponseModel {
   @JsonKey(name: "message")
   final String message;
   @JsonKey(name: "status")
-  final bool status;
+  final String status;
 
   VerifyOtpResponseModel({
     required this.message,
@@ -16,7 +16,7 @@ class VerifyOtpResponseModel {
 
   VerifyOtpResponseModel copyWith({
     String? message,
-    bool? status,
+    String? status,
   }) =>
       VerifyOtpResponseModel(
         message: message ?? this.message,

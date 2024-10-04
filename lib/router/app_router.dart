@@ -20,19 +20,19 @@ class AppRouter {
   static const String examplePagePath = '/example';
 
   static const String registerPageNamed = 'register';
-  static const String registerPagePath = 'register';
+  static const String registerPagePath = '/register';
 
   static const String forgotPasswordPageNamed = 'forgot-password';
-  static const String forgotPasswordPagePath = 'forgot-password';
+  static const String forgotPasswordPagePath = '/forgot-password';
 
   static const String loginPageNamed = 'login';
-  static const String loginPagePath = 'login';
+  static const String loginPagePath = '/login';
 
   static const String setNewPasswordNamed = 'setNewPassword';
-  static const String setNewPasswordPath = 'setNewPassword';
+  static const String setNewPasswordPath = '/setNewPassword';
 
   static const String sellerSettingPageNamed = 'seller-setting';
-  static const String sellerSettingPagePath = 'seller-setting';
+  static const String sellerSettingPagePath = '/seller-setting';
 
   static const String myAccountPageNamed = 'my-account';
   static const String myAccountPagePath = '/my-account';
@@ -40,6 +40,27 @@ class AppRouter {
   static GoRouter router() {
     return GoRouter(
       routes: [
+        GoRoute(
+          path: appDirectorPath,
+          redirect: (context, state) async {
+            AuthenticatorService authService = AuthenticatorService.of(context);
+            await authService.waitForCompleteInitialize();
+            final isLogin = authService.isLogin();
+            final bool isRememberPassword =
+                authService.getRememberPassword() ?? false;
+            if (isLogin && isRememberPassword) {
+              return AppRouter.sellerSettingPagePath;
+            } else {
+              return AppRouter.loginPagePath;
+            }
+          },
+          pageBuilder: (context, state) {
+            return MaterialPage<void>(
+              key: state.pageKey,
+              child: const LandingPage(),
+            );
+          },
+        ),
         ShellRoute(
           pageBuilder:
               (BuildContext context, GoRouterState state, Widget child) {
@@ -60,45 +81,34 @@ class AppRouter {
           ],
         ),
         GoRoute(
-          path: appDirectorPath,
-          pageBuilder: (context, state) {
-            return MaterialPage<void>(
-              key: state.pageKey,
-              child: const LandingPage(),
+          path: loginPagePath,
+          name: loginPageNamed,
+          builder: (context, state) => const LoginPage(),
+        ),
+        GoRoute(
+          path: registerPagePath,
+          name: registerPageNamed,
+          builder: (context, state) => const RegisterPage(),
+        ),
+        GoRoute(
+          path: sellerSettingPagePath,
+          name: sellerSettingPageNamed,
+          builder: (context, state) => const SellerSettingPage(),
+        ),
+        GoRoute(
+          path: forgotPasswordPagePath,
+          name: forgotPasswordPageNamed,
+          builder: (context, state) => const ForgotPasswordPage(),
+        ),
+        GoRoute(
+          path: setNewPasswordPath,
+          name: setNewPasswordNamed,
+          builder: (context, state) {
+            String? mobileNoOrEmail = state.extra as String?;
+            return SetNewPasswordPage(
+              mobile: mobileNoOrEmail ?? '',
             );
           },
-          routes: [
-            GoRoute(
-              path: registerPagePath,
-              name: registerPageNamed,
-              builder: (context, state) => const RegisterPage(),
-            ),
-            GoRoute(
-              path: forgotPasswordPagePath,
-              name: forgotPasswordPageNamed,
-              builder: (context, state) => const ForgotPasswordPage(),
-            ),
-            GoRoute(
-              path: loginPagePath,
-              name: loginPageNamed,
-              builder: (context, state) => const LoginPage(),
-            ),
-            GoRoute(
-              path: setNewPasswordPath,
-              name: setNewPasswordNamed,
-              builder: (context, state) {
-                String? mobileNoOrEmail = state.extra as String?;
-                return SetNewPasswordPage(
-                  mobile: mobileNoOrEmail ?? '',
-                );
-              },
-            ),
-            GoRoute(
-              path: sellerSettingPagePath,
-              name: sellerSettingPageNamed,
-              builder: (context, state) => const SellerSettingPage(),
-            )
-          ],
         ),
       ],
     );

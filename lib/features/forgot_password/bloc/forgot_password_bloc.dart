@@ -124,23 +124,33 @@ class ForgotPasswordBloc
 
       RequestOtpResponseModel requestOtpResponse =
           await _otpRepository.requestOtp(
-        requestBody:
-            RequestOtpRequestBody(number: event.emailOrPhoneNumber ?? ''),
+        requestBody: RequestOtpRequestBody(
+            number: event.emailOrPhoneNumber ?? '', mode: 'reset_pwd_seller'),
       );
+      if (requestOtpResponse.status == 'success') {
+        _requestOtpResponseModel = requestOtpResponse;
 
-      _requestOtpResponseModel = requestOtpResponse;
-
-      scrollController.jumpTo(scrollController.position.minScrollExtent);
-      emit(
-        state.copyWith(
-          requestOtpUiStatus: const UILoadSuccess(),
-          forgotPasswordPageState: ForgotPasswordPageState.verifyOTP,
-          emailOrPhoneNumberFieldProperties: EmailOrPhoneNumberProperties(
-            autovalidateMode: AutovalidateMode.always,
-            validator: (value) => null,
+        scrollController.jumpTo(scrollController.position.minScrollExtent);
+        emit(
+          state.copyWith(
+            requestOtpUiStatus: const UILoadSuccess(),
+            emailOrPhoneInput: event.emailOrPhoneNumber ?? '',
+            forgotPasswordPageState: ForgotPasswordPageState.verifyOTP,
+            emailOrPhoneNumberFieldProperties: EmailOrPhoneNumberProperties(
+              autovalidateMode: AutovalidateMode.always,
+              validator: (value) => null,
+            ),
           ),
-        ),
-      );
+        );
+      } else {
+        emit(
+          state.copyWith(
+            requestOtpUiStatus: UILoadFailed(
+              message: requestOtpResponse.message,
+            ),
+          ),
+        );
+      }
     } catch (e) {
       emit(
         state.copyWith(

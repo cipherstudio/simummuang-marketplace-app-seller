@@ -10,7 +10,7 @@ VerifyOtpResponseModel _$VerifyOtpResponseModelFromJson(
         Map<String, dynamic> json) =>
     VerifyOtpResponseModel(
       message: json['message'] as String,
-      status: json['status'] as bool,
+      status: json['status'] as String,
     );
 
 Map<String, dynamic> _$VerifyOtpResponseModelToJson(
