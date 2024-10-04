@@ -20,6 +20,7 @@ class SetNewPasswordPage extends StatefulWidget {
 class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
   late final SetNewPasswordBloc _setNewPasswordBloc;
   final _formKey = GlobalKey<FormState>();
+
   SMMDialogManager dialogManager = SMMDialogManager();
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
               dialogManager.dismissLoadingDialog();
               DialogUtils.openSuccessDialog(context, 'ตั้งรหัสสำเร็จ',
                   positiveTap: () {
-                context.go(AppRouter.appDirectorPath);
+                context.goNamed(AppRouter.loginPageNamed);
               });
             },
           );
@@ -85,11 +86,20 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                     child: SMMTextFormField.obscure(
                       controller: _setNewPasswordBloc.newPasswordController,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'โปรดระบุรหัสผ่านใหม่';
-                        } else if (value.length < 6) {
-                          return 'อย่างน้อย 6 ตัวอักษร';
+                        // if (value == null || value.isEmpty) {
+                        //   return 'โปรดระบุรหัสผ่านใหม่';
+                        // } else if (value.length < 6) {
+                        //   return 'อย่างน้อย 6 ตัวอักษร';
+                        // }
+
+                        const String pattern =
+                            r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,15}$';
+                        final RegExp regExp = RegExp(pattern);
+
+                        if (!regExp.hasMatch(value ?? '')) {
+                          return 'รหัสผ่านไม่แข็งแรง';
                         }
+
                         return null;
                       },
                       isEnable: true,
@@ -107,15 +117,24 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                       controller:
                           _setNewPasswordBloc.confirmNewPasswordController,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'โปรดระบุยืนยันรหัสผ่านใหม่';
-                        } else if (value !=
-                                _setNewPasswordBloc
-                                    .newPasswordController.text &&
-                            _setNewPasswordBloc
-                                .newPasswordController.text.isNotEmpty) {
-                          return 'ยืนยันรหัสผ่านต้องตรงกับรหัสผ่าน';
+                        const String pattern =
+                            r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,15}$';
+                        final RegExp regExp = RegExp(pattern);
+
+                        if (!regExp.hasMatch(value ?? '')) {
+                          return 'รหัสผ่านไม่แข็งแรง';
+                        } else {
+                          if (value == null || value.isEmpty) {
+                            return 'โปรดระบุยืนยันรหัสผ่านใหม่';
+                          } else if (value !=
+                                  _setNewPasswordBloc
+                                      .newPasswordController.text &&
+                              _setNewPasswordBloc
+                                  .newPasswordController.text.isNotEmpty) {
+                            return 'ยืนยันรหัสผ่านต้องตรงกับรหัสผ่าน';
+                          }
                         }
+
                         return null;
                       },
                       isEnable: true,
@@ -129,12 +148,14 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                       width: double.infinity,
                       label: Trans.current.set_new_password_button_label,
                       onPressed: () {
+                        // context.pushNamed(AppRouter.sellerSettingPageNamed);
                         if (_formKey.currentState!.validate()) {
                           context.read<SetNewPasswordBloc>().add(
-                              SetNewPasswordBlocEvent.resetPassword(
-                                  mobile: widget.mobile,
-                                  newPassword: _setNewPasswordBloc
-                                      .newPasswordController.text));
+                                SetNewPasswordBlocEvent.resetPassword(
+                                    mobile: widget.mobile,
+                                    newPassword: _setNewPasswordBloc
+                                        .newPasswordController.text),
+                              );
                         }
                       },
                     ),

@@ -230,6 +230,10 @@ class ForgotPasswordBloc
         ),
       );
 
+      if (verifyOtpResponse.status == 'error') {
+        throw ForgotPasswordException(message: verifyOtpResponse.message);
+      }
+
       emit(
         state.copyWith(
           verifySendedOTPStatus: const UILoadSuccess(),
