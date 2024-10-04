@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
+import 'package:smm_seller_application/features/forgot_password/bloc/forgot_password_bloc.dart';
 
-import 'package:smm_application/translation/generated/l10n.dart';
+import 'package:smm_seller_application/translation/generated/l10n.dart';
 import 'package:smm_components/components/shared_components.dart';
 
 class RequestOTP extends StatelessWidget {

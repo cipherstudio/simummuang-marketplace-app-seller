@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:smm_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_seller_application/core/authenticator/authenticator_service.dart';
 
 part 'credential.g.dart';
 

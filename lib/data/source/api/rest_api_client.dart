@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:smm_application/core/authenticator/authenticator_service.dart';
-import 'package:smm_application/core/interceptor/app_default_interceptor.dart';
-import 'package:smm_application/core/keys/app_keys.dart';
-import 'package:smm_application/injector/app_injector.dart';
+import 'package:smm_seller_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_seller_application/core/interceptor/app_default_interceptor.dart';
+import 'package:smm_seller_application/core/keys/app_keys.dart';
+import 'package:smm_seller_application/injector/app_injector.dart';
 
 class RestAPIClient {
   static Dio? _dioPublicInstance;

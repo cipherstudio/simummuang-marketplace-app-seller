@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:smm_application/core/authenticator/auth_exception.dart';
-import 'package:smm_application/core/authenticator/authenticator_service.dart';
-import 'package:smm_application/core/authenticator/credential.dart';
-import 'package:smm_application/core/keys/app_keys.dart';
-import 'package:smm_application/extensions/dio_extension.dart';
+import 'package:smm_seller_application/core/authenticator/auth_exception.dart';
+import 'package:smm_seller_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_seller_application/core/authenticator/credential.dart';
+import 'package:smm_seller_application/core/keys/app_keys.dart';
+import 'package:smm_seller_application/extensions/dio_extension.dart';
 
 typedef AuthenticationRequestor = Future<Credential> Function(
   Credential? currentCredential,

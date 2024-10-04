@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/router/app_router.dart';
+import 'package:smm_seller_application/router/app_router.dart';
 import 'package:smm_components/components/smm_bottom_nav_bar.dart';
 
 class ShellRouteNavBar extends StatefulWidget {

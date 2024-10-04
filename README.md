@@ -1,4 +1,4 @@
-# smm_application
+# smm_seller_application
 
 A new Flutter project.
 

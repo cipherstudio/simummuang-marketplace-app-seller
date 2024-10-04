@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:smm_application/core/authenticator/credential.dart';
-import 'package:smm_application/core/core_storage.dart';
+import 'package:smm_seller_application/core/authenticator/credential.dart';
+import 'package:smm_seller_application/core/core_storage.dart';
 
 class AuthenticatorStorage extends CoreStorage {
   AuthenticatorStorage()

@@ -4,10 +4,10 @@ import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smm_application/core/bloc_core/ui_status.dart';
-import 'package:smm_application/domain/data/models/reset_password/reset_password_request_model.dart';
-import 'package:smm_application/domain/data/models/reset_password/reset_password_response_model.dart';
-import 'package:smm_application/domain/repository/auth_repository.dart';
+import 'package:smm_seller_application/core/bloc_core/ui_status.dart';
+import 'package:smm_seller_application/domain/data/models/reset_password/reset_password_request_model.dart';
+import 'package:smm_seller_application/domain/data/models/reset_password/reset_password_response_model.dart';
+import 'package:smm_seller_application/domain/repository/auth_repository.dart';
 
 part './set_new_password_bloc_event.dart';
 part './set_new_password_bloc_state.dart';

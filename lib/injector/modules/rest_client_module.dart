@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:smm_application/data/source/api/api_client.dart';
-import 'package:smm_application/data/source/api/auth_service.dart';
-import 'package:smm_application/data/source/api/otp_service.dart';
+import 'package:smm_seller_application/data/source/api/api_client.dart';
+import 'package:smm_seller_application/data/source/api/auth_service.dart';
+import 'package:smm_seller_application/data/source/api/otp_service.dart';
 
-import 'package:smm_application/data/source/api/seller_info_service.dart';
-import 'package:smm_application/injector/modules/dio_module.dart';
+import 'package:smm_seller_application/data/source/api/seller_info_service.dart';
+import 'package:smm_seller_application/injector/modules/dio_module.dart';
 
 @module
 abstract class RestClientModule {

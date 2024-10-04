@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/core/authenticator/authenticator_service.dart';
-import 'package:smm_application/core/route/shell_route_nav_bar.dart';
-import 'package:smm_application/features/forgot_password/view/forgot_password_page.dart';
-import 'package:smm_application/features/landing_page/landing_page.dart';
-import 'package:smm_application/features/login_page/view/login_page.dart';
-import 'package:smm_application/features/my_account/view/my_account_page.dart';
-import 'package:smm_application/features/register/view/register_page.dart';
-import 'package:smm_application/features/seller_setting/view/seller_setting_page.dart';
-import 'package:smm_application/features/set_new_password/view/set_new_password_page.dart';
+import 'package:smm_seller_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_seller_application/core/route/shell_route_nav_bar.dart';
+import 'package:smm_seller_application/features/forgot_password/view/forgot_password_page.dart';
+import 'package:smm_seller_application/features/landing_page/landing_page.dart';
+import 'package:smm_seller_application/features/login_page/view/login_page.dart';
+import 'package:smm_seller_application/features/my_account/view/my_account_page.dart';
+import 'package:smm_seller_application/features/register/view/register_page.dart';
+import 'package:smm_seller_application/features/seller_setting/view/seller_setting_page.dart';
+import 'package:smm_seller_application/features/set_new_password/view/set_new_password_page.dart';
 
 class AppRouter {
   AppRouter({this.rootKey});

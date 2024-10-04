@@ -1,4 +1,4 @@
-package com.example.smm_application
+package com.smm_seller_application
 
 import io.flutter.embedding.android.FlutterActivity
 

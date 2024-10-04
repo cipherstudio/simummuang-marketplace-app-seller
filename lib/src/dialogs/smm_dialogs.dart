@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smm_components/components/shared_components.dart';
-import 'package:smm_application/src/dialogs/smm_dialog.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialog.dart';
 import 'package:smm_components/themes/app_text_styles.dart';
 
 enum SMMDialogResult { positive, negative }

@@ -1,8 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:smm_application/core/authenticator/authenticator_service.dart';
-import 'package:smm_application/core/interceptor/app_default_interceptor.dart';
-import 'package:smm_application/injector/app_injector.config.dart';
+import 'package:smm_seller_application/core/authenticator/authenticator_service.dart';
+import 'package:smm_seller_application/core/interceptor/app_default_interceptor.dart';
+import 'package:smm_seller_application/injector/app_injector.config.dart';
 
 abstract class Injector {
   Injector._();

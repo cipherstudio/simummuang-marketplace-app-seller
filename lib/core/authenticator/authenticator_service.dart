@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'package:smm_application/core/authenticator/auth_exception.dart';
-import 'package:smm_application/core/authenticator/authenticator_storage.dart';
-import 'package:smm_application/core/authenticator/credential.dart';
-import 'package:smm_application/domain/repository/auth_repository.dart';
-import 'package:smm_application/core/authenticator/interceptor/authentication_api_interceptor.dart';
-import 'package:smm_application/extensions/core_extension.dart';
+import 'package:smm_seller_application/core/authenticator/auth_exception.dart';
+import 'package:smm_seller_application/core/authenticator/authenticator_storage.dart';
+import 'package:smm_seller_application/core/authenticator/credential.dart';
+import 'package:smm_seller_application/domain/repository/auth_repository.dart';
+import 'package:smm_seller_application/core/authenticator/interceptor/authentication_api_interceptor.dart';
+import 'package:smm_seller_application/extensions/core_extension.dart';
 
-import 'package:smm_application/injector/app_injector.dart';
+import 'package:smm_seller_application/injector/app_injector.dart';
 
 import 'package:uuid/uuid.dart';
 

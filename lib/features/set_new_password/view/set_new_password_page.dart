@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_components/components/shared_components.dart';
-import 'package:smm_application/features/set_new_password/bloc/set_new_password_bloc.dart';
-import 'package:smm_application/injector/app_injector.dart';
-import 'package:smm_application/router/app_router.dart';
-import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
-import 'package:smm_application/translation/generated/l10n.dart';
-import 'package:smm_application/utils/dialog_utils.dart';
+import 'package:smm_seller_application/features/set_new_password/bloc/set_new_password_bloc.dart';
+import 'package:smm_seller_application/injector/app_injector.dart';
+import 'package:smm_seller_application/router/app_router.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialog_manager.dart';
+import 'package:smm_seller_application/translation/generated/l10n.dart';
+import 'package:smm_seller_application/utils/dialog_utils.dart';
 import 'package:smm_components/themes/app_text_styles.dart';
 
 class SetNewPasswordPage extends StatefulWidget {

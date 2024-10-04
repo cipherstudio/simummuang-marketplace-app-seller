@@ -3,16 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_components/components/shared_components.dart';
 
-import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
-import 'package:smm_application/features/forgot_password/exceptions/forgot_password_exception.dart';
-import 'package:smm_application/features/forgot_password/view/component/request_otp.dart';
-import 'package:smm_application/features/forgot_password/view/component/verify_otp.dart';
-import 'package:smm_application/injector/app_injector.dart';
-import 'package:smm_application/router/app_router.dart';
-import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
+import 'package:smm_seller_application/features/forgot_password/bloc/forgot_password_bloc.dart';
+import 'package:smm_seller_application/features/forgot_password/exceptions/forgot_password_exception.dart';
+import 'package:smm_seller_application/features/forgot_password/view/component/request_otp.dart';
+import 'package:smm_seller_application/features/forgot_password/view/component/verify_otp.dart';
+import 'package:smm_seller_application/injector/app_injector.dart';
+import 'package:smm_seller_application/router/app_router.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialog_manager.dart';
 
-import 'package:smm_application/translation/generated/l10n.dart';
-import 'package:smm_application/utils/dialog_utils.dart';
+import 'package:smm_seller_application/translation/generated/l10n.dart';
+import 'package:smm_seller_application/utils/dialog_utils.dart';
 import 'package:smm_components/themes/app_colors.dart';
 import 'package:smm_components/themes/app_text_styles.dart';
 

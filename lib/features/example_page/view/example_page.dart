@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:smm_application/core/keys/app_keys.dart';
+import 'package:smm_seller_application/core/keys/app_keys.dart';
 
-import 'package:smm_application/translation/generated/l10n.dart';
-// import 'package:smm_application/widgets/custom_checkbox.dart';
-// import 'package:smm_application/widgets/external_login.dart';
-import 'package:smm_application/router/app_router.dart';
+import 'package:smm_seller_application/translation/generated/l10n.dart';
+// import 'package:smm_seller_application/widgets/custom_checkbox.dart';
+// import 'package:smm_seller_application/widgets/external_login.dart';
+import 'package:smm_seller_application/router/app_router.dart';
 import 'package:smm_components/components/example_components.dart';
 import 'package:smm_components/components/shared_components.dart';
 

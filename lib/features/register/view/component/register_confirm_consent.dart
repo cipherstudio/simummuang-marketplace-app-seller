@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:smm_components/components/shared_components.dart';
-import 'package:smm_application/features/register/bloc/register_bloc.dart';
-import 'package:smm_application/generated/assets.gen.dart';
+import 'package:smm_seller_application/features/register/bloc/register_bloc.dart';
+import 'package:smm_seller_application/generated/assets.gen.dart';
 
-import 'package:smm_application/translation/generated/l10n.dart';
+import 'package:smm_seller_application/translation/generated/l10n.dart';
 import 'package:smm_components/themes/app_colors.dart';
 import 'package:smm_components/themes/app_text_styles.dart';
 

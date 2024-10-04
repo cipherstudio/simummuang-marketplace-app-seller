@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smm_application/src/dialogs/smm_dialogs.dart';
-import 'package:smm_application/src/dialogs/smm_dialog.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialogs.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialog.dart';
 
 class SMMDialogManager {
   final GlobalKey _alertKey = GlobalKey();

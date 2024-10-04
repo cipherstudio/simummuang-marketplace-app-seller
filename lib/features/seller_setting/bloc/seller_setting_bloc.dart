@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smm_application/core/bloc_core/ui_status.dart';
-import 'package:smm_application/domain/data/models/seller_info/seller_info_model.dart';
-import 'package:smm_application/domain/repository/seller_info_repository.dart';
+import 'package:smm_seller_application/core/bloc_core/ui_status.dart';
+import 'package:smm_seller_application/domain/data/models/seller_info/seller_info_model.dart';
+import 'package:smm_seller_application/domain/repository/seller_info_repository.dart';
 
 part 'seller_setting_bloc_event.dart';
 part 'seller_setting_bloc_state.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smm_application/src/dialogs/smm_dialog_manager.dart';
-import 'package:smm_application/src/dialogs/smm_dialogs.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialog_manager.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialogs.dart';
 
 abstract final class DialogUtils {
   static void openErrorDialog(BuildContext context, String message,

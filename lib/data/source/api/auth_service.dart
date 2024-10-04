@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:smm_application/domain/data/models/login/login_request_model.dart';
-import 'package:smm_application/domain/data/models/reset_password/reset_password_response_model.dart';
-import 'package:smm_application/domain/data/models/reset_password/reset_password_request_model.dart';
+import 'package:smm_seller_application/domain/data/models/login/login_request_model.dart';
+import 'package:smm_seller_application/domain/data/models/reset_password/reset_password_response_model.dart';
+import 'package:smm_seller_application/domain/data/models/reset_password/reset_password_request_model.dart';
 
 part 'auth_service.g.dart';
 
