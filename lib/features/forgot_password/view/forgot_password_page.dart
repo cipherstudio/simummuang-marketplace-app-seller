@@ -39,7 +39,7 @@ class ForgotPasswordPage extends StatelessWidget {
                 },
                 loadFailed: (message, error) {
                   dialogManager.dismissLoadingDialog();
-                  DialogUtils.openErrorDialog(context, 'Something went wrong.');
+                  DialogUtils.openErrorDialog(context, message);
                 },
                 loadSuccess: (message) {
                   dialogManager.dismissLoadingDialog();

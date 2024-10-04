@@ -13,6 +13,7 @@ RequestOtpResponseModel _$RequestOtpResponseModelFromJson(
       token: json['token'] as String,
       refno: json['refno'] as String,
       status: json['status'] as String,
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$RequestOtpResponseModelToJson(
@@ -22,4 +23,5 @@ Map<String, dynamic> _$RequestOtpResponseModelToJson(
       'token': instance.token,
       'refno': instance.refno,
       'status': instance.status,
+      'message': instance.message,
     };
