@@ -48,12 +48,11 @@ class AppRouter {
             final isLogin = authService.isLogin();
             final bool isRememberPassword =
                 authService.getRememberPassword() ?? false;
-            return AppRouter.loginPagePath;
-            // if (isLogin && isRememberPassword) {
-            //   return AppRouter.sellerSettingPagePath;
-            // } else {
-            //   return AppRouter.loginPagePath;
-            // }
+            if (isLogin && isRememberPassword) {
+              return AppRouter.sellerSettingPagePath;
+            } else {
+              return AppRouter.loginPagePath;
+            }
           },
           pageBuilder: (context, state) {
             return MaterialPage<void>(
