@@ -1,4 +1,3 @@
-import 'package:smm_seller_application/data/source/api/api_client.dart';
 import 'package:smm_seller_application/data/source/api/otp_service.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_request_body_model.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_response_model.dart';

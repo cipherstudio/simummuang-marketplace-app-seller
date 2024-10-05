@@ -1,10 +1,8 @@
 import 'dart:async';
 
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:phone_numbers_parser/phone_numbers_parser.dart';
 import 'package:smm_seller_application/core/bloc_core/ui_status.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_request_body_model.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_response_model.dart';
@@ -24,13 +22,10 @@ class ForgotPasswordBloc
     required OtpRepository otpRepository,
   })  : _otpRepository = otpRepository,
         super(const ForgotPasswordBlocState()) {
-    on<_Initial>(_onInit);
     on<_RequestOTP>(_onRequestOTP);
     on<_EmailOrPhoneChange>(_onEmailOrPhoneChange);
     on<_Back>(_onBack);
     on<_VerifySendedOTP>(_onVerifySendedOTP);
-    on<_InitialEmailOrPhoneNumberFormField>(
-        _onInitialEmailOrPhoneNumberFormField);
   }
 
   final OtpRepository _otpRepository;
@@ -42,80 +37,11 @@ class ForgotPasswordBloc
     return _requestOtpResponseModel;
   }
 
-  FutureOr<void> _onInit(
-    _Initial event,
-    Emitter<ForgotPasswordBlocState> emit,
-  ) async {
-    emit(
-      state.copyWith(status: const UILoadSuccess()),
-    );
-  }
-
-  Future<void> _onInitialEmailOrPhoneNumberFormField(
-    _InitialEmailOrPhoneNumberFormField event,
-    Emitter<ForgotPasswordBlocState> emit,
-  ) async {
-    emit(
-      state.copyWith(
-        emailOrPhoneNumberFieldProperties: EmailOrPhoneNumberProperties(
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          validator: (value) => null,
-        ),
-      ),
-    );
-  }
-
   FutureOr<void> _onRequestOTP(
     _RequestOTP event,
     Emitter<ForgotPasswordBlocState> emit,
   ) async {
     try {
-      String? validationMessage;
-
-      bool isValid = false;
-
-      String? emailOrPhoneNumber = event.emailOrPhoneNumber;
-
-      PhoneNumber phoneNumberInstance = PhoneNumber.parse(
-        emailOrPhoneNumber ?? '',
-        callerCountry: IsoCode.TH,
-      );
-
-      if (emailOrPhoneNumber.stringNullOrEmpty) {
-        validationMessage = 'โปรดระบุอีเมล์ หรือ เบอร์โทรศัพท์';
-      } else {
-        RegExp regExp = RegExp(r'^\d+$');
-        // เอา RegEx มาเช็คว่า input เป็น numeric หมดไหม
-        if (regExp.hasMatch(emailOrPhoneNumber!)) {
-          // เข้าไป validate phone number
-          if (!phoneNumberInstance.isValid()) {
-            validationMessage = 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
-          } else {
-            isValid = true;
-          }
-        } else {
-          validationMessage = 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
-          // เข้าไปเช็ค email ต่อ
-          // if (!EmailValidator.validate(emailOrPhoneNumber)) {
-          //   validationMessage = 'รูปแบบอีเมล์ไม่ถูกต้อง';
-          // } else {
-          //   isValid = true;
-          // }
-        }
-      }
-
-      if (!isValid) {
-        emit(
-          state.copyWith(
-            emailOrPhoneNumberFieldProperties: EmailOrPhoneNumberProperties(
-              autovalidateMode: AutovalidateMode.always,
-              validator: (value) => validationMessage,
-            ),
-          ),
-        );
-        return;
-      }
-
       emit(
         state.copyWith(
           requestOtpUiStatus: const UILoading(),
@@ -136,10 +62,6 @@ class ForgotPasswordBloc
             requestOtpUiStatus: const UILoadSuccess(),
             emailOrPhoneInput: event.emailOrPhoneNumber ?? '',
             forgotPasswordPageState: ForgotPasswordPageState.verifyOTP,
-            emailOrPhoneNumberFieldProperties: EmailOrPhoneNumberProperties(
-              autovalidateMode: AutovalidateMode.always,
-              validator: (value) => null,
-            ),
           ),
         );
       } else {

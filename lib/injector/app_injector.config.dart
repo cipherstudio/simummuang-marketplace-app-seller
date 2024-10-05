@@ -16,9 +16,9 @@ import '../data/source/api/api_client.dart' as _i6;
 import '../data/source/api/auth_service.dart' as _i4;
 import '../data/source/api/otp_service.dart' as _i5;
 import '../data/source/api/seller_info_service.dart' as _i7;
-import '../domain/repository/auth_repository.dart' as _i9;
-import '../domain/repository/otp_repository.dart' as _i8;
-import '../domain/repository/seller_info_repository.dart' as _i10;
+import '../domain/repository/auth_repository.dart' as _i8;
+import '../domain/repository/otp_repository.dart' as _i10;
+import '../domain/repository/seller_info_repository.dart' as _i9;
 import '../features/forgot_password/bloc/forgot_password_bloc.dart' as _i13;
 import '../features/login_page/bloc/login_bloc.dart' as _i11;
 import '../features/seller_setting/bloc/seller_setting_bloc.dart' as _i14;
@@ -59,20 +59,20 @@ extension GetItInjectableX on _i1.GetIt {
         .getApiClient(gh<_i3.Dio>(instanceName: 'dioPrivateInstance')));
     gh.factory<_i7.SellerInfoService>(() => restClientModule
         .getSellerInfoService(gh<_i3.Dio>(instanceName: 'dioPrivateInstance')));
-    gh.factory<_i8.OtpRepository>(
-        () => repositoryModule.provideOtpRepository(gh<_i5.OtpService>()));
-    gh.factory<_i9.AuthRepository>(
+    gh.factory<_i8.AuthRepository>(
         () => repositoryModule.provideAuthRepository(gh<_i4.AuthService>()));
-    gh.factory<_i10.SellerInfoRepository>(() => repositoryModule
+    gh.factory<_i9.SellerInfoRepository>(() => repositoryModule
         .provideSellerInfoRepository(gh<_i7.SellerInfoService>()));
+    gh.factory<_i10.OtpRepository>(
+        () => repositoryModule.provideOtpRepository(gh<_i5.OtpService>()));
     gh.factory<_i11.LoginBloc>(
-        () => blocPrivilegeModule.getLoginBloc(gh<_i9.AuthRepository>()));
+        () => blocPrivilegeModule.getLoginBloc(gh<_i8.AuthRepository>()));
     gh.factory<_i12.SetNewPasswordBloc>(() =>
-        blocPrivilegeModule.getSetNewPasswordBloc(gh<_i9.AuthRepository>()));
+        blocPrivilegeModule.getSetNewPasswordBloc(gh<_i8.AuthRepository>()));
     gh.factory<_i13.ForgotPasswordBloc>(() =>
-        blocPrivilegeModule.getForgotPasswordBloc(gh<_i8.OtpRepository>()));
+        blocPrivilegeModule.getForgotPasswordBloc(gh<_i10.OtpRepository>()));
     gh.factory<_i14.SellerSettingBloc>(() => blocPrivilegeModule
-        .getSellerSettingBloc(gh<_i10.SellerInfoRepository>()));
+        .getSellerSettingBloc(gh<_i9.SellerInfoRepository>()));
     return this;
   }
 }

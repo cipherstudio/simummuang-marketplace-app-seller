@@ -2,7 +2,6 @@ part of 'forgot_password_bloc.dart';
 
 @freezed
 class ForgotPasswordBlocEvent with _$ForgotPasswordBlocEvent {
-  const factory ForgotPasswordBlocEvent.init() = _Initial;
   const factory ForgotPasswordBlocEvent.requestOTP({
     String? emailOrPhoneNumber,
   }) = _RequestOTP;
@@ -12,7 +11,4 @@ class ForgotPasswordBlocEvent with _$ForgotPasswordBlocEvent {
   const factory ForgotPasswordBlocEvent.verifySendedOTP(
     String? verificationCode,
   ) = _VerifySendedOTP;
-
-  const factory ForgotPasswordBlocEvent.initialEmailOrPhoneNumberFormField() =
-      _InitialEmailOrPhoneNumberFormField;
 }

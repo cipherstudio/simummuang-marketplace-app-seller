@@ -24,8 +24,7 @@ class ForgotPasswordPage extends StatelessWidget {
     SMMDialogManager dialogManager = SMMDialogManager();
 
     return BlocProvider(
-      create: (context) => Injector.instance<ForgotPasswordBloc>()
-        ..add(const ForgotPasswordBlocEvent.init()),
+      create: (context) => Injector.instance<ForgotPasswordBloc>(),
       child: MultiBlocListener(
         listeners: [
           BlocListener<ForgotPasswordBloc, ForgotPasswordBlocState>(

@@ -18,66 +18,51 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ForgotPasswordBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function(String? emailOrPhoneNumber) requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
-    required TResult Function() initialEmailOrPhoneNumberFormField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function(String? emailOrPhoneNumber)? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
-    TResult? Function()? initialEmailOrPhoneNumberFormField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function(String? emailOrPhoneNumber)? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
-    TResult Function()? initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) init,
     required TResult Function(_RequestOTP value) requestOTP,
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
-    required TResult Function(_InitialEmailOrPhoneNumberFormField value)
-        initialEmailOrPhoneNumberFormField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? init,
     TResult? Function(_RequestOTP value)? requestOTP,
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult? Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? init,
     TResult Function(_RequestOTP value)? requestOTP,
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -100,135 +85,6 @@ class _$ForgotPasswordBlocEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ForgotPasswordBlocEventCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'ForgotPasswordBlocEvent.init()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function(String? emailOrPhoneNumber) requestOTP,
-    required TResult Function(String value) emailOrPhoneChange,
-    required TResult Function() back,
-    required TResult Function(String? verificationCode) verifySendedOTP,
-    required TResult Function() initialEmailOrPhoneNumberFormField,
-  }) {
-    return init();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function(String? emailOrPhoneNumber)? requestOTP,
-    TResult? Function(String value)? emailOrPhoneChange,
-    TResult? Function()? back,
-    TResult? Function(String? verificationCode)? verifySendedOTP,
-    TResult? Function()? initialEmailOrPhoneNumberFormField,
-  }) {
-    return init?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(String? emailOrPhoneNumber)? requestOTP,
-    TResult Function(String value)? emailOrPhoneChange,
-    TResult Function()? back,
-    TResult Function(String? verificationCode)? verifySendedOTP,
-    TResult Function()? initialEmailOrPhoneNumberFormField,
-    required TResult orElse(),
-  }) {
-    if (init != null) {
-      return init();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) init,
-    required TResult Function(_RequestOTP value) requestOTP,
-    required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
-    required TResult Function(_Back value) back,
-    required TResult Function(_VerifySendedOTP value) verifySendedOTP,
-    required TResult Function(_InitialEmailOrPhoneNumberFormField value)
-        initialEmailOrPhoneNumberFormField,
-  }) {
-    return init(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? init,
-    TResult? Function(_RequestOTP value)? requestOTP,
-    TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
-    TResult? Function(_Back value)? back,
-    TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult? Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
-  }) {
-    return init?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? init,
-    TResult Function(_RequestOTP value)? requestOTP,
-    TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
-    TResult Function(_Back value)? back,
-    TResult Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
-    required TResult orElse(),
-  }) {
-    if (init != null) {
-      return init(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements ForgotPasswordBlocEvent {
-  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
@@ -296,12 +152,10 @@ class _$RequestOTPImpl implements _RequestOTP {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function(String? emailOrPhoneNumber) requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
-    required TResult Function() initialEmailOrPhoneNumberFormField,
   }) {
     return requestOTP(emailOrPhoneNumber);
   }
@@ -309,12 +163,10 @@ class _$RequestOTPImpl implements _RequestOTP {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function(String? emailOrPhoneNumber)? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
-    TResult? Function()? initialEmailOrPhoneNumberFormField,
   }) {
     return requestOTP?.call(emailOrPhoneNumber);
   }
@@ -322,12 +174,10 @@ class _$RequestOTPImpl implements _RequestOTP {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function(String? emailOrPhoneNumber)? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
-    TResult Function()? initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (requestOTP != null) {
@@ -339,13 +189,10 @@ class _$RequestOTPImpl implements _RequestOTP {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) init,
     required TResult Function(_RequestOTP value) requestOTP,
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
-    required TResult Function(_InitialEmailOrPhoneNumberFormField value)
-        initialEmailOrPhoneNumberFormField,
   }) {
     return requestOTP(this);
   }
@@ -353,13 +200,10 @@ class _$RequestOTPImpl implements _RequestOTP {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? init,
     TResult? Function(_RequestOTP value)? requestOTP,
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult? Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
   }) {
     return requestOTP?.call(this);
   }
@@ -367,13 +211,10 @@ class _$RequestOTPImpl implements _RequestOTP {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? init,
     TResult Function(_RequestOTP value)? requestOTP,
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (requestOTP != null) {
@@ -459,12 +300,10 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function(String? emailOrPhoneNumber) requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
-    required TResult Function() initialEmailOrPhoneNumberFormField,
   }) {
     return emailOrPhoneChange(value);
   }
@@ -472,12 +311,10 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function(String? emailOrPhoneNumber)? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
-    TResult? Function()? initialEmailOrPhoneNumberFormField,
   }) {
     return emailOrPhoneChange?.call(value);
   }
@@ -485,12 +322,10 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function(String? emailOrPhoneNumber)? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
-    TResult Function()? initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (emailOrPhoneChange != null) {
@@ -502,13 +337,10 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) init,
     required TResult Function(_RequestOTP value) requestOTP,
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
-    required TResult Function(_InitialEmailOrPhoneNumberFormField value)
-        initialEmailOrPhoneNumberFormField,
   }) {
     return emailOrPhoneChange(this);
   }
@@ -516,13 +348,10 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? init,
     TResult? Function(_RequestOTP value)? requestOTP,
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult? Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
   }) {
     return emailOrPhoneChange?.call(this);
   }
@@ -530,13 +359,10 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? init,
     TResult Function(_RequestOTP value)? requestOTP,
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (emailOrPhoneChange != null) {
@@ -593,12 +419,10 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function(String? emailOrPhoneNumber) requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
-    required TResult Function() initialEmailOrPhoneNumberFormField,
   }) {
     return back();
   }
@@ -606,12 +430,10 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function(String? emailOrPhoneNumber)? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
-    TResult? Function()? initialEmailOrPhoneNumberFormField,
   }) {
     return back?.call();
   }
@@ -619,12 +441,10 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function(String? emailOrPhoneNumber)? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
-    TResult Function()? initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (back != null) {
@@ -636,13 +456,10 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) init,
     required TResult Function(_RequestOTP value) requestOTP,
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
-    required TResult Function(_InitialEmailOrPhoneNumberFormField value)
-        initialEmailOrPhoneNumberFormField,
   }) {
     return back(this);
   }
@@ -650,13 +467,10 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? init,
     TResult? Function(_RequestOTP value)? requestOTP,
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult? Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
   }) {
     return back?.call(this);
   }
@@ -664,13 +478,10 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? init,
     TResult Function(_RequestOTP value)? requestOTP,
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (back != null) {
@@ -750,12 +561,10 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function(String? emailOrPhoneNumber) requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
-    required TResult Function() initialEmailOrPhoneNumberFormField,
   }) {
     return verifySendedOTP(verificationCode);
   }
@@ -763,12 +572,10 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function(String? emailOrPhoneNumber)? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
-    TResult? Function()? initialEmailOrPhoneNumberFormField,
   }) {
     return verifySendedOTP?.call(verificationCode);
   }
@@ -776,12 +583,10 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function(String? emailOrPhoneNumber)? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
-    TResult Function()? initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (verifySendedOTP != null) {
@@ -793,13 +598,10 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) init,
     required TResult Function(_RequestOTP value) requestOTP,
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
-    required TResult Function(_InitialEmailOrPhoneNumberFormField value)
-        initialEmailOrPhoneNumberFormField,
   }) {
     return verifySendedOTP(this);
   }
@@ -807,13 +609,10 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? init,
     TResult? Function(_RequestOTP value)? requestOTP,
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult? Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
   }) {
     return verifySendedOTP?.call(this);
   }
@@ -821,13 +620,10 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? init,
     TResult Function(_RequestOTP value)? requestOTP,
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
     required TResult orElse(),
   }) {
     if (verifySendedOTP != null) {
@@ -848,151 +644,12 @@ abstract class _VerifySendedOTP implements ForgotPasswordBlocEvent {
 }
 
 /// @nodoc
-abstract class _$$InitialEmailOrPhoneNumberFormFieldImplCopyWith<$Res> {
-  factory _$$InitialEmailOrPhoneNumberFormFieldImplCopyWith(
-          _$InitialEmailOrPhoneNumberFormFieldImpl value,
-          $Res Function(_$InitialEmailOrPhoneNumberFormFieldImpl) then) =
-      __$$InitialEmailOrPhoneNumberFormFieldImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialEmailOrPhoneNumberFormFieldImplCopyWithImpl<$Res>
-    extends _$ForgotPasswordBlocEventCopyWithImpl<$Res,
-        _$InitialEmailOrPhoneNumberFormFieldImpl>
-    implements _$$InitialEmailOrPhoneNumberFormFieldImplCopyWith<$Res> {
-  __$$InitialEmailOrPhoneNumberFormFieldImplCopyWithImpl(
-      _$InitialEmailOrPhoneNumberFormFieldImpl _value,
-      $Res Function(_$InitialEmailOrPhoneNumberFormFieldImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialEmailOrPhoneNumberFormFieldImpl
-    implements _InitialEmailOrPhoneNumberFormField {
-  const _$InitialEmailOrPhoneNumberFormFieldImpl();
-
-  @override
-  String toString() {
-    return 'ForgotPasswordBlocEvent.initialEmailOrPhoneNumberFormField()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitialEmailOrPhoneNumberFormFieldImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function(String? emailOrPhoneNumber) requestOTP,
-    required TResult Function(String value) emailOrPhoneChange,
-    required TResult Function() back,
-    required TResult Function(String? verificationCode) verifySendedOTP,
-    required TResult Function() initialEmailOrPhoneNumberFormField,
-  }) {
-    return initialEmailOrPhoneNumberFormField();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function(String? emailOrPhoneNumber)? requestOTP,
-    TResult? Function(String value)? emailOrPhoneChange,
-    TResult? Function()? back,
-    TResult? Function(String? verificationCode)? verifySendedOTP,
-    TResult? Function()? initialEmailOrPhoneNumberFormField,
-  }) {
-    return initialEmailOrPhoneNumberFormField?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(String? emailOrPhoneNumber)? requestOTP,
-    TResult Function(String value)? emailOrPhoneChange,
-    TResult Function()? back,
-    TResult Function(String? verificationCode)? verifySendedOTP,
-    TResult Function()? initialEmailOrPhoneNumberFormField,
-    required TResult orElse(),
-  }) {
-    if (initialEmailOrPhoneNumberFormField != null) {
-      return initialEmailOrPhoneNumberFormField();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) init,
-    required TResult Function(_RequestOTP value) requestOTP,
-    required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
-    required TResult Function(_Back value) back,
-    required TResult Function(_VerifySendedOTP value) verifySendedOTP,
-    required TResult Function(_InitialEmailOrPhoneNumberFormField value)
-        initialEmailOrPhoneNumberFormField,
-  }) {
-    return initialEmailOrPhoneNumberFormField(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? init,
-    TResult? Function(_RequestOTP value)? requestOTP,
-    TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
-    TResult? Function(_Back value)? back,
-    TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult? Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
-  }) {
-    return initialEmailOrPhoneNumberFormField?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? init,
-    TResult Function(_RequestOTP value)? requestOTP,
-    TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
-    TResult Function(_Back value)? back,
-    TResult Function(_VerifySendedOTP value)? verifySendedOTP,
-    TResult Function(_InitialEmailOrPhoneNumberFormField value)?
-        initialEmailOrPhoneNumberFormField,
-    required TResult orElse(),
-  }) {
-    if (initialEmailOrPhoneNumberFormField != null) {
-      return initialEmailOrPhoneNumberFormField(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InitialEmailOrPhoneNumberFormField
-    implements ForgotPasswordBlocEvent {
-  const factory _InitialEmailOrPhoneNumberFormField() =
-      _$InitialEmailOrPhoneNumberFormFieldImpl;
-}
-
-/// @nodoc
 mixin _$ForgotPasswordBlocState {
   ForgotPasswordPageState get forgotPasswordPageState =>
       throw _privateConstructorUsedError;
   String get emailOrPhoneInput => throw _privateConstructorUsedError;
   UIStatus get verifySendedOTPStatus => throw _privateConstructorUsedError;
   UIStatus get requestOtpUiStatus => throw _privateConstructorUsedError;
-  UIStatus get status => throw _privateConstructorUsedError;
-  EmailOrPhoneNumberProperties get emailOrPhoneNumberFieldProperties =>
-      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ForgotPasswordBlocStateCopyWith<ForgotPasswordBlocState> get copyWith =>
@@ -1009,13 +666,10 @@ abstract class $ForgotPasswordBlocStateCopyWith<$Res> {
       {ForgotPasswordPageState forgotPasswordPageState,
       String emailOrPhoneInput,
       UIStatus verifySendedOTPStatus,
-      UIStatus requestOtpUiStatus,
-      UIStatus status,
-      EmailOrPhoneNumberProperties emailOrPhoneNumberFieldProperties});
+      UIStatus requestOtpUiStatus});
 
   $UIStatusCopyWith<$Res> get verifySendedOTPStatus;
   $UIStatusCopyWith<$Res> get requestOtpUiStatus;
-  $UIStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -1036,8 +690,6 @@ class _$ForgotPasswordBlocStateCopyWithImpl<$Res,
     Object? emailOrPhoneInput = null,
     Object? verifySendedOTPStatus = null,
     Object? requestOtpUiStatus = null,
-    Object? status = null,
-    Object? emailOrPhoneNumberFieldProperties = null,
   }) {
     return _then(_value.copyWith(
       forgotPasswordPageState: null == forgotPasswordPageState
@@ -1056,15 +708,6 @@ class _$ForgotPasswordBlocStateCopyWithImpl<$Res,
           ? _value.requestOtpUiStatus
           : requestOtpUiStatus // ignore: cast_nullable_to_non_nullable
               as UIStatus,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
-      emailOrPhoneNumberFieldProperties: null ==
-              emailOrPhoneNumberFieldProperties
-          ? _value.emailOrPhoneNumberFieldProperties
-          : emailOrPhoneNumberFieldProperties // ignore: cast_nullable_to_non_nullable
-              as EmailOrPhoneNumberProperties,
     ) as $Val);
   }
 
@@ -1083,14 +726,6 @@ class _$ForgotPasswordBlocStateCopyWithImpl<$Res,
       return _then(_value.copyWith(requestOtpUiStatus: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UIStatusCopyWith<$Res> get status {
-    return $UIStatusCopyWith<$Res>(_value.status, (value) {
-      return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -1106,16 +741,12 @@ abstract class _$$ForgotPasswordBlocStateImplCopyWith<$Res>
       {ForgotPasswordPageState forgotPasswordPageState,
       String emailOrPhoneInput,
       UIStatus verifySendedOTPStatus,
-      UIStatus requestOtpUiStatus,
-      UIStatus status,
-      EmailOrPhoneNumberProperties emailOrPhoneNumberFieldProperties});
+      UIStatus requestOtpUiStatus});
 
   @override
   $UIStatusCopyWith<$Res> get verifySendedOTPStatus;
   @override
   $UIStatusCopyWith<$Res> get requestOtpUiStatus;
-  @override
-  $UIStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -1135,8 +766,6 @@ class __$$ForgotPasswordBlocStateImplCopyWithImpl<$Res>
     Object? emailOrPhoneInput = null,
     Object? verifySendedOTPStatus = null,
     Object? requestOtpUiStatus = null,
-    Object? status = null,
-    Object? emailOrPhoneNumberFieldProperties = null,
   }) {
     return _then(_$ForgotPasswordBlocStateImpl(
       forgotPasswordPageState: null == forgotPasswordPageState
@@ -1155,15 +784,6 @@ class __$$ForgotPasswordBlocStateImplCopyWithImpl<$Res>
           ? _value.requestOtpUiStatus
           : requestOtpUiStatus // ignore: cast_nullable_to_non_nullable
               as UIStatus,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as UIStatus,
-      emailOrPhoneNumberFieldProperties: null ==
-              emailOrPhoneNumberFieldProperties
-          ? _value.emailOrPhoneNumberFieldProperties
-          : emailOrPhoneNumberFieldProperties // ignore: cast_nullable_to_non_nullable
-              as EmailOrPhoneNumberProperties,
     ));
   }
 }
@@ -1175,11 +795,7 @@ class _$ForgotPasswordBlocStateImpl implements _ForgotPasswordBlocState {
       {this.forgotPasswordPageState = ForgotPasswordPageState.reqOTP,
       this.emailOrPhoneInput = '',
       this.verifySendedOTPStatus = const UIInitial(),
-      this.requestOtpUiStatus = const UIInitial(),
-      this.status = const UIInitial(),
-      this.emailOrPhoneNumberFieldProperties =
-          const EmailOrPhoneNumberProperties(
-              autovalidateMode: AutovalidateMode.disabled)});
+      this.requestOtpUiStatus = const UIInitial()});
 
   @override
   @JsonKey()
@@ -1193,16 +809,10 @@ class _$ForgotPasswordBlocStateImpl implements _ForgotPasswordBlocState {
   @override
   @JsonKey()
   final UIStatus requestOtpUiStatus;
-  @override
-  @JsonKey()
-  final UIStatus status;
-  @override
-  @JsonKey()
-  final EmailOrPhoneNumberProperties emailOrPhoneNumberFieldProperties;
 
   @override
   String toString() {
-    return 'ForgotPasswordBlocState(forgotPasswordPageState: $forgotPasswordPageState, emailOrPhoneInput: $emailOrPhoneInput, verifySendedOTPStatus: $verifySendedOTPStatus, requestOtpUiStatus: $requestOtpUiStatus, status: $status, emailOrPhoneNumberFieldProperties: $emailOrPhoneNumberFieldProperties)';
+    return 'ForgotPasswordBlocState(forgotPasswordPageState: $forgotPasswordPageState, emailOrPhoneInput: $emailOrPhoneInput, verifySendedOTPStatus: $verifySendedOTPStatus, requestOtpUiStatus: $requestOtpUiStatus)';
   }
 
   @override
@@ -1218,23 +828,12 @@ class _$ForgotPasswordBlocStateImpl implements _ForgotPasswordBlocState {
             (identical(other.verifySendedOTPStatus, verifySendedOTPStatus) ||
                 other.verifySendedOTPStatus == verifySendedOTPStatus) &&
             (identical(other.requestOtpUiStatus, requestOtpUiStatus) ||
-                other.requestOtpUiStatus == requestOtpUiStatus) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.emailOrPhoneNumberFieldProperties,
-                    emailOrPhoneNumberFieldProperties) ||
-                other.emailOrPhoneNumberFieldProperties ==
-                    emailOrPhoneNumberFieldProperties));
+                other.requestOtpUiStatus == requestOtpUiStatus));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      forgotPasswordPageState,
-      emailOrPhoneInput,
-      verifySendedOTPStatus,
-      requestOtpUiStatus,
-      status,
-      emailOrPhoneNumberFieldProperties);
+  int get hashCode => Object.hash(runtimeType, forgotPasswordPageState,
+      emailOrPhoneInput, verifySendedOTPStatus, requestOtpUiStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -1249,10 +848,7 @@ abstract class _ForgotPasswordBlocState implements ForgotPasswordBlocState {
       {final ForgotPasswordPageState forgotPasswordPageState,
       final String emailOrPhoneInput,
       final UIStatus verifySendedOTPStatus,
-      final UIStatus requestOtpUiStatus,
-      final UIStatus status,
-      final EmailOrPhoneNumberProperties
-          emailOrPhoneNumberFieldProperties}) = _$ForgotPasswordBlocStateImpl;
+      final UIStatus requestOtpUiStatus}) = _$ForgotPasswordBlocStateImpl;
 
   @override
   ForgotPasswordPageState get forgotPasswordPageState;
@@ -1262,10 +858,6 @@ abstract class _ForgotPasswordBlocState implements ForgotPasswordBlocState {
   UIStatus get verifySendedOTPStatus;
   @override
   UIStatus get requestOtpUiStatus;
-  @override
-  UIStatus get status;
-  @override
-  EmailOrPhoneNumberProperties get emailOrPhoneNumberFieldProperties;
   @override
   @JsonKey(ignore: true)
   _$$ForgotPasswordBlocStateImplCopyWith<_$ForgotPasswordBlocStateImpl>
