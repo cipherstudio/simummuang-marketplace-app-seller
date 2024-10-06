@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:smm_seller_application/core/authenticator/authenticator_storage.dart';
 import 'package:smm_seller_application/core/bloc_core/ui_status.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_request_body_model.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_response_model.dart';
@@ -26,11 +27,14 @@ class ForgotPasswordBloc
     on<_EmailOrPhoneChange>(_onEmailOrPhoneChange);
     on<_Back>(_onBack);
     on<_VerifySendedOTP>(_onVerifySendedOTP);
+    on<_SetEnableOTPButton>(_onSetEnableOTPButton);
   }
 
   final OtpRepository _otpRepository;
   ScrollController scrollController = ScrollController();
-
+  TextEditingController emailOrPhoneNumberInputController =
+      TextEditingController();
+  final _storage = AuthenticatorStorage();
   RequestOtpResponseModel? _requestOtpResponseModel;
 
   RequestOtpResponseModel? get requestOtpResponseModel {
@@ -47,31 +51,51 @@ class ForgotPasswordBloc
           requestOtpUiStatus: const UILoading(),
         ),
       );
-
-      RequestOtpResponseModel requestOtpResponse =
-          await _otpRepository.requestOtp(
-        requestBody: RequestOtpRequestBody(
-            number: event.emailOrPhoneNumber ?? '', mode: 'reset_pwd_seller'),
-      );
-      if (requestOtpResponse.status == 'success') {
-        _requestOtpResponseModel = requestOtpResponse;
-
+      RequestOtpResponseModel? storageOTP = _storage.getOTPResponse();
+      if (storageOTP != null &&
+          storageOTP.number == emailOrPhoneNumberInputController.text &&
+          (storageOTP.expiredTime?.isAfter(DateTime.now()) ?? false)) {
+        await Future.delayed(const Duration(milliseconds: 200));
+        _requestOtpResponseModel = storageOTP;
         scrollController.jumpTo(scrollController.position.minScrollExtent);
         emit(
           state.copyWith(
+            enableRequestOTP: false,
             requestOtpUiStatus: const UILoadSuccess(),
-            emailOrPhoneInput: event.emailOrPhoneNumber ?? '',
+            emailOrPhoneInput: emailOrPhoneNumberInputController.text,
             forgotPasswordPageState: ForgotPasswordPageState.verifyOTP,
           ),
         );
       } else {
-        emit(
-          state.copyWith(
-            requestOtpUiStatus: UILoadFailed(
-              message: requestOtpResponse.message,
-            ),
-          ),
+        RequestOtpResponseModel requestOtpResponse =
+            await _otpRepository.requestOtp(
+          requestBody: RequestOtpRequestBody(
+              number: emailOrPhoneNumberInputController.text,
+              mode: 'reset_pwd_seller'),
         );
+        if (requestOtpResponse.status == 'success') {
+          _requestOtpResponseModel = requestOtpResponse.copyWith(
+              expiredTime: DateTime.now().add(const Duration(minutes: 2)));
+
+          scrollController.jumpTo(scrollController.position.minScrollExtent);
+          emit(
+            state.copyWith(
+              enableRequestOTP: false,
+              requestOtpUiStatus: const UILoadSuccess(),
+              emailOrPhoneInput: emailOrPhoneNumberInputController.text,
+              forgotPasswordPageState: ForgotPasswordPageState.verifyOTP,
+            ),
+          );
+          _storage.setOTPResponse(_requestOtpResponseModel);
+        } else {
+          emit(
+            state.copyWith(
+              requestOtpUiStatus: UILoadFailed(
+                message: requestOtpResponse.message,
+              ),
+            ),
+          );
+        }
       }
     } catch (e) {
       emit(
@@ -91,6 +115,15 @@ class ForgotPasswordBloc
     scrollController.jumpTo(scrollController.position.minScrollExtent);
     emit(
       state.copyWith(forgotPasswordPageState: ForgotPasswordPageState.reqOTP),
+    );
+  }
+
+  FutureOr<void> _onSetEnableOTPButton(
+    _SetEnableOTPButton event,
+    Emitter<ForgotPasswordBlocState> emit,
+  ) async {
+    emit(
+      state.copyWith(enableRequestOTP: true),
     );
   }
 

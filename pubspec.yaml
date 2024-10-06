@@ -36,7 +36,7 @@ dependencies:
   smm_components:
     git:
       url: https://github.com/hopeza081081081/SMMComponents.git
-      ref: 0.1.5
+      ref: 0.1.11
   
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -68,6 +68,7 @@ dependencies:
   cool_alert: ^2.0.1
   phone_numbers_parser: ^9.0.1
   equatable: ^2.0.5
+  flutter_timer_countdown: ^1.0.7
 
 dev_dependencies:
   flutter_test:

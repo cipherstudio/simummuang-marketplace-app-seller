@@ -18,26 +18,29 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ForgotPasswordBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? emailOrPhoneNumber) requestOTP,
+    required TResult Function() requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
+    required TResult Function() setEnableOTPButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult? Function()? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
+    TResult? Function()? setEnableOTPButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult Function()? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
+    TResult Function()? setEnableOTPButton,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$ForgotPasswordBlocEvent {
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
+    required TResult Function(_SetEnableOTPButton value) setEnableOTPButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$ForgotPasswordBlocEvent {
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult? Function(_SetEnableOTPButton value)? setEnableOTPButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$ForgotPasswordBlocEvent {
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult Function(_SetEnableOTPButton value)? setEnableOTPButton,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,8 +98,6 @@ abstract class _$$RequestOTPImplCopyWith<$Res> {
   factory _$$RequestOTPImplCopyWith(
           _$RequestOTPImpl value, $Res Function(_$RequestOTPImpl) then) =
       __$$RequestOTPImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? emailOrPhoneNumber});
 }
 
 /// @nodoc
@@ -103,85 +107,63 @@ class __$$RequestOTPImplCopyWithImpl<$Res>
   __$$RequestOTPImplCopyWithImpl(
       _$RequestOTPImpl _value, $Res Function(_$RequestOTPImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? emailOrPhoneNumber = freezed,
-  }) {
-    return _then(_$RequestOTPImpl(
-      emailOrPhoneNumber: freezed == emailOrPhoneNumber
-          ? _value.emailOrPhoneNumber
-          : emailOrPhoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$RequestOTPImpl implements _RequestOTP {
-  const _$RequestOTPImpl({this.emailOrPhoneNumber});
-
-  @override
-  final String? emailOrPhoneNumber;
+  const _$RequestOTPImpl();
 
   @override
   String toString() {
-    return 'ForgotPasswordBlocEvent.requestOTP(emailOrPhoneNumber: $emailOrPhoneNumber)';
+    return 'ForgotPasswordBlocEvent.requestOTP()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RequestOTPImpl &&
-            (identical(other.emailOrPhoneNumber, emailOrPhoneNumber) ||
-                other.emailOrPhoneNumber == emailOrPhoneNumber));
+        (other.runtimeType == runtimeType && other is _$RequestOTPImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, emailOrPhoneNumber);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RequestOTPImplCopyWith<_$RequestOTPImpl> get copyWith =>
-      __$$RequestOTPImplCopyWithImpl<_$RequestOTPImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? emailOrPhoneNumber) requestOTP,
+    required TResult Function() requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
+    required TResult Function() setEnableOTPButton,
   }) {
-    return requestOTP(emailOrPhoneNumber);
+    return requestOTP();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult? Function()? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
+    TResult? Function()? setEnableOTPButton,
   }) {
-    return requestOTP?.call(emailOrPhoneNumber);
+    return requestOTP?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult Function()? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
+    TResult Function()? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (requestOTP != null) {
-      return requestOTP(emailOrPhoneNumber);
+      return requestOTP();
     }
     return orElse();
   }
@@ -193,6 +175,7 @@ class _$RequestOTPImpl implements _RequestOTP {
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
+    required TResult Function(_SetEnableOTPButton value) setEnableOTPButton,
   }) {
     return requestOTP(this);
   }
@@ -204,6 +187,7 @@ class _$RequestOTPImpl implements _RequestOTP {
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult? Function(_SetEnableOTPButton value)? setEnableOTPButton,
   }) {
     return requestOTP?.call(this);
   }
@@ -215,6 +199,7 @@ class _$RequestOTPImpl implements _RequestOTP {
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult Function(_SetEnableOTPButton value)? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (requestOTP != null) {
@@ -225,13 +210,7 @@ class _$RequestOTPImpl implements _RequestOTP {
 }
 
 abstract class _RequestOTP implements ForgotPasswordBlocEvent {
-  const factory _RequestOTP({final String? emailOrPhoneNumber}) =
-      _$RequestOTPImpl;
-
-  String? get emailOrPhoneNumber;
-  @JsonKey(ignore: true)
-  _$$RequestOTPImplCopyWith<_$RequestOTPImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _RequestOTP() = _$RequestOTPImpl;
 }
 
 /// @nodoc
@@ -300,10 +279,11 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? emailOrPhoneNumber) requestOTP,
+    required TResult Function() requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
+    required TResult Function() setEnableOTPButton,
   }) {
     return emailOrPhoneChange(value);
   }
@@ -311,10 +291,11 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult? Function()? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
+    TResult? Function()? setEnableOTPButton,
   }) {
     return emailOrPhoneChange?.call(value);
   }
@@ -322,10 +303,11 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult Function()? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
+    TResult Function()? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (emailOrPhoneChange != null) {
@@ -341,6 +323,7 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
+    required TResult Function(_SetEnableOTPButton value) setEnableOTPButton,
   }) {
     return emailOrPhoneChange(this);
   }
@@ -352,6 +335,7 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult? Function(_SetEnableOTPButton value)? setEnableOTPButton,
   }) {
     return emailOrPhoneChange?.call(this);
   }
@@ -363,6 +347,7 @@ class _$EmailOrPhoneChangeImpl implements _EmailOrPhoneChange {
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult Function(_SetEnableOTPButton value)? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (emailOrPhoneChange != null) {
@@ -419,10 +404,11 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? emailOrPhoneNumber) requestOTP,
+    required TResult Function() requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
+    required TResult Function() setEnableOTPButton,
   }) {
     return back();
   }
@@ -430,10 +416,11 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult? Function()? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
+    TResult? Function()? setEnableOTPButton,
   }) {
     return back?.call();
   }
@@ -441,10 +428,11 @@ class _$BackImpl implements _Back {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult Function()? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
+    TResult Function()? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (back != null) {
@@ -460,6 +448,7 @@ class _$BackImpl implements _Back {
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
+    required TResult Function(_SetEnableOTPButton value) setEnableOTPButton,
   }) {
     return back(this);
   }
@@ -471,6 +460,7 @@ class _$BackImpl implements _Back {
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult? Function(_SetEnableOTPButton value)? setEnableOTPButton,
   }) {
     return back?.call(this);
   }
@@ -482,6 +472,7 @@ class _$BackImpl implements _Back {
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult Function(_SetEnableOTPButton value)? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (back != null) {
@@ -561,10 +552,11 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? emailOrPhoneNumber) requestOTP,
+    required TResult Function() requestOTP,
     required TResult Function(String value) emailOrPhoneChange,
     required TResult Function() back,
     required TResult Function(String? verificationCode) verifySendedOTP,
+    required TResult Function() setEnableOTPButton,
   }) {
     return verifySendedOTP(verificationCode);
   }
@@ -572,10 +564,11 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult? Function()? requestOTP,
     TResult? Function(String value)? emailOrPhoneChange,
     TResult? Function()? back,
     TResult? Function(String? verificationCode)? verifySendedOTP,
+    TResult? Function()? setEnableOTPButton,
   }) {
     return verifySendedOTP?.call(verificationCode);
   }
@@ -583,10 +576,11 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? emailOrPhoneNumber)? requestOTP,
+    TResult Function()? requestOTP,
     TResult Function(String value)? emailOrPhoneChange,
     TResult Function()? back,
     TResult Function(String? verificationCode)? verifySendedOTP,
+    TResult Function()? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (verifySendedOTP != null) {
@@ -602,6 +596,7 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
     required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
     required TResult Function(_Back value) back,
     required TResult Function(_VerifySendedOTP value) verifySendedOTP,
+    required TResult Function(_SetEnableOTPButton value) setEnableOTPButton,
   }) {
     return verifySendedOTP(this);
   }
@@ -613,6 +608,7 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
     TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult? Function(_Back value)? back,
     TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult? Function(_SetEnableOTPButton value)? setEnableOTPButton,
   }) {
     return verifySendedOTP?.call(this);
   }
@@ -624,6 +620,7 @@ class _$VerifySendedOTPImpl implements _VerifySendedOTP {
     TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
     TResult Function(_Back value)? back,
     TResult Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult Function(_SetEnableOTPButton value)? setEnableOTPButton,
     required TResult orElse(),
   }) {
     if (verifySendedOTP != null) {
@@ -644,12 +641,134 @@ abstract class _VerifySendedOTP implements ForgotPasswordBlocEvent {
 }
 
 /// @nodoc
+abstract class _$$SetEnableOTPButtonImplCopyWith<$Res> {
+  factory _$$SetEnableOTPButtonImplCopyWith(_$SetEnableOTPButtonImpl value,
+          $Res Function(_$SetEnableOTPButtonImpl) then) =
+      __$$SetEnableOTPButtonImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SetEnableOTPButtonImplCopyWithImpl<$Res>
+    extends _$ForgotPasswordBlocEventCopyWithImpl<$Res,
+        _$SetEnableOTPButtonImpl>
+    implements _$$SetEnableOTPButtonImplCopyWith<$Res> {
+  __$$SetEnableOTPButtonImplCopyWithImpl(_$SetEnableOTPButtonImpl _value,
+      $Res Function(_$SetEnableOTPButtonImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SetEnableOTPButtonImpl implements _SetEnableOTPButton {
+  const _$SetEnableOTPButtonImpl();
+
+  @override
+  String toString() {
+    return 'ForgotPasswordBlocEvent.setEnableOTPButton()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SetEnableOTPButtonImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() requestOTP,
+    required TResult Function(String value) emailOrPhoneChange,
+    required TResult Function() back,
+    required TResult Function(String? verificationCode) verifySendedOTP,
+    required TResult Function() setEnableOTPButton,
+  }) {
+    return setEnableOTPButton();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? requestOTP,
+    TResult? Function(String value)? emailOrPhoneChange,
+    TResult? Function()? back,
+    TResult? Function(String? verificationCode)? verifySendedOTP,
+    TResult? Function()? setEnableOTPButton,
+  }) {
+    return setEnableOTPButton?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? requestOTP,
+    TResult Function(String value)? emailOrPhoneChange,
+    TResult Function()? back,
+    TResult Function(String? verificationCode)? verifySendedOTP,
+    TResult Function()? setEnableOTPButton,
+    required TResult orElse(),
+  }) {
+    if (setEnableOTPButton != null) {
+      return setEnableOTPButton();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RequestOTP value) requestOTP,
+    required TResult Function(_EmailOrPhoneChange value) emailOrPhoneChange,
+    required TResult Function(_Back value) back,
+    required TResult Function(_VerifySendedOTP value) verifySendedOTP,
+    required TResult Function(_SetEnableOTPButton value) setEnableOTPButton,
+  }) {
+    return setEnableOTPButton(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RequestOTP value)? requestOTP,
+    TResult? Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
+    TResult? Function(_Back value)? back,
+    TResult? Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult? Function(_SetEnableOTPButton value)? setEnableOTPButton,
+  }) {
+    return setEnableOTPButton?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RequestOTP value)? requestOTP,
+    TResult Function(_EmailOrPhoneChange value)? emailOrPhoneChange,
+    TResult Function(_Back value)? back,
+    TResult Function(_VerifySendedOTP value)? verifySendedOTP,
+    TResult Function(_SetEnableOTPButton value)? setEnableOTPButton,
+    required TResult orElse(),
+  }) {
+    if (setEnableOTPButton != null) {
+      return setEnableOTPButton(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetEnableOTPButton implements ForgotPasswordBlocEvent {
+  const factory _SetEnableOTPButton() = _$SetEnableOTPButtonImpl;
+}
+
+/// @nodoc
 mixin _$ForgotPasswordBlocState {
   ForgotPasswordPageState get forgotPasswordPageState =>
       throw _privateConstructorUsedError;
   String get emailOrPhoneInput => throw _privateConstructorUsedError;
   UIStatus get verifySendedOTPStatus => throw _privateConstructorUsedError;
   UIStatus get requestOtpUiStatus => throw _privateConstructorUsedError;
+  bool get enableRequestOTP => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ForgotPasswordBlocStateCopyWith<ForgotPasswordBlocState> get copyWith =>
@@ -666,7 +785,8 @@ abstract class $ForgotPasswordBlocStateCopyWith<$Res> {
       {ForgotPasswordPageState forgotPasswordPageState,
       String emailOrPhoneInput,
       UIStatus verifySendedOTPStatus,
-      UIStatus requestOtpUiStatus});
+      UIStatus requestOtpUiStatus,
+      bool enableRequestOTP});
 
   $UIStatusCopyWith<$Res> get verifySendedOTPStatus;
   $UIStatusCopyWith<$Res> get requestOtpUiStatus;
@@ -690,6 +810,7 @@ class _$ForgotPasswordBlocStateCopyWithImpl<$Res,
     Object? emailOrPhoneInput = null,
     Object? verifySendedOTPStatus = null,
     Object? requestOtpUiStatus = null,
+    Object? enableRequestOTP = null,
   }) {
     return _then(_value.copyWith(
       forgotPasswordPageState: null == forgotPasswordPageState
@@ -708,6 +829,10 @@ class _$ForgotPasswordBlocStateCopyWithImpl<$Res,
           ? _value.requestOtpUiStatus
           : requestOtpUiStatus // ignore: cast_nullable_to_non_nullable
               as UIStatus,
+      enableRequestOTP: null == enableRequestOTP
+          ? _value.enableRequestOTP
+          : enableRequestOTP // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -741,7 +866,8 @@ abstract class _$$ForgotPasswordBlocStateImplCopyWith<$Res>
       {ForgotPasswordPageState forgotPasswordPageState,
       String emailOrPhoneInput,
       UIStatus verifySendedOTPStatus,
-      UIStatus requestOtpUiStatus});
+      UIStatus requestOtpUiStatus,
+      bool enableRequestOTP});
 
   @override
   $UIStatusCopyWith<$Res> get verifySendedOTPStatus;
@@ -766,6 +892,7 @@ class __$$ForgotPasswordBlocStateImplCopyWithImpl<$Res>
     Object? emailOrPhoneInput = null,
     Object? verifySendedOTPStatus = null,
     Object? requestOtpUiStatus = null,
+    Object? enableRequestOTP = null,
   }) {
     return _then(_$ForgotPasswordBlocStateImpl(
       forgotPasswordPageState: null == forgotPasswordPageState
@@ -784,6 +911,10 @@ class __$$ForgotPasswordBlocStateImplCopyWithImpl<$Res>
           ? _value.requestOtpUiStatus
           : requestOtpUiStatus // ignore: cast_nullable_to_non_nullable
               as UIStatus,
+      enableRequestOTP: null == enableRequestOTP
+          ? _value.enableRequestOTP
+          : enableRequestOTP // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -795,7 +926,8 @@ class _$ForgotPasswordBlocStateImpl implements _ForgotPasswordBlocState {
       {this.forgotPasswordPageState = ForgotPasswordPageState.reqOTP,
       this.emailOrPhoneInput = '',
       this.verifySendedOTPStatus = const UIInitial(),
-      this.requestOtpUiStatus = const UIInitial()});
+      this.requestOtpUiStatus = const UIInitial(),
+      this.enableRequestOTP = true});
 
   @override
   @JsonKey()
@@ -809,10 +941,13 @@ class _$ForgotPasswordBlocStateImpl implements _ForgotPasswordBlocState {
   @override
   @JsonKey()
   final UIStatus requestOtpUiStatus;
+  @override
+  @JsonKey()
+  final bool enableRequestOTP;
 
   @override
   String toString() {
-    return 'ForgotPasswordBlocState(forgotPasswordPageState: $forgotPasswordPageState, emailOrPhoneInput: $emailOrPhoneInput, verifySendedOTPStatus: $verifySendedOTPStatus, requestOtpUiStatus: $requestOtpUiStatus)';
+    return 'ForgotPasswordBlocState(forgotPasswordPageState: $forgotPasswordPageState, emailOrPhoneInput: $emailOrPhoneInput, verifySendedOTPStatus: $verifySendedOTPStatus, requestOtpUiStatus: $requestOtpUiStatus, enableRequestOTP: $enableRequestOTP)';
   }
 
   @override
@@ -828,12 +963,19 @@ class _$ForgotPasswordBlocStateImpl implements _ForgotPasswordBlocState {
             (identical(other.verifySendedOTPStatus, verifySendedOTPStatus) ||
                 other.verifySendedOTPStatus == verifySendedOTPStatus) &&
             (identical(other.requestOtpUiStatus, requestOtpUiStatus) ||
-                other.requestOtpUiStatus == requestOtpUiStatus));
+                other.requestOtpUiStatus == requestOtpUiStatus) &&
+            (identical(other.enableRequestOTP, enableRequestOTP) ||
+                other.enableRequestOTP == enableRequestOTP));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, forgotPasswordPageState,
-      emailOrPhoneInput, verifySendedOTPStatus, requestOtpUiStatus);
+  int get hashCode => Object.hash(
+      runtimeType,
+      forgotPasswordPageState,
+      emailOrPhoneInput,
+      verifySendedOTPStatus,
+      requestOtpUiStatus,
+      enableRequestOTP);
 
   @JsonKey(ignore: true)
   @override
@@ -848,7 +990,8 @@ abstract class _ForgotPasswordBlocState implements ForgotPasswordBlocState {
       {final ForgotPasswordPageState forgotPasswordPageState,
       final String emailOrPhoneInput,
       final UIStatus verifySendedOTPStatus,
-      final UIStatus requestOtpUiStatus}) = _$ForgotPasswordBlocStateImpl;
+      final UIStatus requestOtpUiStatus,
+      final bool enableRequestOTP}) = _$ForgotPasswordBlocStateImpl;
 
   @override
   ForgotPasswordPageState get forgotPasswordPageState;
@@ -858,6 +1001,8 @@ abstract class _ForgotPasswordBlocState implements ForgotPasswordBlocState {
   UIStatus get verifySendedOTPStatus;
   @override
   UIStatus get requestOtpUiStatus;
+  @override
+  bool get enableRequestOTP;
   @override
   @JsonKey(ignore: true)
   _$$ForgotPasswordBlocStateImplCopyWith<_$ForgotPasswordBlocStateImpl>

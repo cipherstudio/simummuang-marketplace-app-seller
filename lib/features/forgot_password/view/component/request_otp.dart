@@ -17,11 +17,9 @@ class RequestOTP extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
-    TextEditingController emailOrPhoneNumberInputController =
-        TextEditingController();
-
     final _formKey = GlobalKey<FormState>();
-
+    final emailOrPhoneNumberInputController =
+        context.read<ForgotPasswordBloc>().emailOrPhoneNumberInputController;
     return Form(
       key: _formKey,
       child: Column(
@@ -38,10 +36,7 @@ class RequestOTP extends StatelessWidget {
               if (_formKey.currentState!.validate()) {
                 print('request OTP is valid.');
                 context.read<ForgotPasswordBloc>().add(
-                      ForgotPasswordBlocEvent.requestOTP(
-                        emailOrPhoneNumber:
-                            emailOrPhoneNumberInputController.text,
-                      ),
+                      const ForgotPasswordBlocEvent.requestOTP(),
                     );
               }
             },
