@@ -14,26 +14,30 @@ class RequestOtpResponseModel {
   final String status;
   @JsonKey(name: "message")
   final String message;
+  final DateTime? expiredTime;
 
   RequestOtpResponseModel(
       {required this.number,
       required this.token,
       required this.refno,
       required this.status,
-      required this.message});
+      required this.message,
+      this.expiredTime});
 
   RequestOtpResponseModel copyWith(
           {String? number,
           String? token,
           String? refno,
           String? status,
-          String? message}) =>
+          String? message,
+          DateTime? expiredTime}) =>
       RequestOtpResponseModel(
         number: number ?? this.number,
         token: token ?? this.token,
         refno: refno ?? this.refno,
         status: status ?? this.status,
         message: message ?? this.message,
+        expiredTime: expiredTime ?? this.expiredTime,
       );
 
   factory RequestOtpResponseModel.fromJson(Map<String, dynamic> json) =>

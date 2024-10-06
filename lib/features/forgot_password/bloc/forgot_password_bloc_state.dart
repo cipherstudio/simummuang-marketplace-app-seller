@@ -10,5 +10,6 @@ class ForgotPasswordBlocState with _$ForgotPasswordBlocState {
     @Default('') String emailOrPhoneInput,
     @Default(UIInitial()) UIStatus verifySendedOTPStatus,
     @Default(UIInitial()) UIStatus requestOtpUiStatus,
+    @Default(true) bool enableRequestOTP,
   }) = _ForgotPasswordBlocState;
 }

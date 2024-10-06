@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_response_model.dart';
 import 'package:smm_seller_application/extensions/extension.dart';
 import 'package:smm_seller_application/features/forgot_password/bloc/forgot_password_bloc.dart';
@@ -84,11 +85,51 @@ class VerifyOTP extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            SMMOutlinedButton.normal(
-              label:
-                  '${Trans.current.forgetpassword_request_otp_title} (01:59 นาที)',
+            SMMOutlinedButton(
               outlineColor: AppColors.primaryBrandMain,
-              onPressed: () {},
+              enable: state.enableRequestOTP,
+              onPressed: () {
+                context
+                    .read<ForgotPasswordBloc>()
+                    .add(const ForgotPasswordBlocEvent.requestOTP());
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${Trans.current.forgetpassword_request_otp_title} ',
+                    style: AppTextStyles.textXSMedium
+                        .copyWith(color: AppColors.primaryBrandMain),
+                  ),
+                  if (!state.enableRequestOTP) ...[
+                    Text(
+                      '(',
+                      style: AppTextStyles.textXSMedium
+                          .copyWith(color: AppColors.primaryBrandMain),
+                    ),
+                    TimerCountdown(
+                      enableDescriptions: false,
+                      spacerWidth: 1,
+                      colonsTextStyle: AppTextStyles.textXSMedium
+                          .copyWith(color: AppColors.primaryBrandMain),
+                      timeTextStyle: AppTextStyles.textXSMedium
+                          .copyWith(color: AppColors.primaryBrandMain),
+                      format: CountDownTimerFormat.minutesSeconds,
+                      endTime: requestOtpResponseModel?.expiredTime ??
+                          DateTime.now(),
+                      onEnd: () {
+                        context.read<ForgotPasswordBloc>().add(
+                            const ForgotPasswordBlocEvent.setEnableOTPButton());
+                      },
+                    ),
+                    Text(
+                      ' นาที)',
+                      style: AppTextStyles.textXSMedium
+                          .copyWith(color: AppColors.primaryBrandMain),
+                    ),
+                  ]
+                ],
+              ),
             ),
             const SizedBox(
               height: 16,

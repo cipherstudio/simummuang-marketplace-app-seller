@@ -14,6 +14,9 @@ RequestOtpResponseModel _$RequestOtpResponseModelFromJson(
       refno: json['refno'] as String,
       status: json['status'] as String,
       message: json['message'] as String,
+      expiredTime: json['expiredTime'] == null
+          ? null
+          : DateTime.parse(json['expiredTime'] as String),
     );
 
 Map<String, dynamic> _$RequestOtpResponseModelToJson(
@@ -24,4 +27,5 @@ Map<String, dynamic> _$RequestOtpResponseModelToJson(
       'refno': instance.refno,
       'status': instance.status,
       'message': instance.message,
+      'expiredTime': instance.expiredTime?.toIso8601String(),
     };
