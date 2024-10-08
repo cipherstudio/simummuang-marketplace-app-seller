@@ -2,9 +2,12 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:phone_numbers_parser/phone_numbers_parser.dart';
+import 'package:smm_seller_application/core/authenticator/auth_exception.dart';
 import 'package:smm_seller_application/core/authenticator/authenticator_service.dart';
 import 'package:smm_seller_application/core/authenticator/credential.dart';
 import 'package:smm_seller_application/core/enums/app_enums.dart';
+import 'package:smm_seller_application/domain/data/models/login/mobile_login_password_response_model.dart';
 import 'package:smm_seller_application/extensions/extension.dart';
 import 'package:smm_seller_application/features/login_page/bloc/login_bloc.dart';
 import 'package:smm_seller_application/injector/app_injector.dart';
@@ -26,7 +29,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController emailTextFieldController =
+  final TextEditingController mobileNumberTextFieldController =
       TextEditingController();
 
   final TextEditingController passwordTextFieldController =
@@ -34,12 +37,13 @@ class _LoginPageState extends State<LoginPage> {
   // late final LoginBloc _loginBloc;
   SMMDialogManager dialogManager = SMMDialogManager();
 
-  void _onLoginSuccess(BuildContext context, String token) {
+  void _onLoginSuccess(
+      BuildContext context, MobileLoginPasswordResponseModel loginData) {
     AuthenticatorService authService = AuthenticatorService.of(context);
     authService.setCredential(
       Credential.authorized(
-        accessToken: token.replaceAll('"', ''),
-        refreshToken: token.replaceAll('"', ''),
+        accessToken: loginData.token!.replaceAll('"', ''),
+        refreshToken: loginData.token!.replaceAll('"', ''),
         expireAt: DateTime.now().millisecondsSinceEpoch + (600000 * 1000),
       ),
     );
@@ -61,13 +65,18 @@ class _LoginPageState extends State<LoginPage> {
               dialogManager.showLoading(context);
             },
             loadFailed: (message, error) {
-              dialogManager.dismissLoadingDialog();
-              DialogUtils.openErrorDialog(
-                  context, 'อีเมลหรือรหัสผ่านไม่ถูกต้อง');
+              if (error is AuthenticatorExeption) {
+                dialogManager.dismissLoadingDialog();
+                DialogUtils.openErrorDialog(
+                    context, 'อีเมลหรือรหัสผ่านไม่ถูกต้อง');
+              } else {
+                dialogManager.dismissLoadingDialog();
+                DialogUtils.openErrorDialog(context, 'มีบางอย่างผิดพลาด');
+              }
             },
             loadSuccess: (message) {
               dialogManager.dismissLoadingDialog();
-              _onLoginSuccess(context, state.token);
+              _onLoginSuccess(context, state.loginData!);
             },
           );
         },
@@ -126,7 +135,8 @@ class _LoginPageState extends State<LoginPage> {
                     if (_formKey.currentState!.validate()) {
                       BlocProvider.of<LoginBloc>(context)
                           .add(LoginBlocEvent.login(
-                        emailTextFieldController: emailTextFieldController,
+                        mobileNumberTextFieldController:
+                            mobileNumberTextFieldController,
                         passwordTextFieldController:
                             passwordTextFieldController,
                       ));
@@ -160,13 +170,13 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildEmailTextFormField() {
     return SMMTextLabel.textField(
-      text: Trans.current.login_email_label,
+      text: Trans.current.login_phone_number_label,
       isStar: true,
       child: BlocBuilder<LoginBloc, LoginBlocState>(
         buildWhen: (previous, current) => true,
         builder: (context, state) {
           return SMMTextFormField.email(
-            controller: emailTextFieldController,
+            controller: mobileNumberTextFieldController,
             onChanged: (value) {
               if (value!.isEmpty) {
                 BlocProvider.of<LoginBloc>(context)
@@ -175,11 +185,26 @@ class _LoginPageState extends State<LoginPage> {
             },
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'โปรดระบุอีเมล์';
-              } else if (!EmailValidator.validate(value)) {
-                return 'รูปแบบอีเมลไม่ถูกต้อง';
+              PhoneNumber phoneNumberInstance = PhoneNumber.parse(
+                value ?? '',
+                callerCountry: IsoCode.TH,
+              );
+
+              if (value.stringNullOrEmpty) {
+                return 'โปรดระบุเบอร์โทรศัพท์';
+              } else {
+                RegExp regExp = RegExp(r'^\d+$');
+                // เอา RegEx มาเช็คว่า input เป็น numeric หมดไหม
+                if (regExp.hasMatch(value!)) {
+                  // เข้าไป validate phone number
+                  // if (!phoneNumberInstance.isValid()) {
+                  //   return 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
+                  // }
+                } else {
+                  return 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
+                }
               }
+
               return null;
             },
             isEnable: true,
@@ -201,7 +226,8 @@ class _LoginPageState extends State<LoginPage> {
             onSubmit: (value) {
               if (_formKey.currentState!.validate()) {
                 BlocProvider.of<LoginBloc>(context).add(LoginBlocEvent.login(
-                  emailTextFieldController: emailTextFieldController,
+                  mobileNumberTextFieldController:
+                      mobileNumberTextFieldController,
                   passwordTextFieldController: passwordTextFieldController,
                 ));
               }

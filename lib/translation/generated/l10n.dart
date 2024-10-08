@@ -230,11 +230,11 @@ class Trans {
     );
   }
 
-  /// `อีเมล์`
-  String get login_email_label {
+  /// `เบอร์โทรศัพท์`
+  String get login_phone_number_label {
     return Intl.message(
-      'อีเมล์',
-      name: 'login_email_label',
+      'เบอร์โทรศัพท์',
+      name: 'login_phone_number_label',
       desc: '',
       args: [],
     );

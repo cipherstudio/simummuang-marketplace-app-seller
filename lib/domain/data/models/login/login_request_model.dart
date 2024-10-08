@@ -3,13 +3,13 @@ part 'login_request_model.g.dart';
 
 @JsonSerializable()
 class LoginRequestModel {
-  @JsonKey(name: "username")
-  final String username;
+  @JsonKey(name: "mobile")
+  final String mobile;
   @JsonKey(name: "password")
   final String password;
 
   const LoginRequestModel({
-    required this.username,
+    required this.mobile,
     required this.password,
   });
 

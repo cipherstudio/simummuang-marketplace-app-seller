@@ -1,5 +1,6 @@
 import 'package:smm_seller_application/data/source/api/auth_service.dart';
 import 'package:smm_seller_application/domain/data/models/login/login_request_model.dart';
+import 'package:smm_seller_application/domain/data/models/login/mobile_login_password_response_model.dart';
 import 'package:smm_seller_application/domain/data/models/reset_password/reset_password_request_model.dart';
 import 'package:smm_seller_application/domain/data/models/reset_password/reset_password_response_model.dart';
 import 'package:smm_seller_application/domain/repository/auth_repository.dart';
@@ -12,7 +13,8 @@ class AuthRepositoryImpl implements AuthRepository {
   }) : _authService = authService;
 
   @override
-  Future<String> login({required LoginRequestModel body}) async {
+  Future<MobileLoginPasswordResponseModel> login(
+      {required LoginRequestModel body}) async {
     try {
       return await _authService
           .login(

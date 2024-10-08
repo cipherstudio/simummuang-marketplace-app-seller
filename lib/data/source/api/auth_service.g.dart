@@ -22,20 +22,21 @@ class _AuthService implements AuthService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<String> login({required LoginRequestModel body}) async {
+  Future<MobileLoginPasswordResponseModel> login(
+      {required LoginRequestModel body}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<String>(Options(
+    final _options = _setStreamType<MobileLoginPasswordResponseModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/V1/integration/customer/token',
+          '/V1/smm/customer/mobileloginpassword',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -44,10 +45,10 @@ class _AuthService implements AuthService {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<String>(_options);
-    late String _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late MobileLoginPasswordResponseModel _value;
     try {
-      _value = _result.data!;
+      _value = MobileLoginPasswordResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

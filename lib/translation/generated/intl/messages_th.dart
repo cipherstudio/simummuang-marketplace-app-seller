@@ -61,7 +61,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
         "login_email_hint_label":
             MessageLookupByLibrary.simpleMessage("ระบุเบอร์มือถือ"),
-        "login_email_label": MessageLookupByLibrary.simpleMessage("อีเมล์"),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี"),
         "login_external_text_button":
@@ -74,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ระบุรหัสผ่าน"),
         "login_password_label":
             MessageLookupByLibrary.simpleMessage("รหัสผ่าน"),
+        "login_phone_number_label":
+            MessageLookupByLibrary.simpleMessage("เบอร์โทรศัพท์"),
         "login_remember_me_label":
             MessageLookupByLibrary.simpleMessage("จดจำรหัสผ่านของฉัน"),
         "login_title": MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
