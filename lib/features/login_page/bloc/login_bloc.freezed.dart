@@ -21,7 +21,8 @@ mixin _$LoginBlocEvent {
     required TResult Function() initialize,
     required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function(TextEditingController? emailTextFieldController,
+    required TResult Function(
+            TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)
         login,
   }) =>
@@ -31,7 +32,7 @@ mixin _$LoginBlocEvent {
     TResult? Function()? initialize,
     TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function(TextEditingController? emailTextFieldController,
+    TResult? Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
   }) =>
@@ -41,7 +42,7 @@ mixin _$LoginBlocEvent {
     TResult Function()? initialize,
     TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function(TextEditingController? emailTextFieldController,
+    TResult Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
     required TResult orElse(),
@@ -139,7 +140,8 @@ class _$InitializeImpl implements _Initialize {
     required TResult Function() initialize,
     required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function(TextEditingController? emailTextFieldController,
+    required TResult Function(
+            TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)
         login,
   }) {
@@ -152,7 +154,7 @@ class _$InitializeImpl implements _Initialize {
     TResult? Function()? initialize,
     TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function(TextEditingController? emailTextFieldController,
+    TResult? Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
   }) {
@@ -165,7 +167,7 @@ class _$InitializeImpl implements _Initialize {
     TResult Function()? initialize,
     TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function(TextEditingController? emailTextFieldController,
+    TResult Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
     required TResult orElse(),
@@ -268,7 +270,8 @@ class _$InitialEmailTextFormFieldImpl implements _InitialEmailTextFormField {
     required TResult Function() initialize,
     required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function(TextEditingController? emailTextFieldController,
+    required TResult Function(
+            TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)
         login,
   }) {
@@ -281,7 +284,7 @@ class _$InitialEmailTextFormFieldImpl implements _InitialEmailTextFormField {
     TResult? Function()? initialize,
     TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function(TextEditingController? emailTextFieldController,
+    TResult? Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
   }) {
@@ -294,7 +297,7 @@ class _$InitialEmailTextFormFieldImpl implements _InitialEmailTextFormField {
     TResult Function()? initialize,
     TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function(TextEditingController? emailTextFieldController,
+    TResult Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
     required TResult orElse(),
@@ -399,7 +402,8 @@ class _$InitialPasswordTextFormFieldImpl
     required TResult Function() initialize,
     required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function(TextEditingController? emailTextFieldController,
+    required TResult Function(
+            TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)
         login,
   }) {
@@ -412,7 +416,7 @@ class _$InitialPasswordTextFormFieldImpl
     TResult? Function()? initialize,
     TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function(TextEditingController? emailTextFieldController,
+    TResult? Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
   }) {
@@ -425,7 +429,7 @@ class _$InitialPasswordTextFormFieldImpl
     TResult Function()? initialize,
     TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function(TextEditingController? emailTextFieldController,
+    TResult Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
     required TResult orElse(),
@@ -492,7 +496,7 @@ abstract class _$$LoginImplCopyWith<$Res> {
       __$$LoginImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {TextEditingController? emailTextFieldController,
+      {TextEditingController? mobileNumberTextFieldController,
       TextEditingController? passwordTextFieldController});
 }
 
@@ -507,13 +511,14 @@ class __$$LoginImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailTextFieldController = freezed,
+    Object? mobileNumberTextFieldController = freezed,
     Object? passwordTextFieldController = freezed,
   }) {
     return _then(_$LoginImpl(
-      emailTextFieldController: freezed == emailTextFieldController
-          ? _value.emailTextFieldController
-          : emailTextFieldController // ignore: cast_nullable_to_non_nullable
+      mobileNumberTextFieldController: freezed ==
+              mobileNumberTextFieldController
+          ? _value.mobileNumberTextFieldController
+          : mobileNumberTextFieldController // ignore: cast_nullable_to_non_nullable
               as TextEditingController?,
       passwordTextFieldController: freezed == passwordTextFieldController
           ? _value.passwordTextFieldController
@@ -527,16 +532,16 @@ class __$$LoginImplCopyWithImpl<$Res>
 
 class _$LoginImpl implements _Login {
   const _$LoginImpl(
-      {this.emailTextFieldController, this.passwordTextFieldController});
+      {this.mobileNumberTextFieldController, this.passwordTextFieldController});
 
   @override
-  final TextEditingController? emailTextFieldController;
+  final TextEditingController? mobileNumberTextFieldController;
   @override
   final TextEditingController? passwordTextFieldController;
 
   @override
   String toString() {
-    return 'LoginBlocEvent.login(emailTextFieldController: $emailTextFieldController, passwordTextFieldController: $passwordTextFieldController)';
+    return 'LoginBlocEvent.login(mobileNumberTextFieldController: $mobileNumberTextFieldController, passwordTextFieldController: $passwordTextFieldController)';
   }
 
   @override
@@ -544,9 +549,10 @@ class _$LoginImpl implements _Login {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginImpl &&
-            (identical(
-                    other.emailTextFieldController, emailTextFieldController) ||
-                other.emailTextFieldController == emailTextFieldController) &&
+            (identical(other.mobileNumberTextFieldController,
+                    mobileNumberTextFieldController) ||
+                other.mobileNumberTextFieldController ==
+                    mobileNumberTextFieldController) &&
             (identical(other.passwordTextFieldController,
                     passwordTextFieldController) ||
                 other.passwordTextFieldController ==
@@ -554,8 +560,8 @@ class _$LoginImpl implements _Login {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, emailTextFieldController, passwordTextFieldController);
+  int get hashCode => Object.hash(runtimeType, mobileNumberTextFieldController,
+      passwordTextFieldController);
 
   @JsonKey(ignore: true)
   @override
@@ -569,11 +575,12 @@ class _$LoginImpl implements _Login {
     required TResult Function() initialize,
     required TResult Function() initialEmailTextFormField,
     required TResult Function() initialPasswordTextFormField,
-    required TResult Function(TextEditingController? emailTextFieldController,
+    required TResult Function(
+            TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)
         login,
   }) {
-    return login(emailTextFieldController, passwordTextFieldController);
+    return login(mobileNumberTextFieldController, passwordTextFieldController);
   }
 
   @override
@@ -582,11 +589,12 @@ class _$LoginImpl implements _Login {
     TResult? Function()? initialize,
     TResult? Function()? initialEmailTextFormField,
     TResult? Function()? initialPasswordTextFormField,
-    TResult? Function(TextEditingController? emailTextFieldController,
+    TResult? Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
   }) {
-    return login?.call(emailTextFieldController, passwordTextFieldController);
+    return login?.call(
+        mobileNumberTextFieldController, passwordTextFieldController);
   }
 
   @override
@@ -595,13 +603,14 @@ class _$LoginImpl implements _Login {
     TResult Function()? initialize,
     TResult Function()? initialEmailTextFormField,
     TResult Function()? initialPasswordTextFormField,
-    TResult Function(TextEditingController? emailTextFieldController,
+    TResult Function(TextEditingController? mobileNumberTextFieldController,
             TextEditingController? passwordTextFieldController)?
         login,
     required TResult orElse(),
   }) {
     if (login != null) {
-      return login(emailTextFieldController, passwordTextFieldController);
+      return login(
+          mobileNumberTextFieldController, passwordTextFieldController);
     }
     return orElse();
   }
@@ -652,10 +661,10 @@ class _$LoginImpl implements _Login {
 
 abstract class _Login implements LoginBlocEvent {
   const factory _Login(
-      {final TextEditingController? emailTextFieldController,
+      {final TextEditingController? mobileNumberTextFieldController,
       final TextEditingController? passwordTextFieldController}) = _$LoginImpl;
 
-  TextEditingController? get emailTextFieldController;
+  TextEditingController? get mobileNumberTextFieldController;
   TextEditingController? get passwordTextFieldController;
   @JsonKey(ignore: true)
   _$$LoginImplCopyWith<_$LoginImpl> get copyWith =>
@@ -665,7 +674,8 @@ abstract class _Login implements LoginBlocEvent {
 /// @nodoc
 mixin _$LoginBlocState {
   UIStatus get status => throw _privateConstructorUsedError;
-  String get token => throw _privateConstructorUsedError;
+  MobileLoginPasswordResponseModel? get loginData =>
+      throw _privateConstructorUsedError;
   PasswordOptionEnum get passwordOptionEnum =>
       throw _privateConstructorUsedError;
   EmailFieldProperties get emailFieldProperties =>
@@ -686,7 +696,7 @@ abstract class $LoginBlocStateCopyWith<$Res> {
   @useResult
   $Res call(
       {UIStatus status,
-      String token,
+      MobileLoginPasswordResponseModel? loginData,
       PasswordOptionEnum passwordOptionEnum,
       EmailFieldProperties emailFieldProperties,
       PasswordFieldProperties passwordFieldProperties});
@@ -708,7 +718,7 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
   @override
   $Res call({
     Object? status = null,
-    Object? token = null,
+    Object? loginData = freezed,
     Object? passwordOptionEnum = null,
     Object? emailFieldProperties = null,
     Object? passwordFieldProperties = null,
@@ -718,10 +728,10 @@ class _$LoginBlocStateCopyWithImpl<$Res, $Val extends LoginBlocState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UIStatus,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
+      loginData: freezed == loginData
+          ? _value.loginData
+          : loginData // ignore: cast_nullable_to_non_nullable
+              as MobileLoginPasswordResponseModel?,
       passwordOptionEnum: null == passwordOptionEnum
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
@@ -756,7 +766,7 @@ abstract class _$$LoginBlocStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {UIStatus status,
-      String token,
+      MobileLoginPasswordResponseModel? loginData,
       PasswordOptionEnum passwordOptionEnum,
       EmailFieldProperties emailFieldProperties,
       PasswordFieldProperties passwordFieldProperties});
@@ -777,7 +787,7 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? token = null,
+    Object? loginData = freezed,
     Object? passwordOptionEnum = null,
     Object? emailFieldProperties = null,
     Object? passwordFieldProperties = null,
@@ -787,10 +797,10 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as UIStatus,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
+      loginData: freezed == loginData
+          ? _value.loginData
+          : loginData // ignore: cast_nullable_to_non_nullable
+              as MobileLoginPasswordResponseModel?,
       passwordOptionEnum: null == passwordOptionEnum
           ? _value.passwordOptionEnum
           : passwordOptionEnum // ignore: cast_nullable_to_non_nullable
@@ -812,7 +822,7 @@ class __$$LoginBlocStateImplCopyWithImpl<$Res>
 class _$LoginBlocStateImpl implements _LoginBlocState {
   _$LoginBlocStateImpl(
       {this.status = const UIInitial(),
-      this.token = '',
+      this.loginData,
       this.passwordOptionEnum = PasswordOptionEnum.rememberAndForgot,
       this.emailFieldProperties = const EmailFieldProperties(
           autovalidateMode: AutovalidateMode.disabled),
@@ -823,8 +833,7 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
   @JsonKey()
   final UIStatus status;
   @override
-  @JsonKey()
-  final String token;
+  final MobileLoginPasswordResponseModel? loginData;
   @override
   @JsonKey()
   final PasswordOptionEnum passwordOptionEnum;
@@ -837,7 +846,7 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
 
   @override
   String toString() {
-    return 'LoginBlocState(status: $status, token: $token, passwordOptionEnum: $passwordOptionEnum, emailFieldProperties: $emailFieldProperties, passwordFieldProperties: $passwordFieldProperties)';
+    return 'LoginBlocState(status: $status, loginData: $loginData, passwordOptionEnum: $passwordOptionEnum, emailFieldProperties: $emailFieldProperties, passwordFieldProperties: $passwordFieldProperties)';
   }
 
   @override
@@ -846,7 +855,8 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
         (other.runtimeType == runtimeType &&
             other is _$LoginBlocStateImpl &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.token, token) || other.token == token) &&
+            (identical(other.loginData, loginData) ||
+                other.loginData == loginData) &&
             (identical(other.passwordOptionEnum, passwordOptionEnum) ||
                 other.passwordOptionEnum == passwordOptionEnum) &&
             (identical(other.emailFieldProperties, emailFieldProperties) ||
@@ -857,7 +867,7 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, token,
+  int get hashCode => Object.hash(runtimeType, status, loginData,
       passwordOptionEnum, emailFieldProperties, passwordFieldProperties);
 
   @JsonKey(ignore: true)
@@ -871,7 +881,7 @@ class _$LoginBlocStateImpl implements _LoginBlocState {
 abstract class _LoginBlocState implements LoginBlocState {
   factory _LoginBlocState(
           {final UIStatus status,
-          final String token,
+          final MobileLoginPasswordResponseModel? loginData,
           final PasswordOptionEnum passwordOptionEnum,
           final EmailFieldProperties emailFieldProperties,
           final PasswordFieldProperties passwordFieldProperties}) =
@@ -880,7 +890,7 @@ abstract class _LoginBlocState implements LoginBlocState {
   @override
   UIStatus get status;
   @override
-  String get token;
+  MobileLoginPasswordResponseModel? get loginData;
   @override
   PasswordOptionEnum get passwordOptionEnum;
   @override

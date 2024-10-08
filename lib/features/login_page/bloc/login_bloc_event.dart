@@ -8,7 +8,7 @@ class LoginBlocEvent with _$LoginBlocEvent {
   const factory LoginBlocEvent.initialPasswordTextFormField() =
       _InitialPasswordTextFormField;
   const factory LoginBlocEvent.login({
-    TextEditingController? emailTextFieldController,
+    TextEditingController? mobileNumberTextFieldController,
     TextEditingController? passwordTextFieldController,
   }) = _Login;
 }

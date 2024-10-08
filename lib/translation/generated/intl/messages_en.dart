@@ -60,7 +60,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_hint_label":
             MessageLookupByLibrary.simpleMessage("please fill phone number."),
-        "login_email_label": MessageLookupByLibrary.simpleMessage("E-mail"),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account yet?"),
         "login_external_text_button":
@@ -73,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("please fill Password."),
         "login_password_label":
             MessageLookupByLibrary.simpleMessage("Password"),
+        "login_phone_number_label":
+            MessageLookupByLibrary.simpleMessage("phone number"),
         "login_remember_me_label":
             MessageLookupByLibrary.simpleMessage("Remember me."),
         "login_title": MessageLookupByLibrary.simpleMessage("Login"),
