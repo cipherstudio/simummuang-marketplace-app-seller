@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
               if (error is AuthenticatorExeption) {
                 dialogManager.dismissLoadingDialog();
                 DialogUtils.openErrorDialog(
-                    context, 'อีเมลหรือรหัสผ่านไม่ถูกต้อง');
+                    context, 'เบอร์โทรศัพท์หรือรหัสผ่านไม่ถูกต้อง');
               } else {
                 dialogManager.dismissLoadingDialog();
                 DialogUtils.openErrorDialog(context, 'มีบางอย่างผิดพลาด');

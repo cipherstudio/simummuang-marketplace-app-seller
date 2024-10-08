@@ -88,7 +88,7 @@ class RequestOTP extends StatelessWidget {
           );
 
           if (value.stringNullOrEmpty) {
-            return 'โปรดระบุอีเมล์ หรือ เบอร์โทรศัพท์';
+            return 'โปรดระบุ เบอร์โทรศัพท์';
           } else {
             RegExp regExp = RegExp(r'^\d+$');
             // เอา RegEx มาเช็คว่า input เป็น numeric หมดไหม
