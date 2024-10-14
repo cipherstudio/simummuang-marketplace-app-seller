@@ -22,6 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "bottom_nav_account_page_label":
+            MessageLookupByLibrary.simpleMessage("บัญชี"),
+        "bottom_nav_first_page_label":
+            MessageLookupByLibrary.simpleMessage("หน้าแรก"),
+        "bottom_nav_for_you_page_label":
+            MessageLookupByLibrary.simpleMessage("สินค้าเพื่อคุณ"),
+        "bottom_nav_orders_page_label":
+            MessageLookupByLibrary.simpleMessage("คำสั่งซื้อ"),
+        "bottom_nav_products_page_label":
+            MessageLookupByLibrary.simpleMessage("สินค้า"),
         "component_button_label_edit":
             MessageLookupByLibrary.simpleMessage("แก้ไข"),
         "forgetpassword_confirm":
@@ -33,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetpassword_fill_otp":
             MessageLookupByLibrary.simpleMessage("ระบุ OTP ของคุณ"),
         "forgetpassword_mail_or_phone":
-            MessageLookupByLibrary.simpleMessage("อีเมลหรือเบอร์โทรศัพท์"),
+            MessageLookupByLibrary.simpleMessage("เบอร์โทรศัพท์"),
         "forgetpassword_otp_title": MessageLookupByLibrary.simpleMessage(
             "ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์"),
         "forgetpassword_ref_code":
@@ -42,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"),
         "forgetpassword_subtitle": MessageLookupByLibrary.simpleMessage(
-            "โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน"),
+            "โปรดระบุเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน"),
         "forgetpassword_title":
             MessageLookupByLibrary.simpleMessage("ลืมรหัสผ่าน?"),
         "hello_world": MessageLookupByLibrary.simpleMessage("สวัสดี ชาวโลก"),
@@ -50,8 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_button_label":
             MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
         "login_email_hint_label":
-            MessageLookupByLibrary.simpleMessage("ระบุอีเมล์"),
-        "login_email_label": MessageLookupByLibrary.simpleMessage("อีเมล์"),
+            MessageLookupByLibrary.simpleMessage("ระบุเบอร์มือถือ"),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("ยังไม่มีบัญชี"),
         "login_external_text_button":
@@ -64,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ระบุรหัสผ่าน"),
         "login_password_label":
             MessageLookupByLibrary.simpleMessage("รหัสผ่าน"),
+        "login_phone_number_label":
+            MessageLookupByLibrary.simpleMessage("เบอร์โทรศัพท์"),
         "login_remember_me_label":
             MessageLookupByLibrary.simpleMessage("จดจำรหัสผ่านของฉัน"),
         "login_title": MessageLookupByLibrary.simpleMessage("เข้าสู่ระบบ"),
@@ -98,6 +109,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
         "register_title":
             MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),
+        "seller_setting_cancle": MessageLookupByLibrary.simpleMessage("ยกเลิก"),
+        "seller_setting_detail_title":
+            MessageLookupByLibrary.simpleMessage("รายละเอียด"),
+        "seller_setting_map": MessageLookupByLibrary.simpleMessage("แผนที่"),
+        "seller_setting_save":
+            MessageLookupByLibrary.simpleMessage("บันทึกข้อมูล"),
         "seller_setting_seller_email_suffix_text":
             MessageLookupByLibrary.simpleMessage("อีเมล"),
         "seller_setting_seller_information_label":
@@ -119,9 +136,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "seller_setting_store_tel_num_suffix_text":
             MessageLookupByLibrary.simpleMessage("เบอร์โทร"),
         "seller_setting_store_type_label":
-            MessageLookupByLibrary.simpleMessage("ประเภทคลาด"),
+            MessageLookupByLibrary.simpleMessage("ประเภทตลาด"),
         "seller_setting_store_zone_suffix_text":
             MessageLookupByLibrary.simpleMessage("แผงค้า"),
+        "seller_setting_tab_1":
+            MessageLookupByLibrary.simpleMessage("ข้อมูลร้านค้า"),
+        "seller_setting_tab_2":
+            MessageLookupByLibrary.simpleMessage("รายละเอียดร้านค้า"),
+        "seller_setting_title": MessageLookupByLibrary.simpleMessage("ตั้งค่า"),
+        "seller_setting_view":
+            MessageLookupByLibrary.simpleMessage("ดูตัวอย่าง"),
         "set_new_password_button_label":
             MessageLookupByLibrary.simpleMessage("ตั้งรหัสผ่านใหม่"),
         "set_new_password_create_new_account_label":

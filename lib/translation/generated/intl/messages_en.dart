@@ -22,6 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "bottom_nav_account_page_label":
+            MessageLookupByLibrary.simpleMessage("account"),
+        "bottom_nav_first_page_label":
+            MessageLookupByLibrary.simpleMessage("home page"),
+        "bottom_nav_for_you_page_label":
+            MessageLookupByLibrary.simpleMessage("for you"),
+        "bottom_nav_orders_page_label":
+            MessageLookupByLibrary.simpleMessage("orders"),
+        "bottom_nav_products_page_label":
+            MessageLookupByLibrary.simpleMessage("products"),
         "component_button_label_edit":
             MessageLookupByLibrary.simpleMessage("Edit"),
         "forgetpassword_confirm":
@@ -33,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetpassword_fill_otp":
             MessageLookupByLibrary.simpleMessage("ระบุ OTP ของคุณ"),
         "forgetpassword_mail_or_phone":
-            MessageLookupByLibrary.simpleMessage("อีเมลหรือเบอร์โทรศัพท์"),
+            MessageLookupByLibrary.simpleMessage("เบอร์โทรศัพท์"),
         "forgetpassword_otp_title": MessageLookupByLibrary.simpleMessage(
             "ระบบส่งจัดส่งข้อความ OTP ไปยังหมายเลขโทรศัพท์"),
         "forgetpassword_ref_code":
@@ -49,8 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "hint_text": MessageLookupByLibrary.simpleMessage("ระบุ"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_hint_label":
-            MessageLookupByLibrary.simpleMessage("please fill E-mail."),
-        "login_email_label": MessageLookupByLibrary.simpleMessage("E-mail"),
+            MessageLookupByLibrary.simpleMessage("please fill phone number."),
         "login_external_detail":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account yet?"),
         "login_external_text_button":
@@ -63,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("please fill Password."),
         "login_password_label":
             MessageLookupByLibrary.simpleMessage("Password"),
+        "login_phone_number_label":
+            MessageLookupByLibrary.simpleMessage("phone number"),
         "login_remember_me_label":
             MessageLookupByLibrary.simpleMessage("Remember me."),
         "login_title": MessageLookupByLibrary.simpleMessage("Login"),
@@ -97,6 +108,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_surname": MessageLookupByLibrary.simpleMessage("นามสกุล"),
         "register_title":
             MessageLookupByLibrary.simpleMessage("สมัครสมาชิกใหม่"),
+        "seller_setting_cancle": MessageLookupByLibrary.simpleMessage("ยกเลิก"),
+        "seller_setting_detail_title":
+            MessageLookupByLibrary.simpleMessage("รายละเอียด"),
+        "seller_setting_map": MessageLookupByLibrary.simpleMessage("แผนที่"),
+        "seller_setting_save":
+            MessageLookupByLibrary.simpleMessage("บันทึกข้อมูล"),
         "seller_setting_seller_email_suffix_text":
             MessageLookupByLibrary.simpleMessage("E-mail"),
         "seller_setting_seller_information_label":
@@ -121,6 +138,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Market Type"),
         "seller_setting_store_zone_suffix_text":
             MessageLookupByLibrary.simpleMessage("Market Zone"),
+        "seller_setting_tab_1":
+            MessageLookupByLibrary.simpleMessage("ข้อมูลร้านค้า"),
+        "seller_setting_tab_2":
+            MessageLookupByLibrary.simpleMessage("รายละเอียดร้านค้า"),
+        "seller_setting_title": MessageLookupByLibrary.simpleMessage("ตั้งค่า"),
+        "seller_setting_view":
+            MessageLookupByLibrary.simpleMessage("ดูตัวอย่าง"),
         "set_new_password_button_label":
             MessageLookupByLibrary.simpleMessage("confirm your new password"),
         "set_new_password_create_new_account_label":

@@ -1,47 +1,90 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smm_application/components/shared_components.dart';
-import 'package:smm_application/features/forgot_password/bloc/forgot_password_bloc.dart';
-import 'package:smm_application/features/forgot_password/view/component/request_otp.dart';
-import 'package:smm_application/features/forgot_password/view/component/verify_otp.dart';
-import 'package:smm_application/router/app_router.dart';
-import 'package:smm_application/themes/app_colors.dart';
-import 'package:smm_application/themes/app_text_styles.dart';
-import 'package:smm_application/translation/generated/l10n.dart';
+import 'package:smm_components/components/shared_components.dart';
+
+import 'package:smm_seller_application/features/forgot_password/bloc/forgot_password_bloc.dart';
+import 'package:smm_seller_application/features/forgot_password/exceptions/forgot_password_exception.dart';
+import 'package:smm_seller_application/features/forgot_password/view/component/request_otp.dart';
+import 'package:smm_seller_application/features/forgot_password/view/component/verify_otp.dart';
+import 'package:smm_seller_application/injector/app_injector.dart';
+import 'package:smm_seller_application/router/app_router.dart';
+import 'package:smm_seller_application/src/dialogs/smm_dialog_manager.dart';
+
+import 'package:smm_seller_application/translation/generated/l10n.dart';
+import 'package:smm_seller_application/utils/dialog_utils.dart';
+import 'package:smm_components/themes/app_colors.dart';
+import 'package:smm_components/themes/app_text_styles.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SMMDialogManager dialogManager = SMMDialogManager();
+
     return BlocProvider(
-      create: (context) => ForgotPasswordBloc(),
-      child: BlocConsumer<ForgotPasswordBloc, ForgotPasswordBlocState>(
-          listener: (context, state) {
-            if (state.verifySendedOTPSuccess == true) {
-              context.pushNamed(AppRouter.setNewPasswordNamed);
-            } else if (state.verifySendedOTPSuccess == false) {
-              showDialog<String>(
-                context: context,
-                builder: (BuildContext context) => AlertDialog(
-                  title: const Text('Warning.'),
-                  content: const Text('Verify OTP not success.'),
-                  actions: <Widget>[
-                    TextButton(
-                      onPressed: () => Navigator.pop(context, 'Cancel'),
-                      child: const Text('Cancel'),
-                    ),
-                    TextButton(
-                      onPressed: () => Navigator.pop(context, 'OK'),
-                      child: const Text('OK'),
-                    ),
-                  ],
-                ),
+      create: (context) => Injector.instance<ForgotPasswordBloc>(),
+      child: MultiBlocListener(
+        listeners: [
+          BlocListener<ForgotPasswordBloc, ForgotPasswordBlocState>(
+            // listenWhen: (previous, current) =>
+            //     current.requestOtpUiStatus != previous.requestOtpUiStatus,
+            listenWhen: (previous, current) => true,
+            listener: (context, state) {
+              state.requestOtpUiStatus.whenOrNull(
+                loading: () {
+                  dialogManager.showLoading(context);
+                },
+                loadFailed: (message, error) {
+                  dialogManager.dismissLoadingDialog();
+                  DialogUtils.openErrorDialog(context, message);
+                },
+                loadSuccess: (message) {
+                  dialogManager.dismissLoadingDialog();
+                },
               );
-            }
-          },
-          builder: (context, state) => _body(context, state)),
+            },
+          ),
+          BlocListener<ForgotPasswordBloc, ForgotPasswordBlocState>(
+            listenWhen: (previous, current) =>
+                current.verifySendedOTPStatus != previous.verifySendedOTPStatus,
+            listener: (BuildContext context, ForgotPasswordBlocState state) {
+              state.verifySendedOTPStatus.whenOrNull(
+                loading: () {
+                  dialogManager.showLoading(context);
+                },
+                loadFailed: (message, error) {
+                  if (error is ForgotPasswordException) {
+                    dialogManager.dismissLoadingDialog();
+                    DialogUtils.openErrorDialog(
+                      context,
+                      error.message,
+                    );
+                  } else {
+                    dialogManager.dismissLoadingDialog();
+                    DialogUtils.openErrorDialog(
+                        context, 'Something went wrong.');
+                  }
+                  // dialogManager.dismissLoadingDialog();
+                  // DialogUtils.openErrorDialog(context, 'Something went wrong.');
+                },
+                loadSuccess: (message) {
+                  dialogManager.dismissLoadingDialog();
+                  context.pushNamed(
+                    AppRouter.setNewPasswordNamed,
+                    extra: state.emailOrPhoneInput,
+                  );
+                },
+              );
+            },
+          ),
+        ],
+        child: BlocBuilder<ForgotPasswordBloc, ForgotPasswordBlocState>(
+          builder: (BuildContext context, ForgotPasswordBlocState state) =>
+              _body(context, state),
+        ),
+      ),
     );
   }
 

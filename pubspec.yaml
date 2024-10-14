@@ -1,4 +1,4 @@
-name: smm_application
+name: smm_seller_application
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -33,7 +33,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-
+  smm_components:
+    git:
+      url: https://github.com/hopeza081081081/SMMComponents.git
+      ref: 0.1.11
+  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
@@ -54,6 +58,17 @@ dependencies:
   visibility_detector: ^0.4.0+2
   flutter_widget_from_html: 0.15.2
   flutter_otp_text_field: 1.2.0
+  jwt_decoder: 2.0.1
+  #storage
+  shared_preferences: 2.2.1
+  flutter_secure_storage: 9.0.0
+  uuid: ^4.5.1
+  provider: ^6.1.2
+  loading_indicator: ^3.1.1
+  cool_alert: ^2.0.1
+  phone_numbers_parser: ^9.0.1
+  equatable: ^2.0.5
+  flutter_timer_countdown: ^1.0.7
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +86,8 @@ dev_dependencies:
   injectable_generator: ^2.4.0
   retrofit_generator: ^8.0.4
   flutter_gen_runner: 5.3.2
+  change_app_package_name: ^1.4.0
+  rename_app: ^1.6.1
 
 
 # For information on the generic Dart part of this file, see the
@@ -100,10 +117,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: MiSans
+      fonts:
+        - asset: assets/fonts/MiSans.ttf
+        - asset: assets/fonts/MiSans-bold.ttf
+          weight: 700
+        - asset: assets/fonts/MiSans-Semibold.ttf
+          weight: 600
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

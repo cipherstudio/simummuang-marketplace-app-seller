@@ -230,20 +230,20 @@ class Trans {
     );
   }
 
-  /// `อีเมล์`
-  String get login_email_label {
+  /// `เบอร์โทรศัพท์`
+  String get login_phone_number_label {
     return Intl.message(
-      'อีเมล์',
-      name: 'login_email_label',
+      'เบอร์โทรศัพท์',
+      name: 'login_phone_number_label',
       desc: '',
       args: [],
     );
   }
 
-  /// `ระบุอีเมล์`
+  /// `ระบุเบอร์มือถือ`
   String get login_email_hint_label {
     return Intl.message(
-      'ระบุอีเมล์',
+      'ระบุเบอร์มือถือ',
       name: 'login_email_hint_label',
       desc: '',
       args: [],
@@ -470,20 +470,20 @@ class Trans {
     );
   }
 
-  /// `โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน`
+  /// `โปรดระบุเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน`
   String get forgetpassword_subtitle {
     return Intl.message(
-      'โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน',
+      'โปรดระบุเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน',
       name: 'forgetpassword_subtitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `อีเมลหรือเบอร์โทรศัพท์`
+  /// `เบอร์โทรศัพท์`
   String get forgetpassword_mail_or_phone {
     return Intl.message(
-      'อีเมลหรือเบอร์โทรศัพท์',
+      'เบอร์โทรศัพท์',
       name: 'forgetpassword_mail_or_phone',
       desc: '',
       args: [],
@@ -570,6 +570,86 @@ class Trans {
     );
   }
 
+  /// `ตั้งค่า`
+  String get seller_setting_title {
+    return Intl.message(
+      'ตั้งค่า',
+      name: 'seller_setting_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ข้อมูลร้านค้า`
+  String get seller_setting_tab_1 {
+    return Intl.message(
+      'ข้อมูลร้านค้า',
+      name: 'seller_setting_tab_1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รายละเอียดร้านค้า`
+  String get seller_setting_tab_2 {
+    return Intl.message(
+      'รายละเอียดร้านค้า',
+      name: 'seller_setting_tab_2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `บันทึกข้อมูล`
+  String get seller_setting_save {
+    return Intl.message(
+      'บันทึกข้อมูล',
+      name: 'seller_setting_save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ดูตัวอย่าง`
+  String get seller_setting_view {
+    return Intl.message(
+      'ดูตัวอย่าง',
+      name: 'seller_setting_view',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ยกเลิก`
+  String get seller_setting_cancle {
+    return Intl.message(
+      'ยกเลิก',
+      name: 'seller_setting_cancle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `รายละเอียด`
+  String get seller_setting_detail_title {
+    return Intl.message(
+      'รายละเอียด',
+      name: 'seller_setting_detail_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `แผนที่`
+  String get seller_setting_map {
+    return Intl.message(
+      'แผนที่',
+      name: 'seller_setting_map',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `รูปโปรไฟล์ร้าน`
   String get seller_setting_store_image_label {
     return Intl.message(
@@ -590,10 +670,10 @@ class Trans {
     );
   }
 
-  /// `ประเภทคลาด`
+  /// `ประเภทตลาด`
   String get seller_setting_store_type_label {
     return Intl.message(
-      'ประเภทคลาด',
+      'ประเภทตลาด',
       name: 'seller_setting_store_type_label',
       desc: '',
       args: [],
@@ -685,6 +765,56 @@ class Trans {
     return Intl.message(
       'ที่อยู่',
       name: 'seller_setting_seller_suffix_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `หน้าแรก`
+  String get bottom_nav_first_page_label {
+    return Intl.message(
+      'หน้าแรก',
+      name: 'bottom_nav_first_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สินค้าเพื่อคุณ`
+  String get bottom_nav_for_you_page_label {
+    return Intl.message(
+      'สินค้าเพื่อคุณ',
+      name: 'bottom_nav_for_you_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `สินค้า`
+  String get bottom_nav_products_page_label {
+    return Intl.message(
+      'สินค้า',
+      name: 'bottom_nav_products_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `คำสั่งซื้อ`
+  String get bottom_nav_orders_page_label {
+    return Intl.message(
+      'คำสั่งซื้อ',
+      name: 'bottom_nav_orders_page_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `บัญชี`
+  String get bottom_nav_account_page_label {
+    return Intl.message(
+      'บัญชี',
+      name: 'bottom_nav_account_page_label',
       desc: '',
       args: [],
     );

@@ -14,12 +14,39 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/icon_account_bottom_nav.svg
+  SvgGenImage get iconAccountBottomNav =>
+      const SvgGenImage('assets/icons/icon_account_bottom_nav.svg');
+
   /// File path: assets/icons/icon_arrow_left.svg
   SvgGenImage get iconArrowLeft =>
       const SvgGenImage('assets/icons/icon_arrow_left.svg');
 
   /// File path: assets/icons/icon_check.svg
   SvgGenImage get iconCheck => const SvgGenImage('assets/icons/icon_check.svg');
+
+  /// File path: assets/icons/icon_first_page_bottom_nav.svg
+  SvgGenImage get iconFirstPageBottomNav =>
+      const SvgGenImage('assets/icons/icon_first_page_bottom_nav.svg');
+
+  /// File path: assets/icons/icon_for_you_bottom_nav.svg
+  SvgGenImage get iconForYouBottomNav =>
+      const SvgGenImage('assets/icons/icon_for_you_bottom_nav.svg');
+
+  /// File path: assets/icons/icon_orders_bottom_nav.svg
+  SvgGenImage get iconOrdersBottomNav =>
+      const SvgGenImage('assets/icons/icon_orders_bottom_nav.svg');
+
+  /// File path: assets/icons/icon_preview.svg
+  SvgGenImage get iconPreview =>
+      const SvgGenImage('assets/icons/icon_preview.svg');
+
+  /// File path: assets/icons/icon_products_bottom_nav.svg
+  SvgGenImage get iconProductsBottomNav =>
+      const SvgGenImage('assets/icons/icon_products_bottom_nav.svg');
+
+  /// File path: assets/icons/icon_save.svg
+  SvgGenImage get iconSave => const SvgGenImage('assets/icons/icon_save.svg');
 
   /// File path: assets/icons/icon_signin_facebook.svg
   SvgGenImage get iconSigninFacebook =>
@@ -43,8 +70,15 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+        iconAccountBottomNav,
         iconArrowLeft,
         iconCheck,
+        iconFirstPageBottomNav,
+        iconForYouBottomNav,
+        iconOrdersBottomNav,
+        iconPreview,
+        iconProductsBottomNav,
+        iconSave,
         iconSigninFacebook,
         iconSigninGoogle,
         iconSigninLine,
@@ -60,8 +94,12 @@ class $AssetsImagesGen {
   AssetGenImage get imagePickerPlaceholder =>
       const AssetGenImage('assets/images/image_picker_placeholder.png');
 
+  /// File path: assets/images/map_image.png
+  AssetGenImage get mapImage =>
+      const AssetGenImage('assets/images/map_image.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [imagePickerPlaceholder];
+  List<AssetGenImage> get values => [imagePickerPlaceholder, mapImage];
 }
 
 class Assets {
