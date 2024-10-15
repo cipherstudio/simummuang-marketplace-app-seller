@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smm_components/components/shared_components.dart';
+import 'package:smm_components/utils/smm_common_utils.dart';
 
 import 'package:smm_seller_application/domain/data/models/seller_info/seller_info_model.dart';
 
@@ -76,8 +77,7 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
           ),
           SMMTextFormField.settingNormal(
             controller: TextEditingController(
-                text:
-                    widget.sellerInfoModel.responseTime ?? defaultTextWhenNull),
+                text: widget.sellerInfoModel.shopMarket ?? defaultTextWhenNull),
             isEnable: true,
             suffixText: Trans.current.seller_setting_store_label_suffix_text,
           ),
@@ -90,15 +90,15 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
           ),
           SMMTextFormField.settingNormal(
             controller: TextEditingController(
-                text: widget.sellerInfoModel.operatingTime ??
-                    defaultTextWhenNull),
+                text:
+                    widget.sellerInfoModel.shopOpenTime ?? defaultTextWhenNull),
             isEnable: true,
             suffixText:
                 Trans.current.seller_setting_store_opening_hours_suffix_text,
           ),
           SMMTextFormField.settingNormal(
             controller: TextEditingController(
-                text: (widget.sellerInfoModel.contactNumber ??
+                text: (widget.sellerInfoModel.contactInfoMobile ??
                         widget.sellerInfoModel.telephone) ??
                     '08xxxxxxxx'),
             isEnable: true,
@@ -126,7 +126,7 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
           SMMTextFormField.settingNormal(
             controller: TextEditingController(
                 text: (widget.sellerInfoModel.telephone ??
-                        widget.sellerInfoModel.contactNumber) ??
+                        widget.sellerInfoModel.contactInfoMobile) ??
                     '08xxxxxxxx'),
             isEnable: true,
             suffixText: Trans.current.seller_setting_seller_tel_num_suffix_text,
@@ -140,7 +140,7 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
           SMMTextFormField.settingMultipleLines(
             controller: TextEditingController(
                 text:
-                    '${widget.sellerInfoModel.address} ${widget.sellerInfoModel.city} ${widget.sellerInfoModel.country} ${widget.sellerInfoModel.postcode}'),
+                    '${widget.sellerInfoModel.address} ${widget.sellerInfoModel.city} ${SMMCommonUtils.countryMap[widget.sellerInfoModel.countryId]} ${widget.sellerInfoModel.postcode}'),
             isEnable: true,
             suffixText: Trans.current.seller_setting_seller_suffix_text,
           ),

@@ -46,6 +46,12 @@ class SellerInfoModel {
   final String? email;
   @JsonKey(name: "shop_title")
   final String? shopTitle;
+  @JsonKey(name: "shop_market")
+  final String? shopMarket;
+  @JsonKey(name: "shop_open_time")
+  final String? shopOpenTime;
+  @JsonKey(name: "contact_info_mobile")
+  final String? contactInfoMobile;
   @JsonKey(name: "address")
   final String? address;
   @JsonKey(name: "country")
@@ -111,6 +117,9 @@ class SellerInfoModel {
     this.name,
     this.email,
     this.shopTitle,
+    this.shopMarket,
+    this.shopOpenTime,
+    this.contactInfoMobile,
     this.address,
     this.country,
     this.image,
