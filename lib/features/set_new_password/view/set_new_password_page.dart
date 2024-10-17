@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smm_components/components/shared_components.dart';
+import 'package:smm_components/validators/smm_password_validator.dart';
 import 'package:smm_seller_application/features/set_new_password/bloc/set_new_password_bloc.dart';
 import 'package:smm_seller_application/injector/app_injector.dart';
 import 'package:smm_seller_application/router/app_router.dart';
@@ -86,15 +87,8 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                     child: SMMTextFormField.obscure(
                       controller: _setNewPasswordBloc.newPasswordController,
                       validator: (value) {
-                        const String pattern =
-                            r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,15}$';
-                        final RegExp regExp = RegExp(pattern);
-
-                        if (!regExp.hasMatch(value ?? '')) {
-                          return 'รหัสผ่านไม่แข็งแรงและแนะนำให้ใช้รหัสผ่านที่มีความซับซ้อนมากขึ้น';
-                        }
-
-                        return null;
+                        return SMMPasswordValidator
+                            .validatePasswordMoreInformation(value);
                       },
                       isEnable: true,
                       hintText: Trans
@@ -111,35 +105,15 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
                       controller:
                           _setNewPasswordBloc.confirmNewPasswordController,
                       validator: (value) {
-                        // if (value == null || value.isEmpty) {
-                        //   return 'โปรดระบุยืนยันรหัสผ่านใหม่';
-                        // } else if (value !=
-                        //         _setNewPasswordBloc
-                        //             .newPasswordController.text &&
-                        //     _setNewPasswordBloc
-                        //         .newPasswordController.text.isNotEmpty) {
-                        //   return 'ยืนยันรหัสผ่านต้องตรงกับรหัสผ่าน';
-                        // }
-                        // return null;
-
-                        const String pattern =
-                            r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,15}$';
-                        final RegExp regExp = RegExp(pattern);
-
-                        if (!regExp.hasMatch(value ?? '')) {
-                          return 'รหัสผ่านไม่แข็งแรงและแนะนำให้ใช้รหัสผ่านที่มีความซับซ้อนมากขึ้น';
-                        } else {
-                          if (value == null || value.isEmpty) {
-                            return 'โปรดระบุยืนยันรหัสผ่านใหม่';
-                          } else if (value !=
-                                  _setNewPasswordBloc
-                                      .newPasswordController.text &&
-                              _setNewPasswordBloc
-                                  .newPasswordController.text.isNotEmpty) {
-                            return 'ยืนยันรหัสผ่านต้องตรงกับรหัสผ่าน';
-                          }
+                        if (value == null || value.isEmpty) {
+                          return 'โปรดระบุยืนยันรหัสผ่านใหม่';
+                        } else if (value !=
+                                _setNewPasswordBloc
+                                    .newPasswordController.text &&
+                            _setNewPasswordBloc
+                                .newPasswordController.text.isNotEmpty) {
+                          return 'รหัสผ่านไม่ตรงกัน';
                         }
-
                         return null;
                       },
                       isEnable: true,

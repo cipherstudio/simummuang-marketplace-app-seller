@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:phone_numbers_parser/phone_numbers_parser.dart';
-import 'package:smm_seller_application/extensions/extension.dart';
+import 'package:smm_components/validators/smm_phone_number_validator.dart';
 import 'package:smm_seller_application/features/forgot_password/bloc/forgot_password_bloc.dart';
 
 import 'package:smm_seller_application/translation/generated/l10n.dart';
@@ -25,7 +24,7 @@ class RequestOTP extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          _buildEmailOrPhoneNumber(context, emailOrPhoneNumberInputController),
+          _buildPhoneNumber(context, emailOrPhoneNumberInputController),
           const SizedBox(
             height: 24,
           ),
@@ -72,7 +71,7 @@ class RequestOTP extends StatelessWidget {
     );
   }
 
-  Widget _buildEmailOrPhoneNumber(
+  Widget _buildPhoneNumber(
     BuildContext context,
     TextEditingController emailOrPhoneNumberInputController,
   ) {
@@ -82,33 +81,7 @@ class RequestOTP extends StatelessWidget {
       child: SMMTextFormField.normal(
         controller: emailOrPhoneNumberInputController,
         validator: (value) {
-          PhoneNumber phoneNumberInstance = PhoneNumber.parse(
-            value ?? '',
-            callerCountry: IsoCode.TH,
-          );
-
-          if (value.stringNullOrEmpty) {
-            return 'โปรดระบุ เบอร์โทรศัพท์';
-          } else {
-            RegExp regExp = RegExp(r'^\d+$');
-            // เอา RegEx มาเช็คว่า input เป็น numeric หมดไหม
-            if (regExp.hasMatch(value!)) {
-              // เข้าไป validate phone number
-              if (!phoneNumberInstance.isValid()) {
-                return 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
-              }
-            } else {
-              return 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
-              // เข้าไปเช็ค email ต่อ
-              // if (!EmailValidator.validate(emailOrPhoneNumber)) {
-              //   validationMessage = 'รูปแบบอีเมล์ไม่ถูกต้อง';
-              // } else {
-              //   isValid = true;
-              // }
-            }
-          }
-
-          return null;
+          return SMMPhoneNumberValidator.validateInputPhoneNumber(value);
         },
         isEnable: true,
         hintText: Trans.current.login_email_hint_label,
