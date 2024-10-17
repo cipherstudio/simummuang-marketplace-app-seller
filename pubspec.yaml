@@ -36,7 +36,7 @@ dependencies:
   smm_components:
     git:
       url: https://github.com/hopeza081081081/SMMComponents.git
-      ref: feature/validatorComponent
+      ref: 0.1.13
   
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
