@@ -75,7 +75,7 @@ class ForgotPasswordBloc
         );
         if (requestOtpResponse.status == 'success') {
           _requestOtpResponseModel = requestOtpResponse.copyWith(
-              expiredTime: DateTime.now().add(const Duration(minutes: 5)));
+              expiredTime: DateTime.now().add(const Duration(seconds: 10)));
 
           scrollController.jumpTo(scrollController.position.minScrollExtent);
           emit(

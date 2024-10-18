@@ -52,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "หากยังไม่ได้รับ OTP? ขอรหัส OTP อีกครั้ง"),
         "forgetpassword_subtitle": MessageLookupByLibrary.simpleMessage(
-            "โปรดระบุอีเมลหรือเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน"),
+            "โปรดระเบอร์โทรศัพท์\nคุณจะได้รับลิงค์สำหรับเปลี่ยนรหัสผ่าน"),
         "forgetpassword_title":
             MessageLookupByLibrary.simpleMessage("ลืมรหัสผ่าน?"),
         "hello_world": MessageLookupByLibrary.simpleMessage("Hello World"),
@@ -76,7 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("phone number"),
         "login_remember_me_label":
             MessageLookupByLibrary.simpleMessage("Remember me."),
-        "login_title": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_title": MessageLookupByLibrary.simpleMessage("Login Seller"),
         "register_back_button": MessageLookupByLibrary.simpleMessage("กลับ"),
         "register_confirm_button":
             MessageLookupByLibrary.simpleMessage("ยืนยัน"),

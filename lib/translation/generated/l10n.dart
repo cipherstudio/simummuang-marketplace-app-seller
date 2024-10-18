@@ -220,10 +220,10 @@ class Trans {
     );
   }
 
-  /// `เข้าสู่ระบบ`
+  /// `เข้าสู่ระบบผู้ขาย`
   String get login_title {
     return Intl.message(
-      'เข้าสู่ระบบ',
+      'เข้าสู่ระบบผู้ขาย',
       name: 'login_title',
       desc: '',
       args: [],

@@ -16,7 +16,7 @@
   "register_password_confirm" : "ยืนยันรหัสผ่าน",
   "register_password_hint" : "รหัสผ่านอีกครั้ง",
   "register_next_button" : "ถัดไป",
-  "login_title" : "Login",
+  "login_title" : "Login Seller",
   "login_phone_number_label" : "phone number",
   "login_email_hint_label" : "please fill phone number.",
   "login_password_label" : "Password",
