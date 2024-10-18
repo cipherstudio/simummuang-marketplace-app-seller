@@ -5,10 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:smm_seller_application/core/authenticator/authenticator_storage.dart';
 import 'package:smm_seller_application/core/bloc_core/ui_status.dart';
+import 'package:smm_seller_application/domain/data/models/login/login_mobile_request_model.dart';
+import 'package:smm_seller_application/domain/data/models/login/login_mobile_response_model.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_request_body_model.dart';
 import 'package:smm_seller_application/domain/data/models/otp/request_otp_response_model.dart';
 import 'package:smm_seller_application/domain/data/models/otp/verify_otp_request_body_model.dart';
 import 'package:smm_seller_application/domain/data/models/otp/verify_otp_response_model.dart';
+import 'package:smm_seller_application/domain/repository/auth_repository.dart';
 import 'package:smm_seller_application/domain/repository/otp_repository.dart';
 import 'package:smm_seller_application/extensions/extension.dart';
 import 'package:smm_seller_application/features/forgot_password/exceptions/forgot_password_exception.dart';
@@ -21,7 +24,9 @@ class ForgotPasswordBloc
     extends Bloc<ForgotPasswordBlocEvent, ForgotPasswordBlocState> {
   ForgotPasswordBloc({
     required OtpRepository otpRepository,
+    required AuthRepository authRepository,
   })  : _otpRepository = otpRepository,
+        _authRepository = authRepository,
         super(const ForgotPasswordBlocState()) {
     on<_RequestOTP>(_onRequestOTP);
     on<_EmailOrPhoneChange>(_onEmailOrPhoneChange);
@@ -31,6 +36,8 @@ class ForgotPasswordBloc
   }
 
   final OtpRepository _otpRepository;
+  final AuthRepository _authRepository;
+
   ScrollController scrollController = ScrollController();
   TextEditingController emailOrPhoneNumberInputController =
       TextEditingController();
@@ -67,6 +74,19 @@ class ForgotPasswordBloc
           ),
         );
       } else {
+        LoginMobileResponseModel loginMobileResponse =
+            await _authRepository.loginMobile(
+          body: LoginMobileRequestModel(
+            mobile: emailOrPhoneNumberInputController.text,
+          ),
+        );
+
+        if (loginMobileResponse.status == 'error' &&
+            loginMobileResponse.message == 'customer not found') {
+          throw const ForgotPasswordException(
+              message: 'ไม่พบเบอร์มือถือนี้ในระบบ');
+        }
+
         RequestOtpResponseModel requestOtpResponse =
             await _otpRepository.requestOtp(
           requestBody: RequestOtpRequestBody(
@@ -102,6 +122,7 @@ class ForgotPasswordBloc
         state.copyWith(
           requestOtpUiStatus: UILoadFailed(
             message: e.toString(),
+            error: e,
           ),
         ),
       );

@@ -69,8 +69,11 @@ extension GetItInjectableX on _i1.GetIt {
         () => blocPrivilegeModule.getLoginBloc(gh<_i8.AuthRepository>()));
     gh.factory<_i12.SetNewPasswordBloc>(() =>
         blocPrivilegeModule.getSetNewPasswordBloc(gh<_i8.AuthRepository>()));
-    gh.factory<_i13.ForgotPasswordBloc>(() =>
-        blocPrivilegeModule.getForgotPasswordBloc(gh<_i10.OtpRepository>()));
+    gh.factory<_i13.ForgotPasswordBloc>(
+        () => blocPrivilegeModule.getForgotPasswordBloc(
+              gh<_i10.OtpRepository>(),
+              gh<_i8.AuthRepository>(),
+            ));
     gh.factory<_i14.SellerSettingBloc>(() => blocPrivilegeModule
         .getSellerSettingBloc(gh<_i9.SellerInfoRepository>()));
     return this;

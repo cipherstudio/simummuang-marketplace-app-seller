@@ -28,17 +28,21 @@ class ForgotPasswordPage extends StatelessWidget {
       child: MultiBlocListener(
         listeners: [
           BlocListener<ForgotPasswordBloc, ForgotPasswordBlocState>(
-            // listenWhen: (previous, current) =>
-            //     current.requestOtpUiStatus != previous.requestOtpUiStatus,
-            listenWhen: (previous, current) => true,
+            listenWhen: (previous, current) =>
+                current.requestOtpUiStatus != previous.requestOtpUiStatus,
             listener: (context, state) {
               state.requestOtpUiStatus.whenOrNull(
                 loading: () {
                   dialogManager.showLoading(context);
                 },
                 loadFailed: (message, error) {
-                  dialogManager.dismissLoadingDialog();
-                  DialogUtils.openErrorDialog(context, message);
+                  if (error is ForgotPasswordException) {
+                    dialogManager.dismissLoadingDialog();
+                    DialogUtils.openErrorDialog(context, error.message);
+                  } else {
+                    dialogManager.dismissLoadingDialog();
+                    DialogUtils.openErrorDialog(context, 'มีบางอย่างผิดพลาด');
+                  }
                 },
                 loadSuccess: (message) {
                   dialogManager.dismissLoadingDialog();

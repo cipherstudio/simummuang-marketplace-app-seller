@@ -12,8 +12,15 @@ abstract class BlocPrivilegeModule {
   LoginBloc getLoginBloc(AuthRepository authRepository) =>
       LoginBloc(authRepository: authRepository);
 
-  ForgotPasswordBloc getForgotPasswordBloc(OtpRepository otpRepository) =>
-      ForgotPasswordBloc(otpRepository: otpRepository);
+  ForgotPasswordBloc getForgotPasswordBloc(
+    OtpRepository otpRepository,
+    AuthRepository authRepository,
+  ) =>
+      ForgotPasswordBloc(
+        otpRepository: otpRepository,
+        authRepository: authRepository,
+      );
+
   SetNewPasswordBloc getSetNewPasswordBloc(AuthRepository authRepository) =>
       SetNewPasswordBloc(authRepository: authRepository);
 
