@@ -83,8 +83,7 @@ class _SellerSettingStoreInfoState extends State<SellerSettingStoreInfo> {
           ),
           SMMTextFormField.settingNormal(
             controller: TextEditingController(
-                text: widget.sellerInfoModel.responseRatio ??
-                    defaultTextWhenNull),
+                text: widget.sellerInfoModel.shopNumber ?? defaultTextWhenNull),
             isEnable: true,
             suffixText: Trans.current.seller_setting_store_zone_suffix_text,
           ),

@@ -57,9 +57,12 @@ class CustomerModel {
 class ExtensionAttributes {
   @JsonKey(name: "is_subscribed")
   final bool isSubscribed;
+  @JsonKey(name: "seller_id")
+  final String sellerId;
 
   ExtensionAttributes({
     required this.isSubscribed,
+    required this.sellerId,
   });
 
   factory ExtensionAttributes.fromJson(Map<String, dynamic> json) =>

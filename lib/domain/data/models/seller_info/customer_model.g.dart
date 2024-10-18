@@ -44,10 +44,12 @@ Map<String, dynamic> _$CustomerModelToJson(CustomerModel instance) =>
 ExtensionAttributes _$ExtensionAttributesFromJson(Map<String, dynamic> json) =>
     ExtensionAttributes(
       isSubscribed: json['is_subscribed'] as bool,
+      sellerId: json['seller_id'] as String,
     );
 
 Map<String, dynamic> _$ExtensionAttributesToJson(
         ExtensionAttributes instance) =>
     <String, dynamic>{
       'is_subscribed': instance.isSubscribed,
+      'seller_id': instance.sellerId,
     };
