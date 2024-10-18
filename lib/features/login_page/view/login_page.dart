@@ -224,16 +224,8 @@ class _LoginPageState extends State<LoginPage> {
       builder: (BuildContext context, LoginBlocState state) {
         if (state.passwordOptionEnum == PasswordOptionEnum.rememberAndForgot) {
           return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              SMMCheckbox.withText(
-                text: Trans.current.login_remember_me_label,
-                onChanged: (value) {
-                  AuthenticatorService authService =
-                      AuthenticatorService.of(context);
-                  authService.setRememberPassword(value ?? false);
-                },
-              ),
               InkWell(
                 onTap: onForgotPasswordTap,
                 child: Text(

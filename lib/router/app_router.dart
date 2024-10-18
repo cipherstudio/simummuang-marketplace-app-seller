@@ -46,9 +46,7 @@ class AppRouter {
             AuthenticatorService authService = AuthenticatorService.of(context);
             await authService.waitForCompleteInitialize();
             final isLogin = authService.isLogin();
-            final bool isRememberPassword =
-                authService.getRememberPassword() ?? false;
-            if (isLogin && isRememberPassword) {
+            if (isLogin) {
               return AppRouter.sellerSettingPagePath;
             } else {
               return AppRouter.loginPagePath;
