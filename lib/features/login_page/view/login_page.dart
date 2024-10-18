@@ -1,8 +1,7 @@
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:phone_numbers_parser/phone_numbers_parser.dart';
+import 'package:smm_components/validators/smm_phone_number_validator.dart';
 import 'package:smm_seller_application/core/authenticator/auth_exception.dart';
 import 'package:smm_seller_application/core/authenticator/authenticator_service.dart';
 import 'package:smm_seller_application/core/authenticator/credential.dart';
@@ -146,17 +145,6 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 24,
                 ),
-                // ExternalLogin(
-                //   title: Trans.current.login_external_title,
-                //   detail: Trans.current.login_external_detail,
-                //   textButton: Trans.current.login_external_text_button,
-                //   onTextButtonTap: () {
-                //     context.goNamed(AppRouter.registerPageNamed);
-                //   },
-                //   onSocialMediaTap: (socialMediaKindEnum) {
-                //     print(socialMediaKindEnum);
-                //   },
-                // ),
                 const SizedBox(
                   height: 24,
                 ),
@@ -185,27 +173,7 @@ class _LoginPageState extends State<LoginPage> {
             },
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (value) {
-              PhoneNumber phoneNumberInstance = PhoneNumber.parse(
-                value ?? '',
-                callerCountry: IsoCode.TH,
-              );
-
-              if (value.stringNullOrEmpty) {
-                return 'โปรดระบุเบอร์โทรศัพท์';
-              } else {
-                RegExp regExp = RegExp(r'^\d+$');
-                // เอา RegEx มาเช็คว่า input เป็น numeric หมดไหม
-                if (regExp.hasMatch(value!)) {
-                  // เข้าไป validate phone number
-                  // if (!phoneNumberInstance.isValid()) {
-                  //   return 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
-                  // }
-                } else {
-                  return 'รูปแบบเบอร์มือถือไม่ถูกต้อง';
-                }
-              }
-
-              return null;
+              return SMMPhoneNumberValidator.validateInputPhoneNumber(value);
             },
             isEnable: true,
             hintText: Trans.current.login_email_hint_label,

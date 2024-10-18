@@ -1142,11 +1142,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: develop
-      resolved-ref: "9ca31a709ee4c0b0dc28836b7bb43f273874d1ba"
+      ref: "0.1.13"
+      resolved-ref: "94600e5c0ed9c948b1a0ebf6d5cf35db9fa89ca2"
       url: "https://github.com/hopeza081081081/SMMComponents.git"
     source: git
-    version: "0.1.12"
+    version: "0.1.13"
   source_gen:
     dependency: transitive
     description:
